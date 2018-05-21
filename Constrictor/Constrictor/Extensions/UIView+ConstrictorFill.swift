@@ -30,13 +30,13 @@ public extension UIView {
                                           multipler: CGFloat = 1.0,
                                           priority: UILayoutPriority = .required) -> UIView {
         
-        constrict(.top, .bottom, .leading, .trailing,
+        constrict(attributes: .top, .bottom, .leading, .trailing,
                   relation: relation,
                   to: view,
                   constant: constant,
                   multipler: multipler,
                   priority: priority)
-
+        
         return self
     }
 }

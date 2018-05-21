@@ -47,7 +47,7 @@ public extension UIView {
         return self
     }
     
-    @discardableResult func constrict(_ attributes: NSLayoutAttribute ...,
+    @discardableResult func constrict(attributes: NSLayoutAttribute ...,
                                       relation: NSLayoutRelation = .equal,
                                       to view: UIView? = nil,
                                       constant: CGFloat = 0.0,
