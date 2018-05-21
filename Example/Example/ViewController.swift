@@ -16,20 +16,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // ** Red View **
+        // Boilerplate
         redView.backgroundColor = .red
         view.addSubview(redView)
         
-        redView.translatesAutoresizingMaskIntoConstraints = false
+        // Constraints
         redView.constrictFillContainer()
         
-        redView.addSubview(blueView)
+        // ** Blue View **
+        // Boilerplate
         blueView.backgroundColor = .blue
-        blueView.translatesAutoresizingMaskIntoConstraints = false
+        redView.addSubview(blueView)
         
+        // Constraints
         blueView.constrict(.width, constant: 50.0)
             .constrict(.height, constant: 50.0)
             .constrictCenterInContainer()
     }
 }
-

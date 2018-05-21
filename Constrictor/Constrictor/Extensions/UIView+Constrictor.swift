@@ -36,6 +36,8 @@ public extension UIView {
                                       multipler: CGFloat = 1.0,
                                       priority: UILayoutPriority = .required) -> UIView {
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint(item: self,
                            attribute: selfAttribute,
                            relatedBy: relation,
@@ -55,13 +57,13 @@ public extension UIView {
                                       priority: UILayoutPriority = .required) -> UIView {
         
         attributes.forEach {
-            NSLayoutConstraint(item: self,
-                               attribute: $0,
-                               relatedBy: relation,
-                               toItem: view,
-                               attribute: $0,
-                               multiplier: multipler,
-                               constant: constant).isActive = true
+            self.constrict($0,
+                           relation: relation,
+                           to: view,
+                           attribute: $0,
+                           constant: constant,
+                           multipler: multipler,
+                           priority: priority)
         }
         
         return self
