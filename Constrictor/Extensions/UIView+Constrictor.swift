@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
 
-    @discardableResult func constrict(_ type: ConstrictorPosition,
+    @discardableResult func constrict(_ type: ConstrictPosition,
                                       to view: UIView? = nil,
                                       spacing: CGFloat) -> UIView {
         
