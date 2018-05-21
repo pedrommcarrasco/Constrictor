@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20D1F2B620B34E9300B327B7 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2B520B34E9300B327B7 /* UIView+Anchor.swift */; };
+		20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */; };
+		20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorFill.swift */; };
 		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */; };
-		53CDE3D120B3287E007E4AE0 /* ConstrictPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3D020B3287E007E4AE0 /* ConstrictPosition.swift */; };
-		53CDE3D320B328BC007E4AE0 /* ConstrictSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3D220B328BC007E4AE0 /* ConstrictSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20D1F2B520B34E9300B327B7 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
+		20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorFill.swift"; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C120B3201E007E4AE0 /* Constrictor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constrictor.h; sourceTree = "<group>"; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
-		53CDE3D020B3287E007E4AE0 /* ConstrictPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictPosition.swift; sourceTree = "<group>"; };
-		53CDE3D220B328BC007E4AE0 /* ConstrictSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,20 +33,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20D1F2B720B3500E00B327B7 /* Enumerations */ = {
-			isa = PBXGroup;
-			children = (
-				53CDE3D020B3287E007E4AE0 /* ConstrictPosition.swift */,
-				53CDE3D220B328BC007E4AE0 /* ConstrictSize.swift */,
-			);
-			path = Enumerations;
-			sourceTree = "<group>";
-		};
 		20D1F2B820B3501400B327B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */,
 				53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */,
-				20D1F2B520B34E9300B327B7 /* UIView+Anchor.swift */,
+				20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorFill.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -73,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				20D1F2B820B3501400B327B7 /* Extensions */,
-				20D1F2B720B3500E00B327B7 /* Enumerations */,
 				53CDE3C120B3201E007E4AE0 /* Constrictor.h */,
 				53CDE3C220B3201E007E4AE0 /* Info.plist */,
 			);
@@ -159,10 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CDE3D120B3287E007E4AE0 /* ConstrictPosition.swift in Sources */,
-				20D1F2B620B34E9300B327B7 /* UIView+Anchor.swift in Sources */,
-				53CDE3D320B328BC007E4AE0 /* ConstrictSize.swift in Sources */,
+				20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */,
+				20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorFill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
