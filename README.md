@@ -1,7 +1,7 @@
 # Constrictor 🐍
 
 [![Build Status](https://travis-ci.org/pedrommcarrasco/Constrictor.svg?branch=master)](https://travis-ci.org/pedrommcarrasco/Constrictor) 
-[![CocoaPods](https://img.shields.io/cocoapods/v/AFNetworking.svg)](https://cocoapods.org/pods/Constrictor)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Constrictor.svg)](https://cocoapods.org/pods/Constrictor)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE)
 
