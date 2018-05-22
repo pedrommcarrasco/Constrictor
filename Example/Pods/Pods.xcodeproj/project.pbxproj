@@ -3,22 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04780ABD704B5CFD5DBA3A26D89FEDCD /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2228D19270486CE339DD456D1833A91 /* UIView+Constrictor.swift */; };
 		1251BBE110E5ABDB5A5C6D75F78F63DC /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD65E35A3233FBE6F2EFDEB3D43D114 /* Pods-Example-dummy.m */; };
-		1D2D09F23012C66818E9E86E33BCF324 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */; };
+		320405660F5398FCDE8F24A8BC99887A /* Constrictor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2AEDB74F7D2677B6FB87C4796712F26 /* Constrictor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		333A63D941B491DC75202F45CB8CD077 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0486AE4196DAA3E08155521F8C993 /* Constant.swift */; };
 		452AE70A85580DEB5F732CF20488434D /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		53CB881F20B44328002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB881E20B44328002731A6 /* Constant.swift */; };
 		6FA9536C65FD41FBDE8CD3CA2FF26982 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E431137DEEDDBA5C0FF4E61FF7987BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		AE2CB6F784675EEF9A3EDF4F691E49E6 /* Constrictor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */; };
-		BC2A1DE0265A55D6A7CB0BA377F2A2E2 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */; };
-		C0F38E9A706479D9BB5605F0B4646228 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */; };
-		F9702D5745E123234A1CDFC2C8F64633 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */; };
+		7FA6AB00A32E1BEA2EF5169034CF7D09 /* Constrictor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BD3BC554E64903C73CEBD5B90B4CAC /* Constrictor-dummy.m */; };
+		93A8E374B3DD54C516404F44BD7DF0A8 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 82B7222732392B42F4428DB9CD624541 /* Info.plist */; };
+		9BBA9AC7898DDAF39500FF6763A30D0D /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7836DC5E5EC629D6BAF6AC7096F014 /* UIView+ConstrictorCenter.swift */; };
+		C91CD186ED3ECC0C2B59C233381A52B3 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1069A189487003C3F81CFDF2CC44B79 /* UIView+ConstrictorEdges.swift */; };
+		D9DD858975F6EDC7D60A2FE2125B035A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F76AA4E5D36C2102DD967FB04B3626AE /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 85B628705238D3A67D55EA541B1CBABB /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,57 +26,57 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5F820E6805876F925691271B7B745C6C;
+			remoteGlobalIDString = EDE1534492C2F67A95182D4B3E409665;
 			remoteInfo = Constrictor;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		044AA3E23F71470C9B5F50D44720EA0D /* Pods-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-resources.sh"; sourceTree = "<group>"; };
+		08E117746DCD28A70B2518EF00BF24D9 /* Constrictor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Constrictor.modulemap; sourceTree = "<group>"; };
 		11434BC759D12F57876FBB74A4775E74 /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		120BAA0AA20A594A26DEEFD5851ED632 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
-		16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
 		1AD65E35A3233FBE6F2EFDEB3D43D114 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		25A37D4D536CC5988A439441117C41F4 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
-		288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
+		26E8F0BD9F7D7F8C42540DF6AA82303E /* Constrictor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-prefix.pch"; sourceTree = "<group>"; };
+		272DFBB407BFC393C201B6DB94B85112 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31860024A1E3CF8C0095D56522B25C75 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3ADE9E5655579DB0F79DC9C80758673C /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3F3EFEBDE6702DEFDFFF9D5C6DBC3773 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
-		53CB881E20B44328002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B81C04F8E84EAE60AE15C8695031A5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		667064E37587B53E1F77D77D2C865A60 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F4A62977348D04494633B98976B96A8 /* Constrictor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-prefix.pch"; sourceTree = "<group>"; };
+		82B7222732392B42F4428DB9CD624541 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Constrictor/Constrictor/Info.plist; sourceTree = "<group>"; };
+		85B628705238D3A67D55EA541B1CBABB /* Constrictor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constrictor.h; path = Constrictor/Constrictor/Constrictor.h; sourceTree = "<group>"; };
+		885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7836DC5E5EC629D6BAF6AC7096F014 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2228D19270486CE339DD456D1833A91 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
 		A79AC23D5A157FED70D9C53D844B2319 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Constrictor-dummy.m"; sourceTree = "<group>"; };
-		BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Constrictor.xcconfig; sourceTree = "<group>"; };
-		C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Constrictor/Constrictor/Info.plist; sourceTree = "<group>"; };
-		D9B533D4017D25212241CEBF1C3FB8E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE81A692C7541CC03BBA03FD23A6433 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constrictor.h; path = Constrictor/Constrictor/Constrictor.h; sourceTree = "<group>"; };
+		ACD0486AE4196DAA3E08155521F8C993 /* Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B7BD3BC554E64903C73CEBD5B90B4CAC /* Constrictor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Constrictor-dummy.m"; sourceTree = "<group>"; };
+		BD18E28A8C9312E660F619B454D3E62E /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C2AEDB74F7D2677B6FB87C4796712F26 /* Constrictor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-umbrella.h"; sourceTree = "<group>"; };
+		D07348C35030FC0A6159740B2FB704BE /* Constrictor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Constrictor.xcconfig; sourceTree = "<group>"; };
+		DAE81A692C7541CC03BBA03FD23A6433 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Constrictor.framework; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC5B2E05B58CD826FD55659BF1D7E39 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F472ED6A8EF9ECA1A47168B6ED402A3F /* Constrictor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Constrictor.modulemap; sourceTree = "<group>"; };
-		F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-umbrella.h"; sourceTree = "<group>"; };
+		F1069A189487003C3F81CFDF2CC44B79 /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2EB6C796094DF13CA5BDBDC58CF6414B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E431137DEEDDBA5C0FF4E61FF7987BD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9EFC8A738E989C11BB777D4A7A383678 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6FA9536C65FD41FBDE8CD3CA2FF26982 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE0B9936CB2F052F81F659E103C8E80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9DD858975F6EDC7D60A2FE2125B035A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,67 +101,26 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
-		26248C7F46070A511EB021A78F20A809 /* Support Files */ = {
+		4B3390391F542F5C1B76E0C159FA1CD0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F472ED6A8EF9ECA1A47168B6ED402A3F /* Constrictor.modulemap */,
-				BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */,
-				AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */,
-				9F4A62977348D04494633B98976B96A8 /* Constrictor-prefix.pch */,
-				F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */,
-				D9B533D4017D25212241CEBF1C3FB8E5 /* Info.plist */,
+				08E117746DCD28A70B2518EF00BF24D9 /* Constrictor.modulemap */,
+				D07348C35030FC0A6159740B2FB704BE /* Constrictor.xcconfig */,
+				B7BD3BC554E64903C73CEBD5B90B4CAC /* Constrictor-dummy.m */,
+				26E8F0BD9F7D7F8C42540DF6AA82303E /* Constrictor-prefix.pch */,
+				C2AEDB74F7D2677B6FB87C4796712F26 /* Constrictor-umbrella.h */,
+				272DFBB407BFC393C201B6DB94B85112 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Constrictor";
 			sourceTree = "<group>";
 		};
-		2C34664B9F1E287060F1F072A81E4BDF /* Extensions */ = {
+		581618D027858A4BB688F4613BA1F5B9 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */,
-				288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */,
-				167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */,
-			);
-			name = Extensions;
-			path = Constrictor/Constrictor/Extensions;
-			sourceTree = "<group>";
-		};
-		483AC4330BECC54DC6A7DBFFC953DC01 /* Constrictor */ = {
-			isa = PBXGroup;
-			children = (
-				DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */,
-				C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */,
-				53CB882020B44338002731A6 /* Classes */,
-				2C34664B9F1E287060F1F072A81E4BDF /* Extensions */,
-				5B837D098F4E1666A6597AA630223588 /* Pod */,
-				26248C7F46070A511EB021A78F20A809 /* Support Files */,
-			);
-			name = Constrictor;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		53CB882020B44338002731A6 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				53CB881E20B44328002731A6 /* Constant.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		55D01B40901989965CAB89C4A1E5A90E /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				483AC4330BECC54DC6A7DBFFC953DC01 /* Constrictor */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		5B837D098F4E1666A6597AA630223588 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */,
-				11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */,
-				667064E37587B53E1F77D77D2C865A60 /* README.md */,
+				BD18E28A8C9312E660F619B454D3E62E /* Constrictor.podspec */,
+				120BAA0AA20A594A26DEEFD5851ED632 /* LICENSE */,
+				31860024A1E3CF8C0095D56522B25C75 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -174,15 +133,43 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		713FC0CB15F6C3BFFAB21092B512AF21 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0486AE4196DAA3E08155521F8C993 /* Constant.swift */,
+			);
+			name = Classes;
+			path = Constrictor/Constrictor/Classes;
+			sourceTree = "<group>";
+		};
+		7763CE8719FF05F62B1623F049FF02B1 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D51BC7A3B5570DAF740A66A8D434F028 /* Constrictor */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				55D01B40901989965CAB89C4A1E5A90E /* Development Pods */,
+				7763CE8719FF05F62B1623F049FF02B1 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				E951884AC305281FEBD1BAA9BC92C342 /* Products */,
 				6A4F6A14E3FB951290E4531728B7A461 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		B0798871E12798D074186E00C3C2CC2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2228D19270486CE339DD456D1833A91 /* UIView+Constrictor.swift */,
+				8B7836DC5E5EC629D6BAF6AC7096F014 /* UIView+ConstrictorCenter.swift */,
+				F1069A189487003C3F81CFDF2CC44B79 /* UIView+ConstrictorEdges.swift */,
+			);
+			name = Extensions;
+			path = Constrictor/Constrictor/Extensions;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -201,6 +188,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		D51BC7A3B5570DAF740A66A8D434F028 /* Constrictor */ = {
+			isa = PBXGroup;
+			children = (
+				85B628705238D3A67D55EA541B1CBABB /* Constrictor.h */,
+				82B7222732392B42F4428DB9CD624541 /* Info.plist */,
+				713FC0CB15F6C3BFFAB21092B512AF21 /* Classes */,
+				B0798871E12798D074186E00C3C2CC2C /* Extensions */,
+				581618D027858A4BB688F4613BA1F5B9 /* Pod */,
+				4B3390391F542F5C1B76E0C159FA1CD0 /* Support Files */,
+			);
+			name = Constrictor;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		E951884AC305281FEBD1BAA9BC92C342 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,12 +214,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7FB4EFEC8AD5A502B15F8DE9F61F6447 /* Headers */ = {
+		733314D48C6F358D31D61CD159FB6CB3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */,
-				1D2D09F23012C66818E9E86E33BCF324 /* Constrictor.h in Headers */,
+				320405660F5398FCDE8F24A8BC99887A /* Constrictor-umbrella.h in Headers */,
+				F76AA4E5D36C2102DD967FB04B3626AE /* Constrictor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +252,13 @@
 			productReference = 885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5F820E6805876F925691271B7B745C6C /* Constrictor */ = {
+		EDE1534492C2F67A95182D4B3E409665 /* Constrictor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E52D701B08EC4D021BD582287FD73CFF /* Build configuration list for PBXNativeTarget "Constrictor" */;
+			buildConfigurationList = E0A548C5562A813D289C4EDA7C7C211B /* Build configuration list for PBXNativeTarget "Constrictor" */;
 			buildPhases = (
-				A2AAB451A85134C46F5A7FDF9FA65370 /* Sources */,
-				2EB6C796094DF13CA5BDBDC58CF6414B /* Frameworks */,
-				7FB4EFEC8AD5A502B15F8DE9F61F6447 /* Headers */,
+				6004480A6EFC36061914C69B365AAED8 /* Sources */,
+				AE0B9936CB2F052F81F659E103C8E80B /* Frameworks */,
+				733314D48C6F358D31D61CD159FB6CB3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -289,7 +290,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F820E6805876F925691271B7B745C6C /* Constrictor */,
+				EDE1534492C2F67A95182D4B3E409665 /* Constrictor */,
 				5DB625D5AC5653A696819DC04779EC90 /* Pods-Example */,
 			);
 		};
@@ -304,16 +305,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2AAB451A85134C46F5A7FDF9FA65370 /* Sources */ = {
+		6004480A6EFC36061914C69B365AAED8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE2CB6F784675EEF9A3EDF4F691E49E6 /* Constrictor-dummy.m in Sources */,
-				F9702D5745E123234A1CDFC2C8F64633 /* Info.plist in Sources */,
-				39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */,
-				C0F38E9A706479D9BB5605F0B4646228 /* UIView+ConstrictorCenter.swift in Sources */,
-				53CB881F20B44328002731A6 /* Constant.swift in Sources */,
-				BC2A1DE0265A55D6A7CB0BA377F2A2E2 /* UIView+ConstrictorEdges.swift in Sources */,
+				333A63D941B491DC75202F45CB8CD077 /* Constant.swift in Sources */,
+				7FA6AB00A32E1BEA2EF5169034CF7D09 /* Constrictor-dummy.m in Sources */,
+				93A8E374B3DD54C516404F44BD7DF0A8 /* Info.plist in Sources */,
+				04780ABD704B5CFD5DBA3A26D89FEDCD /* UIView+Constrictor.swift in Sources */,
+				9BBA9AC7898DDAF39500FF6763A30D0D /* UIView+ConstrictorCenter.swift in Sources */,
+				C91CD186ED3ECC0C2B59C233381A52B3 /* UIView+ConstrictorEdges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,15 +324,15 @@
 		8922EE516E0DE3F2DD8187922380C1CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Constrictor;
-			target = 5F820E6805876F925691271B7B745C6C /* Constrictor */;
+			target = EDE1534492C2F67A95182D4B3E409665 /* Constrictor */;
 			targetProxy = EC676035383AA74DF9F566B1465EDC67 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		24D0D49026A7AB3B57BC7965388F8797 /* Debug */ = {
+		3A658691934D50FF8309DB72B8498DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */;
+			baseConfigurationReference = D07348C35030FC0A6159740B2FB704BE /* Constrictor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -396,39 +397,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		5758D28C8CC583667FC44C54112768EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Constrictor/Constrictor-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Constrictor/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Constrictor/Constrictor.modulemap";
-				PRODUCT_MODULE_NAME = Constrictor;
-				PRODUCT_NAME = Constrictor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		612B0C52D617867657F6912DF9B54BDD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -587,6 +555,39 @@
 			};
 			name = Release;
 		};
+		92AB726D85C842036A4DDCB8CDD29A6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D07348C35030FC0A6159740B2FB704BE /* Constrictor.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Constrictor/Constrictor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Constrictor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Constrictor/Constrictor.modulemap";
+				PRODUCT_MODULE_NAME = Constrictor;
+				PRODUCT_NAME = Constrictor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -608,11 +609,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E52D701B08EC4D021BD582287FD73CFF /* Build configuration list for PBXNativeTarget "Constrictor" */ = {
+		E0A548C5562A813D289C4EDA7C7C211B /* Build configuration list for PBXNativeTarget "Constrictor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24D0D49026A7AB3B57BC7965388F8797 /* Debug */,
-				5758D28C8CC583667FC44C54112768EB /* Release */,
+				3A658691934D50FF8309DB72B8498DE1 /* Debug */,
+				92AB726D85C842036A4DDCB8CDD29A6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

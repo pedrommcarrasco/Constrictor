@@ -15,8 +15,17 @@ pod install
 ```
 
 ### Carthage
-Coming soon.
+Add this to your Cartfile:
 
+```swift
+github "pedrommcarrasco/Constrictor"
+```
+
+And then run the following command in terminal:
+
+```swift
+carthage update
+```
 
 ## ⌨️ Usage Example
 After installing Constrictor, you should import the framework:
@@ -46,8 +55,19 @@ view.addSubview(blueView)
         
 blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-redView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
-redView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+blueView.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
+blueView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+
+let greenView = UIView()
+greenView.backgroundColor = .green
+greenView.translatesAutoresizingMaskIntoConstraints = false     
+redView.addSubview(greenView)
+
+greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor).isActive = true
+greenView.heightAnchor.constraint(equalTo: blueView.heightAnchor).isActive = true
+greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor).isActive = true
+greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0).isActive = true
+ 
 ```
 
 ### How you can do it with Constrictor 😍
@@ -56,23 +76,32 @@ let redView = UIView()
 redView.backgroundColor = .red
 view.addSubview(redView)
  
-redView.constrictFillContainer()
+redView.constrictEdgesToContainer()
         
 let blueView = UIView()
 blueView.backgroundColor = .blue
-
 redView.addSubview(blueView)
 
-blueView.constrict(.width, constant: 50.0)
-    .constrict(.height, constant: 50.0)
+blueView.constrict(.width, constant: 75)
+    .constrict(.height, constant: 100)
     .constrictCenterInContainer()
+    
+let greenView = UIView()
+greenView.backgroundColor = .green
+redView.addSubview(greenView)
+ 
+greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
+    .constrict(.trailing, to: blueView, attribute: .leading, constant: 50)
 ```
 
 ## 📲 Sample Project
 There's a sample project in this repository called **Example**, if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
 
 ## ✅ To-Do
-
+- [ ] Code Documentation
+- [ ] Tests
+- [ ] TravisCI 
+- [ ] Add more short syntax methods like edges and center.
 
 ## 🙌 Contributing
 Feel free to contribute to this project by **reporting bugs** or open **pull requests**.
