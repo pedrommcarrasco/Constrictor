@@ -66,4 +66,7 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 ## Others
-*.DS_Store
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

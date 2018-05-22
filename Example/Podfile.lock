@@ -1,5 +1,5 @@
 PODS:
-  - Constrictor (0.3.0)
+  - Constrictor (0.3.1)
 
 DEPENDENCIES:
   - Constrictor (from `..`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  Constrictor: 9281e72da02a1ff25f123ede062748ef0fecb83c
+  Constrictor: 10621da3c7afa9d84885f4fd7b56eafd9242bb8f
 
 PODFILE CHECKSUM: 603b81b7e4a99bc8ae7f15d3d988f1f64403f1ce
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
