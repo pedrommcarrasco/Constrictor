@@ -71,7 +71,6 @@ greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor).isActive = true
 greenView.heightAnchor.constraint(equalTo: blueView.heightAnchor).isActive = true
 greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor).isActive = true
 greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0).isActive = true
- 
 ```
 
 ### How you can do it with Constrictor 😍
