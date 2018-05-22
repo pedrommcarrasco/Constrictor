@@ -10,6 +10,21 @@ import UIKit
 
 public extension UIView {
 
+    /**
+     Defines one or more constraints together with the view's superview based on the attributes
+     sent where every constraint will be defined in the same way.
+     
+     - returns:
+     Discardable UIView to allow function's chaining.
+
+     - parameters:
+     - attributes: caller's NSLayoutAttribute to apply constraints.
+     - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+     - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+     - constant: CGFloat's value to add to the constraint.
+     - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
+     - priority: UILayoutPriority that defines the constraint priority.
+     */
     @discardableResult func constrictToContainer(attributes: NSLayoutAttribute ...,
         relation: NSLayoutRelation = .equal,
         constant: CGFloat = 0.0,
@@ -29,6 +44,21 @@ public extension UIView {
         return self
     }
 
+    /**
+     Defines one or more constraints based on the attributes sent where every constraint will be defined in the same way.
+
+     - returns:
+     Discardable UIView to allow function's chaining.
+
+     - parameters:
+     - attributes: caller's NSLayoutAttribute to apply constraints.
+     - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+     - view: Optional UIView to apply a constraint with.
+     - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+     - constant: CGFloat's value to add to the constraint.
+     - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
+     - priority: UILayoutPriority that defines the constraint priority.
+     */
     @discardableResult func constrict(attributes: NSLayoutAttribute ...,
         relation: NSLayoutRelation = .equal,
         to view: UIView? = nil,
@@ -49,6 +79,21 @@ public extension UIView {
         return self
     }
 
+    /**
+     Core method of the Constrictor's framework. Most flexible function that's able to apply any constraint.
+
+     - returns:
+     Discardable UIView to allow function's chaining.
+
+     - parameters:
+        - selfAttribute: caller's NSLayoutAttribute to apply a constraint.
+        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - view: Optional UIView to apply a constraint with.
+        - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+        - constant: CGFloat's value to add to the constraint.
+        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
+        - priority: UILayoutPriority that defines the constraint priority.
+     */
     @discardableResult func constrict(_ selfAttribute: NSLayoutAttribute,
                                       relation: NSLayoutRelation = .equal,
                                       to view: UIView? = nil,
@@ -56,6 +101,7 @@ public extension UIView {
                                       constant: CGFloat = 0.0,
                                       multiplier: CGFloat = 1.0,
                                       priority: UILayoutPriority = .required) -> UIView {
+
 
         translatesAutoresizingMaskIntoConstraints = false
 
