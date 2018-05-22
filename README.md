@@ -100,6 +100,7 @@ There's a sample project in this repository called **Example**, if you want to t
 ## ✅ To-Do
 - [ ] Code Documentation
 - [ ] Tests
+- [ ] TravisCI 
 - [ ] Add more short syntax methods like edges and center.
 
 ## 🙌 Contributing
