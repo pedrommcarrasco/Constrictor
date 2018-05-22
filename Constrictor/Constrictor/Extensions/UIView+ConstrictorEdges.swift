@@ -10,10 +10,24 @@ import UIKit
 
 public extension UIView {
 
+    /**
+     Defines the caller's edges as the same as the its superview
+
+     - parameters:
+        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - constant: CGFloat's value to add to the constraint.
+        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
+        - priority: UILayoutPriority that defines the constraint priority.
+
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
     @discardableResult func constrictEdgesToContainer(relation: NSLayoutRelation = .equal,
                                                       constant: CGFloat = 0.0,
                                                       multiplier: CGFloat = 1.0,
                                                       priority: UILayoutPriority = .required) -> UIView {
+
+        guard let superview = superview else { return self }
 
         constrictEdges(to: superview,
                        relation: relation,
@@ -23,8 +37,21 @@ public extension UIView {
 
         return self
     }
-    
-    @discardableResult func constrictEdges(to view: UIView?,
+
+    /**
+     Defines the caller's edges as the same as the UIView sent by parameter.
+
+     - parameters:
+        - view: UIView to set the same edges with.
+        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - constant: CGFloat's value to add to the constraint.
+        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
+        - priority: UILayoutPriority that defines the constraint priority.
+
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    @discardableResult func constrictEdges(to view: UIView,
                                            relation: NSLayoutRelation = .equal,
                                            constant: CGFloat = 0.0,
                                            multiplier: CGFloat = 1.0,
