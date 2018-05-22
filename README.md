@@ -15,8 +15,17 @@ pod install
 ```
 
 ### Carthage
-Coming soon.
+Add this to your Cartfile:
 
+```swift
+github "pedrommcarrasco/Constrictor"
+```
+
+And then run the following command in terminal:
+
+```swift
+carthage update
+```
 
 ## ⌨️ Usage Example
 After installing Constrictor, you should import the framework:
