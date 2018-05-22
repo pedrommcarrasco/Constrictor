@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1251BBE110E5ABDB5A5C6D75F78F63DC /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD65E35A3233FBE6F2EFDEB3D43D114 /* Pods-Example-dummy.m */; };
-		2277D20556978AD0DE99A7A0C1A3190C /* UIView+ConstrictorFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A2D98E3387944B4DBBB7DE81D3BA4 /* UIView+ConstrictorFill.swift */; };
-		3C244A80D221E78D0B1926257CF83FB1 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 35C8CA7F0FE0D3C5B14841FD508F532D /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42C463DCFC6EE5698AC46D3B7AE750C5 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3ADD22E12DC4DB48DC8583E971BE47 /* UIView+Constrictor.swift */; };
+		1D2D09F23012C66818E9E86E33BCF324 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */; };
 		452AE70A85580DEB5F732CF20488434D /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FA9536C65FD41FBDE8CD3CA2FF26982 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1ECEF4F585525266E7C113987E2D731 /* Constrictor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E431137DEEDDBA5C0FF4E61FF7987BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		C847834289E7F72FB8D6298AC76353BE /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = A46572B80CCC8A73FC3D48E025ABFA70 /* Info.plist */; };
-		CD049BD8AF2B213949401FC07CDF7C89 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F4204100B94F943EAB3C150BFE0DB /* UIView+ConstrictorCenter.swift */; };
-		E972D4F023798778C7BA0D34E3452B8A /* Constrictor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9C18FEEBBE84248C7149F3B6D75E99 /* Constrictor-dummy.m */; };
+		AE2CB6F784675EEF9A3EDF4F691E49E6 /* Constrictor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */; };
+		BC2A1DE0265A55D6A7CB0BA377F2A2E2 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */; };
+		C0F38E9A706479D9BB5605F0B4646228 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */; };
+		F9702D5745E123234A1CDFC2C8F64633 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,32 +31,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02D4F45E0B0F91213C995A4D2F88F20C /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		044AA3E23F71470C9B5F50D44720EA0D /* Pods-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-resources.sh"; sourceTree = "<group>"; };
-		0F3A2D98E3387944B4DBBB7DE81D3BA4 /* UIView+ConstrictorFill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorFill.swift"; sourceTree = "<group>"; };
 		11434BC759D12F57876FBB74A4775E74 /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
+		167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
+		16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
 		1AD65E35A3233FBE6F2EFDEB3D43D114 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		25A37D4D536CC5988A439441117C41F4 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
-		35C8CA7F0FE0D3C5B14841FD508F532D /* Constrictor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constrictor.h; path = Constrictor/Constrictor.h; sourceTree = "<group>"; };
+		288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
 		3ADE9E5655579DB0F79DC9C80758673C /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3AF1F787952E450179E4C0D84EC9EB9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3EFEBDE6702DEFDFFF9D5C6DBC3773 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
-		51E9F77E66830A9F176ECA048663B40D /* Constrictor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-prefix.pch"; sourceTree = "<group>"; };
 		5B81C04F8E84EAE60AE15C8695031A5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		79E554B3FA7071511E2E4F350A195815 /* Constrictor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Constrictor.xcconfig; sourceTree = "<group>"; };
+		667064E37587B53E1F77D77D2C865A60 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E3ADD22E12DC4DB48DC8583E971BE47 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A16F4204100B94F943EAB3C150BFE0DB /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
-		A1ECEF4F585525266E7C113987E2D731 /* Constrictor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-umbrella.h"; sourceTree = "<group>"; };
-		A46572B80CCC8A73FC3D48E025ABFA70 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Constrictor/Info.plist; sourceTree = "<group>"; };
+		9F4A62977348D04494633B98976B96A8 /* Constrictor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-prefix.pch"; sourceTree = "<group>"; };
 		A79AC23D5A157FED70D9C53D844B2319 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		BB9C18FEEBBE84248C7149F3B6D75E99 /* Constrictor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Constrictor-dummy.m"; sourceTree = "<group>"; };
+		AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Constrictor-dummy.m"; sourceTree = "<group>"; };
+		BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Constrictor.xcconfig; sourceTree = "<group>"; };
+		C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Constrictor/Constrictor/Info.plist; sourceTree = "<group>"; };
+		D9B533D4017D25212241CEBF1C3FB8E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE81A692C7541CC03BBA03FD23A6433 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Constrictor.framework; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constrictor.h; path = Constrictor/Constrictor/Constrictor.h; sourceTree = "<group>"; };
 		EFC5B2E05B58CD826FD55659BF1D7E39 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F72395BE253B629AA5CC1E2467F9FFAC /* Constrictor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Constrictor.modulemap; sourceTree = "<group>"; };
+		F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F472ED6A8EF9ECA1A47168B6ED402A3F /* Constrictor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Constrictor.modulemap; sourceTree = "<group>"; };
+		F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,19 +81,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1490AA87ACA8271AAD1AC26F91CE932F /* Constrictor */ = {
-			isa = PBXGroup;
-			children = (
-				35C8CA7F0FE0D3C5B14841FD508F532D /* Constrictor.h */,
-				A46572B80CCC8A73FC3D48E025ABFA70 /* Info.plist */,
-				99C7A3D39EF7A52338031E9861E73CC9 /* Extensions */,
-				CA2D0AD16E2CA0510B32435459101493 /* Pod */,
-				499BA29B9A2E5ACE7DFAA1FF3701972E /* Support Files */,
-			);
-			name = Constrictor;
-			path = ../../Constrictor;
-			sourceTree = "<group>";
-		};
 		1B5ECB992A56AE0C70DC72D88BB90B05 /* Pods-Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,18 +99,60 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
-		499BA29B9A2E5ACE7DFAA1FF3701972E /* Support Files */ = {
+		26248C7F46070A511EB021A78F20A809 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F72395BE253B629AA5CC1E2467F9FFAC /* Constrictor.modulemap */,
-				79E554B3FA7071511E2E4F350A195815 /* Constrictor.xcconfig */,
-				BB9C18FEEBBE84248C7149F3B6D75E99 /* Constrictor-dummy.m */,
-				51E9F77E66830A9F176ECA048663B40D /* Constrictor-prefix.pch */,
-				A1ECEF4F585525266E7C113987E2D731 /* Constrictor-umbrella.h */,
-				3AF1F787952E450179E4C0D84EC9EB9E /* Info.plist */,
+				F472ED6A8EF9ECA1A47168B6ED402A3F /* Constrictor.modulemap */,
+				BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */,
+				AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */,
+				9F4A62977348D04494633B98976B96A8 /* Constrictor-prefix.pch */,
+				F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */,
+				D9B533D4017D25212241CEBF1C3FB8E5 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Example/Pods/Target Support Files/Constrictor";
+			path = "Example/Pods/Target Support Files/Constrictor";
+			sourceTree = "<group>";
+		};
+		2C34664B9F1E287060F1F072A81E4BDF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */,
+				288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */,
+				167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */,
+			);
+			name = Extensions;
+			path = Constrictor/Constrictor/Extensions;
+			sourceTree = "<group>";
+		};
+		483AC4330BECC54DC6A7DBFFC953DC01 /* Constrictor */ = {
+			isa = PBXGroup;
+			children = (
+				DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */,
+				C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */,
+				2C34664B9F1E287060F1F072A81E4BDF /* Extensions */,
+				5B837D098F4E1666A6597AA630223588 /* Pod */,
+				26248C7F46070A511EB021A78F20A809 /* Support Files */,
+			);
+			name = Constrictor;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		55D01B40901989965CAB89C4A1E5A90E /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				483AC4330BECC54DC6A7DBFFC953DC01 /* Constrictor */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		5B837D098F4E1666A6597AA630223588 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */,
+				11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */,
+				667064E37587B53E1F77D77D2C865A60 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		6A4F6A14E3FB951290E4531728B7A461 /* Targets Support Files */ = {
@@ -136,22 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				C8434F0C582857C61026D2A902A6C64B /* Development Pods */,
+				55D01B40901989965CAB89C4A1E5A90E /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				E951884AC305281FEBD1BAA9BC92C342 /* Products */,
 				6A4F6A14E3FB951290E4531728B7A461 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		99C7A3D39EF7A52338031E9861E73CC9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8E3ADD22E12DC4DB48DC8583E971BE47 /* UIView+Constrictor.swift */,
-				A16F4204100B94F943EAB3C150BFE0DB /* UIView+ConstrictorCenter.swift */,
-				0F3A2D98E3387944B4DBBB7DE81D3BA4 /* UIView+ConstrictorFill.swift */,
-			);
-			name = Extensions;
-			path = Constrictor/Extensions;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -160,22 +180,6 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8434F0C582857C61026D2A902A6C64B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1490AA87ACA8271AAD1AC26F91CE932F /* Constrictor */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		CA2D0AD16E2CA0510B32435459101493 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				02D4F45E0B0F91213C995A4D2F88F20C /* Constrictor.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -203,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */,
-				3C244A80D221E78D0B1926257CF83FB1 /* Constrictor.h in Headers */,
+				1D2D09F23012C66818E9E86E33BCF324 /* Constrictor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E52D701B08EC4D021BD582287FD73CFF /* Build configuration list for PBXNativeTarget "Constrictor" */;
 			buildPhases = (
-				FCA4C4D0C1CFC64CCC1F6DEBF29D219D /* Sources */,
+				A2AAB451A85134C46F5A7FDF9FA65370 /* Sources */,
 				2EB6C796094DF13CA5BDBDC58CF6414B /* Frameworks */,
 				7FB4EFEC8AD5A502B15F8DE9F61F6447 /* Headers */,
 			);
@@ -289,15 +293,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCA4C4D0C1CFC64CCC1F6DEBF29D219D /* Sources */ = {
+		A2AAB451A85134C46F5A7FDF9FA65370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E972D4F023798778C7BA0D34E3452B8A /* Constrictor-dummy.m in Sources */,
-				C847834289E7F72FB8D6298AC76353BE /* Info.plist in Sources */,
-				42C463DCFC6EE5698AC46D3B7AE750C5 /* UIView+Constrictor.swift in Sources */,
-				CD049BD8AF2B213949401FC07CDF7C89 /* UIView+ConstrictorCenter.swift in Sources */,
-				2277D20556978AD0DE99A7A0C1A3190C /* UIView+ConstrictorFill.swift in Sources */,
+				AE2CB6F784675EEF9A3EDF4F691E49E6 /* Constrictor-dummy.m in Sources */,
+				F9702D5745E123234A1CDFC2C8F64633 /* Info.plist in Sources */,
+				39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */,
+				C0F38E9A706479D9BB5605F0B4646228 /* UIView+ConstrictorCenter.swift in Sources */,
+				BC2A1DE0265A55D6A7CB0BA377F2A2E2 /* UIView+ConstrictorEdges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,44 +317,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3362D4DBE90368F611FDEE93E45CEB57 /* Release */ = {
+		24D0D49026A7AB3B57BC7965388F8797 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79AC23D5A157FED70D9C53D844B2319 /* Pods-Example.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		371FBEA737A8D6A1F7884E556E4E71AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79E554B3FA7071511E2E4F350A195815 /* Constrictor.xcconfig */;
+			baseConfigurationReference = BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -367,23 +336,24 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Constrictor/Constrictor.modulemap";
+				PRODUCT_MODULE_NAME = Constrictor;
 				PRODUCT_NAME = Constrictor;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		79DB65DC1CCDB449A7360D117BD98022 /* Debug */ = {
+		46925C13DF016987D62F9CE42BEDB5B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFC5B2E05B58CD826FD55659BF1D7E39 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -404,7 +374,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -415,67 +385,9 @@
 			};
 			name = Debug;
 		};
-		A20B0BDFC4838E55DCAD094ED2792393 /* Release */ = {
+		5758D28C8CC583667FC44C54112768EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B303AEC4C565619D29B3A9B96AF36FA2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79E554B3FA7071511E2E4F350A195815 /* Constrictor.xcconfig */;
+			baseConfigurationReference = BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -492,19 +404,57 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Constrictor/Constrictor.modulemap";
+				PRODUCT_MODULE_NAME = Constrictor;
 				PRODUCT_NAME = Constrictor;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		B53EDD60891CA0A99618C4BA3DEEBB79 /* Debug */ = {
+		612B0C52D617867657F6912DF9B54BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A79AC23D5A157FED70D9C53D844B2319 /* Pods-Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		691EE0234A3BA1A3B057D3A4C23C9CCC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -536,6 +486,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -560,12 +511,69 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		703082A85162812D3B777E668767AD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -573,8 +581,8 @@
 		0B67E9A0E96DFC6E0B7A1F3B43F13114 /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79DB65DC1CCDB449A7360D117BD98022 /* Debug */,
-				3362D4DBE90368F611FDEE93E45CEB57 /* Release */,
+				46925C13DF016987D62F9CE42BEDB5B3 /* Debug */,
+				612B0C52D617867657F6912DF9B54BDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -582,8 +590,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B53EDD60891CA0A99618C4BA3DEEBB79 /* Debug */,
-				A20B0BDFC4838E55DCAD094ED2792393 /* Release */,
+				691EE0234A3BA1A3B057D3A4C23C9CCC /* Debug */,
+				703082A85162812D3B777E668767AD25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -591,8 +599,8 @@
 		E52D701B08EC4D021BD582287FD73CFF /* Build configuration list for PBXNativeTarget "Constrictor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B303AEC4C565619D29B3A9B96AF36FA2 /* Debug */,
-				371FBEA737A8D6A1F7884E556E4E71AC /* Release */,
+				24D0D49026A7AB3B57BC7965388F8797 /* Debug */,
+				5758D28C8CC583667FC44C54112768EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
