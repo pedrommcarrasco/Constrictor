@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		1D2D09F23012C66818E9E86E33BCF324 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */; };
 		452AE70A85580DEB5F732CF20488434D /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53CB881F20B44328002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB881E20B44328002731A6 /* Constant.swift */; };
 		6FA9536C65FD41FBDE8CD3CA2FF26982 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		786B257EF70EF6BEFCF2323BA5320734 /* Constrictor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E431137DEEDDBA5C0FF4E61FF7987BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -33,7 +34,7 @@
 /* Begin PBXFileReference section */
 		044AA3E23F71470C9B5F50D44720EA0D /* Pods-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-resources.sh"; sourceTree = "<group>"; };
 		11434BC759D12F57876FBB74A4775E74 /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		11F9CB56DB2ED6C02B9B7BFCE3497E66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		15D3FE98E9F2D34863BD3F3597A0485A /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
 		167E2BBB7D29A9132006BC09C5AB8B4D /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		16ACE10BF0731A1805E0D08AA0868B82 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
@@ -42,21 +43,22 @@
 		288634188B779BFD3714A52465C6B00F /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
 		3ADE9E5655579DB0F79DC9C80758673C /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3F3EFEBDE6702DEFDFFF9D5C6DBC3773 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
+		53CB881E20B44328002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B81C04F8E84EAE60AE15C8695031A5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		667064E37587B53E1F77D77D2C865A60 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		667064E37587B53E1F77D77D2C865A60 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		885225467CAFFA7441953D2091ECC020 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F4A62977348D04494633B98976B96A8 /* Constrictor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-prefix.pch"; sourceTree = "<group>"; };
 		A79AC23D5A157FED70D9C53D844B2319 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		AA1FFE06C7D4F10C2B1D162EDF5E0F20 /* Constrictor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Constrictor-dummy.m"; sourceTree = "<group>"; };
 		BEBED4F996561A996087F8EDC25FE945 /* Constrictor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Constrictor.xcconfig; sourceTree = "<group>"; };
 		C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Constrictor/Constrictor/Info.plist; sourceTree = "<group>"; };
 		D9B533D4017D25212241CEBF1C3FB8E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE81A692C7541CC03BBA03FD23A6433 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Constrictor.framework; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE81A692C7541CC03BBA03FD23A6433 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constrictor.h; path = Constrictor/Constrictor/Constrictor.h; sourceTree = "<group>"; };
 		EFC5B2E05B58CD826FD55659BF1D7E39 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F11461B8167492125CA885DCC67AFEBB /* Constrictor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Constrictor.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F472ED6A8EF9ECA1A47168B6ED402A3F /* Constrictor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Constrictor.modulemap; sourceTree = "<group>"; };
 		F6D4EBBFB830CC7EAF81ACABC8B86E73 /* Constrictor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Constrictor-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,12 +131,21 @@
 			children = (
 				DEABF5E174EA8815599906D86415B2DB /* Constrictor.h */,
 				C6BF093579C0DF7CB4ACBAC2F228956D /* Info.plist */,
+				53CB882020B44338002731A6 /* Classes */,
 				2C34664B9F1E287060F1F072A81E4BDF /* Extensions */,
 				5B837D098F4E1666A6597AA630223588 /* Pod */,
 				26248C7F46070A511EB021A78F20A809 /* Support Files */,
 			);
 			name = Constrictor;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		53CB882020B44338002731A6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				53CB881E20B44328002731A6 /* Constant.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		55D01B40901989965CAB89C4A1E5A90E /* Development Pods */ = {
@@ -301,6 +312,7 @@
 				F9702D5745E123234A1CDFC2C8F64633 /* Info.plist in Sources */,
 				39A0014A01C9964C492574930CF0C4F3 /* UIView+Constrictor.swift in Sources */,
 				C0F38E9A706479D9BB5605F0B4646228 /* UIView+ConstrictorCenter.swift in Sources */,
+				53CB881F20B44328002731A6 /* Constant.swift in Sources */,
 				BC2A1DE0265A55D6A7CB0BA377F2A2E2 /* UIView+ConstrictorEdges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

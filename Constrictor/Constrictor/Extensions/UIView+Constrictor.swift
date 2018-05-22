@@ -11,10 +11,10 @@ import UIKit
 public extension UIView {
 
     @discardableResult func constrictToContainer(attributes: NSLayoutAttribute ...,
-                                                 relation: NSLayoutRelation = .equal,
-                                                 constant: CGFloat = 0.0,
-                                                 multipler: CGFloat = 1.0,
-                                                 priority: UILayoutPriority = .required) -> UIView {
+        relation: NSLayoutRelation = .equal,
+        constant: CGFloat = 0.0,
+        multipler: CGFloat = 1.0,
+        priority: UILayoutPriority = .required) -> UIView {
 
         attributes.forEach {
             self.constrict($0,
@@ -30,11 +30,11 @@ public extension UIView {
     }
 
     @discardableResult func constrict(attributes: NSLayoutAttribute ...,
-                                      relation: NSLayoutRelation = .equal,
-                                      to view: UIView? = nil,
-                                      constant: CGFloat = 0.0,
-                                      multipler: CGFloat = 1.0,
-                                      priority: UILayoutPriority = .required) -> UIView {
+        relation: NSLayoutRelation = .equal,
+        to view: UIView? = nil,
+        constant: CGFloat = 0.0,
+        multipler: CGFloat = 1.0,
+        priority: UILayoutPriority = .required) -> UIView {
         
         attributes.forEach {
             self.constrict($0,
@@ -58,6 +58,8 @@ public extension UIView {
                                       priority: UILayoutPriority = .required) -> UIView {
 
         translatesAutoresizingMaskIntoConstraints = false
+
+        let constant = Constant.normalizeConstant(for: selfAttribute, value: constant)
 
         NSLayoutConstraint(item: self,
                            attribute: selfAttribute,

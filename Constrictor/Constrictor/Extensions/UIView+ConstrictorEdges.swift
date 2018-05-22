@@ -1,5 +1,5 @@
 //
-//  UIView+ConstrictorFill.swift
+//  UIView+ConstrictorEdges.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 21/05/2018.

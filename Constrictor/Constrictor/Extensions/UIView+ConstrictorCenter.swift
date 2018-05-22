@@ -9,15 +9,14 @@
 import Foundation
 
 public extension UIView {
-    
-    @discardableResult func constrictCenterInContainer(axis: (x: Bool, y: Bool) = (true, true),
-                                                       relation: NSLayoutRelation = .equal,
+
+
+    @discardableResult func constrictCenterInContainer(relation: NSLayoutRelation = .equal,
                                                        constant: CGFloat = 0.0,
                                                        multipler: CGFloat = 1.0,
                                                        priority: UILayoutPriority = .required) -> UIView {
         
         constrictCenter(to: superview,
-                        axis: axis,
                         relation: relation,
                         constant: constant,
                         multipler: multipler,
@@ -27,13 +26,11 @@ public extension UIView {
     }
     
     @discardableResult func constrictCenter(to view: UIView?,
-                                            axis: (x: Bool, y: Bool) = (true, true),
                                             relation: NSLayoutRelation = .equal,
                                             constant: CGFloat = 0.0,
                                             multipler: CGFloat = 1.0,
                                             priority: UILayoutPriority = .required) -> UIView {
-        
-        if axis.x {
+
             constrict(.centerX,
                       relation: relation,
                       to: view,
@@ -41,9 +38,7 @@ public extension UIView {
                       constant: constant,
                       multipler: multipler,
                       priority: priority)
-        }
-        
-        if axis.y {
+
             constrict(.centerY,
                       relation: relation,
                       to: view,
@@ -51,7 +46,6 @@ public extension UIView {
                       constant: constant,
                       multipler: multipler,
                       priority: priority)
-        }
         
         return self
     }
