@@ -13,12 +13,12 @@ struct Constant {
     /**
      Inverts the constant/offset sent depending on the NSLayoutAttribute.
 
-     - returns:
-     CGFloat containing the constant final value.
-
      - parameters:
         - attribute: NSLayoutAttribute where the constant/offset will be applied.
         - value: Constant's value.
+
+     - returns:
+     CGFloat containing the constant final value.
      */
     static func normalizeConstant(for attribute: NSLayoutAttribute, value: CGFloat) -> CGFloat {
 
