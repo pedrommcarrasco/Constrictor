@@ -55,8 +55,19 @@ view.addSubview(blueView)
         
 blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-redView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
-redView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+blueView.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
+blueView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+
+let greenView = UIView()
+greenView.backgroundColor = .green
+greenView.translatesAutoresizingMaskIntoConstraints = false     
+redView.addSubview(greenView)
+
+greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor).isActive = true
+greenView.heightAnchor.constraint(equalTo: blueView.heightAnchor).isActive = true
+greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor).isActive = true
+greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0).isActive = true
+ 
 ```
 
 ### How you can do it with Constrictor 😍
@@ -65,16 +76,22 @@ let redView = UIView()
 redView.backgroundColor = .red
 view.addSubview(redView)
  
-redView.constrictFillContainer()
+redView.constrictEdgesToContainer()
         
 let blueView = UIView()
 blueView.backgroundColor = .blue
-
 redView.addSubview(blueView)
 
-blueView.constrict(.width, constant: 50.0)
-    .constrict(.height, constant: 50.0)
+blueView.constrict(.width, constant: 75)
+    .constrict(.height, constant: 100)
     .constrictCenterInContainer()
+    
+let greenView = UIView()
+greenView.backgroundColor = .green
+redView.addSubview(greenView)
+ 
+greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
+    .constrict(.trailing, to: blueView, attribute: .leading, constant: 50)
 ```
 
 ## 📲 Sample Project
