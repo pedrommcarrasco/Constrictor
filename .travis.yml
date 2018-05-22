@@ -12,4 +12,5 @@ script:
  - pod repo update && pod update
  - set -o pipefail
  - xcodebuild -workspace Example.xcworkspace -scheme Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+ - cd ..
  - travis_wait 30 pod lib lint Constrictor.podspec
