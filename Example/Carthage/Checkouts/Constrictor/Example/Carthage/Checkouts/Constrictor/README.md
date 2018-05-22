@@ -1,31 +1,7 @@
-# 🐍 Constrictor 
-***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplying your constraints by reducing the amount of code you have to write.
+# Constrictor 🐍
+AutoLayout's µFramework
 
-## 📦 Installation
-### CocoaPods
-Constrictor's available through CocoaPods. To do so, add the following line to your PodFile:
-
-```swift
-pod 'Constrictor'
-```
-And then run the following command in terminal:
-
-```swift
-pod install
-```
-
-### Carthage
-Coming soon.
-
-
-## ⌨️ Usage Example
-After installing Constrictor, you should import the framework:
-
-```swift
-import Constrictor
-```
-
-Once imported you can start using Constrictor to apply constraints to your views programmatically.
+## Example
 
 ### How you're *probably* doing it without Constrictor 😰
 ```swift
@@ -67,15 +43,3 @@ blueView.constrict(.width, constant: 50.0)
     .constrict(.height, constant: 50.0)
     .constrictCenterInContainer()
 ```
-
-## 📲 Sample Project
-There's a sample project in this repository called **Example**, if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
-
-## ✅ To-Do
-
-
-## 🙌 Contributing
-Feel free to contribute to this project by **reporting bugs** or open **pull requests**.
-
-## ⛔ License
-Constrictor's available under the MIT license. See the LICENSE file for more informations.
