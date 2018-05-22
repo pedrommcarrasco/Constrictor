@@ -102,7 +102,7 @@ greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
 There's a sample project in this repository called **Example**, if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
 
 ## ✅ To-Do
-- [ ] Code Documentation
+- [x] Code Documentation
 - [ ] Tests
 - [x] TravisCI integration
 - [ ] Use TravisCI to run the tests
