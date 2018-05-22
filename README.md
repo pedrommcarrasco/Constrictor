@@ -98,7 +98,9 @@ greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
 There's a sample project in this repository called **Example**, if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
 
 ## ✅ To-Do
-
+- [ ] Code Documentation
+- [ ] Tests
+- [ ] Add more short syntax methods like edges and center.
 
 ## 🙌 Contributing
 Feel free to contribute to this project by **reporting bugs** or open **pull requests**.
