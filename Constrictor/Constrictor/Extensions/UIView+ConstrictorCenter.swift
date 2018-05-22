@@ -14,7 +14,7 @@ public extension UIView {
      Centers the caller in its superview.
 
      - parameters:
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.
@@ -42,8 +42,8 @@ public extension UIView {
      Centers the caller in the view sent by parameter.
 
      - parameters:
-        - view: UIView to center with.
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - view: UIView to match with the caller's .centerX and .centerY.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.

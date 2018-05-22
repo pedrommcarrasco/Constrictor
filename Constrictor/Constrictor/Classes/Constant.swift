@@ -14,7 +14,7 @@ struct Constant {
      Inverts the constant/offset sent depending on the NSLayoutAttribute.
 
      - parameters:
-        - attribute: NSLayoutAttribute where the constant/offset will be applied.
+        - attribute: NSLayoutAttribute where the constant will be applied.
         - value: Constant's value.
 
      - returns:

@@ -11,10 +11,10 @@ import UIKit
 public extension UIView {
 
     /**
-     Defines the caller's edges as the same as the its superview
+     Defines the caller's edges as the same as its superview
 
      - parameters:
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.
@@ -42,8 +42,8 @@ public extension UIView {
      Defines the caller's edges as the same as the UIView sent by parameter.
 
      - parameters:
-        - view: UIView to set the same edges with.
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
+        - view: UIView to match with the caller's .top, .bottom, .leading and .trailing.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.

@@ -11,13 +11,13 @@ import UIKit
 public extension UIView {
 
     /**
-     Defines one or more constraints together with the view's superview based on the attributes
+     Defines one or more constraints together with the view's superview. It's based on the attributes
      sent where every constraint will be defined in the same way.
 
      - parameters:
-        - attributes: Caller's NSLayoutAttribute to apply constraints.
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
-        - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+        - attributes: Caller's NSLayoutAttribute where the constraints will be applied.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
+        - attribute: NSLayoutAttribute's of the superview to match with the caller's attribute.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.
@@ -48,10 +48,9 @@ public extension UIView {
      Defines one or more constraints based on the attributes sent where every constraint will be defined in the same way.
 
      - parameters:
-        - attributes: Caller's NSLayoutAttribute to apply constraints.
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
-        - view: Optional UIView to apply a constraint with.
-        - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+        - attributes: Caller's NSLayoutAttribute where the constraints will be applied.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
+        - view: Optional UIView to match with the caller's NSLayoutAttribute(s).
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.
@@ -87,9 +86,9 @@ public extension UIView {
 
      - parameters:
         - selfAttribute: caller's NSLayoutAttribute to apply a constraint.
-        - relation: Estabilish a relation between an attribute and another with NSLayoutRelation.
-        - view: Optional UIView to apply a constraint with.
-        - attribute: NSLayoutAttribute's of the UIView to apply a constraint with.
+        - relation: Establish a relation between both attributes with NSLayoutRelation.
+        - view: Optional UIView to match with the caller's NSLayoutAttribute(s).
+        - attribute: NSLayoutAttribute's of the superview to match with the caller's attribute.
         - constant: CGFloat's value to add to the constraint.
         - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
         - priority: UILayoutPriority that defines the constraint priority.
