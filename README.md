@@ -99,7 +99,7 @@ greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
 ```
 
 ## 📲 Sample Project
-There's a sample project in this repository called **Example**, if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
+There's a sample project in this repository called [Example](https://github.com/pedrommcarrasco/Constrictor/tree/master/Example), if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
 
 ## ✅ To-Do
 - [x] Code Documentation
@@ -109,7 +109,7 @@ There's a sample project in this repository called **Example**, if you want to t
 - [ ] Add more short syntax methods like edges and center.
 
 ## 🙌 Contributing
-Feel free to contribute to this project by **reporting bugs** or open **pull requests**.
+Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 
 ## ⛔ License
-Constrictor's available under the MIT license. See the LICENSE file for more informations.
+Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE) file for more informations.
