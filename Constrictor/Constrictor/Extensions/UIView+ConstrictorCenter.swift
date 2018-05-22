@@ -13,13 +13,13 @@ public extension UIView {
 
     @discardableResult func constrictCenterInContainer(relation: NSLayoutRelation = .equal,
                                                        constant: CGFloat = 0.0,
-                                                       multipler: CGFloat = 1.0,
+                                                       multiplier: CGFloat = 1.0,
                                                        priority: UILayoutPriority = .required) -> UIView {
         
         constrictCenter(to: superview,
                         relation: relation,
                         constant: constant,
-                        multipler: multipler,
+                        multiplier: multiplier,
                         priority: priority)
         
         return self
@@ -28,7 +28,7 @@ public extension UIView {
     @discardableResult func constrictCenter(to view: UIView?,
                                             relation: NSLayoutRelation = .equal,
                                             constant: CGFloat = 0.0,
-                                            multipler: CGFloat = 1.0,
+                                            multiplier: CGFloat = 1.0,
                                             priority: UILayoutPriority = .required) -> UIView {
 
             constrict(.centerX,
@@ -36,7 +36,7 @@ public extension UIView {
                       to: view,
                       attribute: .centerX,
                       constant: constant,
-                      multipler: multipler,
+                      multiplier: multiplier,
                       priority: priority)
 
             constrict(.centerY,
@@ -44,7 +44,7 @@ public extension UIView {
                       to: view,
                       attribute: .centerY,
                       constant: constant,
-                      multipler: multipler,
+                      multiplier: multiplier,
                       priority: priority)
         
         return self

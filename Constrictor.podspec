@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.swift_version = "4.1"
   s.name         = "Constrictor"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "🐍 AutoLayout's µFramework"
 
   s.description  = "Constrictor's a group of UIView's extensions with the goal of simplyfing the use of constraints by code."

@@ -13,7 +13,7 @@ public extension UIView {
     @discardableResult func constrictToContainer(attributes: NSLayoutAttribute ...,
         relation: NSLayoutRelation = .equal,
         constant: CGFloat = 0.0,
-        multipler: CGFloat = 1.0,
+        multiplier: CGFloat = 1.0,
         priority: UILayoutPriority = .required) -> UIView {
 
         attributes.forEach {
@@ -22,7 +22,7 @@ public extension UIView {
                            to: superview,
                            attribute: $0,
                            constant: constant,
-                           multipler: multipler,
+                           multiplier: multiplier,
                            priority: priority)
         }
 
@@ -33,7 +33,7 @@ public extension UIView {
         relation: NSLayoutRelation = .equal,
         to view: UIView? = nil,
         constant: CGFloat = 0.0,
-        multipler: CGFloat = 1.0,
+        multiplier: CGFloat = 1.0,
         priority: UILayoutPriority = .required) -> UIView {
         
         attributes.forEach {
@@ -42,7 +42,7 @@ public extension UIView {
                            to: view,
                            attribute: $0,
                            constant: constant,
-                           multipler: multipler,
+                           multiplier: multiplier,
                            priority: priority)
         }
         
@@ -54,7 +54,7 @@ public extension UIView {
                                       to view: UIView? = nil,
                                       attribute: NSLayoutAttribute = .notAnAttribute,
                                       constant: CGFloat = 0.0,
-                                      multipler: CGFloat = 1.0,
+                                      multiplier: CGFloat = 1.0,
                                       priority: UILayoutPriority = .required) -> UIView {
 
         translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ public extension UIView {
                            relatedBy: relation,
                            toItem: view,
                            attribute: attribute,
-                           multiplier: multipler,
+                           multiplier: multiplier,
                            constant: constant).isActive = true
 
         return self
