@@ -1,11 +1,14 @@
 {
   "name": "Constrictor",
   "swift_version": "4.1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "🐍 AutoLayout's µFramework",
-  "description": "Constrictor's an group of UIView's extensions with the goal of simplyfing the use of constraints by code.",
+  "description": "Constrictor's a group of UIView's extensions with the goal of simplyfing the use of constraints by code.",
   "homepage": "https://github.com/pedrommcarrasco/Constrictor",
-  "license": "MIT",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
   "authors": "Pedro Carrasco",
   "social_media_url": "http://twitter.com/pedrommcarrasco",
   "platforms": {
@@ -13,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/pedrommcarrasco/Constrictor.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
-  "source_files": "Constrictor/**/*"
+  "source_files": "Constrictor/Constrictor/**/*"
 }
