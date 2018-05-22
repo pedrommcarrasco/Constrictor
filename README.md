@@ -1,4 +1,7 @@
 # 🐍 Constrictor 
+
+[![Build Status](https://travis-ci.org/pedrommcarrasco/Constrictor.svg?branch=master)](https://travis-ci.org/pedrommcarrasco/Constrictor)
+
 ***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplying your constraints by reducing the amount of code you have to write.
 
 ## 📦 Installation
@@ -100,7 +103,8 @@ There's a sample project in this repository called **Example**, if you want to t
 ## ✅ To-Do
 - [ ] Code Documentation
 - [ ] Tests
-- [ ] TravisCI 
+- [x] TravisCI integration
+- [ ] Use TravisCI to run the tests
 - [ ] Add more short syntax methods like edges and center.
 
 ## 🙌 Contributing
