@@ -12,7 +12,19 @@
 		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
 		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */; };
+		53D8198A20B57C0B00E62D1E /* ConstrictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8198920B57C0B00E62D1E /* ConstrictorTests.swift */; };
+		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53D8198D20B57C0B00E62D1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53CDE3B520B3201E007E4AE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53CDE3BD20B3201E007E4AE0;
+			remoteInfo = Constrictor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
@@ -22,6 +34,9 @@
 		53CDE3C120B3201E007E4AE0 /* Constrictor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constrictor.h; sourceTree = "<group>"; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
+		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D8198920B57C0B00E62D1E /* ConstrictorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorTests.swift; sourceTree = "<group>"; };
+		53D8198B20B57C0B00E62D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D8198420B57C0B00E62D1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				53CDE3C020B3201E007E4AE0 /* Constrictor */,
+				53D8198820B57C0B00E62D1E /* ConstrictorTests */,
 				53CDE3BF20B3201E007E4AE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */,
+				53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +103,15 @@
 				53CDE3C220B3201E007E4AE0 /* Info.plist */,
 			);
 			path = Constrictor;
+			sourceTree = "<group>";
+		};
+		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
+			isa = PBXGroup;
+			children = (
+				53D8198920B57C0B00E62D1E /* ConstrictorTests.swift */,
+				53D8198B20B57C0B00E62D1E /* Info.plist */,
+			);
+			path = ConstrictorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,18 +146,40 @@
 			productReference = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		53D8198620B57C0B00E62D1E /* ConstrictorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D8199120B57C0B00E62D1E /* Build configuration list for PBXNativeTarget "ConstrictorTests" */;
+			buildPhases = (
+				53D8198320B57C0B00E62D1E /* Sources */,
+				53D8198420B57C0B00E62D1E /* Frameworks */,
+				53D8198520B57C0B00E62D1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53D8198E20B57C0B00E62D1E /* PBXTargetDependency */,
+			);
+			name = ConstrictorTests;
+			productName = ConstrictorTests;
+			productReference = 53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		53CDE3B520B3201E007E4AE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Pedro Carrasco";
 				TargetAttributes = {
 					53CDE3BD20B3201E007E4AE0 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
+					};
+					53D8198620B57C0B00E62D1E = {
+						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
@@ -140,12 +196,20 @@
 			projectRoot = "";
 			targets = (
 				53CDE3BD20B3201E007E4AE0 /* Constrictor */,
+				53D8198620B57C0B00E62D1E /* ConstrictorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		53CDE3BC20B3201E007E4AE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D8198520B57C0B00E62D1E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +230,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53D8198320B57C0B00E62D1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D8198A20B57C0B00E62D1E /* ConstrictorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53D8198E20B57C0B00E62D1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53CDE3BD20B3201E007E4AE0 /* Constrictor */;
+			targetProxy = 53D8198D20B57C0B00E62D1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		53CDE3C420B3201E007E4AE0 /* Debug */ = {
@@ -342,6 +422,44 @@
 			};
 			name = Release;
 		};
+		53D8198F20B57C0B00E62D1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7GE4Q65N57;
+				INFOPLIST_FILE = ConstrictorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.ConstrictorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53D8199020B57C0B00E62D1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7GE4Q65N57;
+				INFOPLIST_FILE = ConstrictorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.ConstrictorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,6 +477,15 @@
 			buildConfigurations = (
 				53CDE3C720B3201E007E4AE0 /* Debug */,
 				53CDE3C820B3201E007E4AE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D8199120B57C0B00E62D1E /* Build configuration list for PBXNativeTarget "ConstrictorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D8198F20B57C0B00E62D1E /* Debug */,
+				53D8199020B57C0B00E62D1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
