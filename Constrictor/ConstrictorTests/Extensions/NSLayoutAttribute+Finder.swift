@@ -21,8 +21,6 @@ private extension NSLayoutConstraint {
 
     func isItem(at view: UIView?, from index: ConstraintIndex, anAttributeFrom attribute: NSLayoutAttribute) -> Bool {
 
-        guard let item = index.item(from: self) as? UIView else { return false }
-
-        return item == view && firstAttribute == attribute
+        return index.item(from: self) == view && firstAttribute == attribute
     }
 }

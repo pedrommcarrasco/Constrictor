@@ -12,14 +12,18 @@ enum ConstraintIndex {
     case first
     case second
 
-    func item(from constraint: NSLayoutConstraint) -> AnyObject? {
+    func item(from constraint: NSLayoutConstraint) -> UIView? {
+
+        let item: AnyObject?
 
         switch self {
         case .first:
-            return constraint.firstItem
+            item =  constraint.firstItem
 
         case .second:
-            return constraint.secondItem
+            item = constraint.secondItem
         }
+
+        return item as? UIView
     }
 }
