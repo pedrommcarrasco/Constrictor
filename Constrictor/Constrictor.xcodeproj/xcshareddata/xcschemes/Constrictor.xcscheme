@@ -29,7 +29,26 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "53D8198620B57C0B00E62D1E"
+               BuildableName = "ConstrictorTests.xctest"
+               BlueprintName = "ConstrictorTests"
+               ReferencedContainer = "container:Constrictor.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "53CDE3BD20B3201E007E4AE0"
+            BuildableName = "Constrictor.framework"
+            BlueprintName = "Constrictor"
+            ReferencedContainer = "container:Constrictor.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
