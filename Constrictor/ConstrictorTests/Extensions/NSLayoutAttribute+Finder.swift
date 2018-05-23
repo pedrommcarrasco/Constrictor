@@ -10,10 +10,9 @@ import UIKit
 
 extension NSLayoutConstraint {
 
-    func isFrom(_ attribute: NSLayoutAttribute, relatedTo view: UIView?) -> Bool {
+    func isFrom(_ attribute: NSLayoutAttribute, relatedTo view: UIView?, at index: ConstraintIndex) -> Bool {
 
-        return isItem(at: view, from: .first, anAttributeFrom: attribute)
-            || isItem(at: view, from: .second, anAttributeFrom: attribute)
+        return isItem(at: view, from: index, anAttributeFrom: attribute)
     }
 }
 

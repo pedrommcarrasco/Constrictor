@@ -113,21 +113,29 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
     func testConstrictCoreThree() {
 
-        // Setup
+        // Setup aView
         viewController.view.addSubview(aView)
         aView.constrict(.centerX, to: viewController.view, attribute: .centerX)
             .constrict(.centerY, to: viewController.view, attribute: .centerY)
             .constrict(.width, constant: Constants.constant)
             .constrict(.height, constant: Constants.constant)
 
-        // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        // Setup bView
+        viewController.view.addSubview(bView)
+        bView.constrict(.centerY, to: aView, attribute: .centerY)
+            .constrict(.width, to: aView, attribute: .width)
+            .constrict(.height, constant: Constants.constant)
+            .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: Constants.constant)
+
+        // Test aView
+        XCTAssertEqual(viewController.view.constraints.count, 5)
         XCTAssertEqual(aView.constraints.count, 2)
+        XCTAssertEqual(bView.constraints.count, 1)
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
-        let widthConstraints = aView.findConstraints(for: .width, relatedTo: nil)
-        let heightConstraints = aView.findConstraints(for: .height, relatedTo: nil)
+        let widthConstraints = aView.findConstraints(for: .width, at: .secondItem)
+        let heightConstraints = aView.findConstraints(for: .height, at: .secondItem)
 
         XCTAssertEqual(centerXConstraints.count, 1)
         XCTAssertEqual(centerYConstraints.count, 1)
@@ -144,6 +152,28 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(centerYConstraint)
         testConstraint(widthConstraint, constant: Constants.constant)
         testConstraint(heightConstraint, constant: Constants.constant)
+
+        // Test bView
+        let bCenterYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
+        let bWidthConstraints = viewController.view.findConstraints(for: .width, relatedTo: bView, at: .firstItem)
+        let bHeightConstraints = bView.findConstraints(for: .height, at: .secondItem)
+        let bTrailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: bView)
+
+        XCTAssertEqual(bCenterYConstraints.count, 1)
+        XCTAssertEqual(bWidthConstraints.count, 1)
+        XCTAssertEqual(bHeightConstraints.count, 1)
+        XCTAssertEqual(bTrailingConstraints.count, 1)
+
+        guard let bCenterYConstraint = bCenterYConstraints.first,
+            let bWidthConstraint = bWidthConstraints.first,
+            let bHeightConstraint = bHeightConstraints.first,
+            let bTrailingConstraint = bTrailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(bCenterYConstraint)
+        testConstraint(bWidthConstraint)
+        testConstraint(bHeightConstraint, constant: Constants.constant)
+        testConstraint(bTrailingConstraint, constant: Constants.invertedConstant, relation: .greaterThanOrEqual)
     }
 
     func testConstrictCoreFour() {
@@ -161,8 +191,8 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
-        let widthConstraints = aView.findConstraints(for: .width, relatedTo: nil)
-        let heightConstraints = aView.findConstraints(for: .height, relatedTo: nil)
+        let widthConstraints = aView.findConstraints(for: .width, at: .secondItem)
+        let heightConstraints = aView.findConstraints(for: .height, at: .secondItem)
 
         XCTAssertEqual(centerXConstraints.count, 1)
         XCTAssertEqual(centerYConstraints.count, 1)

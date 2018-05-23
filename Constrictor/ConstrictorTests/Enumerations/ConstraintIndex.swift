@@ -9,18 +9,18 @@
 import UIKit
 
 enum ConstraintIndex {
-    case first
-    case second
+    case firstItem
+    case secondItem
 
     func item(from constraint: NSLayoutConstraint) -> UIView? {
 
         let item: AnyObject?
 
         switch self {
-        case .first:
+        case .firstItem:
             item =  constraint.firstItem
 
-        case .second:
+        case .secondItem:
             item = constraint.secondItem
         }
 

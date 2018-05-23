@@ -10,10 +10,12 @@ import UIKit
 
 extension UIView {
 
-    func findConstraints(for attribute: NSLayoutAttribute, relatedTo view: UIView?) -> [NSLayoutConstraint] {
+    func findConstraints(for attribute: NSLayoutAttribute,
+                         relatedTo view: UIView? = nil,
+                         at index: ConstraintIndex = .firstItem) -> [NSLayoutConstraint] {
 
         return constraints.compactMap { constraint -> NSLayoutConstraint? in
-            if constraint.isFrom(attribute, relatedTo: view) { return constraint }
+            if constraint.isFrom(attribute, relatedTo: view, at: index) { return constraint }
             else { return nil }
         }
     }
