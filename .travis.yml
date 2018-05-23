@@ -8,9 +8,11 @@ before_install:
  - pod --version
 
 script:
+ - cd Constrictor
  - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor CODE_SIGNING_REQUIRED=NO build test
+ - cd ..
 
- - cd Example/
+ - cd Example
  - pod repo update && pod update
  - set -o pipefail
  - xcodebuild -workspace Example.xcworkspace -scheme Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
