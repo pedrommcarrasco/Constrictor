@@ -107,7 +107,9 @@ There's a sample project in this repository called [Example](https://github.com/
 - [x] Code Documentation
 - [ ] Tests
 - [x] TravisCI integration
+- [ ] CodeCoverage.io integration
 - [ ] Use TravisCI to run the tests
+- [ ] CodeCoverage.io showing reports
 - [ ] Add more short syntax methods like edges and center.
 
 ## Contributing 🙌 
