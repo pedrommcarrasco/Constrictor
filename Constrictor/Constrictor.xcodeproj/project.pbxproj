@@ -13,6 +13,7 @@
 		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
+		53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D8198B20B57C0B00E62D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +108,26 @@
 		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
 			isa = PBXGroup;
 			children = (
+				53D8199220B5816C00E62D1E /* Tests */,
 				53D8198B20B57C0B00E62D1E /* Info.plist */,
 			);
 			path = ConstrictorTests;
+			sourceTree = "<group>";
+		};
+		53D8199220B5816C00E62D1E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				53D8199320B5817400E62D1E /* Extensions */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		53D8199320B5817400E62D1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 					};
 					53D8198620B57C0B00E62D1E = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -231,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +442,7 @@
 		53D8198F20B57C0B00E62D1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7GE4Q65N57;
 				INFOPLIST_FILE = ConstrictorTests/Info.plist;
@@ -432,6 +454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.ConstrictorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,6 +463,7 @@
 		53D8199020B57C0B00E62D1E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7GE4Q65N57;
 				INFOPLIST_FILE = ConstrictorTests/Info.plist;
