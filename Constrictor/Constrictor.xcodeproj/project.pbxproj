@@ -18,6 +18,7 @@
 		53D819A220B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A120B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift */; };
 		53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A320B5A4E700E62D1E /* ConstraintIndex.swift */; };
 		53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A520B5A58800E62D1E /* UIView+Finder.swift */; };
+		53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		53D819A120B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAttribute+Finder.swift"; sourceTree = "<group>"; };
 		53D819A320B5A4E700E62D1E /* ConstraintIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintIndex.swift; sourceTree = "<group>"; };
 		53D819A520B5A58800E62D1E /* UIView+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Finder.swift"; sourceTree = "<group>"; };
+		53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintTestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
 			isa = PBXGroup;
 			children = (
+				53D819A920B5B1D100E62D1E /* Protocols */,
 				53D819A820B5A68700E62D1E /* Enumerations */,
 				53D819A720B5A68100E62D1E /* Extensions */,
 				53D8199220B5816C00E62D1E /* Tests */,
@@ -164,6 +167,14 @@
 				53D819A320B5A4E700E62D1E /* ConstraintIndex.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		53D819A920B5B1D100E62D1E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
 				53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */,
 				53D8199B20B594AB00E62D1E /* ConstantTests.swift in Sources */,
+				53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */,
 				53D819A220B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

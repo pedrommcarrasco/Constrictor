@@ -9,14 +9,7 @@
 import XCTest
 @testable import Constrictor
 
-class UIViewConstrictorTests: XCTestCase {
-
-    // MARK: Constants
-    enum Constants {
-
-        static let defaultConstant: CGFloat = 0.0
-        static let defaultMultiplier: CGFloat = 1.0
-    }
+class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
     // MARK: Properties
     var viewController: UIViewController!
@@ -75,20 +68,5 @@ class UIViewConstrictorTests: XCTestCase {
         testConstraint(bottomConstraint)
         testConstraint(leadingConstraint)
         testConstraint(trailingConstraint)
-    }
-}
-
-private extension UIViewConstrictorTests {
-
-    func testConstraint(_ constraint: NSLayoutConstraint,
-                        constant: CGFloat = Constants.defaultConstant,
-                        multiplier: CGFloat = Constants.defaultMultiplier,
-                        relation: NSLayoutRelation = .equal,
-                        isActive: Bool = true) {
-
-        XCTAssertEqual(constraint.constant, constant)
-        XCTAssertEqual(constraint.isActive, isActive)
-        XCTAssertEqual(constraint.multiplier, multiplier)
-        XCTAssertEqual(constraint.relation, relation)
     }
 }
