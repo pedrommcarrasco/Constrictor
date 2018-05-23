@@ -9,7 +9,7 @@ before_install:
 
 script:
  - cd Constrictor
- - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor CODE_SIGNING_REQUIRED=NO build test
+ - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor CODE_SIGNING_REQUIRED=NO test
  - cd ..
 
  - cd Example
