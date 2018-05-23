@@ -14,6 +14,7 @@
 		53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */; };
+		53D8199B20B594AB00E62D1E /* ConstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199A20B594AB00E62D1E /* ConstantTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D8198B20B57C0B00E62D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorTests.swift"; sourceTree = "<group>"; };
+		53D8199A20B594AB00E62D1E /* ConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		53D8199220B5816C00E62D1E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				53D8199920B5949900E62D1E /* Classes */,
 				53D8199320B5817400E62D1E /* Extensions */,
 			);
 			path = Tests;
@@ -128,6 +131,14 @@
 				53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53D8199920B5949900E62D1E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				53D8199A20B594AB00E62D1E /* ConstantTests.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
+				53D8199B20B594AB00E62D1E /* ConstantTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
