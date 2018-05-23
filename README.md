@@ -106,11 +106,11 @@ There's a sample project in this repository called [Example](https://github.com/
 
 ## To-Do ✅ 
 - [x] Code Documentation
-- [ ] Tests
+- [ ] Tests (working on it)
 - [x] TravisCI integration
-- [ ] CodeCoverage.io integration
-- [ ] Use TravisCI to run the tests
-- [ ] CodeCoverage.io showing reports
+- [x] CodeCoverage.io integration
+- [x] Use TravisCI to run the tests
+- [x] CodeCoverage.io showing reports
 - [ ] Add more short syntax methods like edges and center.
 
 ## Contributing 🙌 
