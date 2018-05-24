@@ -16,11 +16,13 @@ extension ConstraintTestable where Self: XCTestCase {
                         constant: CGFloat = 0.0,
                         multiplier: CGFloat = 1.0,
                         relation: NSLayoutRelation = .equal,
+                        priority: UILayoutPriority = .required,
                         isActive: Bool = true) {
 
         XCTAssertEqual(constraint.constant, constant)
         XCTAssertEqual(constraint.isActive, isActive)
         XCTAssertEqual(constraint.multiplier, multiplier)
+        XCTAssertEqual(constraint.priority, priority)
         XCTAssertEqual(constraint.relation, relation)
     }
 }

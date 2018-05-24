@@ -15,7 +15,6 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
     enum Constants {
 
         static let constant: CGFloat = 50.0
-        static let invertedConstant: CGFloat = -50.0
         static let multiplier: CGFloat = 0.5
     }
 
@@ -108,7 +107,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         testConstraint(topConstraint, constant: Constants.constant)
         testConstraint(bottomConstraint)
-        testConstraint(trailingConstraint, constant: Constants.invertedConstant)
+        testConstraint(trailingConstraint, constant: -Constants.constant)
         testConstraint(leadingConstraint)
     }
 
@@ -174,7 +173,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(bCenterYConstraint)
         testConstraint(bWidthConstraint)
         testConstraint(bHeightConstraint, constant: Constants.constant)
-        testConstraint(bTrailingConstraint, constant: Constants.invertedConstant, relation: .greaterThanOrEqual)
+        testConstraint(bTrailingConstraint, constant: -Constants.constant, relation: .greaterThanOrEqual)
     }
 
     func testConstrictAtCenterWithWidthHeightWithConstants() {
@@ -182,7 +181,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.constrict(.centerX, to: viewController.view, attribute: .centerX, constant: Constants.constant)
-            .constrict(.centerY, to: viewController.view, attribute: .centerY, constant: Constants.invertedConstant)
+            .constrict(.centerY, to: viewController.view, attribute: .centerY, constant: -Constants.constant)
             .constrict(.width, constant: Constants.constant)
             .constrict(.height, constant: Constants.constant)
 
@@ -207,7 +206,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             else { return XCTFail() }
 
         testConstraint(centerXConstraint, constant: Constants.constant)
-        testConstraint(centerYConstraint, constant: Constants.invertedConstant)
+        testConstraint(centerYConstraint, constant: -Constants.constant)
         testConstraint(widthConstraint, constant: Constants.constant)
         testConstraint(heightConstraint, constant: Constants.constant)
     }
@@ -250,7 +249,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             let bottomConstraint = bottomConstraints.first else { return XCTFail() }
 
         testConstraint(topConstraint, constant: Constants.constant)
-        testConstraint(bottomConstraint, constant: Constants.invertedConstant)
+        testConstraint(bottomConstraint, constant: -Constants.constant)
     }
 
     func testConstrictToContainerAtTopBottomTrailingWithRelation() {
