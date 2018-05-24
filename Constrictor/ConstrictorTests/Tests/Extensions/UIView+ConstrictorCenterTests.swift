@@ -107,4 +107,77 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         testConstraint(centerXConstraint, relation: .lessThanOrEqual)
         testConstraint(centerYConstraint, relation: .lessThanOrEqual)
     }
+
+    // MARK: Test - constrictCenter(to view: UIView,...)
+    func testConstrictCenter() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        viewController.view.addSubview(bView)
+
+        bView.constrictCenter(to: aView)
+
+        // Tests
+        XCTAssertEqual(viewController.view.constraints.count, 2)
+
+        let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
+        let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
+
+        XCTAssertEqual(centerXConstraints.count, 1)
+        XCTAssertEqual(centerYConstraints.count, 1)
+
+        guard let centerXConstraint = centerXConstraints.first,
+            let centerYConstraint = centerYConstraints.first else { return XCTFail() }
+
+        testConstraint(centerXConstraint)
+        testConstraint(centerYConstraint)
+    }
+
+    func testConstrictCenterWithConstant() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        viewController.view.addSubview(bView)
+
+        bView.constrictCenter(to: aView, constant: Constants.constant)
+
+        // Tests
+        XCTAssertEqual(viewController.view.constraints.count, 2)
+
+        let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
+        let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
+
+        XCTAssertEqual(centerXConstraints.count, 1)
+        XCTAssertEqual(centerYConstraints.count, 1)
+
+        guard let centerXConstraint = centerXConstraints.first,
+            let centerYConstraint = centerYConstraints.first else { return XCTFail() }
+
+        testConstraint(centerXConstraint, constant: Constants.constant)
+        testConstraint(centerYConstraint, constant: Constants.constant)
+    }
+
+    func testConstrictCenterWithRelation() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        viewController.view.addSubview(bView)
+
+        bView.constrictCenter(to: aView, relation: .greaterThanOrEqual)
+
+        // Tests
+        XCTAssertEqual(viewController.view.constraints.count, 2)
+
+        let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
+        let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
+
+        XCTAssertEqual(centerXConstraints.count, 1)
+        XCTAssertEqual(centerYConstraints.count, 1)
+
+        guard let centerXConstraint = centerXConstraints.first,
+            let centerYConstraint = centerYConstraints.first else { return XCTFail() }
+
+        testConstraint(centerXConstraint, relation: .greaterThanOrEqual)
+        testConstraint(centerYConstraint, relation: .greaterThanOrEqual)
+    }
 }
