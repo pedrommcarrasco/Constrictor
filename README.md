@@ -106,12 +106,10 @@ There's a sample project in this repository called [Example](https://github.com/
 
 ## To-Do ✅ 
 - [x] Code Documentation
-- [ ] Tests (working on it)
 - [x] TravisCI integration
 - [x] CodeCoverage.io integration
-- [x] Use TravisCI to run the tests
-- [x] CodeCoverage.io showing reports
-- [ ] Add more short syntax methods like edges and center.
+- [x] Unit Testing
+- [ ] More "short-syntax" methods (like edges & center)
 
 ## Contributing 🙌 
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
