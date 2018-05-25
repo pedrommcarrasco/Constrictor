@@ -77,6 +77,78 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(trailingConstraint)
     }
 
+    // MARK: Test - constrict(_ selfAttribute: NSLayoutAttribute, ...
+    func testConstrictAtEdgesWithLayoutGuides() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrict(.top, to: viewController.topLayoutGuide, withinSafeArea: false, attribute: .bottom)
+            .constrict(.bottom, to: viewController.bottomLayoutGuide, withinSafeArea: false,  attribute: .top)
+            .constrict(.trailing, to: viewController.view, withinSafeArea: false,attribute: .trailing)
+            .constrict(.leading, to: viewController.view,withinSafeArea: false,  attribute: .leading)
+
+        // Tests
+        XCTAssertEqual(viewController.view.constraints.count,
+                       expectedConstraintCount(based: 4, relatedToSafeArea: false, numberOfGuides: 2, isInContainer: true))
+
+        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
+        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
+        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
+        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
+    // MARK: Test - constrict(_ selfAttribute: NSLayoutAttribute, ...
+    func testConstrictAtEdgesWithLayoutGuidesWithoutDisablingSafeArea() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrict(.top, to: viewController.topLayoutGuide, attribute: .bottom)
+            .constrict(.bottom, to: viewController.bottomLayoutGuide, attribute: .top)
+            .constrict(.trailing, to: viewController.view, attribute: .trailing)
+            .constrict(.leading, to: viewController.view, attribute: .leading)
+
+        // Tests
+        XCTAssertEqual(viewController.view.constraints.count,
+                       expectedConstraintCount(based: 4, numberOfGuides: 2, isInContainer: true))
+
+        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
+        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
+        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
+        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
     func testConstrictEdgesWithConstants() {
 
         // Setup

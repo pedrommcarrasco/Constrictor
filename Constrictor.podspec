@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.swift_version = "4.1"
   s.static_framework = true
   s.name         = "Constrictor"
-  s.version      = "0.4.0"
+  s.version      = "0.4.1"
   s.summary      = "🐍 AutoLayout's µFramework"
 
   s.description  = "(Boe) Constrictor's AutoLayout µFramework with the goal of simplying your constraints by reducing the amount of code you have to write."

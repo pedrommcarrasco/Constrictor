@@ -26,6 +26,7 @@ struct Item {
 
         if #available(iOS 11.0, *) {
             secondItem = withinSafeArea ? view?.safeAreaLayoutGuide : view
+            
         } else {
             secondItem = view
         }
