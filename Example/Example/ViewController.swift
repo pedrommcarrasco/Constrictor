@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         view.addSubview(redView)
 
         // Constraints -> Same dimensions of redview's superview
-        redView.constrictEdgesToContainer()
+        redView.constrictEdgesToContainer(withinSafeArea: false)
 
         // Or like it's done bellow
         /* redView.constrictToContainer(attributes: .top, .bottom, .leading, .trailing) */
