@@ -53,7 +53,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             .constrict(.leading, to: viewController.view, attribute: .leading)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -87,7 +87,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             .constrict(.leading, to: viewController.view, attribute: .leading)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -128,9 +128,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: Constants.constant)
 
         // Test aView
-        XCTAssertEqual(viewController.view.constraints.count, 5)
-        XCTAssertEqual(aView.constraints.count, 2)
-        XCTAssertEqual(bView.constraints.count, 1)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 5, isInContainer: true))
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
@@ -186,7 +184,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
             .constrict(.height, constant: Constants.constant)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
         XCTAssertEqual(aView.constraints.count, 2)
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
@@ -219,7 +217,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrictToContainer(attributes: .top)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 1)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 1, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
 
@@ -237,7 +235,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrictToContainer(attributes: .top, .bottom, constant: Constants.constant)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -259,7 +257,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrictToContainer(attributes: .top, .bottom, .trailing, relation: .lessThanOrEqual)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 3)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 3, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -286,7 +284,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrictToContainer(attributes: .top, .bottom, .trailing, .leading, multiplier: Constants.multiplier)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -319,7 +317,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrict(attributes: .top, to: bView)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 1)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 1))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
 
@@ -338,7 +336,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrict(attributes: .top, .bottom , to: bView, multiplier: Constants.multiplier)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -362,7 +360,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         aView.constrict(attributes: .width, .height, relation: .greaterThanOrEqual, constant: Constants.constant)
 
         // Tests
-        XCTAssertEqual(aView.constraints.count, 2)
+        XCTAssertEqual(aView.constraints.count, expectedConstraintCount(based: 2))
 
         let widthConstraints = aView.findConstraints(for: .width, at: .secondItem)
         let heightConstraints = aView.findConstraints(for: .height, at: .secondItem)

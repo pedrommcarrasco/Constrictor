@@ -12,7 +12,7 @@
 		203559FF20B371B900A82EB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203559FD20B371B900A82EB8 /* Main.storyboard */; };
 		20355A0120B371BB00A82EB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20355A0020B371BB00A82EB8 /* Assets.xcassets */; };
 		20355A0420B371BB00A82EB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20355A0220B371BB00A82EB8 /* LaunchScreen.storyboard */; };
-		A1E79960E47FA9F2BEF8E897 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911B2C1915AE451FB9DAEED2 /* Pods_Example.framework */; };
+		8ECA734855E07CD56060EDE9 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9164658DAF9914261ECF13F /* libPods-Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		20355A0520B371BB00A82EB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68C87651C3AC19C7DB6EDE86 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		810D2625B22C3D585D7157A4 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		911B2C1915AE451FB9DAEED2 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9164658DAF9914261ECF13F /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E79960E47FA9F2BEF8E897 /* Pods_Example.framework in Frameworks */,
+				8ECA734855E07CD56060EDE9 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 		46412AEAB7B7DE7CAF1E120E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				911B2C1915AE451FB9DAEED2 /* Pods_Example.framework */,
+				F9164658DAF9914261ECF13F /* libPods-Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,7 +99,6 @@
 				203559F220B371B900A82EB8 /* Sources */,
 				203559F320B371B900A82EB8 /* Frameworks */,
 				203559F420B371B900A82EB8 /* Resources */,
-				4E9A1CB3F67CBD653A2196F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,24 +156,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E9A1CB3F67CBD653A2196F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Constrictor/Constrictor.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Constrictor.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E3BE9F3FF71AE0B9786F4AD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -349,7 +330,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7GE4Q65N57;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -365,7 +349,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7GE4Q65N57;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
