@@ -61,13 +61,13 @@ public extension UIView {
      Discardable UIView to allow function's chaining.
      */
     @discardableResult func constrict(attributes: NSLayoutAttribute ..., relation: NSLayoutRelation = .equal,
-                                      to view: UIView? = nil, withinSafeArea: Bool = true, constant: CGFloat = 0.0,
+                                      to item: UIView? = nil, withinSafeArea: Bool = true, constant: CGFloat = 0.0,
                                       multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
         
         attributes.forEach {
             self.constrict($0,
                            relation: relation,
-                           to: view,
+                           to: item,
                            withinSafeArea: withinSafeArea,
                            attribute: $0,
                            constant: constant,
@@ -79,7 +79,7 @@ public extension UIView {
     }
 
     /**
-     Core method of the Constrictor's framework. Most flexible function that's able to apply any constraint.
+     Core method of the Constrictor's framework. Works also with UILayoutSupport. Most flexible function that's able to apply any constraint.
 
      - returns:
      Discardable UIView to allow function's chaining.
@@ -98,22 +98,40 @@ public extension UIView {
      Discardable UIView to allow function's chaining.
      */
     @discardableResult func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
-                                      to view: UIView? = nil, withinSafeArea: Bool = true,
+                                      to item: Any? = nil, withinSafeArea: Bool = true,
                                       attribute: NSLayoutAttribute = .notAnAttribute, constant: CGFloat = 0.0,
                                       multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
 
-
         translatesAutoresizingMaskIntoConstraints = false
-
         let constant = Constant.normalizeConstant(for: selfAttribute, value: constant)
 
-        NSLayoutConstraint(item: self,
-                           attribute: selfAttribute,
-                           relatedBy: relation,
-                           toItem: Item.object(for: view, withinSafeArea: withinSafeArea),
-                           attribute: attribute,
-                           multiplier: multiplier,
-                           constant: constant).isActive = true
+        if let view = item as? UIView {
+            NSLayoutConstraint(item: self,
+                               attribute: selfAttribute,
+                               relatedBy: relation,
+                               toItem: Item.object(for: view, withinSafeArea: withinSafeArea),
+                               attribute: attribute,
+                               multiplier: multiplier,
+                               constant: constant).isActive = true
+
+        } else if let guide = item as? UILayoutSupport {
+            NSLayoutConstraint(item: self,
+                               attribute: selfAttribute,
+                               relatedBy: relation,
+                               toItem: guide,
+                               attribute: attribute,
+                               multiplier: multiplier,
+                               constant: constant).isActive = true
+
+        } else {
+            NSLayoutConstraint(item: self,
+                               attribute: selfAttribute,
+                               relatedBy: relation,
+                               toItem: nil,
+                               attribute: attribute,
+                               multiplier: multiplier,
+                               constant: constant).isActive = true
+        }
 
         return self
     }
