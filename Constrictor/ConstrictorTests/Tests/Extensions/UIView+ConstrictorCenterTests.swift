@@ -49,7 +49,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         aView.constrictCenterInContainer()
         
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
         
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
@@ -71,7 +71,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         aView.constrictCenterInContainer(constant: Constants.constant)
         
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
         
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
@@ -93,7 +93,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         aView.constrictCenterInContainer(relation: .lessThanOrEqual)
         
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
         
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
@@ -118,7 +118,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         bView.constrictCenter(to: aView)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2))
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
@@ -142,7 +142,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         bView.constrictCenter(to: aView, constant: Constants.constant)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2))
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)
@@ -166,7 +166,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         bView.constrictCenter(to: aView, relation: .greaterThanOrEqual)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 2)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2))
 
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: bView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: bView)

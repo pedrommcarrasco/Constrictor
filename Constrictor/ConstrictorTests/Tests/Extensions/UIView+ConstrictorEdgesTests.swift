@@ -49,7 +49,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         aView.constrictEdgesToContainer()
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -82,7 +82,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
                                         multiplier: Constants.multiplier)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -115,7 +115,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         aView.constrictEdges(to: bView)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
@@ -150,7 +150,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
                              multiplier: Constants.multiplier)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, 4)
+        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4))
 
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)

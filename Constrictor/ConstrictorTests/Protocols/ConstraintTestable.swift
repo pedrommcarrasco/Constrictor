@@ -25,4 +25,9 @@ extension ConstraintTestable where Self: XCTestCase {
         XCTAssertEqual(constraint.priority, priority)
         XCTAssertEqual(constraint.relation, relation)
     }
+
+    func expectedConstraintCount(based number: Int, relatedToSafeArea: Bool = true, isInContainer: Bool = false) -> Int {
+
+        return relatedToSafeArea && isInContainer ? number + 4 : number
+    }
 }
