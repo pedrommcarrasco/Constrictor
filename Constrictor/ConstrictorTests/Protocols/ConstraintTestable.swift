@@ -34,11 +34,11 @@ extension ConstraintTestable where Self: XCTestCase {
         if isInContainer, relatedToSafeArea, numberOfGuides > 0 {
              return number + guidesConstraints + (numberOfGuides * 2)
 
+        } else if numberOfGuides > 0 {
+            return number + (numberOfGuides * 2)
+
         } else if isInContainer {
             return number + guidesConstraints
-
-        } else if numberOfGuides > 0 {
-            return number * (numberOfGuides * 2)
 
         } else {
             return number
