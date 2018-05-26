@@ -23,7 +23,7 @@ public extension UIView {
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictEdgesToContainer(withinSafeArea: Bool = true, relation: NSLayoutRelation = .equal,
+    @discardableResult func constrictEdgesToSuperview(withinSafeArea: Bool = true, relation: NSLayoutRelation = .equal,
                                                       constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
                                                       priority: UILayoutPriority = .required) -> UIView {
 
@@ -53,17 +53,20 @@ public extension UIView {
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictEdges(to view: UIView, withinSafeArea: Bool = true,
-                                           relation: NSLayoutRelation = .equal,constant: CGFloat = 0.0,
-                                           multiplier: CGFloat = 1.0,priority: UILayoutPriority = .required) -> UIView {
-
-        constrict(attributes: .top, .bottom, .leading, .trailing,
-                  relation: relation,
-                  to: view,
-                  withinSafeArea: withinSafeArea,
-                  constant: constant,
-                  multiplier: multiplier,
-                  priority: priority)
+    @discardableResult func constrictEdges(_ relation: NSLayoutRelation = .equal, to view: UIView,
+                                           withinSafeArea: Bool = true, constant: CGFloat = 0.0,
+                                           multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
+        
+        if withinSafeArea {
+            constrict(relation, to: .v(view, .safe(.top)), .v(view, .safe(.bottom)),
+                      .v(view, .safe(.leading)), .v(view, .safe(.trailing)),
+                      constant: constant, multiplier: multiplier, priority: priority)
+            
+        } else {
+            constrict(relation, to: .v(view, .attribute(.top)), .v(view, .attribute(.bottom)),
+                      .v(view, .attribute(.leading)), .v(view, .attribute(.trailing)),
+                      constant: constant, multiplier: multiplier, priority: priority)
+        }
         
         return self
     }

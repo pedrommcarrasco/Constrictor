@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202473B520BA14E9005693AC /* ConstrictorAttribute.swift */; };
+		20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */; };
 		20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */; };
 		20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		202473B520BA14E9005693AC /* ConstrictorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAttribute.swift; sourceTree = "<group>"; };
+		20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCore.swift"; sourceTree = "<group>"; };
 		20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
 		20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */,
+				20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */,
 				20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */,
 				20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */,
 			);
@@ -91,6 +96,7 @@
 			children = (
 				53CB882220B4618B002731A6 /* Constant.swift */,
 				5347B1C620B8404500D0EF28 /* Item.swift */,
+				202473B520BA14E9005693AC /* ConstrictorAttribute.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 			files = (
 				5347B1C720B8404500D0EF28 /* Item.swift in Sources */,
 				20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */,
+				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */,
 				20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */,
+				20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */,
 				53CB882320B4618B002731A6 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,130 +9,100 @@
 import UIKit
 
 public extension UIView {
-
+    
     /**
-     Defines one or more constraints together with the view's superview. It's based on the attributes
-     sent where every constraint will be defined in the same way.
-
+     Description
+     
      - parameters:
-        - withinSafeArea: Boolean indicating if the constraint should be applied to the view's safeArea.
-        - attributes: Caller's NSLayoutAttribute where the constraints will be applied.
-        - relation: Establish a relation between both attributes with NSLayoutRelation.
-        - attribute: NSLayoutAttribute's of the superview to match with the caller's attribute.
-        - constant: CGFloat's value to add to the constraint.
-        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
-        - priority: UILayoutPriority that defines the constraint priority.
-
+     - guides:
+     - relation:
+     - constant:
+     - multiplier:
+     - priority:
+     
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictToContainer(withinSafeArea: Bool = true,
-                                                 attributes: NSLayoutAttribute ..., relation: NSLayoutRelation = .equal,
+    @discardableResult func constrictToSuperview(_ guides: Guide ..., relation: NSLayoutRelation = .equal,
                                                  constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
                                                  priority: UILayoutPriority = .required) -> UIView {
-
-        attributes.forEach {
-            self.constrict($0,
-                           relation: relation,
-                           to: superview,
-                           withinSafeArea: withinSafeArea,
-                           attribute: $0,
-                           constant: constant,
-                           multiplier: multiplier,
-                           priority: priority)
-        }
-
-        return self
-    }
-
-    /**
-     Defines one or more constraints based on the attributes sent where every constraint will be defined in the same way.
-
-     - parameters:
-        - attributes: Caller's NSLayoutAttribute where the constraints will be applied.
-        - relation: Establish a relation between both attributes with NSLayoutRelation.
-        - view: Optional UIView to match with the caller's NSLayoutAttribute(s).
-        - withinSafeArea: Boolean indicating if the constraint should be applied to the view's safeArea.
-        - constant: CGFloat's value to add to the constraint.
-        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
-        - priority: UILayoutPriority that defines the constraint priority.
-
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    @discardableResult func constrict(attributes: NSLayoutAttribute ..., relation: NSLayoutRelation = .equal,
-                                      to item: UIView? = nil, withinSafeArea: Bool = true, constant: CGFloat = 0.0,
-                                      multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
         
-        attributes.forEach {
-            self.constrict($0,
-                           relation: relation,
-                           to: item,
-                           withinSafeArea: withinSafeArea,
-                           attribute: $0,
-                           constant: constant,
-                           multiplier: multiplier,
-                           priority: priority)
+        guard let superview = superview else { return self }
+        
+        guides.forEach {
+            switch $0 {
+            case .attribute(let attribute), .safe(let attribute):
+                self.constrict(attribute, relation: relation, to: Item.v(superview, $0),
+                               constant: constant, multiplier: multiplier, priority: priority)
+            }
         }
         
         return self
     }
-
+    
     /**
-     Core method of the Constrictor's framework. Works also with UILayoutSupport. Most flexible function that's able to apply any constraint.
-
-     - returns:
-     Discardable UIView to allow function's chaining.
-
+     Description
+     
      - parameters:
-        - selfAttribute: caller's NSLayoutAttribute to apply a constraint.
-        - relation: Establish a relation between both attributes with NSLayoutRelation.
-        - view: Optional UIView to match with the caller's NSLayoutAttribute(s).
-        - withinSafeArea: Boolean indicating if the constraint should be applied to the view's safeArea.
-        - attribute: NSLayoutAttribute's of the superview to match with the caller's attribute.
-        - constant: CGFloat's value to add to the constraint.
-        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
-        - priority: UILayoutPriority that defines the constraint priority.
-
+     - relation:
+     - guides:
+     - constant:
+     - multiplier:
+     - priority:
+     
      - returns:
      Discardable UIView to allow function's chaining.
      */
+    @discardableResult func constrict(_ relation: NSLayoutRelation = .equal,
+                                      to items: Item ..., constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                                      priority: UILayoutPriority = .required) -> UIView {
+        
+        items.forEach {
+            switch $0 {
+            case .vc(_, let guide), .v(_, let guide):
+                
+                switch guide {
+                case .attribute(let attribute), .safe(let attribute):
+                    self.constrict(attribute, relation: relation, to: $0,
+                                   constant: constant, multiplier: multiplier, priority: priority)
+                }
+            }
+        }
+        
+        return self
+    }
+    
+    /**
+     Description
+     
+     - parameters:
+     - attributes:
+     - guides:
+     - relation:
+     - constant:
+     - multiplier:
+     - priority:
+     
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    
+    
+    
     @discardableResult func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
-                                      to item: Any? = nil, withinSafeArea: Bool = true,
-                                      attribute: NSLayoutAttribute = .notAnAttribute, constant: CGFloat = 0.0,
-                                      multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
-
+                                      to view: UIView? = nil, attribute: ConstrictorAttribute = .none,
+                                      constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                                      priority: UILayoutPriority = .required) -> UIView {
+        
         translatesAutoresizingMaskIntoConstraints = false
-        let constant = Constant.normalizeConstant(for: selfAttribute, value: constant)
-
-        if let view = item as? UIView {
-            NSLayoutConstraint(item: self,
-                               attribute: selfAttribute,
-                               relatedBy: relation,
-                               toItem: Item.object(for: view, withinSafeArea: withinSafeArea),
-                               attribute: attribute,
-                               multiplier: multiplier,
-                               constant: constant).isActive = true
-
-        } else if let guide = item as? UILayoutSupport {
-            NSLayoutConstraint(item: self,
-                               attribute: selfAttribute,
-                               relatedBy: relation,
-                               toItem: guide,
-                               attribute: attribute,
-                               multiplier: multiplier,
-                               constant: constant).isActive = true
-
-        } else {
-            NSLayoutConstraint(item: self,
-                               attribute: selfAttribute,
-                               relatedBy: relation,
-                               toItem: nil,
-                               attribute: attribute,
-                               multiplier: multiplier,
-                               constant: constant).isActive = true
+        
+        guard let view = view else {
+            constrict(selfAttribute, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
+            return self
         }
-
+        
+        constrict(selfAttribute, relation: relation, to: view, attribute: attribute, constant: constant, multiplier: multiplier, priority: priority)
+        
         return self
     }
 }
