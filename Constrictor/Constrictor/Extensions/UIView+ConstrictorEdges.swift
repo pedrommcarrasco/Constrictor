@@ -11,15 +11,14 @@ import UIKit
 public extension UIView {
     
     /**
-     Description
+     Constricts self's edges to viewController's view. Use to constrain edges safely to viewController's view
      
      - parameters:
-     - relation:
-     - constant:
-     - constant:
-     - multiplier:
-     - priority:
-     - withinGuides:
+        - relation: Relation between edges
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -37,15 +36,14 @@ public extension UIView {
     }
     
     /**
-     Description
+     Constricts self's edges to its superview.
      
      - parameters:
-     - relation:
-     - constant:
-     - constant:
-     - multiplier:
-     - priority:
-     - withinGuides:
+        - relation: Relation between edges
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -65,15 +63,15 @@ public extension UIView {
     }
     
     /**
-     Description
+     Constricts self's edges to another Constrictable.
      
      - parameters:
-     - relation:
-     - item:
-     - constant:
-     - multiplier:
-     - priority:
-     - withinGuides:
+     - relation: Relation between edges
+     - item: Constrictable's item to constrict edges with.
+     - constant: Constraints's constant
+     - multiplier: Constraints's multiplier
+     - priority: Constraints's priority
+     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.
