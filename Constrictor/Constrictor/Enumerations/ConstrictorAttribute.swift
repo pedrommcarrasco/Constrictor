@@ -42,17 +42,29 @@ public enum ConstrictorAttribute {
 
 extension ConstrictorAttribute {
     
+    /**
+     Converts ConstrictorAttribute to NSLayoutAttribute based on an optional Constrictable
+     
+     - parameters:
+        - item: Optional Constrictable's to extract NSLayoutAttribute from.
+     
+     - returns:
+     Tuple containing the item to apply a constraint and its attribute.
+     */
+    
     func itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
         if let view = item as? UIView {
             return itemLayoutAttribute(for: view)
             
-        } else  if let viewController = item as? UIViewController {
+        } else if let viewController = item as? UIViewController {
             return itemLayoutAttribute(for: viewController)
+            
+        } else if let layoutGuide = item as? UILayoutGuide {
+            return itemLayoutAttribute(for: layoutGuide)
         }
         
-        
-        return (UIView(), .notAnAttribute)
+        return (item, .notAnAttribute)
     }
 }
 
@@ -60,11 +72,20 @@ private extension ConstrictorAttribute {
     
     static let guidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide, .leftGuide,
                                                            .leadingGuide, .trailingGuide, .centerXGuide, .centerYGuide]
+    
     static let layoutGuidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide,
                                                                  .leftGuide, .leadingGuide, .trailingGuide,
                                                                  .centerXGuide, .centerYGuide]
     
-    
+    /**
+     Converts ConstrictorAttribute to NSLayoutAttribute based on an UILayoutGuite
+     
+     - parameters:
+     - layoutGuide: UILayoutGuide to extract NSLayoutAttribute from.
+     
+     - returns:
+     Tuple containing the item to apply a constraint and its attribute.
+     */
     
     func itemLayoutAttribute(for layoutGuide: UILayoutGuide) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
@@ -87,6 +108,16 @@ private extension ConstrictorAttribute {
         
         return (safeArea, attribute)
     }
+    
+    /**
+     Converts ConstrictorAttribute to NSLayoutAttribute based on an UIView
+     
+     - parameters:
+        - view: UIView to extract NSLayoutAttribute from.
+     
+     - returns:
+     Tuple containing the item to apply a constraint and its attribute.
+     */
     
     func itemLayoutAttribute(for view: UIView) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
@@ -115,6 +146,16 @@ private extension ConstrictorAttribute {
         
         return (safeArea, attribute)
     }
+    
+    /**
+     Converts ConstrictorAttribute to NSLayoutAttribute based on an UIViewController
+     
+     - parameters:
+     - viewController: UIViewController to extract NSLayoutAttribute from.
+     
+     - returns:
+     Tuple containing the item to apply a constraint and its attribute.
+     */
     
     func itemLayoutAttribute(for viewController: UIViewController) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
@@ -162,6 +203,16 @@ private extension ConstrictorAttribute {
         
         return (safeArea, attribute)
     }
+    
+    /**
+     Get an UILayoutGuide pinned to the viewController's safe edges.
+     
+     - parameters:
+     - viewController: UIViewController to get an UILayoutGuide pinned its edges
+     
+     - returns:
+     Safe UILayoutGuide.
+     */
     
     func safeLayoutGuide(for viewController: UIViewController) -> UILayoutGuide {
         
