@@ -39,12 +39,7 @@ public enum ConstrictorAttribute {
     
     case none
     
-    func itemLayoutAttribute(for view: UIView) -> (item: Any, layoutAttribute: NSLayoutAttribute) {
-        
-        return (UIView(), .notAnAttribute)
-    }
-    
-    func itemLayoutAttribute(for viewController: UIViewController) -> (item: Any, layoutAttribute: NSLayoutAttribute) {
+    func itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
         return (UIView(), .notAnAttribute)
     }

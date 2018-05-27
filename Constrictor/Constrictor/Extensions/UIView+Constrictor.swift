@@ -14,71 +14,9 @@ public extension UIView {
      Description
      
      - parameters:
-     - guides:
+     - viewController:
      - relation:
-     - constant:
-     - multiplier:
-     - priority:
-     
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    @discardableResult func constrictToSuperview(_ guides: Guide ..., relation: NSLayoutRelation = .equal,
-                                                 constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                                 priority: UILayoutPriority = .required) -> UIView {
-        
-        guard let superview = superview else { return self }
-        
-        guides.forEach {
-            switch $0 {
-            case .attribute(let attribute), .safe(let attribute):
-                self.constrict(attribute, relation: relation, to: Item.v(superview, $0),
-                               constant: constant, multiplier: multiplier, priority: priority)
-            }
-        }
-        
-        return self
-    }
-    
-    /**
-     Description
-     
-     - parameters:
-     - relation:
-     - guides:
-     - constant:
-     - multiplier:
-     - priority:
-     
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    @discardableResult func constrict(_ relation: NSLayoutRelation = .equal,
-                                      to items: Item ..., constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                      priority: UILayoutPriority = .required) -> UIView {
-        
-        items.forEach {
-            switch $0 {
-            case .vc(_, let guide), .v(_, let guide):
-                
-                switch guide {
-                case .attribute(let attribute), .safe(let attribute):
-                    self.constrict(attribute, relation: relation, to: $0,
-                                   constant: constant, multiplier: multiplier, priority: priority)
-                }
-            }
-        }
-        
-        return self
-    }
-    
-    /**
-     Description
-     
-     - parameters:
      - attributes:
-     - guides:
-     - relation:
      - constant:
      - multiplier:
      - priority:
@@ -87,21 +25,103 @@ public extension UIView {
      Discardable UIView to allow function's chaining.
      */
     
-    
-    
-    @discardableResult func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
-                                      to view: UIView? = nil, attribute: ConstrictorAttribute = .none,
-                                      constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                      priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult
+    func constrictToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+                                   attributes: ConstrictorAttribute ..., constant: CGFloat = 0.0,
+                                   multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
         
-        translatesAutoresizingMaskIntoConstraints = false
+        attributes.forEach {
+            self.constrict($0, relation: relation, to: viewController, attribute: $0,
+                           constant: constant, multiplier: multiplier, priority: priority)
+        }
         
-        guard let view = view else {
+        return self
+    }
+    
+    /**
+     Description
+     
+     - parameters:
+     - relation:
+     - item:
+     - attributes:
+     - constant:
+     - multiplier:
+     - priority:
+     
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    
+    @discardableResult
+    func constrictToSuperview(_ relation: NSLayoutRelation = .equal,
+                              attributes: ConstrictorAttribute ..., constant: CGFloat = 0.0,
+                              multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
+        
+        attributes.forEach {
+            self.constrict($0, relation: relation, to: self.superview, attribute: $0,
+                           constant: constant, multiplier: multiplier, priority: priority)
+        }
+        
+        return self
+    }
+    
+    /**
+     Description
+     
+     - parameters:
+     - relation:
+     - item:
+     - attributes:
+     - constant:
+     - multiplier:
+     - priority:
+     
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    
+    @discardableResult
+    func constrict(_ relation: NSLayoutRelation = .equal, to item: Constrictable? = nil,
+                   attributes: ConstrictorAttribute ..., constant: CGFloat = 0.0,
+                   multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> UIView {
+        
+        attributes.forEach {
+            self.constrict($0, relation: relation, to: item, attribute: $0,
+                           constant: constant, multiplier: multiplier, priority: priority)
+        }
+        
+        return self
+    }
+    
+    /**
+     Description
+     
+     - parameters:
+     - selfAttribute:
+     - relation:
+     - item:
+     - attribute:
+     - constant:
+     - multiplier:
+     - priority:
+     
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    
+    @discardableResult
+    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
+                   to item: Constrictable? = nil, attribute: ConstrictorAttribute = .none,
+                   constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                   priority: UILayoutPriority = .required) -> UIView {
+        
+        guard let item = item else {
             constrict(selfAttribute, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
             return self
         }
         
-        constrict(selfAttribute, relation: relation, to: view, attribute: attribute, constant: constant, multiplier: multiplier, priority: priority)
+        constrict(selfAttribute, relation: relation, to: item, attribute: attribute, constant: constant, multiplier: multiplier, priority: priority)
         
         return self
     }

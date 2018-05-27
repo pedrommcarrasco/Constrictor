@@ -6,7 +6,15 @@
 //  Copyright © 2018 Pedro Carrasco. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public protocol Constrictable {}
+
+extension UIView: Constrictable {}
+extension UIViewController: Constrictable {}
+
+
+
 
 public enum Guide {
     case safe(NSLayoutAttribute)

@@ -10,43 +10,29 @@ import UIKit
 
 extension UIView {
     
-    func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
-                   to viewController: UIViewController, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
+    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
+                   to item: Constrictable, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
-        
-        let itemLayoutAttribute = attribute.itemLayoutAttribute(for: viewController)
+        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
+        let secondItemLayoutAttribute = attribute.itemLayoutAttribute(for: item)
         
         NSLayoutConstraint(item: self,
-                           attribute: selfAttribute,
+                           attribute: firstItemLayoutAttribute.layoutAttribute,
                            relatedBy: relation,
-                           toItem: itemLayoutAttribute.item,
-                           attribute: itemLayoutAttribute.layoutAttribute,
+                           toItem: secondItemLayoutAttribute.item,
+                           attribute: secondItemLayoutAttribute.layoutAttribute,
                            multiplier: multiplier,
                            constant: constant).isActive = true
     }
     
-    func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
-                   to view: UIView, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
-                   multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
-        
-        
-        let itemLayoutAttribute = attribute.itemLayoutAttribute(for: view)
-        
-        NSLayoutConstraint(item: self,
-                           attribute: selfAttribute,
-                           relatedBy: relation,
-                           toItem: itemLayoutAttribute.item,
-                           attribute: itemLayoutAttribute.layoutAttribute,
-                           multiplier: multiplier,
-                           constant: constant).isActive = true
-    }
-    
-    func constrict(_ selfAttribute: NSLayoutAttribute, relation: NSLayoutRelation = .equal,
+    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
                    constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
+        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
+        
         NSLayoutConstraint(item: self,
-                           attribute: selfAttribute,
+                           attribute: firstItemLayoutAttribute.layoutAttribute,
                            relatedBy: relation,
                            toItem: nil,
                            attribute: .notAnAttribute,
