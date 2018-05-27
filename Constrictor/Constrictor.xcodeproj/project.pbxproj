@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202473B520BA14E9005693AC /* ConstrictorAttribute.swift */; };
+		205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */; };
+		205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */; };
+		205B528720BADF330016C8B8 /* Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B528620BADF330016C8B8 /* Constrictable.swift */; };
+		205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */; };
 		20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */; };
 		20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */; };
 		20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
-		5347B1C720B8404500D0EF28 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347B1C620B8404500D0EF28 /* Item.swift */; };
 		5347B1C920B843E000D0EF28 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347B1C820B843E000D0EF28 /* ItemTests.swift */; };
 		539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */; };
 		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
@@ -39,11 +42,14 @@
 
 /* Begin PBXFileReference section */
 		202473B520BA14E9005693AC /* ConstrictorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAttribute.swift; sourceTree = "<group>"; };
+		205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictable.swift"; sourceTree = "<group>"; };
+		205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Constrictable.swift"; sourceTree = "<group>"; };
+		205B528620BADF330016C8B8 /* Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrictable.swift; sourceTree = "<group>"; };
+		205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Constrictable.swift"; sourceTree = "<group>"; };
 		20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCore.swift"; sourceTree = "<group>"; };
 		20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
 		20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
-		5347B1C620B8404500D0EF28 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5347B1C820B843E000D0EF28 /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 		539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdgesTests.swift"; sourceTree = "<group>"; };
 		53CB882220B4618B002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -80,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205B528420BADF220016C8B8 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				202473B520BA14E9005693AC /* ConstrictorAttribute.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		205B528520BADF290016C8B8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				205B528620BADF330016C8B8 /* Constrictable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		20D1F2B820B3501400B327B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,18 +109,19 @@
 				20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */,
 				20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */,
 				20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */,
+				205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */,
+				205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */,
+				205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		53CB882120B46176002731A6 /* Classes */ = {
+		53CB882120B46176002731A6 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
 				53CB882220B4618B002731A6 /* Constant.swift */,
-				5347B1C620B8404500D0EF28 /* Item.swift */,
-				202473B520BA14E9005693AC /* ConstrictorAttribute.swift */,
 			);
-			path = Classes;
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		53CDE3B420B3201E007E4AE0 = {
@@ -122,7 +145,9 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
-				53CB882120B46176002731A6 /* Classes */,
+				205B528520BADF290016C8B8 /* Protocols */,
+				205B528420BADF220016C8B8 /* Enumerations */,
+				53CB882120B46176002731A6 /* Structs */,
 				20D1F2B820B3501400B327B7 /* Extensions */,
 				53CDE3C120B3201E007E4AE0 /* Constrictor.h */,
 				53CDE3C220B3201E007E4AE0 /* Info.plist */,
@@ -305,11 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5347B1C720B8404500D0EF28 /* Item.swift in Sources */,
 				20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */,
+				205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */,
+				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */,
+				205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */,
 				20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */,
+				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
 				20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */,
 				53CB882320B4618B002731A6 /* Constant.swift in Sources */,
 			);

@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+public protocol Constrictable {}

@@ -60,8 +60,33 @@ private extension ConstrictorAttribute {
     
     static let guidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide, .leftGuide,
                                                            .leadingGuide, .trailingGuide, .centerXGuide, .centerYGuide]
-    static let layoutGuidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide, .leftGuide,
-                                                                 .leadingGuide, .trailingGuide, .centerXGuide, .centerYGuide]
+    static let layoutGuidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide,
+                                                                 .leftGuide, .leadingGuide, .trailingGuide,
+                                                                 .centerXGuide, .centerYGuide]
+    
+    
+    
+    func itemLayoutAttribute(for layoutGuide: UILayoutGuide) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
+        
+        let safeArea = layoutGuide
+        let attribute: NSLayoutAttribute
+ 
+        switch self {
+        case .top, .topGuide: attribute = .top
+        case .bottom, .bottomGuide: attribute = .bottom
+        case .right, .rightGuide: attribute = .right
+        case .left, .leftGuide: attribute = .left
+        case .leading, .leadingGuide: attribute = .leading
+        case .trailing, .trailingGuide: attribute = .trailing
+        case .centerX, .centerXGuide: attribute = .centerX
+        case .centerY, .centerYGuide: attribute = .centerY
+        case .width: attribute = .width
+        case .height: attribute = .height
+        case .none: attribute = .notAnAttribute
+        }
+        
+        return (safeArea, attribute)
+    }
     
     func itemLayoutAttribute(for view: UIView) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
         
@@ -120,13 +145,36 @@ private extension ConstrictorAttribute {
         case .left, .leftGuide: attribute = .left
         case .leading, .leadingGuide: attribute = .leading
         case .trailing, .trailingGuide: attribute = .trailing
-        case .centerX, .centerXGuide: attribute = .centerX
-        case .centerY, .centerYGuide: attribute = .centerY
+        case .centerX:  attribute = .centerX
+        case .centerXGuide:
+            safeArea = isIOS11 ? safeArea : safeLayoutGuide(for: viewController)
+            attribute = .centerX
+            
+        case .centerY: attribute = .centerY
+        case .centerYGuide:
+            safeArea = isIOS11 ? safeArea : safeLayoutGuide(for: viewController)
+            attribute = .centerY
+            
         case .width: attribute = .width
         case .height: attribute = .height
         case .none: attribute = .notAnAttribute
         }
         
         return (safeArea, attribute)
+    }
+    
+    func safeLayoutGuide(for viewController: UIViewController) -> UILayoutGuide {
+        
+        let layoutGuide = UILayoutGuide()
+        viewController.view.addLayoutGuide(layoutGuide)
+        
+        NSLayoutConstraint.activate(
+            [NSLayoutConstraint(item: layoutGuide, attribute: .top, relatedBy: .equal, toItem: viewController.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0),
+             NSLayoutConstraint(item: layoutGuide, attribute: .bottom, relatedBy: .equal, toItem: viewController.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 0),
+             NSLayoutConstraint(item: layoutGuide, attribute: .leading, relatedBy: .equal, toItem: viewController.view, attribute: .leading, multiplier: 1, constant: 0),
+             NSLayoutConstraint(item: layoutGuide, attribute: .trailing, relatedBy: .equal, toItem: viewController.view, attribute: .trailing, multiplier: 1, constant: 0)]
+        )
+        
+        return layoutGuide
     }
 }

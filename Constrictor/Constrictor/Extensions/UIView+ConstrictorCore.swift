@@ -14,8 +14,10 @@ extension UIView {
                    to item: Constrictable, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
-        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
+        let firstItemLayoutAttribute = attribute.itemLayoutAttribute(for: self)
         let secondItemLayoutAttribute = attribute.itemLayoutAttribute(for: item)
+        
+        translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint(item: self,
                            attribute: firstItemLayoutAttribute.layoutAttribute,
@@ -30,6 +32,7 @@ extension UIView {
                    constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
         let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
+        translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint(item: self,
                            attribute: firstItemLayoutAttribute.layoutAttribute,
