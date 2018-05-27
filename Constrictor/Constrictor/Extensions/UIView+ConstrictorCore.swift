@@ -14,8 +14,10 @@ extension UIView {
                    to item: Constrictable, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
-        let firstItemLayoutAttribute = attribute.itemLayoutAttribute(for: self)
+        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
         let secondItemLayoutAttribute = attribute.itemLayoutAttribute(for: item)
+        let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
+                                                            value: constant)
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -25,7 +27,7 @@ extension UIView {
                            toItem: secondItemLayoutAttribute.item,
                            attribute: secondItemLayoutAttribute.layoutAttribute,
                            multiplier: multiplier,
-                           constant: constant).isActive = true
+                           constant: normalizedConstant).isActive = true
     }
     
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
@@ -34,12 +36,15 @@ extension UIView {
         let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
         translatesAutoresizingMaskIntoConstraints = false
         
+        let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
+                                                            value: constant)
+        
         NSLayoutConstraint(item: self,
                            attribute: firstItemLayoutAttribute.layoutAttribute,
                            relatedBy: relation,
                            toItem: nil,
                            attribute: .notAnAttribute,
                            multiplier: multiplier,
-                           constant: constant).isActive = true
+                           constant: normalizedConstant).isActive = true
     }
 }
