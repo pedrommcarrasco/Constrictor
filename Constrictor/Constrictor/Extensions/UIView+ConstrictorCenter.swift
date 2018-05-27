@@ -11,14 +11,15 @@ import Foundation
 public extension UIView {
     
     /**
-     Constricts self's center to viewController's view. Use to constrain center safely to viewController's view
+     Constricts self's center to viewController's view.
+     Use to constrain center safely to viewController's view
      
      - parameters:
-     - relation: Relation between center
-     - constant: Constraints's constant
-     - multiplier: Constraints's multiplier
-     - priority: Constraints's priority
-     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+        - relation: Relation between center
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -39,11 +40,11 @@ public extension UIView {
      Constricts self's center to its superview.
      
      - parameters:
-     - relation: Relation between center
-     - constant: Constraints's constant
-     - multiplier: Constraints's multiplier
-     - priority: Constraints's priority
-     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+        - relation: Relation between center
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -66,12 +67,12 @@ public extension UIView {
      Constricts self's center to another Constrictable.
      
      - parameters:
-     - relation: Relation between center
-     - item: Constrictable's item to constrict center with.
-     - constant: Constraints's constant
-     - multiplier: Constraints's multiplier
-     - priority: Constraints's priority
-     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+        - relation: Relation between center
+        - item: Constrictable's item to constrict center with.
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
      
      - returns:
      Discardable UIView to allow function's chaining.

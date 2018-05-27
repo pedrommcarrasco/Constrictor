@@ -11,15 +11,16 @@ import UIKit
 public extension UIView {
     
     /**
-     Description
+     Applies multiple constraints between self and viewController's view.
+     Use to constrain center safely to viewController's view.
      
      - parameters:
-     - viewController:
-     - relation:
-     - attributes:
-     - constant:
-     - multiplier:
-     - priority:
+        - relation: Relation between constraint and constant.
+        - item: Constrictable's item to apply a constraint with.
+        - attributes: Item's layout attributes to constraint with.
+        - constant: Constraint's constant.
+        - multiplier: Constraint's multiplier.
+        - priority: Constraint's priority.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -39,15 +40,15 @@ public extension UIView {
     }
     
     /**
-     Description
+     Applies multiple constraints between self and its superview.
      
      - parameters:
-     - relation:
-     - item:
-     - attributes:
-     - constant:
-     - multiplier:
-     - priority:
+        - relation: Relation between constraint and constant.
+        - item: Constrictable's item to apply a constraint with.
+        - attributes: Item's layout attributes to constraint with.
+        - constant: Constraint's constant.
+        - multiplier: Constraint's multiplier.
+        - priority: Constraint's priority.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -67,15 +68,15 @@ public extension UIView {
     }
     
     /**
-     Description
+     Applies multiple constraints between two Constrictable items.
      
      - parameters:
-     - relation:
-     - item:
-     - attributes:
-     - constant:
-     - multiplier:
-     - priority:
+        - relation: Relation between constraint and constant.
+        - item: Constrictable's item to apply a constraint with.
+        - attributes: Item's layout attributes to constraint with.
+        - constant: Constraint's constant.
+        - multiplier: Constraint's multiplier.
+        - priority: Constraint's priority.
      
      - returns:
      Discardable UIView to allow function's chaining.
@@ -95,16 +96,16 @@ public extension UIView {
     }
     
     /**
-     Description
+     Applies a constraint between two Constrictable items.
      
      - parameters:
-     - selfAttribute:
-     - relation:
-     - item:
-     - attribute:
-     - constant:
-     - multiplier:
-     - priority:
+        - selfAttribute: Self's item layout attribute.
+        - relation: Relation between constraint and constant.
+        - item: Constrictable's item to apply a constraint with.
+        - attribute: Item's layout attribute to constraint with.
+        - constant: Constraint's constant.
+        - multiplier: Constraint's multiplier.
+        - priority: Constraint's priority.
      
      - returns:
      Discardable UIView to allow function's chaining.

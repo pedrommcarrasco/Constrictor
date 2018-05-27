@@ -11,7 +11,8 @@ import UIKit
 extension UIView {
     
     /**
-     Internal Constrictor's core method. Applies a constraint between two Constrictable items.
+     Internal Constrictor's core method.
+     Applies a constraint between two Constrictable items.
      
      - parameters:
         - selfAttribute: Self's item layout attribute
@@ -47,7 +48,8 @@ extension UIView {
     }
     
     /**
-     Internal Constrictor's core method. Applies a constraint to itself.
+     Internal Constrictor's core method.
+     Applies a constraint to itself.
      
      - parameters:
         - selfAttribute: Self's item layout attribute
