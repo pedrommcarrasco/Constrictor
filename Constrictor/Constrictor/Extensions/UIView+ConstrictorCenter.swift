@@ -79,7 +79,8 @@ public extension UIView {
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
+    @discardableResult
+    func constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
                                             constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
                                             priority: UILayoutPriority, withinGuides: Bool = true) -> UIView {
         
