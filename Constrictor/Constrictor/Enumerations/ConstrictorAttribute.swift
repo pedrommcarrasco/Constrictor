@@ -24,7 +24,6 @@ public enum ConstrictorAttribute {
     case leading
     case leadingGuide
     
-    
     case trailing
     case trailingGuide
     
@@ -41,6 +40,9 @@ public enum ConstrictorAttribute {
 }
 
 extension ConstrictorAttribute {
+
+    static let guidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide, .leftGuide,
+                                                           .leadingGuide, .trailingGuide, .centerXGuide, .centerYGuide]
     
     /**
      Converts ConstrictorAttribute to NSLayoutAttribute based on an optional Constrictable
@@ -69,14 +71,7 @@ extension ConstrictorAttribute {
 }
 
 private extension ConstrictorAttribute {
-    
-    static let guidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide, .leftGuide,
-                                                           .leadingGuide, .trailingGuide, .centerXGuide, .centerYGuide]
-    
-    static let layoutGuidedAttributes: [ConstrictorAttribute] = [.topGuide, .bottomGuide, .rightGuide,
-                                                                 .leftGuide, .leadingGuide, .trailingGuide,
-                                                                 .centerXGuide, .centerYGuide]
-    
+
     /**
      Converts ConstrictorAttribute to NSLayoutAttribute based on an UILayoutGuite
      
