@@ -10,7 +10,9 @@ before_install:
 script:
  - cd Constrictor
  - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor -destination "platform=iOS Simulator,name=iPhone 8,OS=11.3" CODE_SIGNING_REQUIRED=NO clean test
+ - bash <(curl -s https://codecov.io/bash) -cF swift
  - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor -destination "platform=iOS Simulator,name=iPhone 5s,OS=9.0" CODE_SIGNING_REQUIRED=NO clean test
+ - bash <(curl -s https://codecov.io/bash) -cF swift
  - cd ..
 
  - cd Example
