@@ -27,21 +27,14 @@ extension ConstraintTestable where Self: XCTestCase {
     }
 
     func expectedConstraintCount(based number: Int, relatedToSafeArea: Bool = true,
-                                 numberOfGuides: Int = 0, isInContainer: Bool = false) -> Int {
+                                 numberOfGuides: Int = 0/*, isInContainer: Bool = false*/) -> Int {
 
-        let guidesConstraints = 4
+        var constraintsCount = 0
 
-        if isInContainer, relatedToSafeArea, numberOfGuides > 0 {
-             return number + guidesConstraints + (numberOfGuides * 2)
+        if relatedToSafeArea { constraintsCount += 4 }
 
-        } else if numberOfGuides > 0 {
-            return number + (numberOfGuides * 2)
+        constraintsCount += (numberOfGuides * 2)
 
-        } else if isInContainer {
-            return number + guidesConstraints
-
-        } else {
-            return number
-        }
+        return number
     }
 }
