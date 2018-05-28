@@ -25,16 +25,4 @@ extension ConstraintTestable where Self: XCTestCase {
         XCTAssertEqual(constraint.priority, priority)
         XCTAssertEqual(constraint.relation, relation)
     }
-
-    func expectedConstraintCount(based number: Int, relatedToSafeArea: Bool = true,
-                                 numberOfGuides: Int = 0/*, isInContainer: Bool = false*/) -> Int {
-
-        var constraintsCount = 0
-
-        if relatedToSafeArea { constraintsCount += 4 }
-
-        constraintsCount += (numberOfGuides * 2)
-
-        return number
-    }
 }
