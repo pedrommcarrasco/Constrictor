@@ -322,4 +322,25 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(topConstraint, multiplier: Constants.multiplier)
         testConstraint(bottomConstraint, multiplier: Constants.multiplier)
     }
+
+    // MARK: Test - constrict(_ relation: NSLayoutRelation = .equal, to item: Constrictable? = nil
+    func testConstrictWidthHeight() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrict(attributes: .width, .height, constant: Constants.constant)
+
+        // Tests
+        let widthConstraints = aView.findConstraints(for: .width, relatedTo: aView)
+        let heightConstraints = aView.findConstraints(for: .height, relatedTo: aView)
+
+        XCTAssertEqual(widthConstraints.count, 1)
+        XCTAssertEqual(heightConstraints.count, 1)
+
+        guard let widthConstraint = widthConstraints.first,
+            let heightConstraint = heightConstraints.first else { return XCTFail() }
+
+        testConstraint(widthConstraint, constant: Constants.constant)
+        testConstraint(heightConstraint, constant: Constants.constant)
+    }
 }
