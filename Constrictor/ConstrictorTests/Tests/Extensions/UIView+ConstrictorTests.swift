@@ -236,8 +236,8 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(bTrailingConstraint, constant: -Constants.constant, relation: .greaterThanOrEqual)
     }
 
-    // MARK: Test - constrictToContainer(_ selfAttribute: NSLayoutAttribute, ...
-    func testConstrictToContainerAtTopBottomConstant() {
+    // MARK: Test - constrictToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal, attributes: ConstrictorAttribute ..., ...
+    func testConstrictToViewControllerAtTopBottomConstant() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -259,180 +259,67 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         testConstraint(bottomConstraint, constant: -Constants.constant)
     }
     
-//    func testConstrictToContainerAtTopBottom() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        aView.constrictToViewController(viewController, attributes: .topGuide, .leadingGuide)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, 2)
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//        XCTAssertEqual(leadingConstraints.count, 1)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first, let leadingConstraint = leadingConstraints.first  else { return XCTFail() }
-//
-//        testConstraint(topConstraint)
-//        testConstraint(leadingConstraint)
-//    }
-//}
+    func testConstrictToViewControllerAtTopBottomGuidesMultiplier() {
 
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrictToViewController(viewController, attributes: .topGuide, .leadingGuide, multiplier: Constants.multiplier)
 
+        // Tests
+        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
+        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
 
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
 
-//
-//    func testConstrictToContainerAtTopBottomWithConstant() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        aView.constrictToContainer(attributes: .top, .bottom, constant: Constants.constant)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2, isInContainer: true))
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//        XCTAssertEqual(bottomConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first,
-//            let bottomConstraint = bottomConstraints.first else { return XCTFail() }
-//
-//        testConstraint(topConstraint, constant: Constants.constant)
-//        testConstraint(bottomConstraint, constant: -Constants.constant)
-//    }
-//
-//    func testConstrictToContainerAtTopBottomTrailingWithRelation() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        aView.constrictToContainer(attributes: .top, .bottom, .trailing, relation: .lessThanOrEqual)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 3, isInContainer: true))
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-//        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//        XCTAssertEqual(bottomConstraints.count, 1)
-//        XCTAssertEqual(trailingConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first,
-//            let bottomConstraint = bottomConstraints.first,
-//            let trailingConstraint = trailingConstraints.first
-//            else { return XCTFail() }
-//
-//        testConstraint(topConstraint, relation: .lessThanOrEqual)
-//        testConstraint(bottomConstraint, relation: .lessThanOrEqual)
-//        testConstraint(trailingConstraint, relation: .lessThanOrEqual)
-//    }
-//
-//    func testConstrictToContainerAtTopBottomTrailingLeadingWithMultiplier() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        aView.constrictToContainer(attributes: .top, .bottom, .trailing, .leading, multiplier: Constants.multiplier)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-//        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
-//        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//        XCTAssertEqual(bottomConstraints.count, 1)
-//        XCTAssertEqual(trailingConstraints.count, 1)
-//        XCTAssertEqual(leadingConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first,
-//            let bottomConstraint = bottomConstraints.first,
-//            let trailingConstraint = trailingConstraints.first,
-//            let leadingConstraint = leadingConstraints.first
-//            else { return XCTFail() }
-//
-//        testConstraint(topConstraint, multiplier: Constants.multiplier)
-//        testConstraint(bottomConstraint, multiplier: Constants.multiplier)
-//        testConstraint(trailingConstraint, multiplier: Constants.multiplier)
-//        testConstraint(leadingConstraint, multiplier: Constants.multiplier)
-//    }
-//
-//    // MARK: Test - constrict(attributes: NSLayoutAttribute ..., ..., to view: UIView?, ...
-//    func testConstrictAttributesToViewAtTop() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        viewController.view.addSubview(bView)
-//        aView.constrict(attributes: .top, to: bView)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 1))
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first else { return XCTFail() }
-//
-//        testConstraint(topConstraint)
-//    }
-//
-//    func testConstrictAttributesToViewAtTopBottomWithMultiplier() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        viewController.view.addSubview(bView)
-//        aView.constrict(attributes: .top, .bottom , to: bView, multiplier: Constants.multiplier)
-//
-//        // Tests
-//        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 2))
-//
-//        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-//        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-//
-//        XCTAssertEqual(topConstraints.count, 1)
-//        XCTAssertEqual(bottomConstraints.count, 1)
-//
-//        guard let topConstraint = topConstraints.first,
-//            let bottomConstraint = bottomConstraints.first
-//            else { return XCTFail() }
-//
-//        testConstraint(topConstraint, multiplier: Constants.multiplier)
-//        testConstraint(bottomConstraint, multiplier: Constants.multiplier)
-//    }
-//
-//    func testConstrictAttributesToViewAtWidthHeightWithConstantsRelation() {
-//
-//        // Setup
-//        viewController.view.addSubview(aView)
-//        viewController.view.addSubview(bView)
-//        aView.constrict(attributes: .width, .height, relation: .greaterThanOrEqual, constant: Constants.constant)
-//
-//        // Tests
-//        XCTAssertEqual(aView.constraints.count, expectedConstraintCount(based: 2))
-//
-//        let widthConstraints = aView.findConstraints(for: .width, at: .secondItem)
-//        let heightConstraints = aView.findConstraints(for: .height, at: .secondItem)
-//
-//        XCTAssertEqual(widthConstraints.count, 1)
-//        XCTAssertEqual(heightConstraints.count, 1)
-//
-//        guard let widthConstraint = widthConstraints.first,
-//            let heightConstraint = heightConstraints.first
-//            else { return XCTFail() }
-//
-//        testConstraint(widthConstraint, constant: Constants.constant, relation: .greaterThanOrEqual)
-//        testConstraint(heightConstraint, constant: Constants.constant, relation: .greaterThanOrEqual)
-//    }
-//}
+        XCTAssertEqual(topConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first, let leadingConstraint = leadingConstraints.first else { return XCTFail() }
+
+        testConstraint(topConstraint, multiplier: Constants.multiplier)
+        testConstraint(leadingConstraint, multiplier: Constants.multiplier)
+    }
+
+    // MARK: Test - constrictToSuperView(_ relation: NSLayoutRelation = .equal, attributes: ConstrictorAttribute ..., ...
+    func testConstrictToSuperviewAtTopBottomConstant() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.addSubview(bView)
+        bView.constrictToSuperview(attributes: .top, .bottom, constant: Constants.constant)
+
+        // Tests
+        let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
+        let bottomConstraints = aView.findConstraints(for: .bottom, relatedTo: bView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first else { return XCTFail() }
+
+        testConstraint(topConstraint, constant: Constants.constant)
+        testConstraint(bottomConstraint, constant: -Constants.constant)
+    }
+
+    func testConstrictToViewSuperviewAtTopBottomGuidesMultiplier() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.addSubview(bView)
+        bView.constrictToSuperview(attributes: .topGuide, .bottomGuide, multiplier: Constants.multiplier)
+
+        // Tests
+        let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
+        let bottomConstraints = aView.findConstraints(for: .bottom, relatedTo: bView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first else { return XCTFail() }
+
+        testConstraint(topConstraint, multiplier: Constants.multiplier)
+        testConstraint(bottomConstraint, multiplier: Constants.multiplier)
+    }
 }
