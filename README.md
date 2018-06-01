@@ -7,7 +7,7 @@
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE)
 
 
-***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplying your constraints by reducing the amount of code you have to write.
+***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplifying your constraints by reducing the amount of code you have to write.
 
 ## Installation 📦 
 ### CocoaPods
@@ -44,7 +44,7 @@ import Constrictor
 
 Once imported you can start using Constrictor to apply constraints to your views programmatically.
 
-Bellow you'll be able to see a working example. First we start by configuring three simple UIViews.
+Bellow, you'll be able to see a working example. First, we start by configuring three simple UIViews (assuming we're in a UIViewController)
 
 ```swift
 let redView = UIView()
@@ -60,7 +60,7 @@ greenView.backgroundColor = .green
 redView.addSubview(greenView)
 ```
 
-Down bellow you'll see how you apply constraints with and without Constrictor.
+Down bellow, you'll see how you apply constraints with and without Constrictor.
 
 ### How you're *probably* doing it without Constrictor 😰
 
@@ -135,4 +135,4 @@ There's a sample project in this repository called [Example](https://github.com/
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 
 ## License ⛔
-Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE) file for more informations.
+Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE) file for more information.
