@@ -67,7 +67,6 @@ Down bellow you'll see how you apply constraints with and without Constrictor.
 ```swift
 [redView, blueView, greenView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 
-// Constrain safely to safeAreas.
 if #available(iOS 11.0, *) {
     let safeArea = view.safeAreaLayoutGuide
     
@@ -87,16 +86,16 @@ if #available(iOS 11.0, *) {
 	safeLayoutGuide.bottomAnchor.constraint(equalTo: bottomLayoutGuide),
         safeLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         safeLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-    	
-        redView.topAnchor.constraint(equalTo: safeLayoutGuide.topAnchor),
-	redView.bottomAnchor.constraint(equalTo: safeLayoutGuide.bottomAnchor),
-        
+ 
         blueView.centerXAnchor.constraint(equalTo: safeLayoutGuide.centerXAnchor),
 	blueView.centerYAnchor.constraint(equalTo: safeLayoutGuide.centerYAnchor)
     ]) 
 }
 
 NSLayoutConstraint.activate([
+   redView.topAnchor.constraint(equalTo: view.topAnchor),
+   redView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+   
    redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
    redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
    
