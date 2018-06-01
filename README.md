@@ -95,7 +95,6 @@ if #available(iOS 11.0, *) {
 NSLayoutConstraint.activate([
    redView.topAnchor.constraint(equalTo: view.topAnchor),
    redView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-   
    redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
    redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
    
