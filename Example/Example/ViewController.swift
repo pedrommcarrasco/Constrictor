@@ -27,19 +27,18 @@ class ViewController: UIViewController {
         redView.constrictEdgesToViewController(self, withinGuides: false)
 
         // Or like it's done bellow
-        /* redView.constrictToContainer(attributes: .top, .bottom, .leading, .trailing) */
+        /* redView.constrictToViewController(attributes: .top, .bottom, .leading, .trailing) */
 
         // Or if you want an offset of 50 over all edges
-        /*redView.constrictToContainer(attributes: .top, .bottom, .leading, .trailing, constant: 50.0) */
+        /*redView.constrictToViewController(attributes: .top, .bottom, .leading, .trailing, constant: 50.0) */
 
         // ** Blue View **
         // Boilerplate
         blueView.backgroundColor = .blue
         redView.addSubview(blueView)
 
-        // Constraints -> 75 width, 100 height and centered in redview (superview)
-        blueView.constrict(.width, constant: 75)
-            .constrict(.height, constant: 100)
+        // Constraints -> 75 width, 75 height and centered in redview (superview)
+        blueView.constrict(attributes: .width, .height, constant: 75.0)
             .constrictCenterInViewController(self)
 
         // ** Green View **
@@ -48,7 +47,8 @@ class ViewController: UIViewController {
         redView.addSubview(greenView)
 
         // Constraints -> Same width, height and centerY of blueView, greenView at the left of blueView with a spacing of 8
-        greenView.constrict(to: blueView, attributes: .width, .height, .centerY)
+        greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
+            .constrictToSuperview(attributes: .height)
             .constrict(.trailing, to: blueView, attribute: .leading, constant: 8)
     }
 }
