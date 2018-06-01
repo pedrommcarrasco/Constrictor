@@ -1,69 +1,98 @@
-//
-//  UIView+ConstrictorEdges.swift
-//  Constrictor
-//
-//  Created by Pedro Carrasco on 21/05/2018.
-//  Copyright © 2018 Pedro Carrasco. All rights reserved.
-//
+////
+////  UIView+ConstrictorEdges.swift
+////  Constrictor
+////
+////  Created by Pedro Carrasco on 21/05/2018.
+////  Copyright © 2018 Pedro Carrasco. All rights reserved.
+////
 
 import UIKit
 
 public extension UIView {
-
+    
     /**
-     Defines the caller's edges as the same as its superview
-
+     Constricts self's edges to viewController's view.
+     Use to constrain edges safely to viewController's view.
+     
      - parameters:
-        - withinSafeArea: Boolean indicating if the constraint should be applied to the view's safeArea.
-        - relation: Establish a relation between both attributes with NSLayoutRelation.
-        - constant: CGFloat's value to add to the constraint.
-        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
-        - priority: UILayoutPriority that defines the constraint priority.
-
+        - relation: Relation between edges
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+     
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictEdgesToContainer(withinSafeArea: Bool = true, relation: NSLayoutRelation = .equal,
-                                                      constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                                      priority: UILayoutPriority = .required) -> UIView {
-
-        guard let superview = superview else { return self }
-
-        constrictEdges(to: superview,
-                       withinSafeArea: withinSafeArea,
-                       relation: relation,
-                       constant: constant,
-                       multiplier: multiplier,
-                       priority: priority)
-
+    
+    @discardableResult
+    func constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+                                        constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> UIView {
+        
+        constrictEdges(relation, to: viewController, constant: constant,
+                       multiplier: multiplier, priority: priority, withinGuides: withinGuides)
+        
         return self
     }
-
+    
     /**
-     Defines the caller's edges as the same as the UIView sent by parameter.
-
+     Constricts self's edges to its superview.
+     
      - parameters:
-        - view: UIView to match with the caller's .top, .bottom, .leading and .trailing.
-        - withinSafeArea: Boolean indicating if the constraint should be applied to the view's safeArea.
-        - relation: Establish a relation between both attributes with NSLayoutRelation.
-        - constant: CGFloat's value to add to the constraint.
-        - multiplier: CGFloat's multiplier based on the values from both selfAttribute and attribute.
-        - priority: UILayoutPriority that defines the constraint priority.
-
+        - relation: Relation between edges
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+     
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    @discardableResult func constrictEdges(to view: UIView, withinSafeArea: Bool = true,
-                                           relation: NSLayoutRelation = .equal,constant: CGFloat = 0.0,
-                                           multiplier: CGFloat = 1.0,priority: UILayoutPriority = .required) -> UIView {
-
-        constrict(attributes: .top, .bottom, .leading, .trailing,
-                  relation: relation,
-                  to: view,
-                  withinSafeArea: withinSafeArea,
-                  constant: constant,
-                  multiplier: multiplier,
-                  priority: priority)
+    
+    @discardableResult
+    func constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
+                                   multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required,
+                                   withinGuides: Bool = true) -> UIView {
+        
+        guard let superview = superview else { return self }
+        
+        constrictEdges(relation, to: superview, constant: constant,
+                       multiplier: multiplier, priority: priority, withinGuides: withinGuides)
+        
+        return self
+    }
+    
+    /**
+     Constricts self's edges to another Constrictable.
+     
+     - parameters:
+        - relation: Relation between edges
+        - item: Constrictable's item to constrict edges with.
+        - constant: Constraints's constant
+        - multiplier: Constraints's multiplier
+        - priority: Constraints's priority
+        - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
+    
+     - returns:
+     Discardable UIView to allow function's chaining.
+     */
+    
+    @discardableResult
+    func constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
+                        constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> UIView {
+        
+        if withinGuides {
+            constrict(relation, to: item,
+                      attributes: .topGuide, .bottomGuide, .leadingGuide, .trailingGuide,
+                      multiplier: multiplier, priority: priority)
+            
+        } else {
+            constrict(relation, to: item,
+                      attributes: .top, .bottom, .leading, .trailing,
+                      multiplier: multiplier, priority: priority)
+        }
         
         return self
     }

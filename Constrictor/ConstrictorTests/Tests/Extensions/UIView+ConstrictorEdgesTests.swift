@@ -9,7 +9,7 @@
 import XCTest
 
 class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
-    
+
     // MARK: Constants
     enum Constants {
 
@@ -41,16 +41,14 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         super.tearDown()
     }
 
-    // MARK: Test - constrictCenterToContainer(...)
-    func testConstrictEdgesToContainer() {
+    // MARK: Test - constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+    func testConstrictEdgesToViewControllerGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToContainer()
+        aView.constrictEdgesToViewController(viewController)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
-
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
         let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
@@ -73,17 +71,13 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         testConstraint(trailingConstraint)
     }
 
-    func testConstrictEdgesToContainerWithConstantRelationMultiplier() {
+    func testConstrictEdgesToViewControllerNotGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToContainer(relation: .greaterThanOrEqual,
-                                        constant: Constants.constant,
-                                        multiplier: Constants.multiplier)
+        aView.constrictEdgesToViewController(viewController, withinGuides: false)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4, isInContainer: true))
-
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
         let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
@@ -100,14 +94,75 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
             let trailingConstraint = trailingConstraints.first
             else { return XCTFail() }
 
-        testConstraint(topConstraint, constant: Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(bottomConstraint, constant: -Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(leadingConstraint, constant: Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(trailingConstraint, constant: -Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
     }
 
-    // MARK: Test - constrictEdges(to view: UIView, ...)
-    func testConstrictEdgesToView() {
+    // MARK: Test - constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
+    func testConstrictEdgesToSuperViewGuided() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.addSubview(bView)
+        bView.constrictEdgesToSuperview()
+
+        // Tests
+        let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
+        let bottomConstraints = aView.findConstraints(for: .bottom, relatedTo: bView)
+        let leadingConstraints = aView.findConstraints(for: .leading, relatedTo: bView)
+        let trailingConstraints = aView.findConstraints(for: .trailing, relatedTo: bView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
+    func testConstrictEdgesToSuperViewNotGuided() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.addSubview(bView)
+        bView.constrictEdgesToSuperview(withinGuides: false)
+
+        // Tests
+        let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
+        let bottomConstraints = aView.findConstraints(for: .bottom, relatedTo: bView)
+        let leadingConstraints = aView.findConstraints(for: .leading, relatedTo: bView)
+        let trailingConstraints = aView.findConstraints(for: .trailing, relatedTo: bView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
+    // MARK: Test - constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable, ...
+    func testConstrictEdgesGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -115,8 +170,6 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         aView.constrictEdges(to: bView)
 
         // Tests
-        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4))
-
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
         let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
         let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
@@ -137,40 +190,5 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         testConstraint(bottomConstraint)
         testConstraint(leadingConstraint)
         testConstraint(trailingConstraint)
-    }
-
-    func testConstrictEdgesToViewWithConstantRelationMultiplier() {
-
-        // Setup
-        viewController.view.addSubview(aView)
-        viewController.view.addSubview(bView)
-        aView.constrictEdges(to: bView,
-                             relation: .greaterThanOrEqual,
-                             constant: Constants.constant,
-                             multiplier: Constants.multiplier)
-
-        // Tests
-        XCTAssertEqual(viewController.view.constraints.count, expectedConstraintCount(based: 4))
-
-        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
-        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
-
-        XCTAssertEqual(topConstraints.count, 1)
-        XCTAssertEqual(bottomConstraints.count, 1)
-        XCTAssertEqual(leadingConstraints.count, 1)
-        XCTAssertEqual(trailingConstraints.count, 1)
-
-        guard let topConstraint = topConstraints.first,
-            let bottomConstraint = bottomConstraints.first,
-            let leadingConstraint = leadingConstraints.first,
-            let trailingConstraint = trailingConstraints.first
-            else { return XCTFail() }
-
-        testConstraint(topConstraint, constant: Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(bottomConstraint, constant: -Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(leadingConstraint, constant: Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
-        testConstraint(trailingConstraint, constant: -Constants.constant, multiplier: Constants.multiplier, relation: .greaterThanOrEqual)
     }
 }

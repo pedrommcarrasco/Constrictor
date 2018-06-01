@@ -44,61 +44,80 @@ import Constrictor
 
 Once imported you can start using Constrictor to apply constraints to your views programmatically.
 
-### How you're *probably* doing it without Constrictor 😰
+Bellow you'll be able to see a working example. First we start by configuring three simple UIViews.
+
 ```swift
 let redView = UIView()
 redView.backgroundColor = .red
-redView.translatesAutoresizingMaskIntoConstraints = false  
 view.addSubview(redView)
-        
-redView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-redView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-redView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-redView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+
 let blueView = UIView()
-blueView.backgroundColor = .blue
-blueView.translatesAutoresizingMaskIntoConstraints = false     
+blueView.backgroundColor = .blue    
 view.addSubview(blueView)
-        
-blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-blueView.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
-blueView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
 
 let greenView = UIView()
-greenView.backgroundColor = .green
-greenView.translatesAutoresizingMaskIntoConstraints = false     
+greenView.backgroundColor = .green    
 redView.addSubview(greenView)
+```
 
-greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor).isActive = true
-greenView.heightAnchor.constraint(equalTo: blueView.heightAnchor).isActive = true
-greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor).isActive = true
-greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0).isActive = true
+Down bellow you'll see how you apply constraints with and without Constrictor.
+
+### How you're *probably* doing it without Constrictor 😰
+
+```swift
+[redView, blueView, greenView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+
+if #available(iOS 11.0, *) {
+    let safeArea = view.safeAreaLayoutGuide
+    
+    NSLayoutConstraint.activate([
+   	redView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+	redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+        
+        blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+	blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+    ]) 
+} else {
+    let safeLayoutGuide = UILayoutGuide()
+    view.addLayoutGuide(safeLayoutGuide)
+        
+    NSLayoutConstraint.activate([
+        safeLayoutGuide.topAnchor.constraint(equalTo: topLayoutGuide),
+	safeLayoutGuide.bottomAnchor.constraint(equalTo: bottomLayoutGuide),
+        safeLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        safeLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+ 
+        blueView.centerXAnchor.constraint(equalTo: safeLayoutGuide.centerXAnchor),
+	blueView.centerYAnchor.constraint(equalTo: safeLayoutGuide.centerYAnchor)
+    ]) 
+}
+
+NSLayoutConstraint.activate([
+   redView.topAnchor.constraint(equalTo: view.topAnchor),
+   redView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+   redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+   redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+   
+   blueView.widthAnchor.constraint(equalToConstant: 75.0),
+   blueView.heightAnchor.constraint(equalToConstant: 75.0),
+   
+   greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor),
+   greenView.heightAnchor.constraint(equalTo: redView.heightAnchor),
+   greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor),
+   greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0)
+])
 ```
 
 ### How you can do it with Constrictor 😍
 ```swift
-let redView = UIView()
-redView.backgroundColor = .red
-view.addSubview(redView)
- 
-redView.constrictEdgesToContainer()
+redView.constrictEdgesToViewController(self, withinGuides: false)
         
-let blueView = UIView()
-blueView.backgroundColor = .blue
-redView.addSubview(blueView)
+blueView.constrict(attributes: .width, .height, constant: 75.0)
+     .constrictCenterInViewController(self)
 
-blueView.constrict(.width, constant: 75)
-    .constrict(.height, constant: 100)
-    .constrictCenterInContainer()
-    
-let greenView = UIView()
-greenView.backgroundColor = .green
-redView.addSubview(greenView)
- 
-greenView.constrict(attributes: .width, .height, .centerY, to: blueView)
-    .constrict(.trailing, to: blueView, attribute: .leading, constant: 50)
+greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
+     .constrictToSuperview(attributes: .height)
+     .constrict(.trailing, to: blueView, attribute: .leading, constant: 50.0)
 ```
 
 ##  Sample Project 📲
@@ -109,6 +128,7 @@ There's a sample project in this repository called [Example](https://github.com/
 - [x] TravisCI integration
 - [x] CodeCoverage.io integration
 - [x] Unit Testing
+- [x] SafeAreas & LayoutGuides
 - [ ] More "short-syntax" methods (like edges & center)
 
 ## Contributing 🙌 

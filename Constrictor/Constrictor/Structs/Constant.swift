@@ -20,6 +20,7 @@ struct Constant {
      - returns:
      CGFloat containing the constant final value.
      */
+    
     static func normalizeConstant(for attribute: NSLayoutAttribute, value: CGFloat) -> CGFloat {
 
         switch attribute {
