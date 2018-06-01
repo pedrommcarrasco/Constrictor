@@ -112,18 +112,6 @@ NSLayoutConstraint.activate([
 
 ### How you can do it with Constrictor 😍
 ```swift
-let redView = UIView()
-redView.backgroundColor = .red
-view.addSubview(redView)
-
-let blueView = UIView()
-blueView.backgroundColor = .blue
-redView.addSubview(blueView)
-
-let greenView = UIView()
-greenView.backgroundColor = .green
-redView.addSubview(greenView)
-
 redView.constrictEdgesToViewController(self, withinGuides: false)
         
 blueView.constrict(attributes: .width, .height, constant: 75.0)
