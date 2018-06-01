@@ -213,7 +213,7 @@ private extension ConstrictorAttribute {
         
         let layoutGuide = UILayoutGuide()
         viewController.view.addLayoutGuide(layoutGuide)
-        
+
         NSLayoutConstraint.activate(
             [NSLayoutConstraint(item: layoutGuide, attribute: .top, relatedBy: .equal, toItem: viewController.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0),
              NSLayoutConstraint(item: layoutGuide, attribute: .bottom, relatedBy: .equal, toItem: viewController.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 0),

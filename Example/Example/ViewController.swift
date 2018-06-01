@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         blueView.backgroundColor = .blue
         redView.addSubview(blueView)
 
-        // Constraints -> 75 width, 75 height and centered in redview (superview)
+        // Constraints -> 75 width, 75 height and centered in viewcontroller's view
         blueView.constrict(attributes: .width, .height, constant: 75.0)
             .constrictCenterInViewController(self)
 
