@@ -81,7 +81,7 @@ public extension UIView {
     @discardableResult
     func constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
                                             constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                            priority: UILayoutPriority, withinGuides: Bool = true) -> UIView {
+                                            priority: UILayoutPriority = .required, withinGuides: Bool = true) -> UIView {
         
         if withinGuides {
             constrict(relation, to: item, attributes: .centerXGuide, .centerYGuide,
