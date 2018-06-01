@@ -71,42 +71,42 @@ Down bellow you'll see how you apply constraints with and without Constrictor.
 if #available(iOS 11.0, *) {
     let safeArea = view.safeAreaLayoutGuide
     
-	NSLayoutConstraint.activate([
-   		redView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-		redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+    NSLayoutConstraint.activate([
+   	redView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+	redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         
         blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-		blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-	]) 
+	blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+    ]) 
 } else {
     let safeLayoutGuide = UILayoutGuide()
     view.addLayoutGuide(safeLayoutGuide)
         
     NSLayoutConstraint.activate([
         safeLayoutGuide.topAnchor.constraint(equalTo: topLayoutGuide),
-		safeLayoutGuide.bottomAnchor.constraint(equalTo: bottomLayoutGuide),
+	safeLayoutGuide.bottomAnchor.constraint(equalTo: bottomLayoutGuide),
         safeLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         safeLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
     	
         redView.topAnchor.constraint(equalTo: safeLayoutGuide.topAnchor),
-		redView.bottomAnchor.constraint(equalTo: safeLayoutGuide.bottomAnchor),
+	redView.bottomAnchor.constraint(equalTo: safeLayoutGuide.bottomAnchor),
         
         blueView.centerXAnchor.constraint(equalTo: safeLayoutGuide.centerXAnchor),
-		blueView.centerYAnchor.constraint(equalTo: safeLayoutGuide.centerYAnchor)
+	blueView.centerYAnchor.constraint(equalTo: safeLayoutGuide.centerYAnchor)
     ]) 
 }
 
 NSLayoutConstraint.activate([
-   		redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-		redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-		
-    	blueView.widthAnchor.constraint(equalToConstant: 75.0),
-		blueView.heightAnchor.constraint(equalToConstant: 75.0),
-    	
-    	greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor),
-        greenView.heightAnchor.constraint(equalTo: redView.heightAnchor),
-        greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor),
-		greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0)
+   redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+   redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+   
+   blueView.widthAnchor.constraint(equalToConstant: 75.0),
+   blueView.heightAnchor.constraint(equalToConstant: 75.0),
+   
+   greenView.widthAnchor.constraint(equalTo: blueView.widthAnchor),
+   greenView.heightAnchor.constraint(equalTo: redView.heightAnchor),
+   greenView.centerYAnchor.constraint(equalTo: blueView.centerYAnchor),
+   greenView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor, constant: 50.0)
 ])
 ```
 
@@ -127,11 +127,11 @@ redView.addSubview(greenView)
 redView.constrictEdgesToViewController(self, withinGuides: false)
         
 blueView.constrict(attributes: .width, .height, constant: 75.0)
-            .constrictCenterInViewController(self)
+     .constrictCenterInViewController(self)
 
 greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
-            .constrictToSuperview(attributes: .height)
-            .constrict(.trailing, to: blueView, attribute: .leading, constant: 50.0)
+     .constrictToSuperview(attributes: .height)
+     .constrict(.trailing, to: blueView, attribute: .leading, constant: 50.0)
 ```
 
 ##  Sample Project 📲
