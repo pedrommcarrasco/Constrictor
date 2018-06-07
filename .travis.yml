@@ -20,9 +20,9 @@ before_install:
 
 script:
  - cd Constrictor
- - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_LATEST" CODE_SIGNING_REQUIRED=NO test
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_LATEST" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
- - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_OLD" CODE_SIGNING_REQUIRED=NO test
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_OLD" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
 
