@@ -3,24 +3,35 @@ osx_image: xcode9.3
 
 install: true
 
+env:
+  global:
+  - PROJECT=Constrictor.xcodeproj
+  - FRAMEWORK_SCHEME=Constrictor
+  - PODSPEC=Constrictor.podspec
+  - PROJECT_EXAMPLE=Example.xcworkspace
+  - PROJECT_SCHEME=Example
+  - DESTINATION_PLATFORM_LATEST='platform=iOS Simulator,name=iPhone 8,OS=latest'
+  - DESTINATION_PLATFORM_OLD='platform=iOS Simulator,name=iPhone 5s,OS=9.0'
+  - CODECOV_ENDPOINT=https://codecov.io/bash
+
 before_install:
  - gem install cocoapods
  - pod --version
 
 script:
  - cd Constrictor
- - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor -destination "platform=iOS Simulator,name=iPhone 8,OS=11.3" CODE_SIGNING_REQUIRED=NO test
- - bash <(curl -s https://codecov.io/bash) -cF swift
- - xcodebuild -project Constrictor.xcodeproj -scheme Constrictor -destination "platform=iOS Simulator,name=iPhone 5s,OS=9.0" CODE_SIGNING_REQUIRED=NO test
- - bash <(curl -s https://codecov.io/bash) -cF swift
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_LATEST" CODE_SIGNING_REQUIRED=NO test
+ - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_OLD" CODE_SIGNING_REQUIRED=NO test
+ - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
 
- - cd Example
+ - cd "$PROJECT_SCHEME"
  - pod repo update && pod update
  - set -o pipefail
- - xcodebuild -workspace Example.xcworkspace -scheme Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+ - xcodebuild -workspace "$PROJECT_EXAMPLE" -scheme "$PROJECT_SCHEME" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
  - cd ..
- - travis_wait 30 pod lib lint Constrictor.podspec
+ - travis_wait 30 pod lib lint "$PODSPEC"
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s "$CODECOV_ENDPOINT")

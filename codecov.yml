@@ -1,0 +1,10 @@
+comment:
+  layout: header, changes, diff, sunburst
+coverage:
+  ignore:
+  - ConstrictorTests/.*
+  status:
+    patch: false
+    project:
+      default:
+        target: auto
