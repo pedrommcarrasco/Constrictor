@@ -13,6 +13,7 @@ env:
   - DESTINATION_PLATFORM_LATEST='platform=iOS Simulator,name=iPhone 8,OS=latest'
   - DESTINATION_PLATFORM_OLD='platform=iOS Simulator,name=iPhone 5s,OS=9.0'
   - CODECOV_ENDPOINT=https://codecov.io/bash
+  - SDK=iphonesimulator
 
 before_install:
  - gem install cocoapods
@@ -20,9 +21,11 @@ before_install:
 
 script:
  - cd Constrictor
- - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_LATEST" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
+ - set -o pipefail
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -configuration Debug ONLY_ACTIVE_ARCH=YES -destination "$DESTINATION_PLATFORM_LATEST" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
- - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -destination "$DESTINATION_PLATFORM_OLD" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
+ - set -o pipefail
+ - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -configuration Debug ONLY_ACTIVE_ARCH=YES -destination "$DESTINATION_PLATFORM_OLD" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
 
@@ -34,4 +37,4 @@ script:
  - travis_wait 30 pod lib lint "$PODSPEC"
 
 after_success:
-  - bash <(curl -s "$CODECOV_ENDPOINT")
+  - bash <(curl -s "$CODECOV_ENDPOINT") -J '^Constrictor$'
