@@ -55,18 +55,20 @@ extension ConstrictorAttribute {
      */
     
     func itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute) {
+    
+        var itemLayoutAttributeTuple: (item: Any?, layoutAttribute: NSLayoutAttribute) = (nil, .notAnAttribute)
         
         if let view = item as? UIView {
-            return itemLayoutAttribute(for: view)
+            itemLayoutAttributeTuple = itemLayoutAttribute(for: view)
             
         } else if let viewController = item as? UIViewController {
-            return itemLayoutAttribute(for: viewController)
+            itemLayoutAttributeTuple = itemLayoutAttribute(for: viewController)
             
         } else if let layoutGuide = item as? UILayoutGuide {
-            return itemLayoutAttribute(for: layoutGuide)
+            itemLayoutAttributeTuple = itemLayoutAttribute(for: layoutGuide)
         }
         
-        return (item, .notAnAttribute)
+        return itemLayoutAttributeTuple
     }
 }
 

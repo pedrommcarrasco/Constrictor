@@ -62,6 +62,26 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         testConstraint(centerXConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
         testConstraint(centerYConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
     }
+    
+    func testConstrictCenterInViewControllerWithoutGuides() {
+        
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrictCenterInViewController(viewController, withinGuides: false)
+        
+        // Tests
+        let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
+        let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
+        
+        XCTAssertEqual(centerXConstraints.count, 1)
+        XCTAssertEqual(centerYConstraints.count, 1)
+        
+        guard let centerXConstraint = centerXConstraints.first,
+            let centerYConstraint = centerYConstraints.first else { return XCTFail() }
+        
+        testConstraint(centerXConstraint)
+        testConstraint(centerYConstraint)
+    }
 
     // MARK: Test - constrictCenterInSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
     func testConstrictCenterInSuperViewWithConstantMultiplier() {
