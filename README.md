@@ -71,9 +71,6 @@ if #available(iOS 11.0, *) {
     let safeArea = view.safeAreaLayoutGuide
     
     NSLayoutConstraint.activate([
-   	redView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-	redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-        
         blueView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 	blueView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     ]) 
