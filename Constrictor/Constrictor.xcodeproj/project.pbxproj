@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202473B520BA14E9005693AC /* ConstrictorAttribute.swift */; };
+		20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */; };
+		20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */; };
 		205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */; };
 		205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */; };
 		205B528720BADF330016C8B8 /* Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B528620BADF330016C8B8 /* Constrictable.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		202473B520BA14E9005693AC /* ConstrictorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAttribute.swift; sourceTree = "<group>"; };
+		20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Operators.swift"; sourceTree = "<group>"; };
+		20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+OperatorsTests.swift"; sourceTree = "<group>"; };
 		205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictable.swift"; sourceTree = "<group>"; };
 		205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Constrictable.swift"; sourceTree = "<group>"; };
 		205B528620BADF330016C8B8 /* Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrictable.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */,
 				205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */,
 				205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */,
+				20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */,
 				20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */,
 				539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */,
+				20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
 				20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */,
 				53CB882320B4618B002731A6 /* Constant.swift in Sources */,
+				20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */,
+				20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */,
 				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
 				20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */,
 				53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */,

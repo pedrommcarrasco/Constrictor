@@ -126,6 +126,7 @@ There's a sample project in this repository called [Example](https://github.com/
 - [x] CodeCoverage.io integration
 - [x] Unit Testing
 - [x] SafeAreas & LayoutGuides
+- [x] UILayoutPriority + and - operators
 - [ ] Save/return constraints so it's easier to support animations
 - [ ] More "short-syntax" methods (like edges & center)
 
