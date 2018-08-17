@@ -86,12 +86,12 @@ public extension UIView {
         if withinGuides {
             constrict(relation, to: item,
                       attributes: .topGuide, .bottomGuide, .leadingGuide, .trailingGuide,
-                      multiplier: multiplier, priority: priority)
+                      constant: constant, multiplier: multiplier, priority: priority)
             
         } else {
             constrict(relation, to: item,
                       attributes: .top, .bottom, .leading, .trailing,
-                      multiplier: multiplier, priority: priority)
+                      constant: constant, multiplier: multiplier, priority: priority)
         }
         
         return self
