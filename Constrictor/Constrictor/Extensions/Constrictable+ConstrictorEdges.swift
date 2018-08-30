@@ -26,9 +26,9 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+    func constrictEdgesToController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
                                         constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Constrictable {
+                                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         constrictEdges(relation, to: viewController, constant: constant,
                        multiplier: multiplier, priority: priority, withinGuides: withinGuides)
@@ -54,7 +54,7 @@ public extension Constrictable {
     @discardableResult
     func constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
                         constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Constrictable {
+                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         if withinGuides {
             constrict(relation, to: item,
@@ -88,9 +88,9 @@ public extension Constrictable where Self: UIView {
      */
 
     @discardableResult
-    func constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
+    func constrictEdgesToParent(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
                                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required,
-                                   withinGuides: Bool = true) -> Constrictable {
+                                   withinGuides: Bool = true) -> Self {
 
         guard let superview = superview else { return self }
 

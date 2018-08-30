@@ -26,9 +26,9 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrictCenterInViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+    func constrictCenterInController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
                                         constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Constrictable {
+                                        priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         constrictCenter(relation, to: viewController, constant: constant,
                        multiplier: multiplier, priority: priority, withinGuides: withinGuides)
@@ -54,7 +54,7 @@ public extension Constrictable {
     @discardableResult
     func constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
                                             constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                                            priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Constrictable {
+                                            priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         if withinGuides {
             constrict(relation, to: item, attributes: .centerXGuide, .centerYGuide,
@@ -86,9 +86,9 @@ public extension Constrictable where Self: UIView {
      */
 
     @discardableResult
-    func constrictCenterInSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
+    func constrictCenterInParent(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
                                     multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required,
-                                    withinGuides: Bool = true) -> Constrictable {
+                                    withinGuides: Bool = true) -> UIView {
 
         guard let superview = superview else { return self }
 

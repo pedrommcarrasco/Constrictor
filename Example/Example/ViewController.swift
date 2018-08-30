@@ -9,11 +9,12 @@
 import UIKit
 import Constrictor
 
+
 class ViewController: UIViewController {
     
     let redView = UIView()
     let blueView = UIView()
-    let greenView = UIView()
+    let greenView = UIView() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
