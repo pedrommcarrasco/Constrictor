@@ -1,5 +1,5 @@
 //
-//  UIView+ConstrictorCore.swift
+//  Constrictable+ConstrictorCore.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 26/05/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+extension Constrictable {
     
     /**
      Internal Constrictor's core method.
@@ -35,8 +35,12 @@ extension UIView {
         let secondItemLayoutAttribute = attribute.itemLayoutAttribute(for: item)
         let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
                                                             value: constant)
-        
-        translatesAutoresizingMaskIntoConstraints = false
+
+        if let constrictableAsView = self as? UIView {
+
+            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
+        }
+
         
         NSLayoutConstraint(item: self,
                            attribute: firstItemLayoutAttribute.layoutAttribute,
@@ -66,7 +70,11 @@ extension UIView {
                    constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
         let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
-        translatesAutoresizingMaskIntoConstraints = false
+
+        if let constrictableAsView = self as? UIView {
+
+            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
                                                             value: constant)

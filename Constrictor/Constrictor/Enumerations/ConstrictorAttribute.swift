@@ -9,6 +9,7 @@
 import Foundation
 
 public enum ConstrictorAttribute {
+
     case top
     case topGuide
     
