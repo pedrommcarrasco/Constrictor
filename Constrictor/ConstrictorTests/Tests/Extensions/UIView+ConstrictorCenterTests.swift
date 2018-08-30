@@ -47,7 +47,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictCenterInViewController(viewController, constant: Constants.constant, multiplier: Constants.multiplier)
+        aView.constrictCenterInController(viewController, constant: Constants.constant, multiplier: Constants.multiplier)
 
         // Tests
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
@@ -67,7 +67,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictCenterInViewController(viewController, withinGuides: false)
+        aView.constrictCenterInController(viewController, withinGuides: false)
         
         // Tests
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
@@ -89,7 +89,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictCenterInSuperview(constant: Constants.constant, multiplier: Constants.multiplier)
+        bView.constrictCenterInParent(constant: Constants.constant, multiplier: Constants.multiplier)
 
         // Tests
         let centerXConstraints = aView.findConstraints(for: .centerX, relatedTo: bView)

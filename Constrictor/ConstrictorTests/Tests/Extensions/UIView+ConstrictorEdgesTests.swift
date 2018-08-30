@@ -46,7 +46,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToViewController(viewController)
+        aView.constrictEdgesToController(viewController)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -75,7 +75,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToViewController(viewController, withinGuides: false)
+        aView.constrictEdgesToController(viewController, withinGuides: false)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -106,7 +106,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictEdgesToSuperview()
+        bView.constrictEdgesToParent()
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
@@ -136,7 +136,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictEdgesToSuperview(withinGuides: false)
+        bView.constrictEdgesToParent(withinGuides: false)
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
