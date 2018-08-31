@@ -60,8 +60,11 @@ public extension Constrictable {
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
-            self.constrict($0, relation: relation, to: item, attribute: $0,
-                           constant: constant, multiplier: multiplier, priority: priority)
+            if let item = item {
+                constrict($0, relation: relation, to: item, attribute: $0, constant: constant, multiplier: multiplier, priority: priority)
+            } else {
+                constrict($0, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
+            }
         }
         
         return self
@@ -86,9 +89,12 @@ public extension Constrictable {
     @discardableResult
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
                    to item: Constrictable? = nil, attribute: ConstrictorAttribute = .none,
-                   constant: Constant = .zero, multiplier: CGFloat = 1.0,
+                   constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
                    priority: UILayoutPriority = .required) -> Self {
-        
+
+
+        let constant = Constant(attribute: selfAttribute, value: constant)
+
         guard let item = item else {
             constrict(selfAttribute, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
             return self
@@ -123,8 +129,11 @@ public extension Constrictable where Self: UIView {
                            multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
-            self.constrict($0, relation: relation, to: self.superview, attribute: $0,
-                           constant: constant, multiplier: multiplier, priority: priority)
+            if let parent = self.superview {
+                constrict($0, relation: relation, to: parent, attribute: $0, constant: constant, multiplier: multiplier, priority: priority)
+            } else {
+                constrict($0, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
+            }
         }
         
         return self

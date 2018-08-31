@@ -33,6 +33,27 @@ public struct Constant {
     let height: CGFloat
 }
 
+// MARK: - Internal Custom Initializer
+extension Constant {
+
+    init(attribute: ConstrictorAttribute, value: CGFloat) {
+
+        switch attribute {
+        case .top, .topGuide: self = .top(value)
+        case .bottom, .bottomGuide: self = .bottom(value)
+        case .right, .rightGuide: self = .right(value)
+        case .left, .leftGuide: self = .left(value)
+        case .leading, .leadingGuide: self = .leading(value)
+        case .trailing, .trailingGuide: self = .trailing(value)
+        case .centerX, .centerXGuide: self = .x(value)
+        case .centerY, .centerYGuide: self = .y(value)
+        case .width: self = .width(value)
+        case .height: self = .height(value)
+        case .none: self = .zero
+        }
+    }
+}
+
 // MARK: - Modifiers
 public extension Constant {
     
@@ -114,6 +135,14 @@ public extension Constant {
                         right: 0.0, left: value,
                         leading: 0.0, trailing: 0.0,
                         width: 0.0, height: value)
+    }
+
+    static func all(_ value: CGFloat) -> Constant {
+        return Constant(x: value, y: value,
+                        top: value, bottom: value,
+                        right: value, left: value,
+                        leading: value, trailing: value,
+                        width: value, height: value)
     }
     
     static let zero = Constant(x: 0.0, y: 0.0,
