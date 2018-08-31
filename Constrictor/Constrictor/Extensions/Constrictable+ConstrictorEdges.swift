@@ -27,7 +27,7 @@ public extension Constrictable {
     
     @discardableResult
     func constrictEdgesToController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
-                                        constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                                        constant: Constant = .zero, multiplier: CGFloat = 1.0,
                                         priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         constrictEdges(relation, to: viewController, constant: constant,
@@ -53,7 +53,7 @@ public extension Constrictable {
     
     @discardableResult
     func constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
-                        constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
+                        constant: Constant = .zero, multiplier: CGFloat = 1.0,
                         priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         if withinGuides {
@@ -88,7 +88,7 @@ public extension Constrictable where Self: UIView {
      */
 
     @discardableResult
-    func constrictEdgesToParent(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0,
+    func constrictEdgesToParent(_ relation: NSLayoutRelation = .equal, constant: Constant = .zero,
                                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required,
                                    withinGuides: Bool = true) -> Self {
 

@@ -47,7 +47,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrict(.top, to: viewController, attribute: .top, constant: Constants.constant)
+        aView.constrict(.top, to: viewController, attribute: .top, constant: .top(Constants.constant))
             .constrict(.bottom, to: viewController, attribute: .bottom, multiplier: Constants.multiplier)
             .constrict(.trailing, relation: .greaterThanOrEqual, to: viewController, attribute: .trailing)
             .constrict(.leading, to: viewController, attribute: .leading)
@@ -115,17 +115,17 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         // Setup aView
         viewController.view.addSubview(aView)
-        aView.constrict(.centerX, to: viewController, attribute: .centerX, constant: Constants.constant)
+        aView.constrict(.centerX, to: viewController, attribute: .centerX, constant: .x(Constants.constant))
             .constrict(.centerY, to: viewController, attribute: .centerY)
-            .constrict(.width, constant: Constants.constant)
-            .constrict(.height, constant: Constants.constant)
+            .constrict(.width, constant: .width(Constants.constant))
+            .constrict(.height, constant: .height(Constants.constant))
 
         // Setup bView
         viewController.view.addSubview(bView)
         bView.constrict(.centerY, to: aView, attribute: .centerY)
             .constrict(.width, to: aView, attribute: .width)
-            .constrict(.height, constant: Constants.constant)
-            .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: Constants.constant)
+            .constrict(.height, constant: .height(Constants.constant))
+            .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: .trailing(Constants.constant))
 
         // Test aView
         XCTAssertEqual(viewController.view.constraints.count, 5)
@@ -180,15 +180,15 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         viewController.view.addSubview(aView)
         aView.constrict(.centerX, to: viewController, attribute: .centerXGuide)
             .constrict(.centerY, to: viewController, attribute: .centerY)
-            .constrict(.width, constant: Constants.constant)
-            .constrict(.height, constant: Constants.constant)
+            .constrict(.width, constant: .width(Constants.constant))
+            .constrict(.height, constant: .height(Constants.constant))
         
         // Setup bView
         viewController.view.addSubview(bView)
         bView.constrict(.centerY, to: aView, attribute: .centerY)
             .constrict(.width, to: aView, attribute: .width)
-            .constrict(.height, constant: Constants.constant)
-            .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: Constants.constant)
+            .constrict(.height, constant: .height(Constants.constant))
+            .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: .trailing(Constants.constant))
 
         // Test aView
 
@@ -241,7 +241,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, attributes: .top, .bottom, constant: Constants.constant)
+        aView.constrictToController(viewController, attributes: .top, .bottom, constant: .top(Constants.constant) & .bottom(Constants.constant))
 
         // Tests
         XCTAssertEqual(viewController.view.constraints.count, 2)
@@ -286,7 +286,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictToParent(attributes: .top, .bottom, constant: Constants.constant)
+        bView.constrictToParent(attributes: .top, .bottom, constant: .top(Constants.constant) & .bottom(Constants.constant))
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
@@ -328,7 +328,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrict(attributes: .width, .height, constant: Constants.constant)
+        aView.constrict(attributes: .width, .height, constant: .width(Constants.constant) & .height(Constants.constant))
 
         // Tests
         let widthConstraints = aView.findConstraints(for: .width, relatedTo: aView)
