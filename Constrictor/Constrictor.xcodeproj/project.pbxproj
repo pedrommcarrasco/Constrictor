@@ -18,6 +18,7 @@
 		20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */; };
 		20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
+		534B3A8D2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */; };
 		539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */; };
 		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
 		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 		20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorCenter.swift"; sourceTree = "<group>"; };
 		20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
+		534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLayoutAttributesDecoder.swift; sourceTree = "<group>"; };
 		539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdgesTests.swift"; sourceTree = "<group>"; };
 		53CB882220B4618B002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		534B3A8B2139C61E009D9F74 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
 		53CB882120B46176002731A6 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				534B3A8B2139C61E009D9F74 /* Handlers */,
 				205B528520BADF290016C8B8 /* Protocols */,
 				205B528420BADF220016C8B8 /* Enumerations */,
 				53CB882120B46176002731A6 /* Structs */,
@@ -346,6 +357,7 @@
 			files = (
 				20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */,
 				205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */,
+				534B3A8D2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift in Sources */,
 				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */,
