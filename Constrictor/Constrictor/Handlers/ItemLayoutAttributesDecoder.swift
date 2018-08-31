@@ -30,13 +30,13 @@ struct ItemLayoutAttributesDecoder {
         var itemLayoutAttributeTuple: (item: Any?, layoutAttribute: NSLayoutAttribute, constant: CGFloat) = (nil, .notAnAttribute, 0.0)
 
         if let view = item as? UIView {
-            itemLayoutAttributeTuple = itemLayoutAttribute(for: view, with: attribute, and: constant)
+            itemLayoutAttributeTuple = itemLayoutAttribute(view: view, with: attribute, and: constant)
 
         } else if let viewController = item as? UIViewController {
-            itemLayoutAttributeTuple = itemLayoutAttribute(for: viewController, with: attribute, and: constant)
+            itemLayoutAttributeTuple = itemLayoutAttribute(viewController: viewController, with: attribute, and: constant)
 
         } else if let layoutGuide = item as? UILayoutGuide {
-            itemLayoutAttributeTuple = itemLayoutAttribute(for: layoutGuide, with: attribute, and: constant)
+            itemLayoutAttributeTuple = itemLayoutAttribute(layoutGuide: layoutGuide, with: attribute, and: constant)
         }
 
         return itemLayoutAttributeTuple
@@ -45,7 +45,7 @@ struct ItemLayoutAttributesDecoder {
 
 
 // MARK: - Private Functions
-private extension ConstrictorAttribute {
+private extension ItemLayoutAttributesDecoder {
 
     /**
      Converts ConstrictorAttribute to NSLayoutAttribute based on an UILayoutGuite
@@ -57,7 +57,7 @@ private extension ConstrictorAttribute {
      Tuple containing the item to apply a constraint and its attribute.
      */
 
-    static func itemLayoutAttribute(for layoutGuide: UILayoutGuide,
+    static func itemLayoutAttribute(layoutGuide: UILayoutGuide,
                                     with attribute: ConstrictorAttribute,
                                     and constantStruct: Constant) -> (item: Any?, layoutAttribute: NSLayoutAttribute, constant: CGFloat) {
 
@@ -76,8 +76,8 @@ private extension ConstrictorAttribute {
      Tuple containing the item to apply a constraint and its attribute.
      */
 
-    static func itemLayoutAttribute(for view: UIView,
-                                    for attribute: ConstrictorAttribute,
+    static func itemLayoutAttribute(view: UIView,
+                                    with attribute: ConstrictorAttribute,
                                     and constantStruct: Constant) -> (item: Any?, layoutAttribute: NSLayoutAttribute, constant: CGFloat) {
 
         let safeArea: Any
@@ -103,7 +103,7 @@ private extension ConstrictorAttribute {
      Tuple containing the item to apply a constraint and its attribute.
      */
 
-    static func itemLayoutAttribute(for viewController: UIViewController,
+    static func itemLayoutAttribute(viewController: UIViewController,
                                     with constrictorAttribute: ConstrictorAttribute,
                                     and constantStruct: Constant) -> (item: Any?, layoutAttribute: NSLayoutAttribute, constant: CGFloat) {
 
@@ -191,7 +191,7 @@ private extension ConstrictorAttribute {
 }
 
 // MARK: - Utils
-private extension ConstrictorAttribute {
+private extension ItemLayoutAttributesDecoder {
 
     static func defaultLayoutAttributeAndConstant(for constrictorAttribute: ConstrictorAttribute,
                                                   with constantStruct: Constant) -> (attribute: NSLayoutAttribute, constant: CGFloat) {
