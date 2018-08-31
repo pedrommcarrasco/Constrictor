@@ -270,11 +270,11 @@ private extension ConstrictorAttribute {
             
         case .bottom, .bottomGuide:
             attribute = .bottom
-            constant = constantStruct.bottom
+            constant = -constantStruct.bottom
             
         case .right, .rightGuide:
             attribute = .right
-            constant = constantStruct.right
+            constant = -constantStruct.right
             
         case .left, .leftGuide:
             attribute = .left
@@ -286,7 +286,7 @@ private extension ConstrictorAttribute {
             
         case .trailing, .trailingGuide:
             attribute = .trailing
-            constant = constantStruct.trailing
+            constant = -constantStruct.trailing
             
         case .centerX, .centerXGuide:
             attribute = .centerX
