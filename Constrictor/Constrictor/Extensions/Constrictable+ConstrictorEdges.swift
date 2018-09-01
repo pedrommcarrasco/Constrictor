@@ -57,14 +57,15 @@ public extension Constrictable {
                         priority: UILayoutPriority = .required, withinGuides: Bool = true) -> Self {
         
         if withinGuides {
-            constrict(relation, to: item,
+
+            constrict(as: relation, to: item,
                       attributes: .topGuide, .bottomGuide, .leadingGuide, .trailingGuide,
-                      constant: constant, multiplier: multiplier, priority: priority)
+                      with: constant, multipliedBy: multiplier, prioritizedAs: priority)
             
         } else {
-            constrict(relation, to: item,
+            constrict(as: relation, to: item,
                       attributes: .top, .bottom, .leading, .trailing,
-                      constant: constant, multiplier: multiplier, priority: priority)
+                      with: constant, multipliedBy: multiplier, prioritizedAs: priority)
         }
         
         return self

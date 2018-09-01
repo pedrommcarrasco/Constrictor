@@ -25,11 +25,11 @@ public extension Constrictable {
      - returns:
      Discardable UIView to allow function's chaining.
      */
-    
+
     @discardableResult
-    func constrictToController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
-                               attributes: ConstrictorAttribute ..., constant: Constant = .zero,
-                               multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> Self {
+    func constrictToController(_ viewController: UIViewController, as relation: NSLayoutRelation = .equal,
+                               to attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
+                               multipliedBy multiplier: CGFloat = 1.0, prioritizedAs priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
             self.constrict($0, relation: relation, to: viewController, attribute: $0,
@@ -55,9 +55,9 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(_ relation: NSLayoutRelation = .equal, to item: Constrictable? = nil,
-                   attributes: ConstrictorAttribute ..., constant: Constant = .zero,
-                   multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> Self {
+    func constrict(as relation: NSLayoutRelation = .equal, to item: Constrictable? = nil,
+                   attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
+                   multipliedBy multiplier: CGFloat = 1.0, prioritizedAs priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
             if let item = item {
@@ -87,10 +87,10 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
+    func constrict(_ selfAttribute: ConstrictorAttribute, as relation: NSLayoutRelation = .equal,
                    to item: Constrictable? = nil, attribute: ConstrictorAttribute = .none,
-                   constant: CGFloat = 0.0, multiplier: CGFloat = 1.0,
-                   priority: UILayoutPriority = .required) -> Self {
+                   with constant: CGFloat = 0.0, multipliedBy multiplier: CGFloat = 1.0,
+                   prioritizedAs priority: UILayoutPriority = .required) -> Self {
 
 
         let constant = Constant(attribute: selfAttribute, value: constant)
@@ -124,9 +124,9 @@ public extension Constrictable where Self: UIView {
      */
     
     @discardableResult
-    func constrictToParent(_ relation: NSLayoutRelation = .equal,
+    func constrictToParent(as relation: NSLayoutRelation = .equal,
                            attributes: ConstrictorAttribute ..., constant: Constant = .zero,
-                           multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) -> Self {
+                           multipliedBy multiplier: CGFloat = 1.0, prioritizedAs priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
             if let parent = self.superview {
