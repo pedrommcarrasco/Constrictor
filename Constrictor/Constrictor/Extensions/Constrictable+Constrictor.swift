@@ -127,14 +127,14 @@ public extension Constrictable where Self: UIView {
     
     @discardableResult
     func constrictToParent(as relation: NSLayoutRelation = .equal,
-                           attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
-                           multiplyBy multiplier: CGFloat = 1.0, prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                           attributes: ConstrictorAttribute ...,
+                           with constant: Constant = .zero,
+                           multiplyBy multiplier: CGFloat = 1.0,
+                           prioritizeAs priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
             if let parent = self.superview {
                 constrict($0, relation: relation, to: parent, attribute: $0, constant: constant, multiplier: multiplier, priority: priority)
-            } else {
-                constrict($0, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
             }
         }
         
