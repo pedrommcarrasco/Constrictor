@@ -48,7 +48,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.constrict(.top, to: viewController, attribute: .top, with: Constants.constant)
-            .constrict(.bottom, to: viewController, attribute: .bottom, multipliedBy: Constants.multiplier)
+            .constrict(.bottom, to: viewController, attribute: .bottom, multiplyBy: Constants.multiplier)
             .constrict(.trailing, as: .greaterThanOrEqual, to: viewController, attribute: .trailing)
             .constrict(.leading, to: viewController, attribute: .leading)
 
@@ -263,7 +263,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, to: .topGuide, .leadingGuide, multipliedBy: Constants.multiplier)
+        aView.constrictToController(viewController, to: .topGuide, .leadingGuide, multiplyBy: Constants.multiplier)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -286,7 +286,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictToParent(attributes: .top, .bottom, constant: .top(Constants.constant) & .bottom(Constants.constant))
+        bView.constrictToParent(attributes: .top, .bottom, with: .top(Constants.constant) & .bottom(Constants.constant))
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
@@ -307,7 +307,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictToParent(attributes: .topGuide, .bottomGuide, multipliedBy: Constants.multiplier)
+        bView.constrictToParent(attributes: .topGuide, .bottomGuide, multiplyBy: Constants.multiplier)
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
