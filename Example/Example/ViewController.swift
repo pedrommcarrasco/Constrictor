@@ -39,7 +39,8 @@ class ViewController: UIViewController {
         redView.addSubview(blueView)
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
-        blueView.constrict(attributes: .width, .height, constant: 75.0)
+
+        blueView.constrict(attributes: .width, with: .all(75))
             .constrictCenterInController(self)
 
         // ** Green View **
@@ -50,6 +51,6 @@ class ViewController: UIViewController {
         // Constraints -> Same width, height and centerY of blueView, greenView at the left of blueView with a spacing of 8
         greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
             .constrictToParent(attributes: .height)
-            .constrict(.trailing, to: blueView, attribute: .leading, constant: 8)
+            .constrict(.trailing, to: blueView, attribute: .leading, with: 8)
     }
 }
