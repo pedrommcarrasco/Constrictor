@@ -30,6 +30,11 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
     }
 
     // MARK:  Test - itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute)
+    func testItemLayoutAttributeForUIViewNone() {
+
+        test(view, for: .none, expectedAttribute: .notAnAttribute, constant: .all(Constants.constant), expectedConstant: 0.0)
+    }
+
     func testItemLayoutAttributeForUIViewTop() {
 
         test(view, for: .top, expectedAttribute: .top, constant: .all(Constants.constant), expectedConstant: Constants.constant)
@@ -298,6 +303,11 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
     func testItemLayoutAttributeForUIViewControllerHeight() {
 
         test(viewController, for: .height, expectedAttribute: .height, constant: .all(Constants.constant), expectedConstant: Constants.constant)
+    }
+
+    func testItemLayoutAttributeForUIViewControllerNone() {
+
+        test(viewController, for: .none, expectedAttribute: .notAnAttribute, constant: .all(Constants.constant), expectedConstant: 0.0)
     }
 }
 
