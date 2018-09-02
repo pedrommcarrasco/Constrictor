@@ -19,7 +19,7 @@ import UIKit
 import UIKit
 
 // MARK: - Constant
-public struct Constant {
+public struct Constant: Equatable {
     
     let x: CGFloat
     let y: CGFloat
@@ -74,7 +74,7 @@ public extension Constant {
     }
     
     static func top(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: value, bottom: 0.0,
                         right: 0.0, left: 0.0,
                         leading: 0.0, trailing: 0.0,
@@ -82,7 +82,7 @@ public extension Constant {
     }
     
     static func bottom(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: value,
                         right: 0.0, left: 0.0,
                         leading: 0.0, trailing: 0.0,
@@ -90,7 +90,7 @@ public extension Constant {
     }
     
     static func leading(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
                         right: 0.0, left: 0.0,
                         leading: value, trailing: 0.0,
@@ -98,7 +98,7 @@ public extension Constant {
     }
     
     static func trailing(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
                         right: 0.0, left: 0.0,
                         leading: 0.0, trailing: value,
@@ -106,7 +106,7 @@ public extension Constant {
     }
     
     static func right(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
                         right: value, left: 0.0,
                         leading: 0.0, trailing: 0.0,
@@ -114,7 +114,7 @@ public extension Constant {
     }
     
     static func left(_ value: CGFloat) -> Constant {
-        return Constant(x: 0.0, y: value,
+        return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
                         right: 0.0, left: value,
                         leading: 0.0, trailing: 0.0,
@@ -124,7 +124,7 @@ public extension Constant {
     static func width(_ value: CGFloat) -> Constant {
         return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
-                        right: value, left: 0.0,
+                        right: 0.0, left: 0.0,
                         leading: 0.0, trailing: 0.0,
                         width: value, height: 0.0)
     }
@@ -132,7 +132,7 @@ public extension Constant {
     static func height(_ value: CGFloat) -> Constant {
         return Constant(x: 0.0, y: 0.0,
                         top: 0.0, bottom: 0.0,
-                        right: 0.0, left: value,
+                        right: 0.0, left: 0.0,
                         leading: 0.0, trailing: 0.0,
                         width: 0.0, height: value)
     }

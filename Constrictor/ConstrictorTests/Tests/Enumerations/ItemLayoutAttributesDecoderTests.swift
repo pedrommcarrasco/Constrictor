@@ -9,6 +9,7 @@
 import XCTest
 @testable import Constrictor
 
+// MARK: - ItemLayoutrAttributesDecoderTests
 class ItemLayoutrAttributesDecoderTests: XCTestCase {
 
     private var view: UIView!
@@ -28,8 +29,12 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
         viewController = UIViewController()
         layoutGuide = UILayoutGuide()
     }
+}
 
-    // MARK:  Test - itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute)
+// MARK: - Tests
+extension ItemLayoutrAttributesDecoderTests {
+
+    // MARK:  itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute)
     func testItemLayoutAttributeForUIViewNone() {
 
         test(view, for: .none, expectedAttribute: .notAnAttribute, constant: .all(Constants.constant), expectedConstant: 0.0)
@@ -311,6 +316,7 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
     }
 }
 
+// MARK: - Utils
 private extension ItemLayoutrAttributesDecoderTests {
 
     func test(_ view: UIView,
