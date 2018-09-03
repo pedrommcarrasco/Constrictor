@@ -14,22 +14,23 @@
 		205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */; };
 		205B528720BADF330016C8B8 /* Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B528620BADF330016C8B8 /* Constrictable.swift */; };
 		205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */; };
-		20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */; };
-		20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */; };
-		20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */; };
+		20BC12FD20B98A240034207F /* Constrictable+ConstrictorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC12FC20B98A240034207F /* Constrictable+ConstrictorCore.swift */; };
+		20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */; };
+		20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
+		534B3A8D2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */; };
+		537F0042213B424300BC0354 /* ConstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537F0041213B424300BC0354 /* ConstantTests.swift */; };
 		539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */; };
 		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
 		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */; };
+		53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */; };
-		53D8199B20B594AB00E62D1E /* ConstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199A20B594AB00E62D1E /* ConstantTests.swift */; };
 		53D819A220B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A120B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift */; };
 		53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A320B5A4E700E62D1E /* ConstraintIndex.swift */; };
 		53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A520B5A58800E62D1E /* UIView+Finder.swift */; };
 		53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */; };
-		53ED274920BC012C00038282 /* ConstrictorAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED274820BC012C00038282 /* ConstrictorAttributeTests.swift */; };
+		53ED274920BC012C00038282 /* ItemLayoutAttributesDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED274820BC012C00038282 /* ItemLayoutAttributesDecoderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,25 +51,26 @@
 		205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Constrictable.swift"; sourceTree = "<group>"; };
 		205B528620BADF330016C8B8 /* Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrictable.swift; sourceTree = "<group>"; };
 		205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Constrictable.swift"; sourceTree = "<group>"; };
-		20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCore.swift"; sourceTree = "<group>"; };
-		20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenter.swift"; sourceTree = "<group>"; };
-		20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdges.swift"; sourceTree = "<group>"; };
+		20BC12FC20B98A240034207F /* Constrictable+ConstrictorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorCore.swift"; sourceTree = "<group>"; };
+		20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorCenter.swift"; sourceTree = "<group>"; };
+		20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
+		534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLayoutAttributesDecoder.swift; sourceTree = "<group>"; };
+		537F0041213B424300BC0354 /* ConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTests.swift; sourceTree = "<group>"; };
 		539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdgesTests.swift"; sourceTree = "<group>"; };
 		53CB882220B4618B002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C120B3201E007E4AE0 /* Constrictor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constrictor.h; sourceTree = "<group>"; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
+		53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+Constrictor.swift"; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D8198B20B57C0B00E62D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorTests.swift"; sourceTree = "<group>"; };
-		53D8199A20B594AB00E62D1E /* ConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTests.swift; sourceTree = "<group>"; };
 		53D819A120B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAttribute+Finder.swift"; sourceTree = "<group>"; };
 		53D819A320B5A4E700E62D1E /* ConstraintIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintIndex.swift; sourceTree = "<group>"; };
 		53D819A520B5A58800E62D1E /* UIView+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Finder.swift"; sourceTree = "<group>"; };
 		53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintTestable.swift; sourceTree = "<group>"; };
-		53ED274820BC012C00038282 /* ConstrictorAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAttributeTests.swift; sourceTree = "<group>"; };
+		53ED274820BC012C00038282 /* ItemLayoutAttributesDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLayoutAttributesDecoderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,16 +111,24 @@
 		20D1F2B820B3501400B327B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				53CDE3CC20B3204D007E4AE0 /* UIView+Constrictor.swift */,
-				20BC12FC20B98A240034207F /* UIView+ConstrictorCore.swift */,
-				20D1F2BB20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift */,
-				20D1F2BD20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift */,
+				53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */,
+				20BC12FC20B98A240034207F /* Constrictable+ConstrictorCore.swift */,
+				20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */,
+				20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */,
 				205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */,
 				205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */,
 				205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */,
 				20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		534B3A8B2139C61E009D9F74 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				534B3A8C2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 		53CB882120B46176002731A6 /* Structs */ = {
@@ -150,6 +160,7 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				534B3A8B2139C61E009D9F74 /* Handlers */,
 				205B528520BADF290016C8B8 /* Protocols */,
 				205B528420BADF220016C8B8 /* Enumerations */,
 				53CB882120B46176002731A6 /* Structs */,
@@ -196,7 +207,7 @@
 		53D8199920B5949900E62D1E /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				53D8199A20B594AB00E62D1E /* ConstantTests.swift */,
+				537F0041213B424300BC0354 /* ConstantTests.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -229,7 +240,7 @@
 		53ED274720BC011800038282 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
-				53ED274820BC012C00038282 /* ConstrictorAttributeTests.swift */,
+				53ED274820BC012C00038282 /* ItemLayoutAttributesDecoderTests.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -344,15 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D1F2BC20B35D4C00B327B7 /* UIView+ConstrictorCenter.swift in Sources */,
+				20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */,
 				205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */,
+				534B3A8D2139C680009D9F74 /* ItemLayoutAttributesDecoder.swift in Sources */,
 				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
-				53CDE3CD20B3204D007E4AE0 /* UIView+Constrictor.swift in Sources */,
+				53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */,
 				205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */,
-				20D1F2BE20B35FBC00B327B7 /* UIView+ConstrictorEdges.swift in Sources */,
+				20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */,
 				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
-				20BC12FD20B98A240034207F /* UIView+ConstrictorCore.swift in Sources */,
+				20BC12FD20B98A240034207F /* Constrictable+ConstrictorCore.swift in Sources */,
 				53CB882320B4618B002731A6 /* Constant.swift in Sources */,
 				20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */,
 			);
@@ -363,12 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */,
+				537F0042213B424300BC0354 /* ConstantTests.swift in Sources */,
 				20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */,
 				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
 				20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */,
 				53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */,
-				53ED274920BC012C00038282 /* ConstrictorAttributeTests.swift in Sources */,
-				53D8199B20B594AB00E62D1E /* ConstantTests.swift in Sources */,
+				53ED274920BC012C00038282 /* ItemLayoutAttributesDecoderTests.swift in Sources */,
 				53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */,
 				539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */,
 				53D819A220B5A2CE00E62D1E /* NSLayoutAttribute+Finder.swift in Sources */,
@@ -513,10 +525,10 @@
 			buildSettings = {
 				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7GE4Q65N57;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -530,6 +542,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.Constrictor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -542,10 +555,10 @@
 			buildSettings = {
 				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7GE4Q65N57;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -559,6 +572,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrommcarrasco.Constrictor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

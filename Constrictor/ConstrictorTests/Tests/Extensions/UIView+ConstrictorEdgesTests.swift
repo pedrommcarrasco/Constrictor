@@ -8,19 +8,19 @@
 
 import XCTest
 
+// MARK: - UIViewConstrictorEdgesTests
 class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 
     // MARK: Constants
-    enum Constants {
-
+    private enum Constants {
         static let constant: CGFloat = 50.0
         static let multiplier: CGFloat = 0.5
     }
 
     // MARK: Properties
-    var viewController: UIViewController!
-    var aView: UIView!
-    var bView: UIView!
+    private var viewController: UIViewController!
+    private var aView: UIView!
+    private var bView: UIView!
 
     // MARK: Lifecycle
     override func setUp() {
@@ -32,21 +32,17 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         viewController = UIViewController()
         viewController.loadViewIfNeeded()
     }
+}
 
-    override func tearDown() {
+// MARK: - Tests
+extension UIViewConstrictorEdgesTests {
 
-        aView = nil
-        bView = nil
-
-        super.tearDown()
-    }
-
-    // MARK: Test - constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+    // MARK: constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
     func testConstrictEdgesToViewControllerGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToViewController(viewController)
+        aView.constrictEdgesToController(viewController)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -75,7 +71,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToViewController(viewController, withinGuides: false)
+        aView.constrictEdgesToController(viewController, withinGuides: false)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -100,13 +96,13 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         testConstraint(trailingConstraint)
     }
 
-    // MARK: Test - constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
+    // MARK: constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
     func testConstrictEdgesToSuperViewGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictEdgesToSuperview()
+        bView.constrictEdgesToParent()
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
@@ -136,7 +132,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictEdgesToSuperview(withinGuides: false)
+        bView.constrictEdgesToParent(withinGuides: false)
 
         // Tests
         let topConstraints = aView.findConstraints(for: .top, relatedTo: bView)
@@ -161,7 +157,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
         testConstraint(trailingConstraint)
     }
 
-    // MARK: Test - constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable, ...
+    // MARK: constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable, ...
     func testConstrictEdgesGuided() {
 
         // Setup

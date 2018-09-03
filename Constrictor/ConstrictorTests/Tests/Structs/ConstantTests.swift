@@ -2,135 +2,264 @@
 //  ConstantTests.swift
 //  ConstrictorTests
 //
-//  Created by Pedro Carrasco on 23/05/2018.
+//  Created by Pedro Carrasco on 01/09/2018.
 //  Copyright © 2018 Pedro Carrasco. All rights reserved.
 //
 
 import XCTest
 @testable import Constrictor
 
+// MARK: - ConstantTests
 class ConstantTests: XCTestCase {
 
-    // MARK:  Constants
-    enum Constants {
-        static let value: CGFloat = 10.0
-
-        static let normalizedValue: CGFloat = 10.0
-        static let invertedNormalizedValue: CGFloat = -10.0
+    // MARK: Constants
+    private enum Constants {
+        static let value: CGFloat = 50.0
     }
 
-    // MARK:  Test - normalizeConstant(for attribute: NSLayoutAttribute, value: CGFloat) -> CGFloat
-    func testNormalizeConstantForLeading() {
-
-        testNormalizeConstant(for: .leading, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForTrailing() {
-
-        testNormalizeConstant(for: .trailing, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForTop() {
-
-        testNormalizeConstant(for: .top, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForBottom() {
-
-        testNormalizeConstant(for: .bottom, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForLeft() {
-
-        testNormalizeConstant(for: .left, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForRight() {
-
-        testNormalizeConstant(for: .right, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForLeadingMargin() {
-
-        testNormalizeConstant(for: .leadingMargin, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForTrailingMargin() {
-
-        testNormalizeConstant(for: .trailingMargin, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForTopMargin() {
-
-        testNormalizeConstant(for: .topMargin, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForBottomMargin() {
-
-        testNormalizeConstant(for: .bottomMargin, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForLeftMargin() {
-
-        testNormalizeConstant(for: .leftMargin, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForRightMargin() {
-
-        testNormalizeConstant(for: .rightMargin, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForCenterY() {
-
-        testNormalizeConstant(for: .centerY, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForCenterX() {
-
-        testNormalizeConstant(for: .centerX, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForCenterXWithinMargins() {
-
-        testNormalizeConstant(for: .centerXWithinMargins, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForCenterYWithinMargins() {
-
-        testNormalizeConstant(for: .centerYWithinMargins, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForHeight() {
-
-        testNormalizeConstant(for: .height, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForWidth() {
-
-        testNormalizeConstant(for: .width, value: Constants.value, expectedResult: Constants.normalizedValue)
-    }
-
-    func testNormalizeConstantForFirstBaseline() {
-
-        testNormalizeConstant(for: .firstBaseline, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForLastBaseline() {
-
-        testNormalizeConstant(for: .lastBaseline, value: Constants.value, expectedResult: Constants.invertedNormalizedValue)
-    }
-
-    func testNormalizeConstantForNotAnAttribute() {
-
-        testNormalizeConstant(for: .notAnAttribute, value: Constants.value, expectedResult: Constants.normalizedValue)
+    // MARK: ExpectedResult
+    private enum ExpectedResult {
+        static let x = Constant(x: Constants.value, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let y = Constant(x: 0.0, y: Constants.value, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let top = Constant(x: 0.0, y: 0.0, top: Constants.value, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let bottom = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: Constants.value, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let right = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: Constants.value, left: 0.0,leading: 0.0, trailing: 0.0,width: 0.0, height: 0.0)
+        static let left = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: Constants.value, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let leading = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: Constants.value, trailing: 0.0, width: 0.0, height: 0.0)
+        static let trailing = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: Constants.value, width: 0.0, height: 0.0)
+        static let width = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: Constants.value, height: 0.0)
+        static let height = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: Constants.value)
+        static let zero = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let all = Constant(x: Constants.value, y: Constants.value, top: Constants.value, bottom: Constants.value,
+                                  right: Constants.value, left: Constants.value, leading: Constants.value, trailing: Constants.value,
+                                  width: Constants.value, height: Constants.value)
     }
 }
 
-private extension ConstantTests {
+// MARK: - Tests
+extension ConstantTests {
 
-    func testNormalizeConstant(for attribute: NSLayoutAttribute, value: CGFloat, expectedResult: CGFloat) {
+    // MARK: init(attribute: ConstrictorAttribute, value: CGFloat)
+    func testInitTop() {
 
-        let result = Constant.normalizeConstant(for: attribute, value: value)
+        let expectedResult = ExpectedResult.top
+        let result = Constant(attribute: .top, value: Constants.value)
+        let resultGuided = Constant(attribute: .topGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitBottom() {
+
+        let expectedResult = ExpectedResult.bottom
+        let result = Constant(attribute: .bottom, value: Constants.value)
+        let resultGuided = Constant(attribute: .bottomGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitLeading() {
+
+        let expectedResult = ExpectedResult.leading
+        let result = Constant(attribute: .leading, value: Constants.value)
+        let resultGuided = Constant(attribute: .leadingGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitTrailing() {
+
+        let expectedResult = ExpectedResult.trailing
+        let result = Constant(attribute: .trailing, value: Constants.value)
+        let resultGuided = Constant(attribute: .trailingGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitRight() {
+
+        let expectedResult = ExpectedResult.right
+        let result = Constant(attribute: .right, value: Constants.value)
+        let resultGuided = Constant(attribute: .rightGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitLeft() {
+
+        let expectedResult = ExpectedResult.left
+        let result = Constant(attribute: .left, value: Constants.value)
+        let resultGuided = Constant(attribute: .leftGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitCenterX() {
+
+        let expectedResult = ExpectedResult.x
+        let result = Constant(attribute: .centerX, value: Constants.value)
+        let resultGuided = Constant(attribute: .centerXGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitCenterY() {
+
+        let expectedResult = ExpectedResult.y
+        let result = Constant(attribute: .centerY, value: Constants.value)
+        let resultGuided = Constant(attribute: .centerYGuide, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(resultGuided, expectedResult)
+    }
+
+    func testInitWidth() {
+
+        let expectedResult = ExpectedResult.width
+        let result = Constant(attribute: .width, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    func testInitHeight() {
+
+        let expectedResult = ExpectedResult.height
+        let result = Constant(attribute: .height, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    func testNone() {
+
+        let expectedResult = ExpectedResult.zero
+        let result = Constant(attribute: .none, value: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: x(_ value: CGFloat) -> Constant
+    func testX() {
+
+        let expectedResult = ExpectedResult.x
+        let result = Constant.x(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: y(_ value: CGFloat) -> Constant
+    func testY() {
+
+        let expectedResult = ExpectedResult.y
+        let result = Constant.y(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: top(_ value: CGFloat) -> Constant
+    func testTop() {
+
+        let expectedResult = ExpectedResult.top
+        let result = Constant.top(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: bottom(_ value: CGFloat) -> Constant
+    func testBottom() {
+
+        let expectedResult = ExpectedResult.bottom
+        let result = Constant.bottom(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: right(_ value: CGFloat) -> Constant
+    func testRight() {
+
+        let expectedResult = ExpectedResult.right
+        let result = Constant.right(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: left(_ value: CGFloat) -> Constant
+    func testLeft() {
+
+        let expectedResult = ExpectedResult.left
+        let result = Constant.left(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: leading(_ value: CGFloat) -> Constant
+    func testLeading() {
+
+        let expectedResult = ExpectedResult.leading
+        let result = Constant.leading(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: trailing(_ value: CGFloat) -> Constant
+    func testTrailing() {
+
+        let expectedResult = ExpectedResult.trailing
+        let result = Constant.trailing(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: width(_ value: CGFloat) -> Constant
+    func testWidth() {
+
+        let expectedResult = ExpectedResult.width
+        let result = Constant.width(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: height(_ value: CGFloat) -> Constant
+    func testHeight() {
+
+        let expectedResult = ExpectedResult.height
+        let result = Constant.height(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: all(_ value: CGFloat) -> Constant
+    func testAll() {
+
+        let expectedResult = ExpectedResult.all
+        let result = Constant.all(Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: .zero: Constant
+    func testZero() {
+
+        let expectedResult = ExpectedResult.zero
+        let result = Constant.zero
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    // MARK: & (lhs: Constant, rhs: Constant) -> Constant
+    func testAnd() {
+
+        let expectedResult = Constant(x: Constants.value, y: 0.0, top: Constants.value, bottom: Constants.value,
+                                      right: 0.0, left: Constants.value, leading: 0.0, trailing: Constants.value,
+                                      width: 0.0, height: Constants.value)
+        let result: Constant = .x(Constants.value) & .top(Constants.value) & .bottom(Constants.value)
+            & .left(Constants.value) & .trailing(Constants.value) & .height(Constants.value)
 
         XCTAssertEqual(result, expectedResult)
     }

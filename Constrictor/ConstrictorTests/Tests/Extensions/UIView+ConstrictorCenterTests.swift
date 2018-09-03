@@ -9,6 +9,7 @@
 import XCTest
 @testable import Constrictor
 
+// MARK: - UIViewConstrictorCenterTests
 class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
 
     // MARK: Constants
@@ -33,21 +34,17 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         viewController = UIViewController()
         viewController.loadViewIfNeeded()
     }
+}
 
-    override func tearDown() {
+// MARK: - Tests
+extension UIViewConstrictorCenterTests {
 
-        aView = nil
-        bView = nil
-
-        super.tearDown()
-    }
-
-    // MARK: Test - constrictCenterInViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal, ...
+    // MARK: constrictCenterInViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal, ...
     func testConstrictCenterInViewControllerWithConstantMultiplier() {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictCenterInViewController(viewController, constant: Constants.constant, multiplier: Constants.multiplier)
+        aView.constrictCenterInController(viewController, with: .all(Constants.constant), multiplyBy: Constants.multiplier)
 
         // Tests
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
@@ -62,34 +59,34 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         testConstraint(centerXConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
         testConstraint(centerYConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
     }
-    
+
     func testConstrictCenterInViewControllerWithoutGuides() {
-        
+
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictCenterInViewController(viewController, withinGuides: false)
-        
+        aView.constrictCenterInController(viewController, withinGuides: false)
+
         // Tests
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
-        
+
         XCTAssertEqual(centerXConstraints.count, 1)
         XCTAssertEqual(centerYConstraints.count, 1)
-        
+
         guard let centerXConstraint = centerXConstraints.first,
             let centerYConstraint = centerYConstraints.first else { return XCTFail() }
-        
+
         testConstraint(centerXConstraint)
         testConstraint(centerYConstraint)
     }
 
-    // MARK: Test - constrictCenterInSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
+    // MARK: constrictCenterInSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
     func testConstrictCenterInSuperViewWithConstantMultiplier() {
 
         // Setup
         viewController.view.addSubview(aView)
         aView.addSubview(bView)
-        bView.constrictCenterInSuperview(constant: Constants.constant, multiplier: Constants.multiplier)
+        bView.constrictCenterInParent(with: .all(Constants.constant), multiplyBy: Constants.multiplier)
 
         // Tests
         let centerXConstraints = aView.findConstraints(for: .centerX, relatedTo: bView)
@@ -105,7 +102,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
         testConstraint(centerYConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
     }
 
-    // MARK: Test - constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
+    // MARK: constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
     func testConstrictCenter() {
 
         // Setup
