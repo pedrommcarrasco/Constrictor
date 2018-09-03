@@ -9,11 +9,12 @@
 import UIKit
 import Constrictor
 
+
 class ViewController: UIViewController {
     
     let redView = UIView()
     let blueView = UIView()
-    let greenView = UIView()
+    let greenView = UIView() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         view.addSubview(redView)
 
         // Constraints -> Same dimensions of redview's superview
-        redView.constrictEdgesToViewController(self, withinGuides: false)
+        redView.constrictEdgesToController(self, withinGuides: false)
 
         // Or like it's done bellow
         /* redView.constrictToViewController(attributes: .top, .bottom, .leading, .trailing) */
@@ -38,8 +39,9 @@ class ViewController: UIViewController {
         redView.addSubview(blueView)
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
-        blueView.constrict(attributes: .width, .height, constant: 75.0)
-            .constrictCenterInViewController(self)
+
+        blueView.constrict(attributes: .width, with: .all(75))
+            .constrictCenterInController(self)
 
         // ** Green View **
         // Boilerplate
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
 
         // Constraints -> Same width, height and centerY of blueView, greenView at the left of blueView with a spacing of 8
         greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
-            .constrictToSuperview(attributes: .height)
-            .constrict(.trailing, to: blueView, attribute: .leading, constant: 8)
+            .constrictToParent(attributes: .height)
+            .constrict(.trailing, to: blueView, attribute: .leading, with: 8)
     }
 }

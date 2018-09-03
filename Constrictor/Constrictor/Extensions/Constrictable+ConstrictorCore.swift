@@ -1,5 +1,5 @@
 //
-//  UIView+ConstrictorCore.swift
+//  Constrictable+ConstrictorCore.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 26/05/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+extension Constrictable {
     
     /**
      Internal Constrictor's core method.
@@ -28,23 +28,25 @@ extension UIView {
      */
     
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
-                   to item: Constrictable, attribute: ConstrictorAttribute, constant: CGFloat = 0.0,
+                   to item: Constrictable, attribute: ConstrictorAttribute, constant: Constant,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
-        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
-        let secondItemLayoutAttribute = attribute.itemLayoutAttribute(for: item)
-        let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
-                                                            value: constant)
-        
-        translatesAutoresizingMaskIntoConstraints = false
+        let firstLayoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: self, with: selfAttribute, and: constant)
+        let secondLayoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: item, with: attribute, and: constant)
+
+        if let constrictableAsView = self as? UIView {
+
+            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
+        }
+
         
         NSLayoutConstraint(item: self,
-                           attribute: firstItemLayoutAttribute.layoutAttribute,
+                           attribute: firstLayoutAttributes.layoutAttribute,
                            relatedBy: relation,
-                           toItem: secondItemLayoutAttribute.item,
-                           attribute: secondItemLayoutAttribute.layoutAttribute,
+                           toItem: secondLayoutAttributes.item,
+                           attribute: secondLayoutAttributes.layoutAttribute,
                            multiplier: multiplier,
-                           constant: normalizedConstant).isActive = true
+                           constant: firstLayoutAttributes.constant).isActive = true
     }
     
     /**
@@ -63,20 +65,21 @@ extension UIView {
      */
     
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
-                   constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
+                   constant: Constant, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
-        let firstItemLayoutAttribute = selfAttribute.itemLayoutAttribute(for: self)
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        let normalizedConstant = Constant.normalizeConstant(for: firstItemLayoutAttribute.layoutAttribute,
-                                                            value: constant)
+        let layoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: self, with: selfAttribute, and: constant)
+
+        if let constrictableAsView = self as? UIView {
+
+            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint(item: self,
-                           attribute: firstItemLayoutAttribute.layoutAttribute,
+                           attribute: layoutAttributes.layoutAttribute,
                            relatedBy: relation,
                            toItem: nil,
                            attribute: .notAnAttribute,
                            multiplier: multiplier,
-                           constant: normalizedConstant).isActive = true
+                           constant: layoutAttributes.constant).isActive = true
     }
 }
