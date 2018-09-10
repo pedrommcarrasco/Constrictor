@@ -324,4 +324,4 @@ You can now do:
 let priority: UILayoutPriority = .defaultLow + 1
 ```
 
-There are two operators: **+ **(plus) and **-** (minus).
+There are two operators: **+** (plus) and **-** (minus).
