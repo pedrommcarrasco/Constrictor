@@ -60,7 +60,7 @@ greenView.backgroundColor = .green
 redView.addSubview(greenView)
 ```
 
-Down bellow, you'll see how you apply constraints with and without Constrictor.
+Bellow, there's a comparison on how to apply constraints with and without Constrictor. There's also a documentation dedicated page available [here](https://github.com/pedrommcarrasco/Constrictor/blob/master/DOCUMENTATION.md).
 
 ### How you're *probably* doing it without Constrictor 😰
 
@@ -128,7 +128,6 @@ There's a sample project in this repository called [Example](https://github.com/
 - [x] SafeAreas & LayoutGuides
 - [x] UILayoutPriority + and - operators
 - [ ] Save/return constraints so it's easier to support animations
-- [ ] More "short-syntax" methods (like edges & center)
 
 ## Contributing 🙌 
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
