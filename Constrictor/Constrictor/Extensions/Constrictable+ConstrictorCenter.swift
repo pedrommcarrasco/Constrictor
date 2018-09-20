@@ -28,7 +28,7 @@ public extension Constrictable {
     
     @discardableResult
     func constrictCenterInController(_ viewController: UIViewController,
-                                     as relation: NSLayoutRelation = .equal,
+                                     as relation: NSLayoutConstraint.Relation = .equal,
                                      with constant: Constant = .zero,
                                      multiplyBy multiplier: CGFloat = 1.0,
                                      prioritizeAs priority: UILayoutPriority = .required,
@@ -56,7 +56,7 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrictCenter(as relation: NSLayoutRelation = .equal,
+    func constrictCenter(as relation: NSLayoutConstraint.Relation = .equal,
                          to item: Constrictable,
                          with constant: Constant = .zero,
                          multiplyBy multiplier: CGFloat = 1.0,
@@ -95,7 +95,7 @@ public extension Constrictable where Self: UIView {
      */
     
     @discardableResult
-    func constrictCenterInParent(as relation: NSLayoutRelation = .equal,
+    func constrictCenterInParent(as relation: NSLayoutConstraint.Relation = .equal,
                                  with constant: Constant = .zero,
                                  multiplyBy multiplier: CGFloat = 1.0,
                                  prioritizeAs priority: UILayoutPriority = .required,

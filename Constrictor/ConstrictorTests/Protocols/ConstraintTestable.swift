@@ -15,7 +15,7 @@ extension ConstraintTestable where Self: XCTestCase {
     func testConstraint(_ constraint: NSLayoutConstraint,
                         constant: CGFloat = 0.0,
                         multiplier: CGFloat = 1.0,
-                        relation: NSLayoutRelation = .equal,
+                        relation: NSLayoutConstraint.Relation = .equal,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true) {
 

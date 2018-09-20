@@ -34,7 +34,7 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
 // MARK: - Tests
 extension ItemLayoutrAttributesDecoderTests {
 
-    // MARK:  itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutAttribute)
+    // MARK:  itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutConstraint.Attribute)
     func testItemLayoutAttributeForUIViewNone() {
 
         test(view, for: .none, expectedAttribute: .notAnAttribute, constant: .all(Constants.constant), expectedConstant: 0.0)
@@ -321,7 +321,7 @@ private extension ItemLayoutrAttributesDecoderTests {
 
     func test(_ view: UIView,
               for attribute: ConstrictorAttribute,
-              expectedAttribute: NSLayoutAttribute,
+              expectedAttribute: NSLayoutConstraint.Attribute,
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 
@@ -344,7 +344,7 @@ private extension ItemLayoutrAttributesDecoderTests {
 
     func test(_ layoutGuide: UILayoutGuide,
               for attribute: ConstrictorAttribute,
-              expectedAttribute: NSLayoutAttribute,
+              expectedAttribute: NSLayoutConstraint.Attribute,
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 
@@ -361,7 +361,7 @@ private extension ItemLayoutrAttributesDecoderTests {
 
     func test(_ viewController: UIViewController,
               for attribute: ConstrictorAttribute,
-              expectedAttribute: NSLayoutAttribute,
+              expectedAttribute: NSLayoutConstraint.Attribute,
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 

@@ -39,7 +39,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
 // MARK: - Tests
 extension UIViewConstrictorCenterTests {
 
-    // MARK: constrictCenterInViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal, ...
+    // MARK: constrictCenterInViewController(_ viewController: UIViewController, relation: NSLayoutConstraint.Relation = .equal, ...
     func testConstrictCenterInViewControllerWithConstantMultiplier() {
 
         // Setup
@@ -80,7 +80,7 @@ extension UIViewConstrictorCenterTests {
         testConstraint(centerYConstraint)
     }
 
-    // MARK: constrictCenterInSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
+    // MARK: constrictCenterInSuperview(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
     func testConstrictCenterInSuperViewWithConstantMultiplier() {
 
         // Setup
@@ -102,7 +102,7 @@ extension UIViewConstrictorCenterTests {
         testConstraint(centerYConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
     }
 
-    // MARK: constrictCenter(_ relation: NSLayoutRelation = .equal, to item: Constrictable,
+    // MARK: constrictCenter(_ relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable,
     func testConstrictCenter() {
 
         // Setup

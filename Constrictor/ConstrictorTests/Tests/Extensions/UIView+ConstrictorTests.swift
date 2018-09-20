@@ -38,7 +38,7 @@ class UIViewConstrictorTests: XCTestCase, ConstraintTestable {
 // MARK: - Tests
 extension UIViewConstrictorTests {
 
-    // MARK: constrict(_ relation: NSLayoutRelation = .equal, to item: Constrictable? = nil, ...
+    // MARK: constrict(_ relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable? = nil, ...
     func testConstrictAtEdges() {
 
         // Setup
@@ -232,7 +232,7 @@ extension UIViewConstrictorTests {
         testConstraint(bTrailingConstraint, constant: -Constants.constant, relation: .greaterThanOrEqual)
     }
 
-    // MARK:  constrictToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal, attributes: ConstrictorAttribute ..., ...
+    // MARK:  constrictToViewController(_ viewController: UIViewController, relation: NSLayoutConstraint.Relation = .equal, attributes: ConstrictorAttribute ..., ...
     func testConstrictToViewControllerAtTopBottomConstant() {
 
         // Setup
@@ -276,7 +276,7 @@ extension UIViewConstrictorTests {
         testConstraint(leadingConstraint, multiplier: Constants.multiplier)
     }
 
-    // MARK: constrictToSuperView(_ relation: NSLayoutRelation = .equal, attributes: ConstrictorAttribute ..., ...
+    // MARK: constrictToSuperView(_ relation: NSLayoutConstraint.Relation = .equal, attributes: ConstrictorAttribute ..., ...
     func testConstrictToSuperviewAtTopBottomConstant() {
 
         // Setup
@@ -319,7 +319,7 @@ extension UIViewConstrictorTests {
         testConstraint(bottomConstraint, multiplier: Constants.multiplier)
     }
 
-    // MARK: constrict(_ relation: NSLayoutRelation = .equal, to item: Constrictable? = nil
+    // MARK: constrict(_ relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable? = nil
     func testConstrictWidthHeight() {
 
         // Setup

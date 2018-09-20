@@ -28,7 +28,7 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrictToController(_ viewController: UIViewController, as relation: NSLayoutRelation = .equal,
+    func constrictToController(_ viewController: UIViewController, as relation: NSLayoutConstraint.Relation = .equal,
                                to attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
                                multiplyBy multiplier: CGFloat = 1.0, prioritizeAs priority: UILayoutPriority = .required) -> Self {
         
@@ -56,7 +56,7 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(as relation: NSLayoutRelation = .equal, to item: Constrictable? = nil,
+    func constrict(as relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable? = nil,
                    attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
                    multiplyBy multiplier: CGFloat = 1.0, prioritizeAs priority: UILayoutPriority = .required) -> Self {
         
@@ -88,7 +88,7 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(_ selfAttribute: ConstrictorAttribute, as relation: NSLayoutRelation = .equal,
+    func constrict(_ selfAttribute: ConstrictorAttribute, as relation: NSLayoutConstraint.Relation = .equal,
                    to item: Constrictable? = nil, attribute: ConstrictorAttribute = .none,
                    with constant: CGFloat = 0.0, multiplyBy multiplier: CGFloat = 1.0,
                    prioritizeAs priority: UILayoutPriority = .required) -> Self {
@@ -126,7 +126,7 @@ public extension Constrictable where Self: UIView {
      */
     
     @discardableResult
-    func constrictToParent(as relation: NSLayoutRelation = .equal,
+    func constrictToParent(as relation: NSLayoutConstraint.Relation = .equal,
                            attributes: ConstrictorAttribute ...,
                            with constant: Constant = .zero,
                            multiplyBy multiplier: CGFloat = 1.0,
