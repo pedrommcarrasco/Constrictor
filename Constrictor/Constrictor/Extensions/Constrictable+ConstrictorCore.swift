@@ -24,10 +24,10 @@ extension Constrictable {
         - priority: Constraint's priority
      
      This method's responsible for abstracting and invoking methods responsible of converting ConstrictorAttribute to
-     NSLayoutAttribute and normalizing the constant based on the selfAttribute
+     NSLayoutConstraint.Attribute and normalizing the constant based on the selfAttribute
      */
     
-    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
+    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutConstraint.Relation = .equal,
                    to item: Constrictable, attribute: ConstrictorAttribute, constant: Constant,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
@@ -61,10 +61,10 @@ extension Constrictable {
         - priority: Constraint's priority
      
      This method's responsible for abstracting and invoking methods responsible of converting ConstrictorAttribute to
-     NSLayoutAttribute and normalizing the constant based on the selfAttribute
+     NSLayoutConstraint.Attribute and normalizing the constant based on the selfAttribute
      */
     
-    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutRelation = .equal,
+    func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutConstraint.Relation = .equal,
                    constant: Constant, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
         
         let layoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: self, with: selfAttribute, and: constant)

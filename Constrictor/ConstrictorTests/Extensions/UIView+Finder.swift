@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
 
-    func findConstraints(for attribute: NSLayoutAttribute,
+    func findConstraints(for attribute: NSLayoutConstraint.Attribute,
                          relatedTo view: UIView? = nil,
                          at index: ConstraintIndex = .firstItem) -> [NSLayoutConstraint] {
 

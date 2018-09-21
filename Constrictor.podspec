@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.swift_version = "4.1"
+  s.swift_version = "4.2"
   s.name         = "Constrictor"
-  s.version      = "2.0.0"
+  s.version      = "3.0.0"
   s.summary      = "🐍 AutoLayout's µFramework"
 
   s.description  = "(Boe) Constrictor's AutoLayout µFramework with the goal of simplying your constraints by reducing the amount of code you have to write."
@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/pedrommcarrasco/Constrictor.git", :tag => s.version.to_s }
 
   s.source_files  = "Constrictor/Constrictor/**/*"
+  s.exclude_files = "Constrictor/Constrictor/*.plist"
 end

@@ -37,7 +37,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 // MARK: - Tests
 extension UIViewConstrictorEdgesTests {
 
-    // MARK: constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutRelation = .equal,
+    // MARK: constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutConstraint.Relation = .equal,
     func testConstrictEdgesToViewControllerGuided() {
 
         // Setup
@@ -96,7 +96,7 @@ extension UIViewConstrictorEdgesTests {
         testConstraint(trailingConstraint)
     }
 
-    // MARK: constrictEdgesToSuperview(_ relation: NSLayoutRelation = .equal, constant: CGFloat = 0.0, ...
+    // MARK: constrictEdgesToSuperview(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
     func testConstrictEdgesToSuperViewGuided() {
 
         // Setup
@@ -157,7 +157,7 @@ extension UIViewConstrictorEdgesTests {
         testConstraint(trailingConstraint)
     }
 
-    // MARK: constrictEdges(_ relation: NSLayoutRelation = .equal, to item: Constrictable, ...
+    // MARK: constrictEdges(_ relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable, ...
     func testConstrictEdgesGuided() {
 
         // Setup
