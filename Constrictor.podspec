@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/pedrommcarrasco/Constrictor.git", :tag => s.version.to_s }
 
   s.source_files  = "Constrictor/Constrictor/**/*"
+  s.exclude_files = "Constrictor/Constrictor/*.plist"
 end
