@@ -113,16 +113,30 @@
 		20D1F2B820B3501400B327B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */,
-				20BC12FC20B98A240034207F /* Constrictable+ConstrictorCore.swift */,
-				20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */,
-				20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */,
 				205B527D20BADEA50016C8B8 /* UIView+Constrictable.swift */,
 				205B527F20BADEB10016C8B8 /* UIViewController+Constrictable.swift */,
 				205B528820BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift */,
 				20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		531188D9215E861400148AF3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				20BC12FC20B98A240034207F /* Constrictable+ConstrictorCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		531188DA215E862100148AF3 /* Sugar */ = {
+			isa = PBXGroup;
+			children = (
+				53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */,
+				20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */,
+				20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */,
+			);
+			path = Sugar;
 			sourceTree = "<group>";
 		};
 		534B3A8B2139C61E009D9F74 /* Factory */ = {
@@ -163,6 +177,8 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				531188D9215E861400148AF3 /* Core */,
+				531188DA215E862100148AF3 /* Sugar */,
 				534B3A8B2139C61E009D9F74 /* Factory */,
 				205B528520BADF290016C8B8 /* Protocols */,
 				205B528420BADF220016C8B8 /* Enumerations */,
