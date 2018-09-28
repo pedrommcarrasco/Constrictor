@@ -1,5 +1,5 @@
 ////
-////  ItemLayoutrAttributesDecoderTests.swift
+////  LayoutItemFactoryTests.swift
 ////  ConstrictorTests
 ////
 ////  Created by Pedro Carrasco on 28/05/2018.
@@ -9,9 +9,10 @@
 import XCTest
 @testable import Constrictor
 
-// MARK: - ItemLayoutrAttributesDecoderTests
-class ItemLayoutrAttributesDecoderTests: XCTestCase {
+// MARK: - LayoutItemFactoryTests
+class LayoutItemFactoryTests: XCTestCase {
 
+    private var parent: UIView!
     private var view: UIView!
     private var viewController: UIViewController!
     private var layoutGuide: UILayoutGuide!
@@ -25,14 +26,19 @@ class ItemLayoutrAttributesDecoderTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
+        parent = UIView()
+
         view = UIView()
         viewController = UIViewController()
         layoutGuide = UILayoutGuide()
+
+        parent.addSubview(view)
+        parent.addSubview(viewController.view)
     }
 }
 
 // MARK: - Tests
-extension ItemLayoutrAttributesDecoderTests {
+extension LayoutItemFactoryTests {
 
     // MARK:  itemLayoutAttribute(for item: Constrictable?) -> (item: Any?, layoutAttribute: NSLayoutConstraint.Attribute)
     func testItemLayoutAttributeForUIViewNone() {
@@ -317,7 +323,7 @@ extension ItemLayoutrAttributesDecoderTests {
 }
 
 // MARK: - Utils
-private extension ItemLayoutrAttributesDecoderTests {
+private extension LayoutItemFactoryTests {
 
     func test(_ view: UIView,
               for attribute: ConstrictorAttribute,
@@ -325,21 +331,26 @@ private extension ItemLayoutrAttributesDecoderTests {
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 
-        let itemAttributeTuple = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: view, with: attribute, and: constant)
-        let resultItem = itemAttributeTuple.item
-        let resultAttribute = itemAttributeTuple.layoutAttribute
+        let items = LayoutItemFactory.makeLayoutItems(firstElement: parent,
+                                                      secondElement: view,
+                                                      firstAttribute: attribute,
+                                                      secondAttribute: attribute,
+                                                      constant: constant)
 
         if #available(iOS 11.0, *), ConstrictorAttribute.guidedAttributes.contains(attribute) {
+
             let expectedItem = view.safeAreaLayoutGuide
-            XCTAssertEqual(resultItem as? UILayoutGuide, expectedItem)
+            XCTAssertEqual(items.tail.element as? UILayoutGuide, expectedItem)
 
         } else {
+
             let expectedItem = view
-            XCTAssertEqual(resultItem as? UIView, expectedItem)
+            XCTAssertEqual(items.tail.element as? UIView, expectedItem)
         }
 
-        XCTAssertEqual(resultAttribute, expectedAttribute)
-        XCTAssertEqual(itemAttributeTuple.constant, expectedConstant)
+        XCTAssertEqual(items.head.attribute, expectedAttribute)
+        XCTAssertEqual(items.tail.attribute, expectedAttribute)
+        XCTAssertEqual(items.head.constant, expectedConstant)
     }
 
     func test(_ layoutGuide: UILayoutGuide,
@@ -348,15 +359,12 @@ private extension ItemLayoutrAttributesDecoderTests {
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 
-        let itemAttributeTuple = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: layoutGuide, with: attribute, and: constant)
+        let item = LayoutItemFactory.makeLayoutItem(element: layoutGuide,
+                                                    attribute: attribute,
+                                                    constant: constant)
 
-        let resultItem = itemAttributeTuple.item
-        let resultAttribute = itemAttributeTuple.layoutAttribute
-
-
-        XCTAssertEqual(resultItem as? UILayoutGuide, layoutGuide)
-        XCTAssertEqual(resultAttribute, expectedAttribute)
-        XCTAssertEqual(itemAttributeTuple.constant, expectedConstant)
+        XCTAssertEqual(item.attribute, expectedAttribute)
+        XCTAssertEqual(item.constant, expectedConstant)
     }
 
     func test(_ viewController: UIViewController,
@@ -365,41 +373,40 @@ private extension ItemLayoutrAttributesDecoderTests {
               constant: Constant = .zero,
               expectedConstant: CGFloat = 0.0) {
 
-        let itemAttributeTuple = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: viewController, with: attribute, and: constant)
-
-        let resultItem = itemAttributeTuple.item
-        let resultAttribute = itemAttributeTuple.layoutAttribute
+        let items = LayoutItemFactory.makeLayoutItems(firstElement: parent,
+                                                      secondElement: viewController,
+                                                      firstAttribute: attribute,
+                                                      secondAttribute: attribute,
+                                                      constant: constant)
 
         if #available(iOS 11.0, *), ConstrictorAttribute.guidedAttributes.contains(attribute) {
+
             let expectedItem = viewController.view.safeAreaLayoutGuide
-            XCTAssertEqual(resultItem as? UILayoutGuide, expectedItem)
+            XCTAssertEqual(items.tail.element as? UILayoutGuide, expectedItem)
 
+        } else if attribute == .centerXGuide { XCTAssertNotNil(items.tail.element as? UILayoutGuide)
+        } else if attribute == .centerYGuide { XCTAssertNotNil(items.tail.element as? UILayoutGuide)
         } else if attribute == .topGuide {
-            let expectedItem = viewController.topLayoutGuide
-            guard let resultItem = resultItem as? UILayoutSupport else { return XCTFail() }
 
-            XCTAssertEqual(resultAttribute, .bottom)
+            let expectedItem = viewController.topLayoutGuide
+            guard let resultItem = items.tail.element as? UILayoutSupport else { return XCTFail() }
+
             XCTAssert(resultItem.isEqual(expectedItem))
 
             return
 
         } else if attribute == .bottomGuide {
-            let expectedItem = viewController.bottomLayoutGuide
-            guard let resultItem = resultItem as? UILayoutSupport else { return XCTFail() }
 
-            XCTAssertEqual(resultAttribute, .top)
+            let expectedItem = viewController.bottomLayoutGuide
+            guard let resultItem = items.tail.element as? UILayoutSupport else { return XCTFail() }
+
             XCTAssert(resultItem.isEqual(expectedItem))
 
             return
-
-        } else if attribute == .centerXGuide {
-            XCTAssertNotNil(resultItem as? UILayoutGuide)
-
-        } else if attribute == .centerYGuide {
-            XCTAssertNotNil(resultItem as? UILayoutGuide)
         }
 
-        XCTAssertEqual(resultAttribute, expectedAttribute)
-        XCTAssertEqual(itemAttributeTuple.constant, expectedConstant)
+        XCTAssertEqual(items.head.attribute, expectedAttribute)
+        XCTAssertEqual(items.tail.attribute, expectedAttribute)
+        XCTAssertEqual(items.head.constant, expectedConstant)
     }
 }
