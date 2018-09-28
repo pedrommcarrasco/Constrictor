@@ -30,23 +30,22 @@ extension Constrictable {
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutConstraint.Relation = .equal,
                    to item: Constrictable, attribute: ConstrictorAttribute, constant: Constant,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
-        
-        let firstLayoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: self, with: selfAttribute, and: constant)
-        let secondLayoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: item, with: attribute, and: constant)
 
-        if let constrictableAsView = self as? UIView {
+        prepareForAutoLayout()
 
-            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
-        }
+        let items = LayoutItemFactory.makeLayoutItems(firstElement: self,
+                                                                secondElement: item,
+                                                                firstAttribute: selfAttribute,
+                                                                secondAttribute: attribute,
+                                                                constant: constant)
 
-        
         NSLayoutConstraint(item: self,
-                           attribute: firstLayoutAttributes.layoutAttribute,
+                           attribute: items.head.attribute,
                            relatedBy: relation,
-                           toItem: secondLayoutAttributes.item,
-                           attribute: secondLayoutAttributes.layoutAttribute,
+                           toItem: items.tail.element,
+                           attribute: items.tail.attribute,
                            multiplier: multiplier,
-                           constant: firstLayoutAttributes.constant).isActive = true
+                           constant: items.head.constant).isActive = true
     }
     
     /**
@@ -66,20 +65,28 @@ extension Constrictable {
     
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutConstraint.Relation = .equal,
                    constant: Constant, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
+
+        prepareForAutoLayout()
         
-        let layoutAttributes = ItemLayoutAttributesDecoder.itemLayoutAttribute(for: self, with: selfAttribute, and: constant)
+        let item = LayoutItemFactory.makeLayoutItem(element: self,
+                                                              attribute: selfAttribute,
+                                                              constant: constant)
+        
+        NSLayoutConstraint(item: self,
+                           attribute: item.attribute,
+                           relatedBy: relation,
+                           toItem: nil,
+                           attribute: .notAnAttribute,
+                           multiplier: multiplier,
+                           constant: item.constant).isActive = true
+    }
+
+
+    func prepareForAutoLayout() {
 
         if let constrictableAsView = self as? UIView {
 
             constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
         }
-        
-        NSLayoutConstraint(item: self,
-                           attribute: layoutAttributes.layoutAttribute,
-                           relatedBy: relation,
-                           toItem: nil,
-                           attribute: .notAnAttribute,
-                           multiplier: multiplier,
-                           constant: layoutAttributes.constant).isActive = true
     }
 }

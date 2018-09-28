@@ -27,12 +27,6 @@ class ViewController: UIViewController {
         // Constraints -> Same dimensions of redview's superview
         redView.constrictEdgesToController(self, withinGuides: false)
 
-        // Or like it's done bellow
-        /* redView.constrictToViewController(attributes: .top, .bottom, .leading, .trailing) */
-
-        // Or if you want an offset of 50 over all edges
-        /*redView.constrictToViewController(attributes: .top, .bottom, .leading, .trailing, constant: 50.0) */
-
         // ** Blue View **
         // Boilerplate
         blueView.backgroundColor = .blue
@@ -40,7 +34,7 @@ class ViewController: UIViewController {
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
 
-        blueView.constrict(attributes: .width, with: .all(75))
+        blueView.constrict(attributes: .width, .height, with: .all(75))
             .constrictCenterInController(self)
 
         // ** Green View **
