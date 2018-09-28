@@ -31,7 +31,7 @@ extension Constrictable {
                    to item: Constrictable, attribute: ConstrictorAttribute, constant: Constant,
                    multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
 
-        self.usingAutoLayout()
+        prepareForAutoLayout()
 
         let items = LayoutItemFactory.makeLayoutItems(firstElement: self,
                                                                 secondElement: item,
@@ -39,8 +39,6 @@ extension Constrictable {
                                                                 secondAttribute: attribute,
                                                                 constant: constant)
 
-
-        
         NSLayoutConstraint(item: self,
                            attribute: items.head.attribute,
                            relatedBy: relation,
@@ -68,16 +66,11 @@ extension Constrictable {
     func constrict(_ selfAttribute: ConstrictorAttribute, relation: NSLayoutConstraint.Relation = .equal,
                    constant: Constant, multiplier: CGFloat = 1.0, priority: UILayoutPriority = .required) {
 
-        self.usingAutoLayout()
+        prepareForAutoLayout()
         
         let item = LayoutItemFactory.makeLayoutItem(element: self,
                                                               attribute: selfAttribute,
                                                               constant: constant)
-
-        if let constrictableAsView = self as? UIView {
-
-            constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
-        }
         
         NSLayoutConstraint(item: self,
                            attribute: item.attribute,
@@ -89,7 +82,7 @@ extension Constrictable {
     }
 
 
-    func usingAutoLayout() {
+    func prepareForAutoLayout() {
 
         if let constrictableAsView = self as? UIView {
 
