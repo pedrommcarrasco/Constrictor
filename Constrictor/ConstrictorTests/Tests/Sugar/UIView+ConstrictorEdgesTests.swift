@@ -42,7 +42,7 @@ extension UIViewConstrictorEdgesTests {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToController(viewController)
+        aView.constrictEdges(to: viewController)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -71,7 +71,7 @@ extension UIViewConstrictorEdgesTests {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictEdgesToController(viewController, withinGuides: false)
+        aView.constrictEdges(to: viewController, withinGuides: false)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)

@@ -136,6 +136,15 @@ extension ConstantTests {
         XCTAssertEqual(result, expectedResult)
     }
 
+    // MARK:  init(size: CGFloat)
+    func testInitSize() {
+
+        let expectedResult = ExpectedResult.height & ExpectedResult.width
+        let result = Constant(size: Constants.value)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
     func testNone() {
 
         let expectedResult = ExpectedResult.zero

@@ -10,36 +10,7 @@ import UIKit
 
 // MARK: - Constrictor
 public extension Constrictable {
-    
-    /**
-     Applies multiple constraints between self and viewController's view.
-     Use to constrain center safely to viewController's view.
-     
-     - parameters:
-     - relation: Relation between constraint and constant.
-     - item: Constrictable's item to apply a constraint with.
-     - attributes: Item's layout attributes to constraint with.
-     - constant: Constraint's constant.
-     - multiplier: Constraint's multiplier.
-     - priority: Constraint's priority.
-     
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    
-    @discardableResult
-    func constrictToController(_ viewController: UIViewController, as relation: NSLayoutConstraint.Relation = .equal,
-                               to attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
-                               multiplyBy multiplier: CGFloat = 1.0, prioritizeAs priority: UILayoutPriority = .required) -> Self {
-        
-        attributes.forEach {
-            self.constrict($0, relation: relation, to: viewController, attribute: $0,
-                           constant: constant, multiplier: multiplier, priority: priority)
-        }
-        
-        return self
-    }
-    
+
     /**
      Applies multiple constraints between two Constrictable items.
      
@@ -56,15 +27,20 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(as relation: NSLayoutConstraint.Relation = .equal, to item: Constrictable? = nil,
-                   attributes: ConstrictorAttribute ..., with constant: Constant = .zero,
-                   multiplyBy multiplier: CGFloat = 1.0, prioritizeAs priority: UILayoutPriority = .required) -> Self {
+    func constrict(as relation: NSLayoutConstraint.Relation = .equal,
+                   to item: Constrictable? = nil,
+                   attributes: ConstrictorAttribute ...,
+                   with constant: Constant = .zero,
+                   multiplyBy multiplier: CGFloat = 1.0,
+                   prioritizeAs priority: UILayoutPriority = .required) -> Self {
         
         attributes.forEach {
             if let item = item {
-                constrict($0, relation: relation, to: item, attribute: $0, constant: constant, multiplier: multiplier, priority: priority)
+                constrict($0, relation: relation, to: item, attribute: $0,
+                          constant: constant, multiplier: multiplier, priority: priority)
             } else {
-                constrict($0, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
+                constrict($0, relation: relation, constant:
+                    constant, multiplier: multiplier, priority: priority)
             }
         }
         
@@ -88,20 +64,26 @@ public extension Constrictable {
      */
     
     @discardableResult
-    func constrict(_ selfAttribute: ConstrictorAttribute, as relation: NSLayoutConstraint.Relation = .equal,
-                   to item: Constrictable? = nil, attribute: ConstrictorAttribute = .none,
-                   with constant: CGFloat = 0.0, multiplyBy multiplier: CGFloat = 1.0,
+    func constrict(_ selfAttribute: ConstrictorAttribute,
+                   as relation: NSLayoutConstraint.Relation = .equal,
+                   to item: Constrictable? = nil,
+                   attribute: ConstrictorAttribute = .none,
+                   with constant: CGFloat = 0.0,
+                   multiplyBy multiplier: CGFloat = 1.0,
                    prioritizeAs priority: UILayoutPriority = .required) -> Self {
         
         
         let constant = Constant(attribute: selfAttribute, value: constant)
         
         guard let item = item else {
-            constrict(selfAttribute, relation: relation, constant: constant, multiplier: multiplier, priority: priority)
+            constrict(selfAttribute, relation: relation,
+                      constant: constant, multiplier: multiplier, priority: priority)
+
             return self
         }
         
-        constrict(selfAttribute, relation: relation, to: item, attribute: attribute, constant: constant, multiplier: multiplier, priority: priority)
+        constrict(selfAttribute, relation: relation, to: item, attribute: attribute,
+                  constant: constant, multiplier: multiplier, priority: priority)
         
         return self
     }
@@ -131,11 +113,12 @@ public extension Constrictable where Self: UIView {
                            with constant: Constant = .zero,
                            multiplyBy multiplier: CGFloat = 1.0,
                            prioritizeAs priority: UILayoutPriority = .required) -> Self {
+
+        guard let parent = self.superview else { return self }
         
         attributes.forEach {
-            if let parent = self.superview {
-                constrict($0, relation: relation, to: parent, attribute: $0, constant: constant, multiplier: multiplier, priority: priority)
-            }
+            constrict($0, relation: relation, to: parent, attribute: $0,
+                      constant: constant, multiplier: multiplier, priority: priority)
         }
         
         return self

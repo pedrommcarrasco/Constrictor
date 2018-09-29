@@ -237,7 +237,7 @@ extension UIViewConstrictorTests {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, to: .top, .bottom, with: .all(Constants.constant))
+        aView.constrict(to: viewController, attributes: .top, .bottom, with: .all(Constants.constant))
 
         // Tests
         XCTAssertEqual(viewController.view.constraints.count, 2)
@@ -259,7 +259,7 @@ extension UIViewConstrictorTests {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, to: .topGuide, .leadingGuide, multiplyBy: Constants.multiplier)
+        aView.constrict(to: viewController, attributes: .topGuide, .leadingGuide, multiplyBy: Constants.multiplier)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
