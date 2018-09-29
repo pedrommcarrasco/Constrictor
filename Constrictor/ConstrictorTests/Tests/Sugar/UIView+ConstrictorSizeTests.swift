@@ -124,4 +124,26 @@ extension UIViewConstrictorSizeTests {
         testConstraint(widthConstraint, constant: Constants.constant)
         testConstraint(heightConstraint, constant: Constants.constant)
     }
+
+    // MARK: constrictSizeToParent(as relation: NSLayoutConstraint.Relation = .equal, with constant: Constant = .zero, ...
+    func testConstrictSizeToParent() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.addSubview(bView)
+        bView.constrictSizeToParent(with: .all(Constants.constant), multiplyBy: Constants.multiplier)
+
+        // Tests
+        let widthConstraints = aView.findConstraints(for: .width, relatedTo: bView)
+        let heightConstraints = aView.findConstraints(for: .height, relatedTo: bView)
+
+        XCTAssertEqual(widthConstraints.count, 1)
+        XCTAssertEqual(heightConstraints.count, 1)
+
+        guard let widthConstraint = widthConstraints.first,
+            let heightConstraint = heightConstraints.first else { return XCTFail() }
+
+        testConstraint(widthConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
+        testConstraint(heightConstraint, constant: Constants.constant, multiplier: Constants.multiplier)
+    }
 }

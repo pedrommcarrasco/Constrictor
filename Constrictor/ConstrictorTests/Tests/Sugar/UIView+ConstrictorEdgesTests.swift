@@ -38,7 +38,7 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 extension UIViewConstrictorEdgesTests {
 
     // MARK: constrictEdgesToParent(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
-    func testConstrictEdgesToSuperViewGuided() {
+    func testConstrictEdgesToParentGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -68,7 +68,7 @@ extension UIViewConstrictorEdgesTests {
         testConstraint(trailingConstraint)
     }
 
-    func testConstrictEdgesToSuperViewNotGuided() {
+    func testConstrictEdgesToParentNotGuided() {
 
         // Setup
         viewController.view.addSubview(aView)

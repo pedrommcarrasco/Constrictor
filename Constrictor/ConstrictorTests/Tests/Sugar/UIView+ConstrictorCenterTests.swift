@@ -40,7 +40,7 @@ class UIViewConstrictorCenterTests: XCTestCase, ConstraintTestable {
 extension UIViewConstrictorCenterTests {
 
     // MARK: constrictCenterInParent(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
-    func testConstrictCenterInSuperViewWithConstantMultiplier() {
+    func testConstrictCenterInParentWithConstantMultiplier() {
 
         // Setup
         viewController.view.addSubview(aView)
