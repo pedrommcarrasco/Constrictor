@@ -107,13 +107,13 @@ NSLayoutConstraint.activate([
 
 ### How you can do it with Constrictor 😍
 ```swift
-redView.constrictEdgesToViewController(self, withinGuides: false)
+redView.constrictEdges(to: self, withinGuides: false)
         
-blueView.constrict(attributes: .width, .height, with: .all(75.0))
-     .constrictCenterInViewController(self)
+blueView.constrictSize(with: 75.0)
+     .constrictCenter(in: self)
 
 greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
-     .constrictToSuperview(attributes: .height)
+     .constrictToParent(attributes: .height)
      .constrict(.trailing, to: blueView, attribute: .leading, with: 50.0)
 ```
 
