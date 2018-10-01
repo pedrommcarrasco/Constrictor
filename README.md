@@ -109,7 +109,7 @@ NSLayoutConstraint.activate([
 ```swift
 redView.constrictEdges(to: self, withinGuides: false)
         
-blueView.constrictSize(with: 75.0)
+blueView.constrictSize(to: 75.0)
      .constrictCenter(in: self)
 
 greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
