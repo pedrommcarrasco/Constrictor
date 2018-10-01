@@ -1,44 +1,15 @@
-////
-////  Constrictable+ConstrictorCenter.swift
-////  Constrictor
-////
-////  Created by Pedro Carrasco on 21/05/2018.
-////  Copyright © 2018 Pedro Carrasco. All rights reserved.
-////
+//
+//  Constrictable+ConstrictorCenter.swift
+//  Constrictor
+//
+//  Created by Pedro Carrasco on 21/05/2018.
+//  Copyright © 2018 Pedro Carrasco. All rights reserved.
+//
 
-import Foundation
+import UIKit
 
 // MARK: - ConstrictorCenter
 public extension Constrictable {
-    
-    /**
-     Constricts self's center to viewController's view.
-     Use to constrain center safely to viewController's view
-     
-     - parameters:
-     - relation: Relation between center
-     - constant: Constraints's constant
-     - multiplier: Constraints's multiplier
-     - priority: Constraints's priority
-     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
-     
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    
-    @discardableResult
-    func constrictCenterInController(_ viewController: UIViewController,
-                                     as relation: NSLayoutConstraint.Relation = .equal,
-                                     with constant: Constant = .zero,
-                                     multiplyBy multiplier: CGFloat = 1.0,
-                                     prioritizeAs priority: UILayoutPriority = .required,
-                                     withinGuides: Bool = true) -> Self {
-        
-        constrictCenter(as: relation, to: viewController, with: constant,
-                        multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides)
-        
-        return self
-    }
     
     /**
      Constricts self's center to another Constrictable.
@@ -57,7 +28,7 @@ public extension Constrictable {
     
     @discardableResult
     func constrictCenter(as relation: NSLayoutConstraint.Relation = .equal,
-                         to item: Constrictable,
+                         in item: Constrictable,
                          with constant: Constant = .zero,
                          multiplyBy multiplier: CGFloat = 1.0,
                          prioritizeAs priority: UILayoutPriority = .required,
@@ -103,7 +74,7 @@ public extension Constrictable where Self: UIView {
         
         guard let superview = superview else { return self }
         
-        constrictCenter(as: relation, to: superview, with: constant,
+        constrictCenter(as: relation, in: superview, with: constant,
                         multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides)
         
         return self

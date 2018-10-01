@@ -187,7 +187,6 @@ extension UIViewConstrictorTests {
             .constrict(.trailing, relation: .greaterThanOrEqual, to: aView, attribute: .leading, constant: .trailing(Constants.constant))
 
         // Test aView
-
         let centerXConstraints = viewController.view.findConstraints(for: .centerX, relatedTo: aView)
         let centerYConstraints = viewController.view.findConstraints(for: .centerY, relatedTo: aView)
         let widthConstraints = aView.findConstraints(for: .width, at: .secondItem)
@@ -232,12 +231,11 @@ extension UIViewConstrictorTests {
         testConstraint(bTrailingConstraint, constant: -Constants.constant, relation: .greaterThanOrEqual)
     }
 
-    // MARK:  constrictToViewController(_ viewController: UIViewController, relation: NSLayoutConstraint.Relation = .equal, attributes: ConstrictorAttribute ..., ...
     func testConstrictToViewControllerAtTopBottomConstant() {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, to: .top, .bottom, with: .all(Constants.constant))
+        aView.constrict(to: viewController, attributes: .top, .bottom, with: .all(Constants.constant))
 
         // Tests
         XCTAssertEqual(viewController.view.constraints.count, 2)
@@ -259,7 +257,7 @@ extension UIViewConstrictorTests {
 
         // Setup
         viewController.view.addSubview(aView)
-        aView.constrictToController(viewController, to: .topGuide, .leadingGuide, multiplyBy: Constants.multiplier)
+        aView.constrict(to: viewController, attributes: .topGuide, .leadingGuide, multiplyBy: Constants.multiplier)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
@@ -276,8 +274,8 @@ extension UIViewConstrictorTests {
         testConstraint(leadingConstraint, multiplier: Constants.multiplier)
     }
 
-    // MARK: constrictToSuperView(_ relation: NSLayoutConstraint.Relation = .equal, attributes: ConstrictorAttribute ..., ...
-    func testConstrictToSuperviewAtTopBottomConstant() {
+    // MARK: constrictToParent(_ relation: NSLayoutConstraint.Relation = .equal, attributes: ConstrictorAttribute ..., ...
+    func testConstrictToParentAtTopBottomConstant() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -298,7 +296,7 @@ extension UIViewConstrictorTests {
         testConstraint(bottomConstraint, constant: -Constants.constant)
     }
 
-    func testConstrictToViewSuperviewAtTopBottomGuidesMultiplier() {
+    func testConstrictToParentAtTopBottomGuidesMultiplier() {
 
         // Setup
         viewController.view.addSubview(aView)

@@ -52,6 +52,11 @@ extension Constant {
         case .none: self = .zero
         }
     }
+
+    init(size: CGFloat) {
+
+        self = .width(size) & .height(size)
+    }
 }
 
 // MARK: - Modifiers

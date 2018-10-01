@@ -19,6 +19,8 @@
 		20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
 		531188D8215E364D00148AF3 /* LayoutItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531188D7215E364D00148AF3 /* LayoutItemFactory.swift */; };
+		531188DC215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531188DB215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift */; };
+		531188DF215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */; };
 		537F0042213B424300BC0354 /* ConstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537F0041213B424300BC0354 /* ConstantTests.swift */; };
 		539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */; };
 		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
@@ -57,6 +59,8 @@
 		20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorEdges.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
 		531188D7215E364D00148AF3 /* LayoutItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItemFactory.swift; sourceTree = "<group>"; };
+		531188DB215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+ConstrictorSize.swift"; sourceTree = "<group>"; };
+		531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorSizeTests.swift"; sourceTree = "<group>"; };
 		537F0041213B424300BC0354 /* ConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTests.swift; sourceTree = "<group>"; };
 		539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdgesTests.swift"; sourceTree = "<group>"; };
 		53CB882220B4618B002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -135,6 +139,18 @@
 				53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */,
 				20D1F2BB20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift */,
 				20D1F2BD20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift */,
+				531188DB215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift */,
+			);
+			path = Sugar;
+			sourceTree = "<group>";
+		};
+		531188DD215F93DD00148AF3 /* Sugar */ = {
+			isa = PBXGroup;
+			children = (
+				53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */,
+				20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */,
+				539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */,
+				531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */,
 			);
 			path = Sugar;
 			sourceTree = "<group>";
@@ -205,6 +221,7 @@
 		53D8199220B5816C00E62D1E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				531188DD215F93DD00148AF3 /* Sugar */,
 				53ED274720BC011800038282 /* Enumerations */,
 				53D8199920B5949900E62D1E /* Structs */,
 				53D8199320B5817400E62D1E /* Extensions */,
@@ -215,9 +232,6 @@
 		53D8199320B5817400E62D1E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */,
-				20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */,
-				539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */,
 				20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */,
 			);
 			path = Extensions;
@@ -381,6 +395,7 @@
 				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */,
+				531188DC215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift in Sources */,
 				205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */,
 				20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */,
 				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
@@ -400,6 +415,7 @@
 				53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */,
 				20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */,
 				53D819A420B5A4E700E62D1E /* ConstraintIndex.swift in Sources */,
+				531188DF215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift in Sources */,
 				53ED274920BC012C00038282 /* LayoutItemFactoryTests.swift in Sources */,
 				53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */,
 				539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */,

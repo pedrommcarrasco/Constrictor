@@ -37,67 +37,8 @@ class UIViewConstrictorEdgesTests: XCTestCase, ConstraintTestable {
 // MARK: - Tests
 extension UIViewConstrictorEdgesTests {
 
-    // MARK: constrictEdgesToViewController(_ viewController: UIViewController, relation: NSLayoutConstraint.Relation = .equal,
-    func testConstrictEdgesToViewControllerGuided() {
-
-        // Setup
-        viewController.view.addSubview(aView)
-        aView.constrictEdgesToController(viewController)
-
-        // Tests
-        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
-        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
-
-        XCTAssertEqual(topConstraints.count, 1)
-        XCTAssertEqual(bottomConstraints.count, 1)
-        XCTAssertEqual(leadingConstraints.count, 1)
-        XCTAssertEqual(trailingConstraints.count, 1)
-
-        guard let topConstraint = topConstraints.first,
-            let bottomConstraint = bottomConstraints.first,
-            let leadingConstraint = leadingConstraints.first,
-            let trailingConstraint = trailingConstraints.first
-            else { return XCTFail() }
-
-        testConstraint(topConstraint)
-        testConstraint(bottomConstraint)
-        testConstraint(leadingConstraint)
-        testConstraint(trailingConstraint)
-    }
-
-    func testConstrictEdgesToViewControllerNotGuided() {
-
-        // Setup
-        viewController.view.addSubview(aView)
-        aView.constrictEdgesToController(viewController, withinGuides: false)
-
-        // Tests
-        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
-        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
-        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
-        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
-
-        XCTAssertEqual(topConstraints.count, 1)
-        XCTAssertEqual(bottomConstraints.count, 1)
-        XCTAssertEqual(leadingConstraints.count, 1)
-        XCTAssertEqual(trailingConstraints.count, 1)
-
-        guard let topConstraint = topConstraints.first,
-            let bottomConstraint = bottomConstraints.first,
-            let leadingConstraint = leadingConstraints.first,
-            let trailingConstraint = trailingConstraints.first
-            else { return XCTFail() }
-
-        testConstraint(topConstraint)
-        testConstraint(bottomConstraint)
-        testConstraint(leadingConstraint)
-        testConstraint(trailingConstraint)
-    }
-
-    // MARK: constrictEdgesToSuperview(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
-    func testConstrictEdgesToSuperViewGuided() {
+    // MARK: constrictEdgesToParent(_ relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0, ...
+    func testConstrictEdgesToParentGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -127,7 +68,7 @@ extension UIViewConstrictorEdgesTests {
         testConstraint(trailingConstraint)
     }
 
-    func testConstrictEdgesToSuperViewNotGuided() {
+    func testConstrictEdgesToParentNotGuided() {
 
         // Setup
         viewController.view.addSubview(aView)
@@ -164,6 +105,64 @@ extension UIViewConstrictorEdgesTests {
         viewController.view.addSubview(aView)
         viewController.view.addSubview(bView)
         aView.constrictEdges(to: bView)
+
+        // Tests
+        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
+        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
+        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
+        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
+    func testConstrictEdgesToViewControllerGuided() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrictEdges(to: viewController)
+
+        // Tests
+        let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)
+        let bottomConstraints = viewController.view.findConstraints(for: .bottom, relatedTo: aView)
+        let leadingConstraints = viewController.view.findConstraints(for: .leading, relatedTo: aView)
+        let trailingConstraints = viewController.view.findConstraints(for: .trailing, relatedTo: aView)
+
+        XCTAssertEqual(topConstraints.count, 1)
+        XCTAssertEqual(bottomConstraints.count, 1)
+        XCTAssertEqual(leadingConstraints.count, 1)
+        XCTAssertEqual(trailingConstraints.count, 1)
+
+        guard let topConstraint = topConstraints.first,
+            let bottomConstraint = bottomConstraints.first,
+            let leadingConstraint = leadingConstraints.first,
+            let trailingConstraint = trailingConstraints.first
+            else { return XCTFail() }
+
+        testConstraint(topConstraint)
+        testConstraint(bottomConstraint)
+        testConstraint(leadingConstraint)
+        testConstraint(trailingConstraint)
+    }
+
+    func testConstrictEdgesToViewControllerNotGuided() {
+
+        // Setup
+        viewController.view.addSubview(aView)
+        aView.constrictEdges(to: viewController, withinGuides: false)
 
         // Tests
         let topConstraints = viewController.view.findConstraints(for: .top, relatedTo: aView)

@@ -1,44 +1,15 @@
-////
-////  Constrictable+ConstrictorEdges.swift
-////  Constrictor
-////
-////  Created by Pedro Carrasco on 21/05/2018.
-////  Copyright © 2018 Pedro Carrasco. All rights reserved.
-////
+//
+//  Constrictable+ConstrictorEdges.swift
+//  Constrictor
+//
+//  Created by Pedro Carrasco on 21/05/2018.
+//  Copyright © 2018 Pedro Carrasco. All rights reserved.
+//
 
 import UIKit
 
 // MARK: - ConstrictorEdges
 public extension Constrictable {
-    
-    /**
-     Constricts self's edges to viewController's view.
-     Use to constrain edges safely to viewController's view.
-     
-     - parameters:
-     - relation: Relation between edges
-     - constant: Constraints's constant
-     - multiplier: Constraints's multiplier
-     - priority: Constraints's priority
-     - withinGuides: Bool indicating where to constraint to safeAreas/top and bottom layout guides or not.
-     
-     - returns:
-     Discardable UIView to allow function's chaining.
-     */
-    
-    @discardableResult
-    func constrictEdgesToController(_ viewController: UIViewController,
-                                    as relation: NSLayoutConstraint.Relation = .equal,
-                                    with constant: Constant = .zero,
-                                    multipiedBy multiplier: CGFloat = 1.0,
-                                    prioritizeAs priority: UILayoutPriority = .required,
-                                    withinGuides: Bool = true) -> Self {
-        
-        constrictEdges(as: relation, to: viewController, with: constant,
-                       multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides)
-        
-        return self
-    }
     
     /**
      Constricts self's edges to another Constrictable.

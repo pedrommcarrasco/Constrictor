@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         view.addSubview(redView)
 
         // Constraints -> Same dimensions of redview's superview
-        redView.constrictEdgesToController(self, withinGuides: false)
+        redView.constrictEdges(to: self, withinGuides: false)
 
         // ** Blue View **
         // Boilerplate
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
 
         blueView.constrict(attributes: .width, .height, with: .all(75))
-            .constrictCenterInController(self)
+            .constrictCenter(in: self)
 
         // ** Green View **
         // Boilerplate
