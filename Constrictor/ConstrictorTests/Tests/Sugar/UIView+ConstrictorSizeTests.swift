@@ -87,7 +87,7 @@ extension UIViewConstrictorSizeTests {
         // Setup
         viewController.view.addSubview(aView)
         viewController.view.addSubview(bView)
-        bView.constrictSize(with: .height(Constants.constant) & .width(Constants.constant * 2))
+        bView.constrictSize(to: .height(Constants.constant) & .width(Constants.constant * 2))
 
         // Tests
         let widthConstraints = bView.findConstraints(for: .width, at: .secondItem)
@@ -109,7 +109,7 @@ extension UIViewConstrictorSizeTests {
         // Setup
         viewController.view.addSubview(aView)
         viewController.view.addSubview(bView)
-        bView.constrictSize(with: Constants.constant)
+        bView.constrictSize(to: Constants.constant)
 
         // Tests
         let widthConstraints = bView.findConstraints(for: .width, at: .secondItem)
