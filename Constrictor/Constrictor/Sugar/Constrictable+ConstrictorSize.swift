@@ -53,7 +53,7 @@ public extension Constrictable {
 
     @discardableResult
     func constrictSize(as relation: NSLayoutConstraint.Relation = .equal,
-                       with constant: Constant,
+                       to constant: Constant,
                        prioritizeAs priority: UILayoutPriority = .required) -> Self {
 
 
@@ -77,11 +77,11 @@ public extension Constrictable {
 
     @discardableResult
     func constrictSize(as relation: NSLayoutConstraint.Relation = .equal,
-                       with constant: CGFloat,
+                       to constant: CGFloat,
                        prioritizeAs priority: UILayoutPriority = .required) -> Self {
 
 
-        constrictSize(as: relation, with: Constant(size: constant), prioritizeAs: priority)
+        constrictSize(as: relation, to: Constant(size: constant), prioritizeAs: priority)
 
         return self
     }

@@ -33,8 +33,7 @@ class ViewController: UIViewController {
         redView.addSubview(blueView)
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
-
-        blueView.constrict(attributes: .width, .height, with: .all(75))
+        blueView.constrictSize(to: 75.0)
             .constrictCenter(in: self)
 
         // ** Green View **
