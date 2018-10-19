@@ -1,13 +1,12 @@
-# Constrictor 🐍
+![](https://github.com/pedrommcarrasco/Constrictor/blob/master/cover.png?raw=true)
+
+***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplifying your constraints by reducing the amount of code you have to write.
 
 [![Build Status](https://travis-ci.org/pedrommcarrasco/Constrictor.svg?branch=master)](https://travis-ci.org/pedrommcarrasco/Constrictor) 
 [![codecov](https://codecov.io/gh/pedrommcarrasco/Constrictor/branch/master/graph/badge.svg)](https://codecov.io/gh/pedrommcarrasco/Constrictor)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Constrictor.svg)](https://cocoapods.org/pods/Constrictor)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE)
-
-
-***(Boe)*** Constrictor's AutoLayout µFramework with the goal of simplifying your constraints by reducing the amount of code you have to write.
 
 ## Installation 📦 
 ### CocoaPods
