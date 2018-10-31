@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ConstraintIndex {
+public enum ConstraintIndex {
     case firstItem
     case secondItem
 

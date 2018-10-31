@@ -7,9 +7,8 @@
 //
 
 import Foundation
-
-
 import XCTest
+@testable import Constrictor
 
 // MARK: - UIViewConstrictorEdgesTests
 class UIViewConstrictorIDTests: XCTestCase, ConstraintTestable {
