@@ -8,16 +8,6 @@
 
 import UIKit
 
-//
-//  Constant.swift
-//  Constrictor
-//
-//  Created by Pedro Carrasco on 22/05/2018.
-//  Copyright © 2018 Pedro Carrasco. All rights reserved.
-//
-
-import UIKit
-
 // MARK: - Constant
 public struct Constant: Equatable {
     

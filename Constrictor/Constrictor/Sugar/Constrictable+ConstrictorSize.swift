@@ -30,10 +30,11 @@ public extension Constrictable {
                        to item: Constrictable,
                        with constant: Constant = .zero,
                        multiplyBy multiplier: CGFloat = 1.0,
-                       prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                       prioritizeAs priority: UILayoutPriority = .required,
+                       using identifier: String? = nil) -> Self {
 
         constrict(as: relation, to: item, attributes: .width, .height,
-                  with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                  with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
 
         return self
     }
@@ -54,11 +55,11 @@ public extension Constrictable {
     @discardableResult
     func constrictSize(as relation: NSLayoutConstraint.Relation = .equal,
                        to constant: Constant,
-                       prioritizeAs priority: UILayoutPriority = .required) -> Self {
-
+                       prioritizeAs priority: UILayoutPriority = .required,
+                       using identifier: String? = nil) -> Self {
 
         constrict(as: relation, attributes: .width, .height,
-                  with: constant, prioritizeAs: priority)
+                  with: constant, prioritizeAs: priority, using: identifier)
 
         return self
     }
@@ -78,11 +79,10 @@ public extension Constrictable {
     @discardableResult
     func constrictSize(as relation: NSLayoutConstraint.Relation = .equal,
                        to constant: CGFloat,
-                       prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                       prioritizeAs priority: UILayoutPriority = .required,
+                       using identifier: String? = nil) -> Self {
 
-
-        constrictSize(as: relation, to: Constant(size: constant), prioritizeAs: priority)
-
+        constrictSize(as: relation, to: Constant(size: constant), prioritizeAs: priority, using: identifier)
         return self
     }
 }
@@ -107,12 +107,13 @@ public extension Constrictable where Self: UIView {
     func constrictSizeToParent(as relation: NSLayoutConstraint.Relation = .equal,
                                with constant: Constant = .zero,
                                multiplyBy multiplier: CGFloat = 1.0,
-                               prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                               prioritizeAs priority: UILayoutPriority = .required,
+                               using identifier: String? = nil) -> Self {
 
         guard let superview = superview else { return self }
 
         constrictSize(as: relation, to: superview,
-                      with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                      with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
 
         return self
     }

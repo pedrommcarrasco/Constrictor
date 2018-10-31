@@ -32,15 +32,16 @@ public extension Constrictable {
                    attributes: ConstrictorAttribute ...,
                    with constant: Constant = .zero,
                    multiplyBy multiplier: CGFloat = 1.0,
-                   prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                   prioritizeAs priority: UILayoutPriority = .required,
+                   using identifier: String? = nil) -> Self {
         
         attributes.forEach {
             if let item = item {
                 constrict($0, relation: relation, to: item, attribute: $0,
-                          constant: constant, multiplier: multiplier, priority: priority)
+                          constant: constant, multiplier: multiplier, priority: priority, using: identifier)
             } else {
                 constrict($0, relation: relation, constant:
-                    constant, multiplier: multiplier, priority: priority)
+                    constant, multiplier: multiplier, priority: priority, using: identifier)
             }
         }
         
@@ -70,7 +71,8 @@ public extension Constrictable {
                    attribute: ConstrictorAttribute = .none,
                    with constant: CGFloat = 0.0,
                    multiplyBy multiplier: CGFloat = 1.0,
-                   prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                   prioritizeAs priority: UILayoutPriority = .required,
+                   using identifier: String? = nil) -> Self {
         
         
         let constant = Constant(attribute: selfAttribute, value: constant)
@@ -112,7 +114,8 @@ public extension Constrictable where Self: UIView {
                            attributes: ConstrictorAttribute ...,
                            with constant: Constant = .zero,
                            multiplyBy multiplier: CGFloat = 1.0,
-                           prioritizeAs priority: UILayoutPriority = .required) -> Self {
+                           prioritizeAs priority: UILayoutPriority = .required,
+                           using identifier: String? = nil) -> Self {
 
         guard let parent = self.superview else { return self }
         

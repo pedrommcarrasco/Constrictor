@@ -22,6 +22,7 @@ extension Constrictable {
      - constant: Constraint's constant
      - multiplier: Constraint's multiplier
      - priority: Constraint's priority
+     - identifier: Constraint's identifier
      
      This method's responsible for abstracting and invoking methods responsible of converting ConstrictorAttribute to
      NSLayoutConstraint.Attribute and normalizing the constant based on the selfAttribute
@@ -33,7 +34,8 @@ extension Constrictable {
                    attribute: ConstrictorAttribute,
                    constant: Constant,
                    multiplier: CGFloat = 1.0,
-                   priority: UILayoutPriority = .required) {
+                   priority: UILayoutPriority = .required,
+                   using identifier: String? = nil) {
 
         prepareForAutoLayout()
 
@@ -43,13 +45,16 @@ extension Constrictable {
                                                       secondAttribute: attribute,
                                                       constant: constant)
 
-        NSLayoutConstraint(item: self,
+        let constraint = NSLayoutConstraint(item: self,
                            attribute: items.head.attribute,
                            relatedBy: relation,
                            toItem: items.tail.element,
                            attribute: items.tail.attribute,
                            multiplier: multiplier,
-                           constant: items.head.constant).isActive = true
+                           constant: items.head.constant)
+        
+        constraint.identifier = identifier
+        constraint.isActive = true
     }
     
     /**
@@ -62,6 +67,7 @@ extension Constrictable {
      - constant: Constraint's constant
      - multiplier: Constraint's multiplier
      - priority: Constraint's priority
+     - identifier: Constraint's identifier
      
      This method's responsible for abstracting and invoking methods responsible of converting ConstrictorAttribute to
      NSLayoutConstraint.Attribute and normalizing the constant based on the selfAttribute
@@ -71,7 +77,8 @@ extension Constrictable {
                    relation: NSLayoutConstraint.Relation = .equal,
                    constant: Constant,
                    multiplier: CGFloat = 1.0,
-                   priority: UILayoutPriority = .required) {
+                   priority: UILayoutPriority = .required,
+                   using identifier: String? = nil) {
 
         prepareForAutoLayout()
         
@@ -79,13 +86,16 @@ extension Constrictable {
                                                     attribute: selfAttribute,
                                                     constant: constant)
         
-        NSLayoutConstraint(item: self,
+        let constraint = NSLayoutConstraint(item: self,
                            attribute: item.attribute,
                            relatedBy: relation,
                            toItem: nil,
                            attribute: .notAnAttribute,
                            multiplier: multiplier,
-                           constant: item.constant).isActive = true
+                           constant: item.constant)
+        
+        constraint.identifier = identifier
+        constraint.isActive = true
     }
 }
 
@@ -95,7 +105,6 @@ private extension Constrictable {
     func prepareForAutoLayout() {
 
         if let constrictableAsView = self as? UIView {
-
             constrictableAsView.translatesAutoresizingMaskIntoConstraints = false
         }
     }

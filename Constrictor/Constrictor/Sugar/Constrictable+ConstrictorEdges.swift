@@ -32,16 +32,17 @@ public extension Constrictable {
                         with constant: Constant = .zero,
                         multiplyBy multiplier: CGFloat = 1.0,
                         prioritizeAs priority: UILayoutPriority = .required,
-                        withinGuides: Bool = true) -> Self {
+                        withinGuides: Bool = true,
+                        using identifier: String? = nil) -> Self {
         
         if withinGuides {
             constrict(as: relation, to: item,
                       attributes: .topGuide, .bottomGuide, .leadingGuide, .trailingGuide,
-                      with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                      with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
         } else {
             constrict(as: relation, to: item,
                       attributes: .top, .bottom, .leading, .trailing,
-                      with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                      with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
         }
         
         return self
@@ -70,12 +71,13 @@ public extension Constrictable where Self: UIView {
                                 with constant: Constant = .zero,
                                 multiplyBy multiplier: CGFloat = 1.0,
                                 prioritizeAs priority: UILayoutPriority = .required,
-                                withinGuides: Bool = true) -> Self {
+                                withinGuides: Bool = true,
+                                using identifier: String? = nil) -> Self {
 
         guard let superview = superview else { return self }
 
         constrictEdges(as: relation, to: superview, with: constant,
-                       multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides)
+                       multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides, using: identifier)
 
         return self
     }

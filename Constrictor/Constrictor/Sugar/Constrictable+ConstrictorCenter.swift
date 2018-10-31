@@ -32,15 +32,16 @@ public extension Constrictable {
                          with constant: Constant = .zero,
                          multiplyBy multiplier: CGFloat = 1.0,
                          prioritizeAs priority: UILayoutPriority = .required,
-                         withinGuides: Bool = true) -> Self {
+                         withinGuides: Bool = true,
+                         using identifier: String? = nil) -> Self {
         
         if withinGuides {
             constrict(as: relation, to: item, attributes: .centerXGuide, .centerYGuide,
-                      with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                      with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
             
         } else {
             constrict(as: relation, to: item, attributes: .centerX, .centerY,
-                      with: constant, multiplyBy: multiplier, prioritizeAs: priority)
+                      with: constant, multiplyBy: multiplier, prioritizeAs: priority, using: identifier)
             
         }
         
@@ -70,12 +71,13 @@ public extension Constrictable where Self: UIView {
                                  with constant: Constant = .zero,
                                  multiplyBy multiplier: CGFloat = 1.0,
                                  prioritizeAs priority: UILayoutPriority = .required,
-                                 withinGuides: Bool = true) -> UIView {
+                                 withinGuides: Bool = true,
+                                 using identifier: String? = nil) -> UIView {
         
         guard let superview = superview else { return self }
         
         constrictCenter(as: relation, in: superview, with: constant,
-                        multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides)
+                        multiplyBy: multiplier, prioritizeAs: priority, withinGuides: withinGuides, using: identifier)
         
         return self
     }

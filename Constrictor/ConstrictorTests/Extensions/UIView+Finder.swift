@@ -16,7 +16,11 @@ extension UIView {
 
         return constraints.compactMap { constraint -> NSLayoutConstraint? in
             if constraint.isFrom(attribute, relatedTo: view, at: index) { return constraint }
-            else { return nil }
+            return nil
         }
+    }
+    
+    func findConstraint(withID identifier: String) -> NSLayoutConstraint? {
+        return constraints.first(where: { $0.identifier == identifier })
     }
 }

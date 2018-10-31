@@ -34,6 +34,7 @@
 		53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */; };
 		53E6F33C215D4C6200E0337E /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6F33B215D4C6200E0337E /* LayoutItem.swift */; };
 		53ED274920BC012C00038282 /* LayoutItemFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */; };
+		59A23EEF2189B72A00BDCF0C /* UIView+ConstrictorIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A23EEE2189B72A00BDCF0C /* UIView+ConstrictorIds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintTestable.swift; sourceTree = "<group>"; };
 		53E6F33B215D4C6200E0337E /* LayoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItem.swift; sourceTree = "<group>"; };
 		53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItemFactoryTests.swift; sourceTree = "<group>"; };
+		59A23EEE2189B72A00BDCF0C /* UIView+ConstrictorIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorIds.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */,
 				539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */,
 				531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */,
+				59A23EEE2189B72A00BDCF0C /* UIView+ConstrictorIds.swift */,
 			);
 			path = Sugar;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A23EEF2189B72A00BDCF0C /* UIView+ConstrictorIds.swift in Sources */,
 				53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */,
 				537F0042213B424300BC0354 /* ConstantTests.swift in Sources */,
 				20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */,
