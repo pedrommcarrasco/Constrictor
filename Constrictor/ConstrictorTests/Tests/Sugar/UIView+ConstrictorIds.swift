@@ -42,12 +42,7 @@ class UIViewConstrictorIDTests: XCTestCase, ConstraintTestable {
 
 // MARK: - Constraints with ID tests
 extension UIViewConstrictorIDTests {
-    
-    func testConstrictToParent() {
-        aView.constrictToParent(attributes: .top, )
-        XCTAssertNotNil(viewController.view.findConstraint(withID: constraintIdentifier))
-    }
-    
+        
     func testConstrictSizeToViewController() {
         aView.constrictSize(to: viewController, multiplyBy: Constants.multiplier, using: constraintIdentifier)
         XCTAssertNotNil(viewController.view.findConstraint(withID: constraintIdentifier))
