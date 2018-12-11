@@ -21,6 +21,8 @@ class ConstantTests: XCTestCase {
     private enum ExpectedResult {
         static let x = Constant(x: Constants.value, y: 0.0, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
         static let y = Constant(x: 0.0, y: Constants.value, top: 0.0, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
+        static let horizontal = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: Constants.value, left: Constants.value, leading: Constants.value, trailing: Constants.value, width: 0.0, height: 0.0)
+        static let vertical = Constant(x: 0.0, y: 0.0, top: Constants.value, bottom: Constants.value, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
         static let top = Constant(x: 0.0, y: 0.0, top: Constants.value, bottom: 0.0, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
         static let bottom = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: Constants.value, right: 0.0, left: 0.0, leading: 0.0, trailing: 0.0, width: 0.0, height: 0.0)
         static let right = Constant(x: 0.0, y: 0.0, top: 0.0, bottom: 0.0, right: Constants.value, left: 0.0,leading: 0.0, trailing: 0.0,width: 0.0, height: 0.0)
@@ -168,6 +170,24 @@ extension ConstantTests {
         let expectedResult = ExpectedResult.y
         let result = Constant.y(Constants.value)
 
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    // MARK: horizontal(_ value: CGFloat) -> Constant
+    func testHorizontal() {
+        
+        let expectedResult = ExpectedResult.horizontal
+        let result = Constant.horizontal(Constants.value)
+        
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    // MARK: vertical(_ value: CGFloat) -> Constant
+    func testVertical() {
+        
+        let expectedResult = ExpectedResult.vertical
+        let result = Constant.vertical(Constants.value)
+        
         XCTAssertEqual(result, expectedResult)
     }
 
