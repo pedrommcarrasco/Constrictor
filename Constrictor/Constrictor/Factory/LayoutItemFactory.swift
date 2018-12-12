@@ -250,7 +250,7 @@ private extension LayoutItemFactory {
     static func safeLayoutGuide(for viewController: UIViewController) -> UILayoutGuide? {
         
         let fakeSafeArea = viewController.view.layoutGuides
-            .filter { $0.identifier == Constants.fakeSafeAreaIdentifier }
+            .filter(isFakeSafeArea)
             .first
         
         guard fakeSafeArea == nil else { return fakeSafeArea }
@@ -285,5 +285,9 @@ private extension LayoutItemFactory {
         )
         
         return layoutGuide
+    }
+    
+    static func isFakeSafeArea(_ layoutGuide: UILayoutGuide) -> Bool {
+        return layoutGuide.identifier == Constants.fakeSafeAreaIdentifier
     }
 }
