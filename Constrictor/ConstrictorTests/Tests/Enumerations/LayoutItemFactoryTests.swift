@@ -333,11 +333,11 @@ private extension LayoutItemFactoryTests {
         
         let view = UIView()
         
-        let (_, tail) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .topGuide, secondAttribute: .topGuide, constant: .all(Constants.constant))
+        let (_, tail) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
         
         XCTAssertTrue(tail.element is UILayoutGuide)
         
-        let (_, tail2) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .topGuide, secondAttribute: .topGuide, constant: .all(Constants.constant))
+        let (_, tail2) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
         
         XCTAssertTrue(tail2.element is UILayoutGuide)
         XCTAssertEqual(tail.element as? UILayoutGuide, tail2.element as? UILayoutGuide)
