@@ -320,11 +320,22 @@ extension LayoutItemFactoryTests {
 
         test(viewController, for: .none, expectedAttribute: .notAnAttribute, constant: .all(Constants.constant), expectedConstant: 0.0)
     }
+    
+    func testSafeLayoutGuideFakeArea() {
+        testFakeArea(viewController)
+    }
 }
 
 // MARK: - Utils
 private extension LayoutItemFactoryTests {
 
+    func testFakeArea(_ viewController: UIViewController) {
+        let item1 = LayoutItemFactory.makeLayoutItem(element: viewController, attribute: .topGuide, constant: .top(20))
+        let item2 = LayoutItemFactory.makeLayoutItem(element: viewController, attribute: .topGuide, constant: .top(20))
+        
+        XCTAssertEqual(item1.attribute, item2.attribute)
+    }
+    
     func test(_ view: UIView,
               for attribute: ConstrictorAttribute,
               expectedAttribute: NSLayoutConstraint.Attribute,
