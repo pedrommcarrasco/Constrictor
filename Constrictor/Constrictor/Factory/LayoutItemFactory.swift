@@ -150,9 +150,9 @@ private extension LayoutItemFactory {
             constant = constantStruct.top
             
             if let atLeastiOS11 = atLeastiOS11, !atLeastiOS11,
-                let vc = viewController, let _ = safeLayoutGuide(for: vc) {
+                let vc = viewController, let fakeSafeArea = safeLayoutGuide(for: vc) {
                 
-                element = vc.topLayoutGuide
+                element = fakeSafeArea
                 
             } else { element = safeArea }
             
@@ -165,9 +165,9 @@ private extension LayoutItemFactory {
             constant = -constantStruct.bottom
             
             if let atLeastiOS11 = atLeastiOS11, !atLeastiOS11,
-                let vc = viewController, let _ = safeLayoutGuide(for: vc) {
+                let vc = viewController, let fakeSafeArea = safeLayoutGuide(for: vc) {
                 
-                element = vc.bottomLayoutGuide
+                element = fakeSafeArea
                 
             } else { element = safeArea }
             
