@@ -322,26 +322,20 @@ extension LayoutItemFactoryTests {
     }
     
     func testSafeLayoutGuideFakeArea() {
-        testFakeArea(viewController)
+
+        let (_, tail) = LayoutItemFactory.makeLayoutItems(firstElement: UIView(), secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
+        
+        XCTAssertTrue(tail.element is UILayoutGuide)
+        
+        let (_, tail2) = LayoutItemFactory.makeLayoutItems(firstElement: UIView(), secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
+        
+        XCTAssertTrue(tail2.element is UILayoutGuide)
+        XCTAssertEqual(tail.element as? UILayoutGuide, tail2.element as? UILayoutGuide)
     }
 }
 
 // MARK: - Utils
 private extension LayoutItemFactoryTests {
-    
-    func testFakeArea(_ viewController: UIViewController) {
-        
-        let view = UIView()
-        
-        let (_, tail) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
-        
-        XCTAssertTrue(tail.element is UILayoutGuide)
-        
-        let (_, tail2) = LayoutItemFactory.makeLayoutItems(firstElement: view, secondElement: viewController, firstAttribute: .centerXGuide, secondAttribute: .centerXGuide, constant: .all(Constants.constant))
-        
-        XCTAssertTrue(tail2.element is UILayoutGuide)
-        XCTAssertEqual(tail.element as? UILayoutGuide, tail2.element as? UILayoutGuide)
-    }
     
     func test(_ view: UIView,
               for attribute: ConstrictorAttribute,
