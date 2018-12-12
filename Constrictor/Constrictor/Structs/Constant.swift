@@ -35,9 +35,9 @@ public struct Constant: Equatable {
 
 // MARK: - Internal Custom Initializer
 extension Constant {
-
+    
     init(attribute: ConstrictorAttribute, value: CGFloat) {
-
+        
         switch attribute {
         case .top, .topGuide: self = .top(value)
         case .bottom, .bottomGuide: self = .bottom(value)
@@ -52,9 +52,9 @@ extension Constant {
         case .none: self = .zero
         }
     }
-
+    
     init(size: CGFloat) {
-
+        
         self = .width(size) & .height(size)
     }
 }
@@ -73,6 +73,22 @@ public extension Constant {
     static func y(_ value: CGFloat) -> Constant {
         return Constant(x: 0.0, y: value,
                         top: 0.0, bottom: 0.0,
+                        right: 0.0, left: 0.0,
+                        leading: 0.0, trailing: 0.0,
+                        width: 0.0, height: 0.0)
+    }
+    
+    static func horizontal(_ value: CGFloat) -> Constant {
+        return Constant(x: 0.0, y: 0.0,
+                        top: 0.0, bottom: 0.0,
+                        right: value, left: value,
+                        leading: value, trailing: value,
+                        width: 0.0, height: 0.0)
+    }
+    
+    static func vertical(_ value: CGFloat) -> Constant {
+        return Constant(x: 0.0, y: 0.0,
+                        top: value, bottom: value,
                         right: 0.0, left: 0.0,
                         leading: 0.0, trailing: 0.0,
                         width: 0.0, height: 0.0)
@@ -141,7 +157,7 @@ public extension Constant {
                         leading: 0.0, trailing: 0.0,
                         width: 0.0, height: value)
     }
-
+    
     static func all(_ value: CGFloat) -> Constant {
         return Constant(x: value, y: value,
                         top: value, bottom: value,
