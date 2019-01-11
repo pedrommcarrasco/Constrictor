@@ -1,14 +1,13 @@
 //
-//  UIView+Constrictor.swift
+//  UILayoutGuide+Constrictor.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
-//  Copyright © 2019 Pedro Carrasco. All rights reserved.
 //
 
 import UIKit
 
-public extension UIView {
+public extension UILayoutGuide {
     
     private struct AssociatedKey {
         static var constrictor: UInt8 = 0

@@ -12,7 +12,7 @@ struct ConstrictorAssembler {
     
     // MARK: Prepare Anchorable
     static func configure(_ anchorable: Anchorable) {
-        guard let view = anchorable as? UIView, !view.translatesAutoresizingMaskIntoConstraints else { return }
+        guard let view = anchorable as? UIView, view.translatesAutoresizingMaskIntoConstraints else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
     }
 

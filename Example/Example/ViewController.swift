@@ -33,9 +33,8 @@ class ViewController: UIViewController {
         redView.addSubview(blueView)
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
-        blueView.constrictor
-            .size(to: 75)
-            .center(in: self.view)
+            blueView.constrictor.size(to: 75)
+            blueView.constrictor.center(in: self.view)
 
         // ** Green View **
         // Boilerplate
@@ -48,5 +47,6 @@ class ViewController: UIViewController {
             .height(to: redView)
             .centerY(to: blueView.safeAreaLayoutGuide)
             .trailing(to: blueView, .leading, with: 8)
+    
     }
 }
