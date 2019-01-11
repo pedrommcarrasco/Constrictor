@@ -1,22 +1,22 @@
+////
+////  UIView+Finder.swift
+////  ConstrictorTests
+////
+////  Created by Pedro Carrasco on 23/05/2018.
+////  Copyright © 2018 Pedro Carrasco. All rights reserved.
+////
 //
-//  UIView+Finder.swift
-//  ConstrictorTests
+//import UIKit
 //
-//  Created by Pedro Carrasco on 23/05/2018.
-//  Copyright © 2018 Pedro Carrasco. All rights reserved.
+//extension UIView {
 //
-
-import UIKit
-
-extension UIView {
-
-    func findConstraints(for attribute: NSLayoutConstraint.Attribute,
-                         relatedTo view: UIView? = nil,
-                         at index: ConstraintIndex = .firstItem) -> [NSLayoutConstraint] {
-
-        return constraints.compactMap { constraint -> NSLayoutConstraint? in
-            if constraint.isFrom(attribute, relatedTo: view, at: index) { return constraint }
-            else { return nil }
-        }
-    }
-}
+//    func findConstraints(for attribute: NSLayoutConstraint.Attribute,
+//                         relatedTo view: UIView? = nil,
+//                         at index: ConstraintIndex = .firstItem) -> [NSLayoutConstraint] {
+//
+//        return constraints.compactMap { constraint -> NSLayoutConstraint? in
+//            if constraint.isFrom(attribute, relatedTo: view, at: index) { return constraint }
+//            else { return nil }
+//        }
+//    }
+//}

@@ -9,7 +9,6 @@
 import UIKit
 import Constrictor
 
-
 class ViewController: UIViewController {
     
     let redView = UIView()
@@ -25,7 +24,8 @@ class ViewController: UIViewController {
         view.addSubview(redView)
 
         // Constraints -> Same dimensions of redview's superview
-        redView.constrictEdges(to: self, withinGuides: false)
+        redView.constrictor
+            .edge(to: self.view)
 
         // ** Blue View **
         // Boilerplate
@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         redView.addSubview(blueView)
 
         // Constraints -> 75 width, 75 height and centered in viewcontroller's view
-        blueView.constrictSize(to: 75.0)
-            .constrictCenter(in: self)
+        blueView.constrictor
+            .size(to: 75)
+            .center(in: self.view)
 
         // ** Green View **
         // Boilerplate
@@ -42,8 +43,10 @@ class ViewController: UIViewController {
         redView.addSubview(greenView)
 
         // Constraints -> Same width, height and centerY of blueView, greenView at the left of blueView with a spacing of 8
-        greenView.constrict(to: blueView, attributes: .width, .centerYGuide)
-            .constrictToParent(attributes: .height)
-            .constrict(.trailing, to: blueView, attribute: .leading, with: 8)
+        greenView.constrictor
+            .width(to: blueView)
+            .height(to: redView)
+            .centerY(to: blueView.safeAreaLayoutGuide)
+            .trailing(to: blueView, .leading, with: 8)
     }
 }

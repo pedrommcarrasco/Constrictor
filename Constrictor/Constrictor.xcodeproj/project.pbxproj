@@ -23,8 +23,6 @@
 		531188DF215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */; };
 		537F0042213B424300BC0354 /* ConstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537F0041213B424300BC0354 /* ConstantTests.swift */; };
 		539B841820B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */; };
-		53CB882320B4618B002731A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB882220B4618B002731A6 /* Constant.swift */; };
-		53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CDE3C120B3201E007E4AE0 /* Constrictor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53D8199520B5818800E62D1E /* UIView+ConstrictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8199420B5818800E62D1E /* UIView+ConstrictorTests.swift */; };
@@ -33,6 +31,26 @@
 		53D819A620B5A58800E62D1E /* UIView+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819A520B5A58800E62D1E /* UIView+Finder.swift */; };
 		53D819AB20B5B1F300E62D1E /* ConstraintTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */; };
 		53E6F33C215D4C6200E0337E /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6F33B215D4C6200E0337E /* LayoutItem.swift */; };
+		53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D98F21E8AF1300929BBF /* Constrictor.swift */; };
+		53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */; };
+		53E9D99421E8B70F00929BBF /* Constrictor+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99321E8B70F00929BBF /* Constrictor+Edge.swift */; };
+		53E9D99621E8BBB100929BBF /* Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99521E8BBB100929BBF /* Anchorable.swift */; };
+		53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */; };
+		53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */; };
+		53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */; };
+		53E9D9A021E8D30900929BBF /* ConstrictorXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */; };
+		53E9D9A221E8D46D00929BBF /* ConstrictorYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */; };
+		53E9D9A521E8D4D600929BBF /* ConstrictorDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */; };
+		53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */; };
+		53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */; };
+		53E9D9B021E8D7C200929BBF /* ConstrictorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */; };
+		53E9D9B221E8DA2800929BBF /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */; };
+		53E9D9B821E8E85C00929BBF /* ConstrictorSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */; };
+		53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */; };
+		53E9D9BC21E8EA1800929BBF /* ConstrictorCenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */; };
+		53E9D9C021E8EAA400929BBF /* ConstrictorCenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */; };
+		53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */; };
+		53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */; };
 		53ED274920BC012C00038282 /* LayoutItemFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,9 +81,7 @@
 		531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorSizeTests.swift"; sourceTree = "<group>"; };
 		537F0041213B424300BC0354 /* ConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTests.swift; sourceTree = "<group>"; };
 		539B841720B6C7DF00C85514 /* UIView+ConstrictorEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorEdgesTests.swift"; sourceTree = "<group>"; };
-		53CB882220B4618B002731A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53CDE3C120B3201E007E4AE0 /* Constrictor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constrictor.h; sourceTree = "<group>"; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CDE3CC20B3204D007E4AE0 /* Constrictable+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictable+Constrictor.swift"; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +92,26 @@
 		53D819A520B5A58800E62D1E /* UIView+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Finder.swift"; sourceTree = "<group>"; };
 		53D819AA20B5B1F300E62D1E /* ConstraintTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintTestable.swift; sourceTree = "<group>"; };
 		53E6F33B215D4C6200E0337E /* LayoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItem.swift; sourceTree = "<group>"; };
+		53E9D98F21E8AF1300929BBF /* Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrictor.swift; sourceTree = "<group>"; };
+		53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrictor.swift"; sourceTree = "<group>"; };
+		53E9D99321E8B70F00929BBF /* Constrictor+Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Edge.swift"; sourceTree = "<group>"; };
+		53E9D99521E8BBB100929BBF /* Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchorable.swift; sourceTree = "<group>"; };
+		53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Size.swift"; sourceTree = "<group>"; };
+		53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Center.swift"; sourceTree = "<group>"; };
+		53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contrictor+Simple.swift"; sourceTree = "<group>"; };
+		53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorXAxis.swift; sourceTree = "<group>"; };
+		53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorYAxis.swift; sourceTree = "<group>"; };
+		53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorDimension.swift; sourceTree = "<group>"; };
+		53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorable.swift"; sourceTree = "<group>"; };
+		53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Anchorable.swift"; sourceTree = "<group>"; };
+		53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorFactory.swift; sourceTree = "<group>"; };
+		53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
+		53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeConstant.swift; sourceTree = "<group>"; };
+		53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeAnchor.swift; sourceTree = "<group>"; };
+		53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorCenterAnchor.swift; sourceTree = "<group>"; };
+		53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorCenterConstant.swift; sourceTree = "<group>"; };
+		53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeAnchor.swift; sourceTree = "<group>"; };
+		53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeConstant.swift; sourceTree = "<group>"; };
 		53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItemFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +202,6 @@
 		53CB882120B46176002731A6 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				53CB882220B4618B002731A6 /* Constant.swift */,
 				53E6F33B215D4C6200E0337E /* LayoutItem.swift */,
 			);
 			path = Structs;
@@ -193,15 +228,12 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
-				531188D9215E861400148AF3 /* Core */,
-				531188DA215E862100148AF3 /* Sugar */,
-				534B3A8B2139C61E009D9F74 /* Factory */,
-				205B528520BADF290016C8B8 /* Protocols */,
-				205B528420BADF220016C8B8 /* Enumerations */,
-				53CB882120B46176002731A6 /* Structs */,
-				20D1F2B820B3501400B327B7 /* Extensions */,
-				53CDE3C120B3201E007E4AE0 /* Constrictor.h */,
+				53E9D9A321E8D4BA00929BBF /* Anchors */,
+				53E9D9A621E8D53000929BBF /* Core */,
+				53E9D9AE21E8D75400929BBF /* Factory */,
+				53E9D9AD21E8D60400929BBF /* Sugar */,
 				53CDE3C220B3201E007E4AE0 /* Info.plist */,
+				53E9D98D21E8AEC600929BBF /* OLD */,
 			);
 			path = Constrictor;
 			sourceTree = "<group>";
@@ -270,6 +302,92 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		53E9D98D21E8AEC600929BBF /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				531188D9215E861400148AF3 /* Core */,
+				531188DA215E862100148AF3 /* Sugar */,
+				534B3A8B2139C61E009D9F74 /* Factory */,
+				205B528520BADF290016C8B8 /* Protocols */,
+				205B528420BADF220016C8B8 /* Enumerations */,
+				53CB882120B46176002731A6 /* Structs */,
+				20D1F2B820B3501400B327B7 /* Extensions */,
+			);
+			path = OLD;
+			sourceTree = "<group>";
+		};
+		53E9D9A321E8D4BA00929BBF /* Anchors */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D99521E8BBB100929BBF /* Anchorable.swift */,
+				53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */,
+				53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */,
+				53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */,
+				53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */,
+				53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */,
+			);
+			path = Anchors;
+			sourceTree = "<group>";
+		};
+		53E9D9A621E8D53000929BBF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D98F21E8AF1300929BBF /* Constrictor.swift */,
+				53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */,
+				53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		53E9D9AD21E8D60400929BBF /* Sugar */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D9B421E8E81400929BBF /* Center */,
+				53E9D9B521E8E81900929BBF /* Edge */,
+				53E9D9B621E8E82100929BBF /* Size */,
+			);
+			path = Sugar;
+			sourceTree = "<group>";
+		};
+		53E9D9AE21E8D75400929BBF /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */,
+				53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		53E9D9B421E8E81400929BBF /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */,
+				53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */,
+				53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		53E9D9B521E8E81900929BBF /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D99321E8B70F00929BBF /* Constrictor+Edge.swift */,
+				53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */,
+				53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */,
+			);
+			path = Edge;
+			sourceTree = "<group>";
+		};
+		53E9D9B621E8E82100929BBF /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */,
+				53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */,
+				53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
 		53ED274720BC011800038282 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +403,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CDE3C320B3201E007E4AE0 /* Constrictor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,20 +505,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E9D99621E8BBB100929BBF /* Anchorable.swift in Sources */,
+				53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */,
+				53E9D9B021E8D7C200929BBF /* ConstrictorFactory.swift in Sources */,
+				53E9D9A221E8D46D00929BBF /* ConstrictorYAxis.swift in Sources */,
 				20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */,
+				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
+				53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */,
+				53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */,
 				205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */,
 				53E6F33C215D4C6200E0337E /* LayoutItem.swift in Sources */,
 				531188D8215E364D00148AF3 /* LayoutItemFactory.swift in Sources */,
 				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
+				53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
+				53E9D9A521E8D4D600929BBF /* ConstrictorDimension.swift in Sources */,
+				53E9D99421E8B70F00929BBF /* Constrictor+Edge.swift in Sources */,
+				53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */,
+				53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */,
 				531188DC215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift in Sources */,
+				53E9D9B221E8DA2800929BBF /* NSLayoutConstraint+Set.swift in Sources */,
+				53E9D9B821E8E85C00929BBF /* ConstrictorSizeConstant.swift in Sources */,
 				205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */,
 				20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */,
+				53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */,
 				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
+				53E9D9BC21E8EA1800929BBF /* ConstrictorCenterAnchor.swift in Sources */,
 				20BC12FD20B98A240034207F /* Constrictable+ConstrictorCore.swift in Sources */,
-				53CB882320B4618B002731A6 /* Constant.swift in Sources */,
+				53E9D9A021E8D30900929BBF /* ConstrictorXAxis.swift in Sources */,
 				20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */,
+				53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */,
+				53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */,
+				53E9D9C021E8EAA400929BBF /* ConstrictorCenterConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
