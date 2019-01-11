@@ -8,8 +8,15 @@
 
 import UIKit
 
-struct ConstrictorFactory {
+struct ConstrictorAssembler {
+    
+    // MARK: Prepare Anchorable
+    static func configure(_ anchorable: Anchorable) {
+        guard let view = anchorable as? UIView, !view.translatesAutoresizingMaskIntoConstraints else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
 
+    // MARK: Constraint Factory
     static func constrict(anchorA: NSLayoutXAxisAnchor,
                           anchorB: NSLayoutXAxisAnchor,
                           relation: NSLayoutConstraint.Relation,

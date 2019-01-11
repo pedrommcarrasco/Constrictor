@@ -43,7 +43,7 @@
 		53E9D9A521E8D4D600929BBF /* ConstrictorDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */; };
 		53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */; };
 		53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */; };
-		53E9D9B021E8D7C200929BBF /* ConstrictorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */; };
+		53E9D9B021E8D7C200929BBF /* ConstrictorAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */; };
 		53E9D9B221E8DA2800929BBF /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */; };
 		53E9D9B821E8E85C00929BBF /* ConstrictorSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */; };
 		53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */; };
@@ -104,7 +104,7 @@
 		53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorDimension.swift; sourceTree = "<group>"; };
 		53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorable.swift"; sourceTree = "<group>"; };
 		53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Anchorable.swift"; sourceTree = "<group>"; };
-		53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorFactory.swift; sourceTree = "<group>"; };
+		53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAssembler.swift; sourceTree = "<group>"; };
 		53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
 		53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeConstant.swift; sourceTree = "<group>"; };
 		53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeAnchor.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		53E9D9AE21E8D75400929BBF /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				53E9D9AF21E8D7C200929BBF /* ConstrictorFactory.swift */,
+				53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */,
 				53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */,
 			);
 			path = Factory;
@@ -507,7 +507,7 @@
 			files = (
 				53E9D99621E8BBB100929BBF /* Anchorable.swift in Sources */,
 				53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */,
-				53E9D9B021E8D7C200929BBF /* ConstrictorFactory.swift in Sources */,
+				53E9D9B021E8D7C200929BBF /* ConstrictorAssembler.swift in Sources */,
 				53E9D9A221E8D46D00929BBF /* ConstrictorYAxis.swift in Sources */,
 				20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */,
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
