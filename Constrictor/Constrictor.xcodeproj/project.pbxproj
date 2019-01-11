@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2012F4BC21E93D510090861B /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BA21E93D510090861B /* Assembler.swift */; };
+		2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */; };
 		202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202473B520BA14E9005693AC /* ConstrictorAttribute.swift */; };
 		20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */; };
 		20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */; };
@@ -38,17 +40,15 @@
 		53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */; };
 		53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */; };
 		53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */; };
-		53E9D9A021E8D30900929BBF /* ConstrictorXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */; };
-		53E9D9A221E8D46D00929BBF /* ConstrictorYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */; };
-		53E9D9A521E8D4D600929BBF /* ConstrictorDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */; };
+		53E9D9A021E8D30900929BBF /* XAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99F21E8D30900929BBF /* XAxis.swift */; };
+		53E9D9A221E8D46D00929BBF /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A121E8D46D00929BBF /* YAxis.swift */; };
+		53E9D9A521E8D4D600929BBF /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A421E8D4D600929BBF /* Dimension.swift */; };
 		53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */; };
 		53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */; };
-		53E9D9B021E8D7C200929BBF /* ConstrictorAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */; };
-		53E9D9B221E8DA2800929BBF /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */; };
-		53E9D9B821E8E85C00929BBF /* ConstrictorSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */; };
-		53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */; };
-		53E9D9BC21E8EA1800929BBF /* ConstrictorCenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */; };
-		53E9D9C021E8EAA400929BBF /* ConstrictorCenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */; };
+		53E9D9B821E8E85C00929BBF /* SizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B721E8E85C00929BBF /* SizeConstant.swift */; };
+		53E9D9BA21E8E8EE00929BBF /* SizeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B921E8E8EE00929BBF /* SizeAnchor.swift */; };
+		53E9D9BC21E8EA1800929BBF /* CenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BB21E8EA1800929BBF /* CenterAnchor.swift */; };
+		53E9D9C021E8EAA400929BBF /* CenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BF21E8EAA400929BBF /* CenterConstant.swift */; };
 		53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */; };
 		53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */; };
 		53ED274920BC012C00038282 /* LayoutItemFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */; };
@@ -65,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2012F4BA21E93D510090861B /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
 		202473B520BA14E9005693AC /* ConstrictorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAttribute.swift; sourceTree = "<group>"; };
 		20572CE520F2B3AF00D21F09 /* UILayoutPriority+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Operators.swift"; sourceTree = "<group>"; };
 		20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+OperatorsTests.swift"; sourceTree = "<group>"; };
@@ -99,17 +101,15 @@
 		53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Size.swift"; sourceTree = "<group>"; };
 		53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Center.swift"; sourceTree = "<group>"; };
 		53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contrictor+Simple.swift"; sourceTree = "<group>"; };
-		53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorXAxis.swift; sourceTree = "<group>"; };
-		53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorYAxis.swift; sourceTree = "<group>"; };
-		53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorDimension.swift; sourceTree = "<group>"; };
+		53E9D99F21E8D30900929BBF /* XAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxis.swift; sourceTree = "<group>"; };
+		53E9D9A121E8D46D00929BBF /* YAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxis.swift; sourceTree = "<group>"; };
+		53E9D9A421E8D4D600929BBF /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorable.swift"; sourceTree = "<group>"; };
 		53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Anchorable.swift"; sourceTree = "<group>"; };
-		53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorAssembler.swift; sourceTree = "<group>"; };
-		53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
-		53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeConstant.swift; sourceTree = "<group>"; };
-		53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorSizeAnchor.swift; sourceTree = "<group>"; };
-		53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorCenterAnchor.swift; sourceTree = "<group>"; };
-		53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorCenterConstant.swift; sourceTree = "<group>"; };
+		53E9D9B721E8E85C00929BBF /* SizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstant.swift; sourceTree = "<group>"; };
+		53E9D9B921E8E8EE00929BBF /* SizeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAnchor.swift; sourceTree = "<group>"; };
+		53E9D9BB21E8EA1800929BBF /* CenterAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAnchor.swift; sourceTree = "<group>"; };
+		53E9D9BF21E8EAA400929BBF /* CenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterConstant.swift; sourceTree = "<group>"; };
 		53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeAnchor.swift; sourceTree = "<group>"; };
 		53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeConstant.swift; sourceTree = "<group>"; };
 		53ED274820BC012C00038282 /* LayoutItemFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItemFactoryTests.swift; sourceTree = "<group>"; };
@@ -134,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2012F4B921E93D510090861B /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				2012F4BA21E93D510090861B /* Assembler.swift */,
+				2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
 		205B528420BADF220016C8B8 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,9 +237,9 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				2012F4B921E93D510090861B /* Assembler */,
 				53E9D9A321E8D4BA00929BBF /* Anchors */,
 				53E9D9A621E8D53000929BBF /* Core */,
-				53E9D9AE21E8D75400929BBF /* Factory */,
 				53E9D9AD21E8D60400929BBF /* Sugar */,
 				53CDE3C220B3201E007E4AE0 /* Info.plist */,
 				53E9D98D21E8AEC600929BBF /* OLD */,
@@ -320,9 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				53E9D99521E8BBB100929BBF /* Anchorable.swift */,
-				53E9D9A421E8D4D600929BBF /* ConstrictorDimension.swift */,
-				53E9D99F21E8D30900929BBF /* ConstrictorXAxis.swift */,
-				53E9D9A121E8D46D00929BBF /* ConstrictorYAxis.swift */,
+				53E9D9A421E8D4D600929BBF /* Dimension.swift */,
+				53E9D99F21E8D30900929BBF /* XAxis.swift */,
+				53E9D9A121E8D46D00929BBF /* YAxis.swift */,
 				53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */,
 				53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */,
 			);
@@ -349,21 +358,12 @@
 			path = Sugar;
 			sourceTree = "<group>";
 		};
-		53E9D9AE21E8D75400929BBF /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				53E9D9AF21E8D7C200929BBF /* ConstrictorAssembler.swift */,
-				53E9D9B121E8DA2800929BBF /* NSLayoutConstraint+Set.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
 		53E9D9B421E8E81400929BBF /* Center */ = {
 			isa = PBXGroup;
 			children = (
 				53E9D99921E8BC4000929BBF /* Constrictor+Center.swift */,
-				53E9D9BB21E8EA1800929BBF /* ConstrictorCenterAnchor.swift */,
-				53E9D9BF21E8EAA400929BBF /* ConstrictorCenterConstant.swift */,
+				53E9D9BB21E8EA1800929BBF /* CenterAnchor.swift */,
+				53E9D9BF21E8EAA400929BBF /* CenterConstant.swift */,
 			);
 			path = Center;
 			sourceTree = "<group>";
@@ -382,8 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				53E9D99721E8BC1300929BBF /* Constrictor+Size.swift */,
-				53E9D9B921E8E8EE00929BBF /* ConstrictorSizeAnchor.swift */,
-				53E9D9B721E8E85C00929BBF /* ConstrictorSizeConstant.swift */,
+				53E9D9B921E8E8EE00929BBF /* SizeAnchor.swift */,
+				53E9D9B721E8E85C00929BBF /* SizeConstant.swift */,
 			);
 			path = Size;
 			sourceTree = "<group>";
@@ -506,38 +506,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E9D99621E8BBB100929BBF /* Anchorable.swift in Sources */,
-				53E9D9BA21E8E8EE00929BBF /* ConstrictorSizeAnchor.swift in Sources */,
-				53E9D9B021E8D7C200929BBF /* ConstrictorAssembler.swift in Sources */,
-				53E9D9A221E8D46D00929BBF /* ConstrictorYAxis.swift in Sources */,
+				53E9D9BA21E8E8EE00929BBF /* SizeAnchor.swift in Sources */,
+				53E9D9A221E8D46D00929BBF /* YAxis.swift in Sources */,
 				20D1F2BC20B35D4C00B327B7 /* Constrictable+ConstrictorCenter.swift in Sources */,
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
 				53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */,
 				53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */,
 				205B527E20BADEA50016C8B8 /* UIView+Constrictable.swift in Sources */,
+				2012F4BC21E93D510090861B /* Assembler.swift in Sources */,
 				53E6F33C215D4C6200E0337E /* LayoutItem.swift in Sources */,
+				2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */,
 				531188D8215E364D00148AF3 /* LayoutItemFactory.swift in Sources */,
 				205B528920BAE5E20016C8B8 /* UILayoutGuide+Constrictable.swift in Sources */,
 				53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */,
 				202473B620BA14E9005693AC /* ConstrictorAttribute.swift in Sources */,
-				53E9D9A521E8D4D600929BBF /* ConstrictorDimension.swift in Sources */,
+				53E9D9A521E8D4D600929BBF /* Dimension.swift in Sources */,
 				53E9D99421E8B70F00929BBF /* Constrictor+Edge.swift in Sources */,
 				53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */,
 				53CDE3CD20B3204D007E4AE0 /* Constrictable+Constrictor.swift in Sources */,
 				53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */,
 				531188DC215E92BA00148AF3 /* Constrictable+ConstrictorSize.swift in Sources */,
-				53E9D9B221E8DA2800929BBF /* NSLayoutConstraint+Set.swift in Sources */,
-				53E9D9B821E8E85C00929BBF /* ConstrictorSizeConstant.swift in Sources */,
+				53E9D9B821E8E85C00929BBF /* SizeConstant.swift in Sources */,
 				205B528020BADEB10016C8B8 /* UIViewController+Constrictable.swift in Sources */,
 				20D1F2BE20B35FBC00B327B7 /* Constrictable+ConstrictorEdges.swift in Sources */,
 				53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */,
 				205B528720BADF330016C8B8 /* Constrictable.swift in Sources */,
-				53E9D9BC21E8EA1800929BBF /* ConstrictorCenterAnchor.swift in Sources */,
+				53E9D9BC21E8EA1800929BBF /* CenterAnchor.swift in Sources */,
 				20BC12FD20B98A240034207F /* Constrictable+ConstrictorCore.swift in Sources */,
-				53E9D9A021E8D30900929BBF /* ConstrictorXAxis.swift in Sources */,
+				53E9D9A021E8D30900929BBF /* XAxis.swift in Sources */,
 				20572CE620F2B3AF00D21F09 /* UILayoutPriority+Operators.swift in Sources */,
 				53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */,
 				53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */,
-				53E9D9C021E8EAA400929BBF /* ConstrictorCenterConstant.swift in Sources */,
+				53E9D9C021E8EAA400929BBF /* CenterConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ConstrictorDimension.swift
+//  Dimension.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-public enum ConstrictorDimension {
+public enum Dimension {
     case width
     case height
 }
 
-extension ConstrictorDimension {
+extension Dimension {
 
     func anchor(for anchorable: Anchorable) -> NSLayoutDimension {
         switch self {

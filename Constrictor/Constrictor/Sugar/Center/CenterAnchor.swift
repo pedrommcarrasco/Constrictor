@@ -1,5 +1,5 @@
 //
-//  ConstrictorCenterAnchor.swift
+//  CenterAnchor.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ConstrictorCenterAnchor {
+public enum CenterAnchor {
     case x
     case y
 }

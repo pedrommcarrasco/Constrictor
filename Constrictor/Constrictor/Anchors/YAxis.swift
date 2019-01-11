@@ -1,5 +1,5 @@
 //
-//  ConstrictorYAxis.swift
+//  YAxis.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-public enum ConstrictorYAxis {
+public enum YAxis {
     case centerY
     case top
     case bottom
 }
 
-extension ConstrictorYAxis {
+extension YAxis {
 
     func anchor(for anchorable: Anchorable) -> NSLayoutYAxisAnchor {
         switch self {

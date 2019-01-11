@@ -1,5 +1,5 @@
 //
-//  ConstrictorSizeAnchor.swift
+//  SizeAnchor.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ConstrictorSizeAnchor {
+enum SizeAnchor {
     case width
     case height
 }

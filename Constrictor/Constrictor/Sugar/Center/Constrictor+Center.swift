@@ -13,7 +13,7 @@ extension Constrictor {
     @discardableResult
     public func center(as relation:  NSLayoutConstraint.Relation = .equal,
                        in item: Anchorable,
-                       with constant: ConstrictorCenterConstant,
+                       with constant: CenterConstant,
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
 
