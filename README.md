@@ -1,4 +1,4 @@
-![](https://github.com/pedrommcarrasco/Constrictor/blob/master/Design/constrictor.png?raw=true)
+![](https://github.com/pedrommcarrasco/Constrictor/blob/Revamp/cover.jpg?raw=true)
 
 > **Constrict** *(/ˈkənˈstrɪkt/)*, *verb*
 >
