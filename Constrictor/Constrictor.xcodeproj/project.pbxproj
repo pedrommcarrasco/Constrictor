@@ -131,6 +131,32 @@
 			path = Finder;
 			sourceTree = "<group>";
 		};
+		2040464721EA84DD00991BA5 /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				531188DD215F93DD00148AF3 /* Sugar */,
+				53ED274720BC011800038282 /* Enumerations */,
+				53D8199920B5949900E62D1E /* Structs */,
+				53D8199320B5817400E62D1E /* Extensions */,
+			);
+			path = OLD;
+			sourceTree = "<group>";
+		};
+		2040464821EA855600991BA5 /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				53D8199220B5816C00E62D1E /* Tests */,
+			);
+			path = OLD;
+			sourceTree = "<group>";
+		};
+		2040464921EA856100991BA5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		531188DD215F93DD00148AF3 /* Sugar */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +202,8 @@
 		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
 			isa = PBXGroup;
 			children = (
-				53D819A920B5B1D100E62D1E /* Protocols */,
-				53D819A820B5A68700E62D1E /* Enumerations */,
-				53D819A720B5A68100E62D1E /* Extensions */,
-				53D8199220B5816C00E62D1E /* Tests */,
+				2040464921EA856100991BA5 /* Tests */,
+				2040464821EA855600991BA5 /* OLD */,
 				53D8198B20B57C0B00E62D1E /* Info.plist */,
 			);
 			path = ConstrictorTests;
@@ -188,10 +212,10 @@
 		53D8199220B5816C00E62D1E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				531188DD215F93DD00148AF3 /* Sugar */,
-				53ED274720BC011800038282 /* Enumerations */,
-				53D8199920B5949900E62D1E /* Structs */,
-				53D8199320B5817400E62D1E /* Extensions */,
+				53D819A920B5B1D100E62D1E /* Protocols */,
+				53D819A820B5A68700E62D1E /* Enumerations */,
+				53D819A720B5A68100E62D1E /* Extensions */,
+				2040464721EA84DD00991BA5 /* OLD */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
