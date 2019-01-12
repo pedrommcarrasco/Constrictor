@@ -1,5 +1,5 @@
 //
-//  XAxis.swift
+//  AnchorXAxis.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum XAxis {
+public enum AnchorXAxis {
     case centerX
     case left
     case leading
@@ -16,7 +16,7 @@ public enum XAxis {
     case trailing
 }
 
-extension XAxis {
+extension AnchorXAxis {
 
     func anchor(for anchorable: Anchorable) -> NSLayoutXAxisAnchor {
         switch self {

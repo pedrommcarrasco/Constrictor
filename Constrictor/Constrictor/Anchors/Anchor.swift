@@ -23,6 +23,21 @@ public enum Anchor {
 
 extension Anchor {
     
+    var attribute: NSLayoutConstraint.Attribute {
+        switch self {
+        case .top: return .top
+        case .bottom: return .bottom
+        case .leading: return .leading
+        case .trailing: return .trailing
+        case .right: return .right
+        case .left: return .left
+        case .centerX: return .centerX
+        case .centerY: return .centerY
+        case .width: return .width
+        case .height: return .height
+        }
+    }
+    
     func constraints(for constraints: Constraints) -> [NSLayoutConstraint] {
         switch self{
         case .top: return constraints.top

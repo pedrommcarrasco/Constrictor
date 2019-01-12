@@ -14,7 +14,7 @@ extension Constrictor {
     @discardableResult
     public func centerY(as relation: NSLayoutConstraint.Relation = .equal,
                         to item: Anchorable,
-                        _ attribute: YAxis = .centerY,
+                        _ attribute: AnchorYAxis = .centerY,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
@@ -34,7 +34,7 @@ extension Constrictor {
     @discardableResult
     public func top(as relation: NSLayoutConstraint.Relation = .equal,
                     to item: Anchorable,
-                    _ attribute: YAxis = .top,
+                    _ attribute: AnchorYAxis = .top,
                     with constant: CGFloat = 0,
                     prioritizeAs priority: UILayoutPriority = .required,
                     isActive: Bool = true) -> Self {
@@ -54,7 +54,7 @@ extension Constrictor {
     @discardableResult
     public func bottom(as relation: NSLayoutConstraint.Relation = .equal,
                        to item: Anchorable,
-                       _ attribute: YAxis = .bottom,
+                       _ attribute: AnchorYAxis = .bottom,
                        with constant: CGFloat = 0,
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
@@ -75,7 +75,7 @@ extension Constrictor {
     @discardableResult
     public func centerX(as relation: NSLayoutConstraint.Relation = .equal,
                         to item: Anchorable,
-                        _ attribute: XAxis = .centerX,
+                        _ attribute: AnchorXAxis = .centerX,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
@@ -95,7 +95,7 @@ extension Constrictor {
     @discardableResult
     public func leading(as relation: NSLayoutConstraint.Relation = .equal,
                         to item: Anchorable,
-                        _ attribute: XAxis = .leading,
+                        _ attribute: AnchorXAxis = .leading,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
@@ -115,7 +115,7 @@ extension Constrictor {
     @discardableResult
     public func trailing(as relation: NSLayoutConstraint.Relation = .equal,
                          to item: Anchorable,
-                         _ attribute: XAxis = .trailing,
+                         _ attribute: AnchorXAxis = .trailing,
                          with constant: CGFloat = 0,
                          prioritizeAs priority: UILayoutPriority = .required,
                          isActive: Bool = true) -> Self {
@@ -135,7 +135,7 @@ extension Constrictor {
     @discardableResult
     public func right(as relation: NSLayoutConstraint.Relation = .equal,
                       to item: Anchorable,
-                      _ attribute: XAxis = .right,
+                      _ attribute: AnchorXAxis = .right,
                       with constant: CGFloat = 0,
                       prioritizeAs priority: UILayoutPriority = .required,
                       isActive: Bool = true) -> Self {
@@ -155,7 +155,7 @@ extension Constrictor {
     @discardableResult
     public func left(as relation: NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
-                     _ attribute: XAxis = .left,
+                     _ attribute: AnchorXAxis = .left,
                      with constant: CGFloat = 0,
                      prioritizeAs priority: UILayoutPriority = .required,
                      isActive: Bool = true) -> Self {
@@ -169,15 +169,14 @@ extension Constrictor {
                                                         isActive: isActive)
         constraints.left.append(constraint)
         
-        
         return self
     }
     
-    // MARK: Dimension
+    // MARK: AnchorDimension
     @discardableResult
     public func width(as relation: NSLayoutConstraint.Relation = .equal,
                       to item: Anchorable,
-                      _ attribute: Dimension = .width,
+                      _ attribute: AnchorDimension = .width,
                       with constant: CGFloat = 0,
                       multiplyBy multiplier: CGFloat = 1,
                       prioritizeAs priority: UILayoutPriority = .required,
@@ -216,7 +215,7 @@ extension Constrictor {
     @discardableResult
     public func height(as relation: NSLayoutConstraint.Relation = .equal,
                        to item: Anchorable,
-                       _ attribute: Dimension = .height,
+                       _ attribute: AnchorDimension = .height,
                        with constant: CGFloat = 0,
                        multiplyBy multiplier: CGFloat = 1,
                        prioritizeAs priority: UILayoutPriority = .required,
