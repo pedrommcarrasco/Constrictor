@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum AnchorYAxis {
+public enum AnchorYAxis: CaseIterable {
     case centerY
     case top
     case bottom

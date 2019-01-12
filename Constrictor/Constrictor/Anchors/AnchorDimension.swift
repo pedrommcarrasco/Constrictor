@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum AnchorDimension {
+public enum AnchorDimension: CaseIterable {
     case width
     case height
 }

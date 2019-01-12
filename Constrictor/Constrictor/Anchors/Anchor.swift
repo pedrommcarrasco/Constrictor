@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum Anchor {
+public enum Anchor: CaseIterable {
     case top
     case bottom
     case leading
