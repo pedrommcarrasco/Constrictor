@@ -1,5 +1,5 @@
 //
-//  Collection+NSLayoutConstraint.swift
+//  NSLayoutConstraintCollection+Finder.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 12/01/2019.
