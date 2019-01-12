@@ -20,12 +20,13 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.centerYAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.centerYAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.centerY.append(constraint)
         
         return self
     }
@@ -39,12 +40,13 @@ extension Constrictor {
                     isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.topAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.topAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.top.append(constraint)
         
         return self
     }
@@ -58,12 +60,13 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.bottomAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.bottomAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.bottom.append(constraint)
         
         return self
     }
@@ -78,12 +81,13 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.centerXAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.centerXAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.centerX.append(constraint)
         
         return self
     }
@@ -97,12 +101,13 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.leadingAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.leadingAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.leading.append(constraint)
         
         return self
     }
@@ -116,12 +121,13 @@ extension Constrictor {
                          isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.trailingAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.trailingAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.trailing.append(constraint)
         
         return self
     }
@@ -135,12 +141,13 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.rightAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.rightAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.right.append(constraint)
         
         return self
     }
@@ -154,12 +161,14 @@ extension Constrictor {
                      isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.leftAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.leftAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.left.append(constraint)
+        
         
         return self
     }
@@ -175,13 +184,14 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.widthAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       multiplier: multiplier,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.widthAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        multiplier: multiplier,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.width.append(constraint)
         
         return self
     }
@@ -193,11 +203,12 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchor: object.widthAnchor,
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchor: object.widthAnchor,
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.width.append(constraint)
         
         return self
     }
@@ -212,13 +223,14 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchorA: object.heightAnchor,
-                                       anchorB: attribute.anchor(for: item),
-                                       relation: relation,
-                                       constant: constant,
-                                       multiplier: multiplier,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchorA: object.heightAnchor,
+                                                        anchorB: attribute.anchor(for: item),
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        multiplier: multiplier,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.height.append(constraint)
         
         return self
     }
@@ -230,11 +242,12 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
         
         ConstrictorAssembler.configure(object)
-        ConstrictorAssembler.constrict(anchor: object.heightAnchor,
-                                       relation: relation,
-                                       constant: constant,
-                                       priority: priority,
-                                       isActive: isActive)
+        let constraint = ConstrictorAssembler.constrict(anchor: object.heightAnchor,
+                                                        relation: relation,
+                                                        constant: constant,
+                                                        priority: priority,
+                                                        isActive: isActive)
+        constraints.height.append(constraint)
         
         return self
     }

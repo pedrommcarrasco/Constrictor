@@ -22,7 +22,7 @@ struct ConstrictorAssembler {
                           relation: NSLayoutConstraint.Relation,
                           constant: CGFloat,
                           priority: UILayoutPriority,
-                          isActive: Bool) {
+                          isActive: Bool) -> NSLayoutConstraint {
 
         let constraint: NSLayoutConstraint
 
@@ -33,6 +33,8 @@ struct ConstrictorAssembler {
         }
 
         constraint.set(constant: constant, priority: priority, isActive: isActive)
+        
+        return constraint
     }
 
     static func constrict(anchorA: NSLayoutYAxisAnchor,
@@ -40,7 +42,7 @@ struct ConstrictorAssembler {
                           relation: NSLayoutConstraint.Relation,
                           constant: CGFloat,
                           priority: UILayoutPriority,
-                          isActive: Bool) {
+                          isActive: Bool) -> NSLayoutConstraint {
 
         let constraint: NSLayoutConstraint
 
@@ -51,6 +53,8 @@ struct ConstrictorAssembler {
         }
 
         constraint.set(constant: constant, priority: priority, isActive: isActive)
+        
+        return constraint
     }
 
     static func constrict(anchorA: NSLayoutDimension,
@@ -59,7 +63,7 @@ struct ConstrictorAssembler {
                           constant: CGFloat,
                           multiplier: CGFloat,
                           priority: UILayoutPriority,
-                          isActive: Bool) {
+                          isActive: Bool) -> NSLayoutConstraint{
 
         let constraint: NSLayoutConstraint
 
@@ -70,13 +74,15 @@ struct ConstrictorAssembler {
         }
 
         constraint.set(constant: constant, priority: priority, isActive: isActive)
+        
+        return constraint
     }
 
     static func constrict(anchor: NSLayoutDimension,
                           relation: NSLayoutConstraint.Relation,
                           constant: CGFloat,
                           priority: UILayoutPriority,
-                          isActive: Bool) {
+                          isActive: Bool) -> NSLayoutConstraint {
 
         let constraint: NSLayoutConstraint
 
@@ -87,5 +93,7 @@ struct ConstrictorAssembler {
         }
 
         constraint.set(constant: constant, priority: priority, isActive: isActive)
+        
+        return constraint
     }
 }

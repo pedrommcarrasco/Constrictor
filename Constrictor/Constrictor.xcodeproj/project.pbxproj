@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2012F4BC21E93D510090861B /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BA21E93D510090861B /* Assembler.swift */; };
 		2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */; };
+		2040463F21EA037000991BA5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040463E21EA037000991BA5 /* Constraints.swift */; };
+		2040464421EA2F0300991BA5 /* Collection+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040464321EA2F0300991BA5 /* Collection+NSLayoutConstraint.swift */; };
+		2040464621EA320E00991BA5 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040464521EA320E00991BA5 /* Anchor.swift */; };
 		20572CE820F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */; };
 		20D364DC20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */; };
 		531188DF215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		2012F4BA21E93D510090861B /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
+		2040463E21EA037000991BA5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		2040464321EA2F0300991BA5 /* Collection+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
+		2040464521EA320E00991BA5 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		20572CE720F2B3EA00D21F09 /* UILayoutPriority+OperatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+OperatorsTests.swift"; sourceTree = "<group>"; };
 		20D364DB20B6291000EF02B2 /* UIView+ConstrictorCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorCenterTests.swift"; sourceTree = "<group>"; };
 		531188DE215F942A00148AF3 /* UIView+ConstrictorSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorSizeTests.swift"; sourceTree = "<group>"; };
@@ -117,6 +123,14 @@
 			path = Assembler;
 			sourceTree = "<group>";
 		};
+		2040464221EA2EE400991BA5 /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				2040464321EA2F0300991BA5 /* Collection+NSLayoutConstraint.swift */,
+			);
+			path = Finder;
+			sourceTree = "<group>";
+		};
 		531188DD215F93DD00148AF3 /* Sugar */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +163,7 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				2040464221EA2EE400991BA5 /* Finder */,
 				2012F4B921E93D510090861B /* Assembler */,
 				53E9D9A321E8D4BA00929BBF /* Anchors */,
 				53E9D9A621E8D53000929BBF /* Core */,
@@ -225,12 +240,13 @@
 		53E9D9A321E8D4BA00929BBF /* Anchors */ = {
 			isa = PBXGroup;
 			children = (
+				2040464521EA320E00991BA5 /* Anchor.swift */,
 				53E9D99521E8BBB100929BBF /* Anchorable.swift */,
 				53E9D9A421E8D4D600929BBF /* Dimension.swift */,
-				53E9D99F21E8D30900929BBF /* XAxis.swift */,
-				53E9D9A121E8D46D00929BBF /* YAxis.swift */,
 				53E9D9A921E8D55B00929BBF /* UILayoutGuide+Anchorable.swift */,
 				53E9D9A721E8D54D00929BBF /* UIView+Anchorable.swift */,
+				53E9D99F21E8D30900929BBF /* XAxis.swift */,
+				53E9D9A121E8D46D00929BBF /* YAxis.swift */,
 			);
 			path = Anchors;
 			sourceTree = "<group>";
@@ -238,6 +254,7 @@
 		53E9D9A621E8D53000929BBF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2040463E21EA037000991BA5 /* Constraints.swift */,
 				53E9D98F21E8AF1300929BBF /* Constrictor.swift */,
 				53E9D99D21E8D01100929BBF /* Contrictor+Simple.swift */,
 				53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */,
@@ -403,6 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E9D99621E8BBB100929BBF /* Anchorable.swift in Sources */,
+				2040463F21EA037000991BA5 /* Constraints.swift in Sources */,
+				2040464421EA2F0300991BA5 /* Collection+NSLayoutConstraint.swift in Sources */,
 				53E9D9BA21E8E8EE00929BBF /* SizeAnchor.swift in Sources */,
 				53E9D9A221E8D46D00929BBF /* YAxis.swift in Sources */,
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
@@ -412,6 +431,7 @@
 				2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */,
 				53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */,
 				53E9D9A521E8D4D600929BBF /* Dimension.swift in Sources */,
+				2040464621EA320E00991BA5 /* Anchor.swift in Sources */,
 				53E9D99421E8B70F00929BBF /* Constrictor+Edge.swift in Sources */,
 				53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */,
 				53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */,
