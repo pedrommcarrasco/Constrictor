@@ -17,6 +17,9 @@
 		2040465421EA96F600991BA5 /* AnchorXAxisUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040465321EA96F600991BA5 /* AnchorXAxisUnitTests.swift */; };
 		2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040465521EA97DE00991BA5 /* AnchorYAxisUnitTests.swift */; };
 		2040465921EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040465821EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift */; };
+		20F9275521EBB6980027081C /* CenterConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275421EBB6980027081C /* CenterConstantUnitTests.swift */; };
+		20F9275821EBBB100027081C /* SizeConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275721EBBB100027081C /* SizeConstantUnitTests.swift */; };
+		20F9275B21EBDC430027081C /* EdgeConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275A21EBDC430027081C /* EdgeConstantUnitTests.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D98F21E8AF1300929BBF /* Constrictor.swift */; };
 		53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */; };
@@ -34,9 +37,9 @@
 		53E9D9BA21E8E8EE00929BBF /* SizeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9B921E8E8EE00929BBF /* SizeAnchor.swift */; };
 		53E9D9BC21E8EA1800929BBF /* CenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BB21E8EA1800929BBF /* CenterAnchor.swift */; };
 		53E9D9C021E8EAA400929BBF /* CenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9BF21E8EAA400929BBF /* CenterConstant.swift */; };
-		53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */; };
-		53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */; };
-		D046A58EC7B4F29E934C25CC /* Pods_ConstrictorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75766121C7ADBC8BE7358157 /* Pods_ConstrictorTests.framework */; };
+		53E9D9C221E8EEA600929BBF /* EdgeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C121E8EEA600929BBF /* EdgeAnchor.swift */; };
+		53E9D9C421E8EF4900929BBF /* EdgeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D9C321E8EF4900929BBF /* EdgeConstant.swift */; };
+		FDF6B46DBFA3ACEA1B2C5A70 /* Pods_ConstrictorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B958BB8B2D8DF90025693AA /* Pods_ConstrictorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03D64DC235989BE5B4958195 /* Pods-ConstrictorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0B958BB8B2D8DF90025693AA /* Pods_ConstrictorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConstrictorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2012F4BA21E93D510090861B /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
 		2040463E21EA037000991BA5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
@@ -61,6 +64,10 @@
 		2040465321EA96F600991BA5 /* AnchorXAxisUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorXAxisUnitTests.swift; sourceTree = "<group>"; };
 		2040465521EA97DE00991BA5 /* AnchorYAxisUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorYAxisUnitTests.swift; sourceTree = "<group>"; };
 		2040465821EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintSetUnitTests.swift; sourceTree = "<group>"; };
+		20F9275421EBB6980027081C /* CenterConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterConstantUnitTests.swift; sourceTree = "<group>"; };
+		20F9275721EBBB100027081C /* SizeConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstantUnitTests.swift; sourceTree = "<group>"; };
+		20F9275A21EBDC430027081C /* EdgeConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeConstantUnitTests.swift; sourceTree = "<group>"; };
+		3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,10 +88,9 @@
 		53E9D9B921E8E8EE00929BBF /* SizeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAnchor.swift; sourceTree = "<group>"; };
 		53E9D9BB21E8EA1800929BBF /* CenterAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAnchor.swift; sourceTree = "<group>"; };
 		53E9D9BF21E8EAA400929BBF /* CenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterConstant.swift; sourceTree = "<group>"; };
-		53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeAnchor.swift; sourceTree = "<group>"; };
-		53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorEdgeConstant.swift; sourceTree = "<group>"; };
-		75766121C7ADBC8BE7358157 /* Pods_ConstrictorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConstrictorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15CA590341E4197C828CD1E /* Pods-ConstrictorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.release.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.release.xcconfig"; sourceTree = "<group>"; };
+		53E9D9C121E8EEA600929BBF /* EdgeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeAnchor.swift; sourceTree = "<group>"; };
+		53E9D9C321E8EF4900929BBF /* EdgeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeConstant.swift; sourceTree = "<group>"; };
+		76330500B4B1F93E4F2B9966 /* Pods-ConstrictorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.release.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */,
-				D046A58EC7B4F29E934C25CC /* Pods_ConstrictorTests.framework in Frameworks */,
+				FDF6B46DBFA3ACEA1B2C5A70 /* Pods_ConstrictorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,13 +130,14 @@
 			path = Finder;
 			sourceTree = "<group>";
 		};
-		2040464921EA856100991BA5 /* Tests */ = {
+		2040464921EA856100991BA5 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				20F9275221EBB66D0027081C /* Sugar */,
 				2040465721EA987400991BA5 /* Assembler */,
 				2040464A21EA8F7400991BA5 /* Anchors */,
 			);
-			path = Tests;
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		2040464A21EA8F7400991BA5 /* Anchors */ = {
@@ -152,14 +159,38 @@
 			path = Assembler;
 			sourceTree = "<group>";
 		};
-		4D408BD527259CE6EE81C1A6 /* Pods */ = {
+		20F9275221EBB66D0027081C /* Sugar */ = {
 			isa = PBXGroup;
 			children = (
-				03D64DC235989BE5B4958195 /* Pods-ConstrictorTests.debug.xcconfig */,
-				F15CA590341E4197C828CD1E /* Pods-ConstrictorTests.release.xcconfig */,
+				20F9275921EBDBDA0027081C /* Edge */,
+				20F9275621EBBAFD0027081C /* Size */,
+				20F9275321EBB6800027081C /* Center */,
 			);
-			name = Pods;
-			path = Pods;
+			path = Sugar;
+			sourceTree = "<group>";
+		};
+		20F9275321EBB6800027081C /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				20F9275421EBB6980027081C /* CenterConstantUnitTests.swift */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		20F9275621EBBAFD0027081C /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				20F9275721EBBB100027081C /* SizeConstantUnitTests.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		20F9275921EBDBDA0027081C /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				20F9275A21EBDC430027081C /* EdgeConstantUnitTests.swift */,
+			);
+			path = Edge;
 			sourceTree = "<group>";
 		};
 		53CDE3B420B3201E007E4AE0 = {
@@ -168,8 +199,8 @@
 				53CDE3C020B3201E007E4AE0 /* Constrictor */,
 				53D8198820B57C0B00E62D1E /* ConstrictorTests */,
 				53CDE3BF20B3201E007E4AE0 /* Products */,
-				4D408BD527259CE6EE81C1A6 /* Pods */,
-				B5278B8F76F3B391F2D7F8AF /* Frameworks */,
+				9374CF91C177CF06A787473F /* Pods */,
+				55212C9CB71DABC7D9AB1F93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,7 +229,7 @@
 		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
 			isa = PBXGroup;
 			children = (
-				2040464921EA856100991BA5 /* Tests */,
+				2040464921EA856100991BA5 /* Unit Tests */,
 				53D8198B20B57C0B00E62D1E /* Info.plist */,
 			);
 			path = ConstrictorTests;
@@ -253,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				53E9D99321E8B70F00929BBF /* Constrictor+Edge.swift */,
-				53E9D9C121E8EEA600929BBF /* ConstrictorEdgeAnchor.swift */,
-				53E9D9C321E8EF4900929BBF /* ConstrictorEdgeConstant.swift */,
+				53E9D9C121E8EEA600929BBF /* EdgeAnchor.swift */,
+				53E9D9C321E8EF4900929BBF /* EdgeConstant.swift */,
 			);
 			path = Edge;
 			sourceTree = "<group>";
@@ -269,12 +300,21 @@
 			path = Size;
 			sourceTree = "<group>";
 		};
-		B5278B8F76F3B391F2D7F8AF /* Frameworks */ = {
+		55212C9CB71DABC7D9AB1F93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75766121C7ADBC8BE7358157 /* Pods_ConstrictorTests.framework */,
+				0B958BB8B2D8DF90025693AA /* Pods_ConstrictorTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9374CF91C177CF06A787473F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */,
+				76330500B4B1F93E4F2B9966 /* Pods-ConstrictorTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,11 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53D8199120B57C0B00E62D1E /* Build configuration list for PBXNativeTarget "ConstrictorTests" */;
 			buildPhases = (
-				E5A5FD920B1662D89844016D /* [CP] Check Pods Manifest.lock */,
+				7E58DC377224A18558D5F274 /* [CP] Check Pods Manifest.lock */,
 				53D8198320B57C0B00E62D1E /* Sources */,
 				53D8198420B57C0B00E62D1E /* Frameworks */,
 				53D8198520B57C0B00E62D1E /* Resources */,
-				CADA8A2F3B5E8A640DC3AE78 /* [CP] Embed Pods Frameworks */,
+				8DAB312E42935D20A53A49BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,29 +424,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CADA8A2F3B5E8A640DC3AE78 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5A5FD920B1662D89844016D /* [CP] Check Pods Manifest.lock */ = {
+		7E58DC377224A18558D5F274 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,6 +446,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8DAB312E42935D20A53A49BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -442,7 +482,7 @@
 				53E9D9A221E8D46D00929BBF /* AnchorYAxis.swift in Sources */,
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
 				53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */,
-				53E9D9C421E8EF4900929BBF /* ConstrictorEdgeConstant.swift in Sources */,
+				53E9D9C421E8EF4900929BBF /* EdgeConstant.swift in Sources */,
 				2012F4BC21E93D510090861B /* Assembler.swift in Sources */,
 				2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */,
 				53E9D99E21E8D01100929BBF /* Contrictor+Simple.swift in Sources */,
@@ -452,7 +492,7 @@
 				53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */,
 				53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */,
 				53E9D9B821E8E85C00929BBF /* SizeConstant.swift in Sources */,
-				53E9D9C221E8EEA600929BBF /* ConstrictorEdgeAnchor.swift in Sources */,
+				53E9D9C221E8EEA600929BBF /* EdgeAnchor.swift in Sources */,
 				53E9D9BC21E8EA1800929BBF /* CenterAnchor.swift in Sources */,
 				53E9D9A021E8D30900929BBF /* AnchorXAxis.swift in Sources */,
 				53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */,
@@ -465,10 +505,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F9275B21EBDC430027081C /* EdgeConstantUnitTests.swift in Sources */,
 				2040464C21EA8F8400991BA5 /* AnchorUnitTests.swift in Sources */,
 				2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */,
+				20F9275821EBBB100027081C /* SizeConstantUnitTests.swift in Sources */,
 				2040465921EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift in Sources */,
 				2040465421EA96F600991BA5 /* AnchorXAxisUnitTests.swift in Sources */,
+				20F9275521EBB6980027081C /* CenterConstantUnitTests.swift in Sources */,
 				2040464E21EA94C700991BA5 /* AnchorDimensionUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,7 +710,7 @@
 		};
 		53D8198F20B57C0B00E62D1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03D64DC235989BE5B4958195 /* Pods-ConstrictorTests.debug.xcconfig */;
+			baseConfigurationReference = 3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,7 +731,7 @@
 		};
 		53D8199020B57C0B00E62D1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F15CA590341E4197C828CD1E /* Pods-ConstrictorTests.release.xcconfig */;
+			baseConfigurationReference = 76330500B4B1F93E4F2B9966 /* Pods-ConstrictorTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

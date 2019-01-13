@@ -25,7 +25,7 @@ extension Constrictor {
     @discardableResult
     public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
-                     with constant: ConstrictorEdgeConstant = .zero,
+                     with constant: EdgeConstant = .zero,
                      prioritizeAs priority: UILayoutPriority = .required,
                      isActive: Bool = true) -> Self {
         
@@ -39,7 +39,7 @@ extension Constrictor {
     
     public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
-                     _ attributes: ConstrictorEdgeAnchor ...,
+                     _ attributes: EdgeAnchor ...,
                      with constant: CGFloat,
                      prioritizeAs priority: UILayoutPriority = .required,
                      isActive: Bool = true) -> Self {
@@ -52,8 +52,8 @@ extension Constrictor {
     
     public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
-                     _ attributes: ConstrictorEdgeAnchor ...,
-                     with constant: ConstrictorEdgeConstant = .zero,
+                     _ attributes: EdgeAnchor ...,
+                     with constant: EdgeConstant = .zero,
                      prioritizeAs priority: UILayoutPriority = .required,
                      isActive: Bool = true) -> Self {
         
@@ -68,8 +68,8 @@ private extension Constrictor {
     
     func internalVariadicEdge(as relation:  NSLayoutConstraint.Relation = .equal,
                               to item: Anchorable,
-                              _ attributes: [ConstrictorEdgeAnchor],
-                              with constant: ConstrictorEdgeConstant = .zero,
+                              _ attributes: [EdgeAnchor],
+                              with constant: EdgeConstant = .zero,
                               prioritizeAs priority: UILayoutPriority = .required,
                               isActive: Bool = true) {
         attributes.forEach {

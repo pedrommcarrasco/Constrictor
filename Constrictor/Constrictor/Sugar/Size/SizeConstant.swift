@@ -18,14 +18,6 @@ public struct SizeConstant: Equatable {
 // MARK: - Internal Custom Initializer
 extension SizeConstant {
 
-    init(attribute: SizeAnchor, value: CGFloat) {
-
-        switch attribute {
-        case .width: self = .width(value)
-        case .height: self = .height(value)
-        }
-    }
-
     init(size: CGFloat) {
         self = .width(size) & .height(size)
     }

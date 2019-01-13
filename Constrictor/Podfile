@@ -3,8 +3,7 @@
 use_frameworks!
 
 target 'ConstrictorTests' do
-	inherit! :search_paths
-    	pod 'SnapshotTesting'
+    pod 'SnapshotTesting'
 end
 
 post_install do |installer|

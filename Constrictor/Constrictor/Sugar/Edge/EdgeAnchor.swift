@@ -1,5 +1,5 @@
 //
-//  ConstrictorEdgeAnchor.swift
+//  EdgeAnchor.swift
 //  Constrictor
 //
 //  Created by Pedro Carrasco on 11/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ConstrictorEdgeAnchor {
+public enum EdgeAnchor {
     case top
     case bottom
     case leading

@@ -15,17 +15,6 @@ public struct CenterConstant: Equatable {
     let y: CGFloat
 }
 
-// MARK: - Internal Custom Initializer
-extension CenterConstant {
-
-    init(attribute: CenterAnchor, value: CGFloat) {
-        switch attribute {
-        case .x: self = .x(value)
-        case .y: self = .y(value)
-        }
-    }
-}
-
 // MARK: - Modifiers
 extension CenterConstant {
 
