@@ -10,19 +10,21 @@ env:
   - PODSPEC=Constrictor.podspec
   - PROJECT_EXAMPLE=Example.xcworkspace
   - PROJECT_SCHEME=Example
-  - DESTINATION_PLATFORM='platform=iOS Simulator,name=iPhone 8,OS=latest'
+  - DESTINATION_PLATFORM='platform=iOS Simulator,name=iPhone 8,OS=12.1'
   - CODECOV_ENDPOINT=https://codecov.io/bash
   - SDK=iphonesimulator
 
 before_install:
  - gem install cocoapods
  - pod --version
+ - xcrun instruments -w 'iPhone 8 (12.1)'
+ - travis_wait 15
 
 script:
  - cd Constrictor
  - pod update
  - set -o pipefail
- - travis_wait 5
+ 
  - xcodebuild -workspace "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -destination "$DESTINATION_PLATFORM" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
