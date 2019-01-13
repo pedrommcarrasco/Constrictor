@@ -16,7 +16,7 @@ extension Collection where Element: NSLayoutConstraint {
                                               with constant: CGFloat?,
                                               prioritizeAs priority: UILayoutPriority?,
                                               isActive: Bool?) -> NSLayoutConstraint? {
-        
+
         return first {
             guard let secondItem = $0.secondItem as? T else { return false }
             
