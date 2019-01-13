@@ -5,7 +5,7 @@ install: true
 
 env:
   global:
-  - PROJECT=Constrictor.xcodeproj
+  - PROJECT=Constrictor.xcworkspace
   - FRAMEWORK_SCHEME=Constrictor
   - PODSPEC=Constrictor.podspec
   - PROJECT_EXAMPLE=Example.xcworkspace
@@ -20,8 +20,9 @@ before_install:
 
 script:
  - cd Constrictor
+ - pod repo update && pod update
  - set -o pipefail
- - xcodebuild -project "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -configuration Debug ONLY_ACTIVE_ARCH=YES -destination "$DESTINATION_PLATFORM" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
+ - xcodebuild -workspace "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -configuration Debug ONLY_ACTIVE_ARCH=YES -destination "$DESTINATION_PLATFORM" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test  | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
 
