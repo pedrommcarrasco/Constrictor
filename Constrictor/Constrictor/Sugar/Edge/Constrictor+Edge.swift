@@ -37,6 +37,7 @@ extension Constrictor {
         return self
     }
     
+    @discardableResult
     public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
                      _ attributes: EdgeAnchor ...,
@@ -50,6 +51,7 @@ extension Constrictor {
         return self
     }
     
+    @discardableResult
     public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
                      to item: Anchorable,
                      _ attributes: EdgeAnchor ...,
@@ -78,13 +80,13 @@ private extension Constrictor {
                 top(as: relation, to: item, .top, with: constant.top,
                     prioritizeAs: priority, isActive: isActive)
             case .bottom:
-                bottom(as: relation, to: item, .bottom, with: -constant.bottom,
+                bottom(as: relation, to: item, .bottom, with: constant.bottom,
                        prioritizeAs: priority, isActive: isActive)
             case .leading:
                 leading(as: relation, to: item, .leading, with: constant.leading,
                         prioritizeAs: priority, isActive: isActive)
             case .trailing:
-                trailing(as: relation, to: item, .trailing, with: -constant.trailing,
+                trailing(as: relation, to: item, .trailing, with: constant.trailing,
                          prioritizeAs: priority, isActive: isActive)
             }
         }

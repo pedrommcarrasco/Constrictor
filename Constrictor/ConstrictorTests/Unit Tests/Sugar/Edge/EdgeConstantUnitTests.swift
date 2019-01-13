@@ -12,7 +12,7 @@ import XCTest
 // MARK: - EdgeConstantUnitTests
 final class EdgeConstantUnitTests: XCTestCase {
     
-    // MARK: Properties
+    // MARK: Constant
     private enum Constant {
         static let constant: CGFloat = 10
     }
@@ -29,13 +29,13 @@ extension EdgeConstantUnitTests {
                        EdgeConstant.vertical(value), EdgeConstant.horizontal(value),
                        EdgeConstant.zero, EdgeConstant.all(value)]
         let expectedResults = [(top: value, bottom: 0, trailing: 0, leading: 0),
-                               (top: 0, bottom: value, trailing: 0, leading: 0),
+                               (top: 0, bottom: -value, trailing: 0, leading: 0),
                                (top: 0, bottom: 0, trailing: 0, leading: value),
-                               (top: 0, bottom: 0, trailing: value, leading: 0),
-                               (top: value, bottom: value, trailing: 0, leading: 0),
-                               (top: 0, bottom: 0, trailing: value, leading: value),
+                               (top: 0, bottom: 0, trailing: -value, leading: 0),
+                               (top: value, bottom: -value, trailing: 0, leading: 0),
+                               (top: 0, bottom: 0, trailing: -value, leading: value),
                                (top: 0, bottom: 0, trailing: 0, leading: 0),
-                               (top: value, bottom: value, trailing: value, leading: value)]
+                               (top: value, bottom: -value, trailing: -value, leading: value)]
         
         zip(results, expectedResults).forEach { result, expected in
             XCTAssertEqual(result.top, expected.top)
@@ -54,4 +54,3 @@ extension EdgeConstantUnitTests {
         XCTAssertEqual(result.trailing, 0)
     }
 }
-

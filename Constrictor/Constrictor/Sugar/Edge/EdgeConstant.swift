@@ -29,7 +29,7 @@ extension EdgeConstant {
     }
     
     public static func bottom(_ value: CGFloat) -> EdgeConstant {
-        return EdgeConstant(top: 0, bottom: value, leading: 0, trailing: 0)
+        return EdgeConstant(top: 0, bottom: -value, leading: 0, trailing: 0)
     }
     
     public static func leading(_ value: CGFloat) -> EdgeConstant {
@@ -37,19 +37,19 @@ extension EdgeConstant {
     }
     
     public static func trailing(_ value: CGFloat) -> EdgeConstant {
-        return EdgeConstant(top: 0, bottom: 0, leading: 0, trailing: value)
+        return EdgeConstant(top: 0, bottom: 0, leading: 0, trailing: -value)
     }
     
     public static func vertical(_ value: CGFloat) -> EdgeConstant {
-        return EdgeConstant(top: value, bottom: value, leading: 0, trailing: 0)
+        return EdgeConstant(top: value, bottom: -value, leading: 0, trailing: 0)
     }
     
     public static func horizontal(_ value: CGFloat) -> EdgeConstant {
-        return EdgeConstant(top: 0, bottom: 0, leading: value, trailing: value)
+        return EdgeConstant(top: 0, bottom: 0, leading: value, trailing: -value)
     }
     
     static func all(_ value: CGFloat) -> EdgeConstant {
-        return EdgeConstant(top: value, bottom: value, leading: value, trailing: value)
+        return EdgeConstant(top: value, bottom: -value, leading: value, trailing: -value)
     }
 }
 

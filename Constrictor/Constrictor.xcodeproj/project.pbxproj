@@ -20,6 +20,10 @@
 		20F9275521EBB6980027081C /* CenterConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275421EBB6980027081C /* CenterConstantUnitTests.swift */; };
 		20F9275821EBBB100027081C /* SizeConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275721EBBB100027081C /* SizeConstantUnitTests.swift */; };
 		20F9275B21EBDC430027081C /* EdgeConstantUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275A21EBDC430027081C /* EdgeConstantUnitTests.swift */; };
+		20F9276021EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9275F21EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift */; };
+		20F9276321EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276221EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift */; };
+		20F9276621EBE5D60027081C /* SnapshotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276521EBE5D60027081C /* SnapshotFactory.swift */; };
+		20F9276821EBE66A0027081C /* SnapshotConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276721EBE66A0027081C /* SnapshotConstants.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D98F21E8AF1300929BBF /* Constrictor.swift */; };
 		53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */; };
@@ -67,6 +71,10 @@
 		20F9275421EBB6980027081C /* CenterConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterConstantUnitTests.swift; sourceTree = "<group>"; };
 		20F9275721EBBB100027081C /* SizeConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstantUnitTests.swift; sourceTree = "<group>"; };
 		20F9275A21EBDC430027081C /* EdgeConstantUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeConstantUnitTests.swift; sourceTree = "<group>"; };
+		20F9275F21EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+EdgeSnapshotTests.swift"; sourceTree = "<group>"; };
+		20F9276221EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+CenterAndSizeSnaphotTests.swift"; sourceTree = "<group>"; };
+		20F9276521EBE5D60027081C /* SnapshotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotFactory.swift; sourceTree = "<group>"; };
+		20F9276721EBE66A0027081C /* SnapshotConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotConstants.swift; sourceTree = "<group>"; };
 		3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +201,49 @@
 			path = Edge;
 			sourceTree = "<group>";
 		};
+		20F9275C21EBE0880027081C /* Snapshot Tests */ = {
+			isa = PBXGroup;
+			children = (
+				20F9276421EBE5BD0027081C /* Helpers */,
+				20F9275D21EBE0950027081C /* Sugar */,
+			);
+			path = "Snapshot Tests";
+			sourceTree = "<group>";
+		};
+		20F9275D21EBE0950027081C /* Sugar */ = {
+			isa = PBXGroup;
+			children = (
+				20F9276121EBE5860027081C /* Center & Size */,
+				20F9275E21EBE0A20027081C /* Edge */,
+			);
+			path = Sugar;
+			sourceTree = "<group>";
+		};
+		20F9275E21EBE0A20027081C /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				20F9275F21EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift */,
+			);
+			path = Edge;
+			sourceTree = "<group>";
+		};
+		20F9276121EBE5860027081C /* Center & Size */ = {
+			isa = PBXGroup;
+			children = (
+				20F9276221EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift */,
+			);
+			path = "Center & Size";
+			sourceTree = "<group>";
+		};
+		20F9276421EBE5BD0027081C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				20F9276521EBE5D60027081C /* SnapshotFactory.swift */,
+				20F9276721EBE66A0027081C /* SnapshotConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		53CDE3B420B3201E007E4AE0 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +280,7 @@
 		53D8198820B57C0B00E62D1E /* ConstrictorTests */ = {
 			isa = PBXGroup;
 			children = (
+				20F9275C21EBE0880027081C /* Snapshot Tests */,
 				2040464921EA856100991BA5 /* Unit Tests */,
 				53D8198B20B57C0B00E62D1E /* Info.plist */,
 			);
@@ -509,9 +561,13 @@
 				2040464C21EA8F8400991BA5 /* AnchorUnitTests.swift in Sources */,
 				2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */,
 				20F9275821EBBB100027081C /* SizeConstantUnitTests.swift in Sources */,
+				20F9276021EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift in Sources */,
+				20F9276821EBE66A0027081C /* SnapshotConstants.swift in Sources */,
 				2040465921EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift in Sources */,
 				2040465421EA96F600991BA5 /* AnchorXAxisUnitTests.swift in Sources */,
+				20F9276321EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift in Sources */,
 				20F9275521EBB6980027081C /* CenterConstantUnitTests.swift in Sources */,
+				20F9276621EBE5D60027081C /* SnapshotFactory.swift in Sources */,
 				2040464E21EA94C700991BA5 /* AnchorDimensionUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
