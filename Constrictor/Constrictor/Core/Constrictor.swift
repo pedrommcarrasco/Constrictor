@@ -88,3 +88,10 @@ extension Constrictor {
         return self
     }
 }
+
+extension Constrictor: Equatable {
+    
+    public static func == (lhs: Constrictor, rhs: Constrictor) -> Bool {
+        return lhs.constraints == rhs.constraints
+    }
+}

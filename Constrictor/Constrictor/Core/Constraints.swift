@@ -20,3 +20,19 @@ public final class Constraints {
     public internal(set) var width = [NSLayoutConstraint]()
     public internal(set) var height = [NSLayoutConstraint]()
 }
+
+extension Constraints: Equatable {
+    
+    public static func == (lhs: Constraints, rhs: Constraints) -> Bool {
+        return lhs.top == rhs.top
+        && lhs.bottom == rhs.bottom
+        && lhs.leading == rhs.leading
+        && lhs.trailing == rhs.trailing
+        && lhs.right == rhs.right
+        && lhs.left == rhs.left
+        && lhs.centerX == rhs.centerX
+        && lhs.centerY == rhs.centerY
+        && lhs.width == rhs.width
+        && lhs.height == rhs.height
+    }
+}
