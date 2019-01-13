@@ -10,6 +10,7 @@
 		2012F4BC21E93D510090861B /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BA21E93D510090861B /* Assembler.swift */; };
 		2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */; };
 		2026B04B21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026B04A21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift */; };
+		2026B04D21EC025500C9C853 /* UILayoutGuide+ConstrictorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026B04C21EC025500C9C853 /* UILayoutGuide+ConstrictorUnitTests.swift */; };
 		2040463F21EA037000991BA5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040463E21EA037000991BA5 /* Constraints.swift */; };
 		2040464421EA2F0300991BA5 /* NSLayoutConstraintCollection+Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040464321EA2F0300991BA5 /* NSLayoutConstraintCollection+Finder.swift */; };
 		2040464621EA320E00991BA5 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040464521EA320E00991BA5 /* Anchor.swift */; };
@@ -63,6 +64,7 @@
 		2012F4BA21E93D510090861B /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		2012F4BB21E93D510090861B /* NSLayoutConstraint+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Set.swift"; sourceTree = "<group>"; };
 		2026B04A21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstrictorUnitTests.swift"; sourceTree = "<group>"; };
+		2026B04C21EC025500C9C853 /* UILayoutGuide+ConstrictorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+ConstrictorUnitTests.swift"; sourceTree = "<group>"; };
 		2040463E21EA037000991BA5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		2040464321EA2F0300991BA5 /* NSLayoutConstraintCollection+Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraintCollection+Finder.swift"; sourceTree = "<group>"; };
 		2040464521EA320E00991BA5 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2026B04A21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift */,
+				2026B04C21EC025500C9C853 /* UILayoutGuide+ConstrictorUnitTests.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */,
 				20F9275821EBBB100027081C /* SizeConstantUnitTests.swift in Sources */,
 				20F9276021EBE0CF0027081C /* Constrictor+EdgeSnapshotTests.swift in Sources */,
+				2026B04D21EC025500C9C853 /* UILayoutGuide+ConstrictorUnitTests.swift in Sources */,
 				20F9276821EBE66A0027081C /* SnapshotConstants.swift in Sources */,
 				2040465921EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift in Sources */,
 				2026B04B21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift in Sources */,
