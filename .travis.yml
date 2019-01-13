@@ -17,8 +17,6 @@ env:
 before_install:
  - gem install cocoapods --pre
  - pod --version
- - xcrun instruments -w 'iPhone 8 (12.1)'
- - travis_wait 15
 
 script:
  - cd Constrictor
