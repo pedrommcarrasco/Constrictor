@@ -22,7 +22,8 @@ script:
  - cd Constrictor
  - pod repo update && pod update
  - set -o pipefail
- - xcodebuild -workspace "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test | xcpretty -c
+ - travis_wait 5
+ - xcodebuild -workspace "$PROJECT" -scheme "$FRAMEWORK_SCHEME" -sdk "$SDK" -destination "$DESTINATION_PLATFORM" CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test | xcpretty -c
  - bash <(curl -s "$CODECOV_ENDPOINT") -cF swift
  - cd ..
 
