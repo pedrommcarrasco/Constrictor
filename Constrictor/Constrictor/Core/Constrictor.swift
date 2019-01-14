@@ -15,7 +15,7 @@ public final class Constrictor {
     public let constraints = Constraints()
     
     // MARK: Internal Properties
-    let object: Anchorable
+    weak var object: Anchorable?
     
     // MARK: Init
     init(object: Anchorable) {

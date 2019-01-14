@@ -30,6 +30,8 @@
 		20F9276A21EBEBD20027081C /* UILayoutGuide+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276921EBEBD20027081C /* UILayoutGuide+Constrictor.swift */; };
 		5379EC3521EC856800FAB4CD /* Constrictor+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */; };
 		5379EC3821EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */; };
+		5379EC3C21ECA49200FAB4CD /* UILayoutPriority+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */; };
+		5379EC3F21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D98F21E8AF1300929BBF /* Constrictor.swift */; };
 		53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */; };
@@ -88,6 +90,8 @@
 		3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Update.swift"; sourceTree = "<group>"; };
 		5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorUpdateUnitTests.swift; sourceTree = "<group>"; };
+		5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Operators.swift"; sourceTree = "<group>"; };
+		5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+OperatorUnitTests.swift"; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +174,7 @@
 		2040464921EA856100991BA5 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				5379EC3D21ECA4BA00FAB4CD /* Priority */,
 				5379EC3621EC859E00FAB4CD /* Update */,
 				2026B04921EBFEA700C9C853 /* Core */,
 				20F9275221EBB66D0027081C /* Sugar */,
@@ -292,6 +297,22 @@
 			path = Update;
 			sourceTree = "<group>";
 		};
+		5379EC3A21ECA47900FAB4CD /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
+		5379EC3D21ECA4BA00FAB4CD /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
 		53CDE3B420B3201E007E4AE0 = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +336,7 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
+				5379EC3A21ECA47900FAB4CD /* Priority */,
 				5379EC3321EC855500FAB4CD /* Update */,
 				2040464221EA2EE400991BA5 /* Finder */,
 				2012F4B921E93D510090861B /* Assembler */,
@@ -585,6 +607,7 @@
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
 				53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */,
 				53E9D9C421E8EF4900929BBF /* EdgeConstant.swift in Sources */,
+				5379EC3C21ECA49200FAB4CD /* UILayoutPriority+Operators.swift in Sources */,
 				2012F4BC21E93D510090861B /* Assembler.swift in Sources */,
 				2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */,
 				53E9D99E21E8D01100929BBF /* Constrictor+Simple.swift in Sources */,
@@ -609,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5379EC3F21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift in Sources */,
 				20F9275B21EBDC430027081C /* EdgeConstantUnitTests.swift in Sources */,
 				2040464C21EA8F8400991BA5 /* AnchorUnitTests.swift in Sources */,
 				2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */,

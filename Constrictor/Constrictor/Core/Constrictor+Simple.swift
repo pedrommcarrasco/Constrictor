@@ -18,7 +18,8 @@ extension Constrictor {
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.centerYAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -38,7 +39,8 @@ extension Constrictor {
                     with constant: CGFloat = 0,
                     prioritizeAs priority: UILayoutPriority = .required,
                     isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.topAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -58,7 +60,8 @@ extension Constrictor {
                        with constant: CGFloat = 0,
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.bottomAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -79,7 +82,8 @@ extension Constrictor {
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.centerXAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -99,7 +103,8 @@ extension Constrictor {
                         with constant: CGFloat = 0,
                         prioritizeAs priority: UILayoutPriority = .required,
                         isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.leadingAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -119,7 +124,8 @@ extension Constrictor {
                          with constant: CGFloat = 0,
                          prioritizeAs priority: UILayoutPriority = .required,
                          isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.trailingAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -139,7 +145,8 @@ extension Constrictor {
                       with constant: CGFloat = 0,
                       prioritizeAs priority: UILayoutPriority = .required,
                       isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.rightAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -159,7 +166,8 @@ extension Constrictor {
                      with constant: CGFloat = 0,
                      prioritizeAs priority: UILayoutPriority = .required,
                      isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.leftAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -181,7 +189,8 @@ extension Constrictor {
                       multiplyBy multiplier: CGFloat = 1,
                       prioritizeAs priority: UILayoutPriority = .required,
                       isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.widthAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -200,7 +209,8 @@ extension Constrictor {
                       to constant: CGFloat,
                       prioritizeAs priority: UILayoutPriority = .required,
                       isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchor: object.widthAnchor,
                                                         relation: relation,
@@ -220,7 +230,8 @@ extension Constrictor {
                        multiplyBy multiplier: CGFloat = 1,
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchorA: object.heightAnchor,
                                                         anchorB: attribute.anchor(for: item),
@@ -239,7 +250,8 @@ extension Constrictor {
                        to constant: CGFloat,
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
-        
+
+        guard let object = object else { return self }
         ConstrictorAssembler.configure(object)
         let constraint = ConstrictorAssembler.constrict(anchor: object.heightAnchor,
                                                         relation: relation,
