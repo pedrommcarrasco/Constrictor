@@ -8,12 +8,14 @@
 
 import UIKit
 
-extension UILayoutPriority {
-    static func +(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
+// MARK: - Operators
+public extension UILayoutPriority {
+
+    public static func +(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
         return UILayoutPriority(lhs.rawValue + rhs)
     }
 
-    static func -(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
+    public static func -(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
         return UILayoutPriority(lhs.rawValue - rhs)
     }
 }

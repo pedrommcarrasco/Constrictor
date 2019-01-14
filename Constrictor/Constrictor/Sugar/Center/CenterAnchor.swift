@@ -8,7 +8,8 @@
 
 import Foundation
 
+// MARK: - CenterAnchor
 public enum CenterAnchor {
-    case x
-    case y
+    case centerX
+    case centerY
 }

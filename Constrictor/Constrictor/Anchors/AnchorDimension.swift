@@ -8,11 +8,13 @@
 
 import UIKit
 
+// MARK: - AnchorDimension
 public enum AnchorDimension: CaseIterable {
     case width
     case height
 }
 
+// MARK: - Properties
 extension AnchorDimension {
     
     var attribute: NSLayoutConstraint.Attribute {
@@ -21,7 +23,11 @@ extension AnchorDimension {
         case .height: return .height
         }
     }
-    
+}
+
+// MARK: - Functions
+extension AnchorDimension {
+
     func anchor(for anchorable: Anchorable) -> NSLayoutDimension {
         switch self {
         case .width: return anchorable.widthAnchor

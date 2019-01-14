@@ -45,7 +45,7 @@ extension ConstrictorCenterAndSizeSnapshotTests {
     
     func testScenarioB() {
         view.constrictor
-            .center(in: viewController.view, with: .x(-SnapshotConstants.Spacing.standard))
+            .center(in: viewController.view, with: .centerX(-SnapshotConstants.Spacing.standard))
             .size(to: viewController.view, with: -SnapshotConstants.Size.L)
         
         assertSnapshot(matching: viewController, as: .image)

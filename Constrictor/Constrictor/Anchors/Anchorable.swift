@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Anchorable
 public protocol Anchorable: class {
     var leadingAnchor: NSLayoutXAxisAnchor { get }
     var trailingAnchor: NSLayoutXAxisAnchor { get }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Anchor
 public enum Anchor: CaseIterable {
     case top
     case bottom
@@ -21,6 +22,7 @@ public enum Anchor: CaseIterable {
     case height
 }
 
+// MARK: - Properties
 extension Anchor {
     
     var attribute: NSLayoutConstraint.Attribute {
@@ -37,6 +39,10 @@ extension Anchor {
         case .height: return .height
         }
     }
+}
+
+// MARK: - Functions
+extension Anchor {
     
     func constraints(for constraints: Constraints) -> [NSLayoutConstraint] {
         switch self{

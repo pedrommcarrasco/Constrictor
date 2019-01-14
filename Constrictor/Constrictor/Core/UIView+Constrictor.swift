@@ -8,12 +8,15 @@
 
 import UIKit
 
+// MARK: Constrictor
 public extension UIView {
-    
+
+    // MARK: Associated Key
     private struct AssociatedKey {
         static var constrictor: UInt8 = 0
     }
-    
+
+    // MARK: Lazy Property
     var constrictor: Constrictor {
         if let constrictor = objc_getAssociatedObject(self, &AssociatedKey.constrictor) as? Constrictor {
             return constrictor

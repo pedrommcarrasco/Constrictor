@@ -23,19 +23,19 @@ extension CenterConstantUnitTests {
     
     // MARK: Modifiers
     func testModifiers() {
-        let results = [CenterConstant.x(Constant.constant), CenterConstant.y(Constant.constant)]
+        let results = [CenterConstant.centerX(Constant.constant), CenterConstant.y(Constant.constant)]
         let expectedResults: [(x: CGFloat, y: CGFloat)] = [(x: Constant.constant, y: 0), (x: 0, y: Constant.constant)]
         
         zip(results, expectedResults).forEach { result, expected in
-            XCTAssertEqual(result.x, expected.x)
-            XCTAssertEqual(result.y, expected.y)
+            XCTAssertEqual(result.centerX, expected.x)
+            XCTAssertEqual(result.centerY, expected.y)
         }
     }
     
     // MARK: Operators
     func testOperators() {
-        let result = CenterConstant.x(Constant.constant) & CenterConstant.y(Constant.constant)
-        XCTAssertEqual(result.x, Constant.constant)
-        XCTAssertEqual(result.y, Constant.constant)
+        let result = CenterConstant.centerX(Constant.constant) & CenterConstant.y(Constant.constant)
+        XCTAssertEqual(result.centerX, Constant.constant)
+        XCTAssertEqual(result.centerY, Constant.constant)
     }
 }

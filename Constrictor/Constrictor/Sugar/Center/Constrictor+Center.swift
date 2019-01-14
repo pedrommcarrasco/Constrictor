@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Center
 extension Constrictor {
 
     @discardableResult
@@ -17,9 +18,9 @@ extension Constrictor {
                        prioritizeAs priority: UILayoutPriority = .required,
                        isActive: Bool = true) -> Self {
 
-        centerX(as: relation, to: item, .centerX, with: constant.x,
+        centerX(as: relation, to: item, .centerX, with: constant.centerX,
                 prioritizeAs: priority, isActive: isActive)
-        centerY(as: relation, to: item, .centerY, with: constant.y,
+        centerY(as: relation, to: item, .centerY, with: constant.centerY,
                 prioritizeAs: priority, isActive: isActive)
 
         return self

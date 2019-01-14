@@ -7,8 +7,10 @@
 
 import UIKit
 
+// MARK: - Constraints
 public final class Constraints {
-        
+
+    // MARK: Properties
     public internal(set) var top = [NSLayoutConstraint]()
     public internal(set) var bottom = [NSLayoutConstraint]()
     public internal(set) var leading = [NSLayoutConstraint]()
@@ -21,6 +23,7 @@ public final class Constraints {
     public internal(set) var height = [NSLayoutConstraint]()
 }
 
+// MARK: - Equatable
 extension Constraints: Equatable {
     
     public static func == (lhs: Constraints, rhs: Constraints) -> Bool {

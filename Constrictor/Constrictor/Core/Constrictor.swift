@@ -11,10 +11,8 @@ import UIKit
 // MARK: - Constrictor
 public final class Constrictor {
     
-    // MARK: Public Properties
+    // MARK: Properties
     public let constraints = Constraints()
-    
-    // MARK: Internal Properties
     weak var object: Anchorable?
     
     // MARK: Init
@@ -23,6 +21,7 @@ public final class Constrictor {
     }
 }
 
+// MARK: - Equatable
 extension Constrictor: Equatable {
     
     public static func == (lhs: Constrictor, rhs: Constrictor) -> Bool {

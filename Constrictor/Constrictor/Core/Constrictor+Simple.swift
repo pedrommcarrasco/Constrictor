@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Simple
 extension Constrictor {
     
     // MARK: YAxis
@@ -20,8 +21,8 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.centerYAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.centerYAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -41,8 +42,8 @@ extension Constrictor {
                     isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.topAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.topAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -62,8 +63,8 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.bottomAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.bottomAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -84,8 +85,8 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.centerXAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.centerXAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -105,8 +106,8 @@ extension Constrictor {
                         isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.leadingAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.leadingAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -126,8 +127,8 @@ extension Constrictor {
                          isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.trailingAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.trailingAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -147,8 +148,8 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.rightAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.rightAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -168,8 +169,8 @@ extension Constrictor {
                      isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.leftAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.leftAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -191,8 +192,8 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.widthAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.widthAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -211,8 +212,8 @@ extension Constrictor {
                       isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchor: object.widthAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchor: object.widthAnchor,
                                                         relation: relation,
                                                         constant: constant,
                                                         priority: priority,
@@ -232,8 +233,8 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchorA: object.heightAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchorA: object.heightAnchor,
                                                         anchorB: attribute.anchor(for: item),
                                                         relation: relation,
                                                         constant: constant,
@@ -252,8 +253,8 @@ extension Constrictor {
                        isActive: Bool = true) -> Self {
 
         guard let object = object else { return self }
-        ConstrictorAssembler.configure(object)
-        let constraint = ConstrictorAssembler.constrict(anchor: object.heightAnchor,
+        Assembler.configure(object)
+        let constraint = Assembler.constrict(anchor: object.heightAnchor,
                                                         relation: relation,
                                                         constant: constant,
                                                         priority: priority,

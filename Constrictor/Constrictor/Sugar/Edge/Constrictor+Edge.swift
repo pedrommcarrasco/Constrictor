@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Edge
 extension Constrictor {
     
     @discardableResult

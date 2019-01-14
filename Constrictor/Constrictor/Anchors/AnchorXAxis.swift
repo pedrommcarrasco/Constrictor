@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - AnchorXAxis
 public enum AnchorXAxis: CaseIterable {
     case centerX
     case left
@@ -16,6 +17,7 @@ public enum AnchorXAxis: CaseIterable {
     case trailing
 }
 
+// MARK: - Functions
 extension AnchorXAxis {
 
     func anchor(for anchorable: Anchorable) -> NSLayoutXAxisAnchor {

@@ -11,19 +11,19 @@ import UIKit
 // MARK: - CenterConstant
 public struct CenterConstant: Equatable {
 
-    let x: CGFloat
-    let y: CGFloat
+    let centerX: CGFloat
+    let centerY: CGFloat
 }
 
 // MARK: - Modifiers
 extension CenterConstant {
 
-    static func x(_ value: CGFloat) -> CenterConstant {
-        return CenterConstant(x: value, y: 0)
+    static func centerX(_ value: CGFloat) -> CenterConstant {
+        return CenterConstant(centerX: value, centerY: 0)
     }
 
-    static func y(_ value: CGFloat) -> CenterConstant {
-        return CenterConstant(x: 0, y: value)
+    static func centerY(_ value: CGFloat) -> CenterConstant {
+        return CenterConstant(centerX: 0, centerY: value)
     }
 }
 
@@ -31,6 +31,6 @@ extension CenterConstant {
 extension CenterConstant {
 
     static func & (lhs: CenterConstant, rhs: CenterConstant) -> CenterConstant {
-        return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+        return .init(centerX: lhs.centerX + rhs.centerX, centerY: lhs.centerY + rhs.centerY)
     }
 }

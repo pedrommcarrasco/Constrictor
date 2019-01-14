@@ -8,12 +8,14 @@
 
 import UIKit
 
+// MARK: - AnchorYAxis
 public enum AnchorYAxis: CaseIterable {
     case centerY
     case top
     case bottom
 }
 
+// MARK: - Functions
 extension AnchorYAxis {
 
     func anchor(for anchorable: Anchorable) -> NSLayoutYAxisAnchor {
