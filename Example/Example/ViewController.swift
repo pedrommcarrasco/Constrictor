@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.greenView.constrictor
                 .update(.trailing, to: self.blueView) { $0?.constant = 50 }
-                .update(.width) { $0?.constant = -15 }
+                .updateFirst(.width) { $0?.constant = -15 }
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
