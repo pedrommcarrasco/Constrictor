@@ -87,8 +87,8 @@ struct ConstrictorAssembler {
         let constraint: NSLayoutConstraint
 
         switch relation {
-        case .lessThanOrEqual: constraint = anchor.constraint(equalToConstant: constant)
-        case .equal: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
+        case .lessThanOrEqual: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
+        case .equal: constraint = anchor.constraint(equalToConstant: constant)
         case .greaterThanOrEqual: constraint = anchor.constraint(lessThanOrEqualToConstant: constant)
         }
 
