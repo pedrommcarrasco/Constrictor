@@ -6,8 +6,9 @@
 
 Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 
-![](https://github.com/pedrommcarrasco/Constrictor/blob/Revamp/presentation.gif?raw=true)
-
+<p align="center">
+    <img src="https://github.com/pedrommcarrasco/Constrictor/blob/Revamp/presentation.gif?raw=true" alt="Presentation" width="100%"/>
+</p>
 
 [![Build Status](https://travis-ci.org/pedrommcarrasco/Constrictor.svg?branch=master)](https://travis-ci.org/pedrommcarrasco/Constrictor) 
 [![codecov](https://codecov.io/gh/pedrommcarrasco/Constrictor/branch/master/graph/badge.svg)](https://codecov.io/gh/pedrommcarrasco/Constrictor)
