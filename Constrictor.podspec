@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version      = "5.0.0"
   s.summary      = "🐍 Constrict your layout in Swift"
 
-  s.description  = "(Boe) Constrictor's AutoLayout Framework with the goal of simplying your constraints & reduce the amount of code you have to write."
+  s.description  = "Constrict your Auto Layout code with Constrictor, your chainable sugar."
 
   s.homepage     = "https://github.com/pedrommcarrasco/Constrictor"
   s.license = { :type => 'MIT', :file => 'LICENSE' }
