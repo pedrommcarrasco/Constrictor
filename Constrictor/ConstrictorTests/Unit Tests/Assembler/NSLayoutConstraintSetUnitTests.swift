@@ -16,7 +16,7 @@ final class NSLayoutConstraintSetUnitTests: XCTestCase {
     private enum Constant {
         static let constant: CGFloat = 6
         static let priority: LayoutPriority = .high
-        static let state: LayoutState = .notActive
+        static let state: LayoutState = .inactive
     }
     
     // MARK: Properties
