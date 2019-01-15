@@ -17,7 +17,7 @@ Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 ![GitHub contributors](https://img.shields.io/github/contributors/pedrommcarrasco/constrictor.svg)
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE)
 
-## Features ✨
+# Features ✨
 
 - [x] Compatible with Auto Layout 👍
 - [x] Concise and chainable syntax ⛓️
@@ -26,9 +26,9 @@ Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 - [x] Easily update constraints 🏃
 - [x] Allows setting priority upon creation 💁‍♂️
 
-## Usage Examples ⌨️ 
+# Usage Examples ⌨️ 
 
-### Simple
+## Simple
 Constrictor allows you to **fully replace**  `NSLayoutAnchor`. For example:
 ```swift
 // NSLayoutAnchor
@@ -54,7 +54,7 @@ constraint.priority = .defaultHigh
 // Constrictor
 label.constrictor.top(as: .greaterOrEqual, to: view, prioritizeAs: .high, state: .notActive)
 ```
-### Edge
+## Edge
 How you constrain edges with `NSLayoutAnchor`:
 ```swift
 label.topAnchor.constraint(equalTo: view.topAnchor)
@@ -74,7 +74,7 @@ What if you want to constrain every edge except bottom?
 ```swift
 label.constrictor.edge(to: view, .top, .leading, .trailing, with: .horizontal(15))
 ```
-### Center
+## Center
 Centering with `NSLayoutAnchor`:
 ```swift
 label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -89,7 +89,7 @@ Different offsets?
 label.constrictor.center(in: label, with: .centerX(-16) & .centerY(32))
 ```
 
-### Size
+## Size
 Defining size with `NSLayoutAnchor`:
 ```swift
 label.widthAnchor.constraint(equalToConstant: 10)
@@ -104,7 +104,7 @@ To another view with multiplier? Just like this:
 label.constrictor.size(view, multiplyBy: 0.75)
 ```
 
-### Animate
+## Animate
 Everybody loves animations, so does **Constrictor**:
 ```swift
 // Only have one constraint for an anchor?
@@ -116,7 +116,7 @@ label.constrictor.update(.bottom, to: imageView) { $0?.constant = 16 }
 // Call UIView.animate(...) { view.layoutIfNeeded() } to animate changes
 ```
 
-### Chain
+## Chain
 One of the key features of **Constrictor** is how you can easily chain with it. As an example:
 ```swift
 label.constrictor
@@ -125,9 +125,8 @@ label.constrictor
     .bottom(as: .greaterOrEqual, to: imageView, .top)
 ```
 
-
-## Installation 📦 
-### CocoaPods
+# Installation 📦 
+## CocoaPods
 Constrictor's available through [CocoaPods](https://cocoapods.org/pods/Constrictor). To do so, add the following line to your PodFile:
 
 ```swift
@@ -139,7 +138,7 @@ And then run the following command in terminal:
 pod install
 ```
 
-### Carthage
+## Carthage
 Add this to your Cartfile:
 
 ```swift
@@ -152,11 +151,11 @@ And then run the following command in terminal:
 carthage update
 ```
 
-##  Sample Project 📲
+#  Sample Project 📲
 There's a sample project in this repository called [Example](https://github.com/pedrommcarrasco/Constrictor/tree/master/Example), if you want to take a look at Constrictor before using it in your projects, feel free to take a look at it and try to apply some constraints with it.
 
-## Contributing 🙌 
+# Contributing 🙌 
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc). Also, feel free to ask me anything on [Twitter](https://twitter.com/pedrommcarrasco)
 
-## License ⛔
+# License ⛔
 Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE) file for more information.
