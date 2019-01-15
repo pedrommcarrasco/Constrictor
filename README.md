@@ -52,7 +52,7 @@ let constraint = label.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor
 constraint.priority = .defaultHigh
 
 // Constrictor
-label.constrictor.top(as: .greaterOrEqual, to: view, prioritizeAs: .high, state: .notActive)
+label.constrictor.top(as: .greaterOrEqual, to: view, prioritizeAs: .high, is: .notActive)
 ```
 ## Edge
 How you constrain edges with `NSLayoutAnchor`:
