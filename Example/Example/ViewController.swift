@@ -48,7 +48,8 @@ class ViewController: UIViewController {
             .height(to: redView)
             .centerY(to: blueView.safeAreaLayoutGuide)
             .trailing(to: blueView, .leading, with: 8)
-        
+
+        // Animation
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.greenView.constrictor
                 .update(.trailing, to: self.blueView) { $0?.constant = 50 }

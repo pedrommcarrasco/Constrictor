@@ -11,9 +11,9 @@ import UIKit
 // MARK: - Set
 extension NSLayoutConstraint {
 
-    func set(constant: CGFloat, priority: UILayoutPriority, isActive: Bool) {
+    func set(constant: CGFloat, priority: LayoutPriority, state: LayoutState) {
         self.constant = constant
-        self.priority = priority
-        self.isActive = isActive
+        self.priority = priority.nativeValue()
+        self.isActive = state.nativeValue()
     }
 }

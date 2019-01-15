@@ -12,31 +12,31 @@ import UIKit
 extension Constrictor {
 
     @discardableResult
-    public func center(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func center(as relation:  LayoutRelation = .equal,
                        in item: Anchorable,
                        with constant: CenterConstant,
-                       prioritizeAs priority: UILayoutPriority = .required,
-                       isActive: Bool = true) -> Self {
+                       prioritizeAs priority: LayoutPriority = .required,
+                       is state: LayoutState = .active) -> Self {
 
         centerX(as: relation, to: item, .centerX, with: constant.centerX,
-                prioritizeAs: priority, isActive: isActive)
+                prioritizeAs: priority, is: state)
         centerY(as: relation, to: item, .centerY, with: constant.centerY,
-                prioritizeAs: priority, isActive: isActive)
+                prioritizeAs: priority, is: state)
 
         return self
     }
 
     @discardableResult
-    public func center(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func center(as relation:  LayoutRelation = .equal,
                        in item: Anchorable,
                        with constant: CGFloat = 0,
-                       prioritizeAs priority: UILayoutPriority = .required,
-                       isActive: Bool = true) -> Self {
+                       prioritizeAs priority: LayoutPriority = .required,
+                       is state: LayoutState = .active) -> Self {
 
         centerX(as: relation, to: item, .centerX, with: constant,
-                prioritizeAs: priority, isActive: isActive)
+                prioritizeAs: priority, is: state)
         centerY(as: relation, to: item, .centerY, with: constant,
-                prioritizeAs: priority, isActive: isActive)
+                prioritizeAs: priority, is: state)
 
         return self
     }

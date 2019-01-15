@@ -12,56 +12,56 @@ import UIKit
 extension Constrictor {
     
     @discardableResult
-    public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func edge(as relation:  LayoutRelation = .equal,
                      to item: Anchorable,
                      with constant: CGFloat,
-                     prioritizeAs priority: UILayoutPriority = .required,
-                     isActive: Bool = true) -> Self {
+                     prioritizeAs priority: LayoutPriority = .required,
+                     is state: LayoutState = .active) -> Self {
         
-        edge(as: relation, to: item, with: .all(constant), prioritizeAs: priority, isActive: isActive)
+        edge(as: relation, to: item, with: .all(constant), prioritizeAs: priority, is: state)
         
         return self
     }
     
     @discardableResult
-    public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func edge(as relation:  LayoutRelation = .equal,
                      to item: Anchorable,
                      with constant: EdgeConstant = .zero,
-                     prioritizeAs priority: UILayoutPriority = .required,
-                     isActive: Bool = true) -> Self {
+                     prioritizeAs priority: LayoutPriority = .required,
+                     is state: LayoutState = .active) -> Self {
         
-        top(as: relation, to: item, .top, with: constant.top, prioritizeAs: priority, isActive: isActive)
-        bottom(as: relation, to: item, .bottom, with: constant.bottom, prioritizeAs: priority, isActive: isActive)
-        leading(as: relation, to: item, .leading, with: constant.leading, prioritizeAs: priority, isActive: isActive)
-        trailing(as: relation, to: item, .trailing, with: constant.trailing, prioritizeAs: priority, isActive: isActive)
+        top(as: relation, to: item, .top, with: constant.top, prioritizeAs: priority, is: state)
+        bottom(as: relation, to: item, .bottom, with: constant.bottom, prioritizeAs: priority, is: state)
+        leading(as: relation, to: item, .leading, with: constant.leading, prioritizeAs: priority, is: state)
+        trailing(as: relation, to: item, .trailing, with: constant.trailing, prioritizeAs: priority, is: state)
         
         return self
     }
     
     @discardableResult
-    public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func edge(as relation:  LayoutRelation = .equal,
                      to item: Anchorable,
                      _ attributes: EdgeAnchor ...,
                      with constant: CGFloat,
-                     prioritizeAs priority: UILayoutPriority = .required,
-                     isActive: Bool = true) -> Self {
+                     prioritizeAs priority: LayoutPriority = .required,
+                     is state: LayoutState = .active) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: .all(constant),
-                             prioritizeAs: priority, isActive: isActive)
+                             prioritizeAs: priority, is: state)
         
         return self
     }
     
     @discardableResult
-    public func edge(as relation:  NSLayoutConstraint.Relation = .equal,
+    public func edge(as relation:  LayoutRelation = .equal,
                      to item: Anchorable,
                      _ attributes: EdgeAnchor ...,
                      with constant: EdgeConstant = .zero,
-                     prioritizeAs priority: UILayoutPriority = .required,
-                     isActive: Bool = true) -> Self {
+                     prioritizeAs priority: LayoutPriority = .required,
+                     is state: LayoutState = .active) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: constant,
-                             prioritizeAs: priority, isActive: isActive)
+                             prioritizeAs: priority, is: state)
         
         return self
     }
@@ -69,26 +69,26 @@ extension Constrictor {
 
 private extension Constrictor {
     
-    func internalVariadicEdge(as relation:  NSLayoutConstraint.Relation = .equal,
+    func internalVariadicEdge(as relation:  LayoutRelation = .equal,
                               to item: Anchorable,
                               _ attributes: [EdgeAnchor],
                               with constant: EdgeConstant = .zero,
-                              prioritizeAs priority: UILayoutPriority = .required,
-                              isActive: Bool = true) {
+                              prioritizeAs priority: LayoutPriority = .required,
+                              is state: LayoutState = .active) {
         attributes.forEach {
             switch $0 {
             case .top:
                 top(as: relation, to: item, .top, with: constant.top,
-                    prioritizeAs: priority, isActive: isActive)
+                    prioritizeAs: priority, is: state)
             case .bottom:
                 bottom(as: relation, to: item, .bottom, with: constant.bottom,
-                       prioritizeAs: priority, isActive: isActive)
+                       prioritizeAs: priority, is: state)
             case .leading:
                 leading(as: relation, to: item, .leading, with: constant.leading,
-                        prioritizeAs: priority, isActive: isActive)
+                        prioritizeAs: priority, is: state)
             case .trailing:
                 trailing(as: relation, to: item, .trailing, with: constant.trailing,
-                         prioritizeAs: priority, isActive: isActive)
+                         prioritizeAs: priority, is: state)
             }
         }
     }

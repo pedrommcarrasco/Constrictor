@@ -19,80 +19,80 @@ struct Assembler {
     // MARK: Constraint Factory
     static func constrict(anchorA: NSLayoutXAxisAnchor,
                           anchorB: NSLayoutXAxisAnchor,
-                          relation: NSLayoutConstraint.Relation,
+                          relation: LayoutRelation,
                           constant: CGFloat,
-                          priority: UILayoutPriority,
-                          isActive: Bool) -> NSLayoutConstraint {
+                          priority: LayoutPriority,
+                          state: LayoutState) -> NSLayoutConstraint {
         
         let constraint: NSLayoutConstraint
         
         switch relation {
-        case .lessThanOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB)
+        case .lessOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB)
         case .equal: constraint = anchorA.constraint(equalTo: anchorB)
-        case .greaterThanOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB)
+        case .greaterOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB)
         }
         
-        constraint.set(constant: constant, priority: priority, isActive: isActive)
+        constraint.set(constant: constant, priority: priority, state: state)
         
         return constraint
     }
     
     static func constrict(anchorA: NSLayoutYAxisAnchor,
                           anchorB: NSLayoutYAxisAnchor,
-                          relation: NSLayoutConstraint.Relation,
+                          relation: LayoutRelation,
                           constant: CGFloat,
-                          priority: UILayoutPriority,
-                          isActive: Bool) -> NSLayoutConstraint {
+                          priority: LayoutPriority,
+                          state: LayoutState) -> NSLayoutConstraint {
         
         let constraint: NSLayoutConstraint
         
         switch relation {
-        case .lessThanOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB)
+        case .lessOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB)
         case .equal: constraint = anchorA.constraint(equalTo: anchorB)
-        case .greaterThanOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB)
+        case .greaterOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB)
         }
         
-        constraint.set(constant: constant, priority: priority, isActive: isActive)
+        constraint.set(constant: constant, priority: priority, state: state)
         
         return constraint
     }
     
     static func constrict(anchorA: NSLayoutDimension,
                           anchorB: NSLayoutDimension,
-                          relation: NSLayoutConstraint.Relation,
+                          relation: LayoutRelation,
                           constant: CGFloat,
                           multiplier: CGFloat,
-                          priority: UILayoutPriority,
-                          isActive: Bool) -> NSLayoutConstraint{
+                          priority: LayoutPriority,
+                          state: LayoutState) -> NSLayoutConstraint{
         
         let constraint: NSLayoutConstraint
         
         switch relation {
-        case .lessThanOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB, multiplier: multiplier)
+        case .lessOrEqual: constraint = anchorA.constraint(lessThanOrEqualTo: anchorB, multiplier: multiplier)
         case .equal: constraint = anchorA.constraint(equalTo: anchorB, multiplier: multiplier)
-        case .greaterThanOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB, multiplier: multiplier)
+        case .greaterOrEqual: constraint = anchorA.constraint(greaterThanOrEqualTo: anchorB, multiplier: multiplier)
         }
         
-        constraint.set(constant: constant, priority: priority, isActive: isActive)
+        constraint.set(constant: constant, priority: priority, state: state)
         
         return constraint
     }
     
     static func constrict(anchor: NSLayoutDimension,
-                          relation: NSLayoutConstraint.Relation,
+                          relation: LayoutRelation,
                           constant: CGFloat,
-                          priority: UILayoutPriority,
-                          isActive: Bool) -> NSLayoutConstraint {
+                          priority: LayoutPriority,
+                          state: LayoutState) -> NSLayoutConstraint {
         
         let constraint: NSLayoutConstraint
         
         switch relation {
-        case .lessThanOrEqual: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
+        case .lessOrEqual: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
         case .equal: constraint = anchor.constraint(equalToConstant: constant)
-        case .greaterThanOrEqual: constraint = anchor.constraint(lessThanOrEqualToConstant: constant)
+        case .greaterOrEqual: constraint = anchor.constraint(lessThanOrEqualToConstant: constant)
         }
         
-        constraint.set(constant: constant, priority: priority, isActive: isActive)
+        constraint.set(constant: constant, priority: priority, state: state)
         
         return constraint
     }

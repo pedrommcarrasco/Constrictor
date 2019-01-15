@@ -33,12 +33,12 @@ extension Constrictor {
     // MARK: Deep Finder
     @discardableResult
     public func update<T: Anchorable & Equatable>(_ anchorA: Anchor,
-                                                  as relation: NSLayoutConstraint.Relation? = nil,
+                                                  as relation: LayoutRelation? = nil,
                                                   to item: T,
                                                   _ anchorB: Anchor? = nil,
                                                   with constant: CGFloat? = nil,
-                                                  prioritizeAs priority: UILayoutPriority? = nil,
-                                                  isActive: Bool? = nil,
+                                                  prioritizeAs priority: LayoutPriority? = nil,
+                                                  state: LayoutState? = nil,
                                                   _ completion: ConstraintCompletion) -> Self {
 
         let constraints = anchorA.constraints(for: self.constraints)
@@ -47,7 +47,7 @@ extension Constrictor {
                                                anchorB,
                                                with: constant,
                                                prioritizeAs: priority,
-                                               isActive: isActive)
+                                               state: state)
         completion(constraint)
 
         return self
@@ -55,13 +55,13 @@ extension Constrictor {
 
     @discardableResult
     public func update<T: Anchorable & Equatable>(_ anchorA: AnchorDimension,
-                                                  as relation: NSLayoutConstraint.Relation? = nil,
+                                                  as relation: LayoutRelation? = nil,
                                                   to item: T?,
                                                   _ anchorB: AnchorDimension? = nil,
                                                   with constant: CGFloat? = nil,
                                                   multiplyBy multiplier: CGFloat? = nil,
-                                                  prioritizeAs priority: UILayoutPriority? = nil,
-                                                  isActive: Bool? = nil,
+                                                  prioritizeAs priority: LayoutPriority? = nil,
+                                                  state: LayoutState? = nil,
                                                   _ completion: ConstraintCompletion) -> Self {
 
         let constraints = anchorA.constraints(for: self.constraints)
@@ -71,7 +71,7 @@ extension Constrictor {
                                                with: constant,
                                                multiplyBy: multiplier,
                                                prioritizeAs: priority,
-                                               isActive: isActive)
+                                               state: state)
         completion(constraint)
 
         return self

@@ -28,10 +28,12 @@
 		20F9276621EBE5D60027081C /* SnapshotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276521EBE5D60027081C /* SnapshotFactory.swift */; };
 		20F9276821EBE66A0027081C /* SnapshotConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276721EBE66A0027081C /* SnapshotConstants.swift */; };
 		20F9276A21EBEBD20027081C /* UILayoutGuide+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9276921EBEBD20027081C /* UILayoutGuide+Constrictor.swift */; };
+		5378798D21EDDF96006E5AA3 /* LayoutPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378798C21EDDF96006E5AA3 /* LayoutPriority.swift */; };
+		5378799021EDE5A1006E5AA3 /* LayoutRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378798F21EDE5A1006E5AA3 /* LayoutRelation.swift */; };
+		5378799321EDE8CC006E5AA3 /* LayoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378799221EDE8CC006E5AA3 /* LayoutState.swift */; };
 		5379EC3521EC856800FAB4CD /* Constrictor+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */; };
 		5379EC3821EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */; };
-		5379EC3C21ECA49200FAB4CD /* UILayoutPriority+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */; };
-		5379EC3F21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */; };
+		5379EC3F21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */; };
 		53D8198C20B57C0B00E62D1E /* Constrictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */; };
 		53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D98F21E8AF1300929BBF /* Constrictor.swift */; };
 		53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9D99121E8B26700929BBF /* UIView+Constrictor.swift */; };
@@ -88,10 +90,12 @@
 		20F9276721EBE66A0027081C /* SnapshotConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotConstants.swift; sourceTree = "<group>"; };
 		20F9276921EBEBD20027081C /* UILayoutGuide+Constrictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Constrictor.swift"; sourceTree = "<group>"; };
 		3C68CD7DC34DDA775AC7293D /* Pods-ConstrictorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstrictorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConstrictorTests/Pods-ConstrictorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5378798C21EDDF96006E5AA3 /* LayoutPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriority.swift; sourceTree = "<group>"; };
+		5378798F21EDE5A1006E5AA3 /* LayoutRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutRelation.swift; sourceTree = "<group>"; };
+		5378799221EDE8CC006E5AA3 /* LayoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutState.swift; sourceTree = "<group>"; };
 		5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Update.swift"; sourceTree = "<group>"; };
 		5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorUpdateUnitTests.swift; sourceTree = "<group>"; };
-		5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Operators.swift"; sourceTree = "<group>"; };
-		5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+OperatorUnitTests.swift"; sourceTree = "<group>"; };
+		5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityUnitTests.swift; sourceTree = "<group>"; };
 		53CDE3BE20B3201E007E4AE0 /* Constrictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Constrictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CDE3C220B3201E007E4AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D8198720B57C0B00E62D1E /* ConstrictorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstrictorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +285,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5378799121EDE8B4006E5AA3 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5378798F21EDE5A1006E5AA3 /* LayoutRelation.swift */,
+				5378798C21EDDF96006E5AA3 /* LayoutPriority.swift */,
+				5378799221EDE8CC006E5AA3 /* LayoutState.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		5379EC3321EC855500FAB4CD /* Update */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,18 +311,10 @@
 			path = Update;
 			sourceTree = "<group>";
 		};
-		5379EC3A21ECA47900FAB4CD /* Priority */ = {
-			isa = PBXGroup;
-			children = (
-				5379EC3B21ECA49200FAB4CD /* UILayoutPriority+Operators.swift */,
-			);
-			path = Priority;
-			sourceTree = "<group>";
-		};
 		5379EC3D21ECA4BA00FAB4CD /* Priority */ = {
 			isa = PBXGroup;
 			children = (
-				5379EC3E21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift */,
+				5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */,
 			);
 			path = Priority;
 			sourceTree = "<group>";
@@ -336,7 +342,7 @@
 		53CDE3C020B3201E007E4AE0 /* Constrictor */ = {
 			isa = PBXGroup;
 			children = (
-				5379EC3A21ECA47900FAB4CD /* Priority */,
+				5378799121EDE8B4006E5AA3 /* Modifiers */,
 				5379EC3321EC855500FAB4CD /* Update */,
 				2040464221EA2EE400991BA5 /* Finder */,
 				2012F4B921E93D510090861B /* Assembler */,
@@ -607,13 +613,14 @@
 				53E9D9A821E8D54D00929BBF /* UIView+Anchorable.swift in Sources */,
 				53E9D99221E8B26700929BBF /* UIView+Constrictor.swift in Sources */,
 				53E9D9C421E8EF4900929BBF /* EdgeConstant.swift in Sources */,
-				5379EC3C21ECA49200FAB4CD /* UILayoutPriority+Operators.swift in Sources */,
+				5378798D21EDDF96006E5AA3 /* LayoutPriority.swift in Sources */,
 				2012F4BC21E93D510090861B /* Assembler.swift in Sources */,
 				2012F4BD21E93D510090861B /* NSLayoutConstraint+Set.swift in Sources */,
 				53E9D99E21E8D01100929BBF /* Constrictor+Simple.swift in Sources */,
 				53E9D9A521E8D4D600929BBF /* AnchorDimension.swift in Sources */,
 				2040464621EA320E00991BA5 /* Anchor.swift in Sources */,
 				53E9D99421E8B70F00929BBF /* Constrictor+Edge.swift in Sources */,
+				5378799321EDE8CC006E5AA3 /* LayoutState.swift in Sources */,
 				53E9D99A21E8BC4000929BBF /* Constrictor+Center.swift in Sources */,
 				53E9D99021E8AF1300929BBF /* Constrictor.swift in Sources */,
 				53E9D9B821E8E85C00929BBF /* SizeConstant.swift in Sources */,
@@ -622,6 +629,7 @@
 				5379EC3521EC856800FAB4CD /* Constrictor+Update.swift in Sources */,
 				53E9D9BC21E8EA1800929BBF /* CenterAnchor.swift in Sources */,
 				53E9D9A021E8D30900929BBF /* AnchorXAxis.swift in Sources */,
+				5378799021EDE5A1006E5AA3 /* LayoutRelation.swift in Sources */,
 				53E9D99821E8BC1300929BBF /* Constrictor+Size.swift in Sources */,
 				53E9D9AA21E8D55B00929BBF /* UILayoutGuide+Anchorable.swift in Sources */,
 				53E9D9C021E8EAA400929BBF /* CenterConstant.swift in Sources */,
@@ -632,7 +640,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5379EC3F21ECA51C00FAB4CD /* UILayoutPriority+OperatorUnitTests.swift in Sources */,
+				5379EC3F21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift in Sources */,
 				20F9275B21EBDC430027081C /* EdgeConstantUnitTests.swift in Sources */,
 				2040464C21EA8F8400991BA5 /* AnchorUnitTests.swift in Sources */,
 				2040465621EA97DE00991BA5 /* AnchorYAxisUnitTests.swift in Sources */,

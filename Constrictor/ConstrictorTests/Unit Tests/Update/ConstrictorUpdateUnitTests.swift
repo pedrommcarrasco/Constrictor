@@ -35,8 +35,8 @@ final class ConstrictorUpdateUnitTests: XCTestCase {
 
         view.constrictor
             .size(to: Constant.size)
-            .width(as: .greaterThanOrEqual, to: containerView, with: Constant.greaterSize, multiplyBy: Constant.multiplier)
-            .width(as: .lessThanOrEqual, to: containerView, with: Constant.lesserSize)
+            .width(as: .greaterOrEqual, to: containerView, with: Constant.greaterSize, multiplyBy: Constant.multiplier)
+            .width(as: .lessOrEqual, to: containerView, with: Constant.lesserSize)
             .center(in: containerView)
     }
 
@@ -85,7 +85,7 @@ extension ConstrictorUpdateUnitTests {
 
     func testDeepFinderUpdateDimensionAnchorAsGreater() {
         var constraint: NSLayoutConstraint?
-        view.constrictor.update(.width, as: .greaterThanOrEqual, to: containerView) { constraint = $0 }
+        view.constrictor.update(.width, as: .greaterOrEqual, to: containerView) { constraint = $0 }
 
         XCTAssertEqual(constraint?.relation, .greaterThanOrEqual)
         XCTAssertEqual(constraint?.constant, Constant.greaterSize )

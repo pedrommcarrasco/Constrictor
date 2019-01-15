@@ -15,8 +15,8 @@ final class NSLayoutConstraintSetUnitTests: XCTestCase {
     // MARK: Constant
     private enum Constant {
         static let constant: CGFloat = 6
-        static let priority: UILayoutPriority = .defaultHigh
-        static let isActive: Bool = false
+        static let priority: LayoutPriority = .high
+        static let state: LayoutState = .notActive
     }
     
     // MARK: Properties
@@ -39,9 +39,9 @@ extension NSLayoutConstraintSetUnitTests {
     
     // MARK: Set
     func testSet() {
-        constraint.set(constant: Constant.constant, priority: Constant.priority, isActive: Constant.isActive)
+        constraint.set(constant: Constant.constant, priority: Constant.priority, state: Constant.state)
         XCTAssertEqual(constraint.constant, Constant.constant)
-        XCTAssertEqual(constraint.priority, Constant.priority)
-        XCTAssertEqual(constraint.isActive, Constant.isActive)
+        XCTAssertEqual(constraint.priority, Constant.priority.nativeValue())
+        XCTAssertEqual(constraint.isActive, Constant.state.nativeValue())
     }
 }
