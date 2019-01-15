@@ -18,12 +18,13 @@ Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Constrictor/blob/master/LICENSE)
 
 ## Features ✨
-* Compatible with Auto Layout
-* Short and chainable syntax
-* Automatically sets `translateAutoresizingMaskIntoConstraints`
-* Constraints are active by default
-* Easily update constraints
-* Allows setting priority upon creation
+
+- [x] Compatible with Auto Layout 👍
+- [x] Concise and chainable syntax ⛓️
+- [x] Automatically sets `translateAutoresizingMaskIntoConstraints` 😍
+- [x] Constraints are active by default 🤩
+- [x] Easily update constraints 🏃
+- [x] Allows setting priority upon creation 💁‍♂️
 
 ## Usage Examples ⌨️ 
 
