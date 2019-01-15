@@ -16,7 +16,7 @@ extension Constrictor {
                        in item: Anchorable,
                        with constant: CenterConstant,
                        prioritizeAs priority: LayoutPriority = .required,
-                       is state: LayoutState = .active) -> Self {
+                       is state: LayoutState = .enabled) -> Self {
 
         centerX(as: relation, to: item, .centerX, with: constant.centerX,
                 prioritizeAs: priority, is: state)
@@ -31,7 +31,7 @@ extension Constrictor {
                        in item: Anchorable,
                        with constant: CGFloat = 0,
                        prioritizeAs priority: LayoutPriority = .required,
-                       is state: LayoutState = .active) -> Self {
+                       is state: LayoutState = .enabled) -> Self {
 
         centerX(as: relation, to: item, .centerX, with: constant,
                 prioritizeAs: priority, is: state)

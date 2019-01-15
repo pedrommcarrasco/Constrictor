@@ -6,12 +6,12 @@
 //  Copyright © 2019 Pedro Carrasco. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - LayoutState
 public enum LayoutState {
-    case active
-    case inactive
+    case enabled
+    case disabled
 }
 
 // MARK: - Conversion
@@ -19,8 +19,20 @@ extension LayoutState {
 
     func nativeValue() -> Bool {
         switch self {
-        case .active: return true
-        case .inactive: return false
+        case .enabled: return true
+        case .disabled: return false
         }
+    }
+}
+
+// MARK: - NSLayoutConstraint's Sugar
+public extension NSLayoutConstraint {
+
+    public func enable() {
+        isActive = true
+    }
+
+    public func disable() {
+        isActive = false
     }
 }

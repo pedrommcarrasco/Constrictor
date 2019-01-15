@@ -52,7 +52,7 @@ let constraint = label.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor
 constraint.priority = .defaultHigh
 
 // Constrictor
-label.constrictor.top(as: .greaterOrEqual, to: view, prioritizeAs: .high, is: .inactive)
+label.constrictor.top(as: .greaterOrEqual, to: view, prioritizeAs: .high, is: .disabled)
 ```
 ## Edge
 How you constrain edges with `NSLayoutAnchor`:
@@ -108,7 +108,7 @@ label.constrictor.size(view, multiplyBy: 0.75)
 Everybody loves animations, so does **Constrictor**:
 ```swift
 // Only have one constraint for an anchor?
-label.constrictor.updateFirst(.top) { $0?.constant = 10 }
+label.constrictor.updateFirst(.top) { $0?.enable() }
 
 // Have two constraints for an anchor but for different elements? Provide more details
 label.constrictor.update(.bottom, to: imageView) { $0?.constant = 16 }

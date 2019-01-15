@@ -18,7 +18,7 @@ extension Constrictor {
                         _ attribute: AnchorYAxis = .centerY,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: LayoutPriority = .required,
-                        is state: LayoutState = .active) -> Self {
+                        is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -39,7 +39,7 @@ extension Constrictor {
                     _ attribute: AnchorYAxis = .top,
                     with constant: CGFloat = 0,
                     prioritizeAs priority: LayoutPriority = .required,
-                    is state: LayoutState = .active) -> Self {
+                    is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -60,7 +60,7 @@ extension Constrictor {
                        _ attribute: AnchorYAxis = .bottom,
                        with constant: CGFloat = 0,
                        prioritizeAs priority: LayoutPriority = .required,
-                       is state: LayoutState = .active) -> Self {
+                       is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -82,7 +82,7 @@ extension Constrictor {
                         _ attribute: AnchorXAxis = .centerX,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: LayoutPriority = .required,
-                        is state: LayoutState = .active) -> Self {
+                        is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -103,7 +103,7 @@ extension Constrictor {
                         _ attribute: AnchorXAxis = .leading,
                         with constant: CGFloat = 0,
                         prioritizeAs priority: LayoutPriority = .required,
-                        is state: LayoutState = .active) -> Self {
+                        is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -124,7 +124,7 @@ extension Constrictor {
                          _ attribute: AnchorXAxis = .trailing,
                          with constant: CGFloat = 0,
                          prioritizeAs priority: LayoutPriority = .required,
-                         is state: LayoutState = .active) -> Self {
+                         is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -145,7 +145,7 @@ extension Constrictor {
                       _ attribute: AnchorXAxis = .right,
                       with constant: CGFloat = 0,
                       prioritizeAs priority: LayoutPriority = .required,
-                      is state: LayoutState = .active) -> Self {
+                      is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -166,7 +166,7 @@ extension Constrictor {
                      _ attribute: AnchorXAxis = .left,
                      with constant: CGFloat = 0,
                      prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .active) -> Self {
+                     is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -189,7 +189,7 @@ extension Constrictor {
                       with constant: CGFloat = 0,
                       multiplyBy multiplier: CGFloat = 1,
                       prioritizeAs priority: LayoutPriority = .required,
-                      is state: LayoutState = .active) -> Self {
+                      is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -209,7 +209,7 @@ extension Constrictor {
     public func width(as relation: LayoutRelation = .equal,
                       to constant: CGFloat,
                       prioritizeAs priority: LayoutPriority = .required,
-                      is state: LayoutState = .active) -> Self {
+                      is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -230,7 +230,7 @@ extension Constrictor {
                        with constant: CGFloat = 0,
                        multiplyBy multiplier: CGFloat = 1,
                        prioritizeAs priority: LayoutPriority = .required,
-                       is state: LayoutState = .active) -> Self {
+                       is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)
@@ -250,7 +250,7 @@ extension Constrictor {
     public func height(as relation: LayoutRelation = .equal,
                        to constant: CGFloat,
                        prioritizeAs priority: LayoutPriority = .required,
-                       is state: LayoutState = .active) -> Self {
+                       is state: LayoutState = .enabled) -> Self {
 
         guard let object = object else { return self }
         Assembler.configure(object)

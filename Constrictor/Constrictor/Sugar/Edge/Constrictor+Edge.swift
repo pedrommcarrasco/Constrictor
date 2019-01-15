@@ -16,7 +16,7 @@ extension Constrictor {
                      to item: Anchorable,
                      with constant: CGFloat,
                      prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .active) -> Self {
+                     is state: LayoutState = .enabled) -> Self {
         
         edge(as: relation, to: item, with: .all(constant), prioritizeAs: priority, is: state)
         
@@ -28,7 +28,7 @@ extension Constrictor {
                      to item: Anchorable,
                      with constant: EdgeConstant = .zero,
                      prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .active) -> Self {
+                     is state: LayoutState = .enabled) -> Self {
         
         top(as: relation, to: item, .top, with: constant.top, prioritizeAs: priority, is: state)
         bottom(as: relation, to: item, .bottom, with: constant.bottom, prioritizeAs: priority, is: state)
@@ -44,7 +44,7 @@ extension Constrictor {
                      _ attributes: EdgeAnchor ...,
                      with constant: CGFloat,
                      prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .active) -> Self {
+                     is state: LayoutState = .enabled) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: .all(constant),
                              prioritizeAs: priority, is: state)
@@ -58,7 +58,7 @@ extension Constrictor {
                      _ attributes: EdgeAnchor ...,
                      with constant: EdgeConstant = .zero,
                      prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .active) -> Self {
+                     is state: LayoutState = .enabled) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: constant,
                              prioritizeAs: priority, is: state)
@@ -74,7 +74,7 @@ private extension Constrictor {
                               _ attributes: [EdgeAnchor],
                               with constant: EdgeConstant = .zero,
                               prioritizeAs priority: LayoutPriority = .required,
-                              is state: LayoutState = .active) {
+                              is state: LayoutState = .enabled) {
         attributes.forEach {
             switch $0 {
             case .top:

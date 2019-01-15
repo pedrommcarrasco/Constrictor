@@ -31,6 +31,7 @@
 		5378798D21EDDF96006E5AA3 /* LayoutPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378798C21EDDF96006E5AA3 /* LayoutPriority.swift */; };
 		5378799021EDE5A1006E5AA3 /* LayoutRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378798F21EDE5A1006E5AA3 /* LayoutRelation.swift */; };
 		5378799321EDE8CC006E5AA3 /* LayoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378799221EDE8CC006E5AA3 /* LayoutState.swift */; };
+		5378799621EE2901006E5AA3 /* LayoutStateUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378799521EE2901006E5AA3 /* LayoutStateUnitTests.swift */; };
 		5379EC3521EC856800FAB4CD /* Constrictor+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */; };
 		5379EC3821EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */; };
 		5379EC3F21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */; };
@@ -93,6 +94,7 @@
 		5378798C21EDDF96006E5AA3 /* LayoutPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriority.swift; sourceTree = "<group>"; };
 		5378798F21EDE5A1006E5AA3 /* LayoutRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutRelation.swift; sourceTree = "<group>"; };
 		5378799221EDE8CC006E5AA3 /* LayoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutState.swift; sourceTree = "<group>"; };
+		5378799521EE2901006E5AA3 /* LayoutStateUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStateUnitTests.swift; sourceTree = "<group>"; };
 		5379EC3421EC856800FAB4CD /* Constrictor+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constrictor+Update.swift"; sourceTree = "<group>"; };
 		5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrictorUpdateUnitTests.swift; sourceTree = "<group>"; };
 		5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityUnitTests.swift; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 		2040464921EA856100991BA5 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5379EC3D21ECA4BA00FAB4CD /* Priority */,
+				5378799421EE28ED006E5AA3 /* Modifiers */,
 				5379EC3621EC859E00FAB4CD /* Update */,
 				2026B04921EBFEA700C9C853 /* Core */,
 				20F9275221EBB66D0027081C /* Sugar */,
@@ -295,6 +297,15 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		5378799421EE28ED006E5AA3 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */,
+				5378799521EE2901006E5AA3 /* LayoutStateUnitTests.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		5379EC3321EC855500FAB4CD /* Update */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,14 +320,6 @@
 				5379EC3721EC85B700FAB4CD /* ConstrictorUpdateUnitTests.swift */,
 			);
 			path = Update;
-			sourceTree = "<group>";
-		};
-		5379EC3D21ECA4BA00FAB4CD /* Priority */ = {
-			isa = PBXGroup;
-			children = (
-				5379EC3E21ECA51C00FAB4CD /* LayoutPriorityUnitTests.swift */,
-			);
-			path = Priority;
 			sourceTree = "<group>";
 		};
 		53CDE3B420B3201E007E4AE0 = {
@@ -651,6 +654,7 @@
 				20F9276821EBE66A0027081C /* SnapshotConstants.swift in Sources */,
 				2026B05021EC045300C9C853 /* Constrictor+SimpleSnapshotTests.swift in Sources */,
 				2040465921EA989100991BA5 /* NSLayoutConstraintSetUnitTests.swift in Sources */,
+				5378799621EE2901006E5AA3 /* LayoutStateUnitTests.swift in Sources */,
 				2026B04B21EBFEBE00C9C853 /* UIView+ConstrictorUnitTests.swift in Sources */,
 				2040465421EA96F600991BA5 /* AnchorXAxisUnitTests.swift in Sources */,
 				20F9276321EBE5970027081C /* Constrictor+CenterAndSizeSnaphotTests.swift in Sources */,
