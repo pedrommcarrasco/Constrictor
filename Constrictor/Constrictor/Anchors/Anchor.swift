@@ -45,7 +45,7 @@ extension Anchor {
 extension Anchor {
     
     func constraints(for constraints: Constraints) -> [NSLayoutConstraint] {
-        switch self{
+        switch self {
         case .top: return constraints.top
         case .bottom: return constraints.bottom
         case .leading: return constraints.leading

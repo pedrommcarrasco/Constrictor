@@ -36,7 +36,7 @@ extension AnchorDimension {
     }
     
     func constraints(for constraints: Constraints) -> [NSLayoutConstraint] {
-        switch self{
+        switch self {
         case .width: return constraints.width
         case .height: return constraints.height
         }

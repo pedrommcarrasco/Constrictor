@@ -1,4 +1,4 @@
-![](https://github.com/pedrommcarrasco/Constrictor/blob/Revamp/cover.jpg?raw=true)
+![](https://github.com/pedrommcarrasco/Constrictor/blob/master/cover.jpg?raw=true)
 
 > **Constrict** *(/ˈkənˈstrɪkt/)*, *verb*
 >
@@ -7,7 +7,7 @@
 Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 
 <p align="center">
-    <img src="https://github.com/pedrommcarrasco/Constrictor/blob/Revamp/presentation.gif?raw=true" alt="Presentation" width="100%"/>
+    <img src="https://github.com/pedrommcarrasco/Constrictor/blob/master/presentation.gif?raw=true" alt="Presentation" width="100%"/>
 </p>
 
 [![Build Status](https://travis-ci.org/pedrommcarrasco/Constrictor.svg?branch=master)](https://travis-ci.org/pedrommcarrasco/Constrictor) 
