@@ -28,6 +28,15 @@ Constrict your Auto Layout code with **Constrictor**, your chainable sugar.
 
 # Usage Examples ⌨️ 
 
+## Chain
+One of the key features of **Constrictor** is how you can easily chain with it. As an example:
+```swift
+label.constrictor
+    .size(view, multiplyBy: 0.75)
+    .center(view)
+    .bottom(as: .greaterOrEqual, to: imageView, .top)
+```
+
 ## Simple
 Constrictor allows you to **fully replace**  `NSLayoutAnchor`. For example:
 ```swift
@@ -114,15 +123,6 @@ label.constrictor.updateFirst(.top) { $0?.enable() }
 label.constrictor.update(.bottom, to: imageView) { $0?.constant = 16 }
 
 // Call UIView.animate(...) { view.layoutIfNeeded() } to animate changes
-```
-
-## Chain
-One of the key features of **Constrictor** is how you can easily chain with it. As an example:
-```swift
-label.constrictor
-    .size(view, multiplyBy: 0.75)
-    .center(view)
-    .bottom(as: .greaterOrEqual, to: imageView, .top)
 ```
 
 # Installation 📦 
