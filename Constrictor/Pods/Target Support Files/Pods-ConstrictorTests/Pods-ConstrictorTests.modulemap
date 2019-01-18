@@ -1,0 +1,6 @@
+framework module Pods_ConstrictorTests {
+  umbrella header "Pods-ConstrictorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
