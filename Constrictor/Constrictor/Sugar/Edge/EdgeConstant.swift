@@ -56,7 +56,7 @@ extension EdgeConstant {
 // MARK: - Operator
 extension EdgeConstant {
     
-    static func & (lhs: EdgeConstant, rhs: EdgeConstant) -> EdgeConstant {
+    public static func & (lhs: EdgeConstant, rhs: EdgeConstant) -> EdgeConstant {
         return .init(top: lhs.top + rhs.top,
                      bottom: lhs.bottom + rhs.bottom,
                      leading: lhs.leading + rhs.leading,

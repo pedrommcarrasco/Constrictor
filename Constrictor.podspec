@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.swift_version = "4.2"
   s.name         = "Constrictor"
-  s.version      = "5.0.0"
+  s.version      = "5.0.1"
   s.summary      = "🐍 Constrict your layout in Swift"
 
   s.description  = "Constrict your Auto Layout code with Constrictor, your chainable sugar."

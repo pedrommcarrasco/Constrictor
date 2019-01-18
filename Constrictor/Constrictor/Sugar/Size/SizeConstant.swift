@@ -26,11 +26,11 @@ extension SizeConstant {
 // MARK: - Modifiers
 extension SizeConstant {
 
-    static func width(_ value: CGFloat) -> SizeConstant {
+    public static func width(_ value: CGFloat) -> SizeConstant {
         return SizeConstant(width: value, height: 0)
     }
 
-    static func height(_ value: CGFloat) -> SizeConstant {
+    public static func height(_ value: CGFloat) -> SizeConstant {
         return SizeConstant(width: 0, height: value)
     }
 }
@@ -38,7 +38,7 @@ extension SizeConstant {
 // MARK: - Operator
 extension SizeConstant {
 
-    static func & (lhs: SizeConstant, rhs: SizeConstant) -> SizeConstant {
+    public static func & (lhs: SizeConstant, rhs: SizeConstant) -> SizeConstant {
 
         return .init(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
     }

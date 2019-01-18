@@ -18,11 +18,11 @@ public struct CenterConstant: Equatable {
 // MARK: - Modifiers
 extension CenterConstant {
 
-    static func centerX(_ value: CGFloat) -> CenterConstant {
+    public static func centerX(_ value: CGFloat) -> CenterConstant {
         return CenterConstant(centerX: value, centerY: 0)
     }
 
-    static func centerY(_ value: CGFloat) -> CenterConstant {
+    public static func centerY(_ value: CGFloat) -> CenterConstant {
         return CenterConstant(centerX: 0, centerY: value)
     }
 }
@@ -30,7 +30,7 @@ extension CenterConstant {
 // MARK: - Operator
 extension CenterConstant {
 
-    static func & (lhs: CenterConstant, rhs: CenterConstant) -> CenterConstant {
+    public static func & (lhs: CenterConstant, rhs: CenterConstant) -> CenterConstant {
         return .init(centerX: lhs.centerX + rhs.centerX, centerY: lhs.centerY + rhs.centerY)
     }
 }
