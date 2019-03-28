@@ -40,11 +40,11 @@ extension LayoutPriority {
 // MARK: - Operators
 public extension LayoutPriority {
 
-    public static func +(lhs: LayoutPriority, rhs: Float) -> LayoutPriority {
+    static func +(lhs: LayoutPriority, rhs: Float) -> LayoutPriority {
         return LayoutPriority(lhs.value + rhs)
     }
 
-    public static func -(lhs: LayoutPriority, rhs: Float) -> LayoutPriority {
+    static func -(lhs: LayoutPriority, rhs: Float) -> LayoutPriority {
         return LayoutPriority(lhs.value - rhs)
     }
 }

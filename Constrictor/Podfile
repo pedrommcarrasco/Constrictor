@@ -3,7 +3,7 @@
 use_frameworks!
 
 target 'ConstrictorTests' do
-    pod 'SnapshotTesting', '~> 1.1'
+    pod 'SnapshotTesting', '~> 1.4'
 end
 
 post_install do |installer|
