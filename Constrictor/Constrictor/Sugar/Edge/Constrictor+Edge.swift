@@ -9,14 +9,14 @@
 import UIKit
 
 // MARK: - Edge
-extension Constrictor {
+public extension Constrictor {
     
     @discardableResult
-    public func edge(as relation:  LayoutRelation = .equal,
-                     to item: Anchorable,
-                     with constant: CGFloat,
-                     prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .enabled) -> Self {
+    func edge(as relation:  LayoutRelation = .equal,
+              to item: Anchorable,
+              with constant: CGFloat,
+              prioritizeAs priority: LayoutPriority = .required,
+              is state: LayoutState = .enabled) -> Self {
         
         edge(as: relation, to: item, with: .all(constant), prioritizeAs: priority, is: state)
         
@@ -24,11 +24,11 @@ extension Constrictor {
     }
     
     @discardableResult
-    public func edge(as relation:  LayoutRelation = .equal,
-                     to item: Anchorable,
-                     with constant: EdgeConstant = .zero,
-                     prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .enabled) -> Self {
+    func edge(as relation:  LayoutRelation = .equal,
+              to item: Anchorable,
+              with constant: EdgeConstant = .zero,
+              prioritizeAs priority: LayoutPriority = .required,
+              is state: LayoutState = .enabled) -> Self {
         
         top(as: relation, to: item, .top, with: constant.top, prioritizeAs: priority, is: state)
         bottom(as: relation, to: item, .bottom, with: constant.bottom, prioritizeAs: priority, is: state)
@@ -39,12 +39,12 @@ extension Constrictor {
     }
     
     @discardableResult
-    public func edge(as relation:  LayoutRelation = .equal,
-                     to item: Anchorable,
-                     _ attributes: EdgeAnchor ...,
-                     with constant: CGFloat,
-                     prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .enabled) -> Self {
+    func edge(as relation:  LayoutRelation = .equal,
+              to item: Anchorable,
+              _ attributes: EdgeAnchor ...,
+              with constant: CGFloat,
+              prioritizeAs priority: LayoutPriority = .required,
+              is state: LayoutState = .enabled) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: .all(constant),
                              prioritizeAs: priority, is: state)
@@ -53,12 +53,12 @@ extension Constrictor {
     }
     
     @discardableResult
-    public func edge(as relation:  LayoutRelation = .equal,
-                     to item: Anchorable,
-                     _ attributes: EdgeAnchor ...,
-                     with constant: EdgeConstant = .zero,
-                     prioritizeAs priority: LayoutPriority = .required,
-                     is state: LayoutState = .enabled) -> Self {
+    func edge(as relation:  LayoutRelation = .equal,
+              to item: Anchorable,
+              _ attributes: EdgeAnchor ...,
+              with constant: EdgeConstant = .zero,
+              prioritizeAs priority: LayoutPriority = .required,
+              is state: LayoutState = .enabled) -> Self {
         
         internalVariadicEdge(as: relation, to: item, attributes, with: constant,
                              prioritizeAs: priority, is: state)

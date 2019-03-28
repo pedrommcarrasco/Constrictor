@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         // Constraints -> Same dimensions of redview's superview
         redView.constrictor
-            .edge(to: view)
+            .edge(to: view, with: .top(10) & .horizontal(20))
         
         // ** Blue View **
         // Boilerplate

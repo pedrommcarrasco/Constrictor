@@ -28,11 +28,11 @@ extension LayoutState {
 // MARK: - NSLayoutConstraint's Sugar
 public extension NSLayoutConstraint {
 
-    public func enable() {
+    func enable() {
         isActive = true
     }
 
-    public func disable() {
+    func disable() {
         isActive = false
     }
 }

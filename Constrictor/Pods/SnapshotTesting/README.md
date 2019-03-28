@@ -1,6 +1,6 @@
 # 📸 SnapshotTesting
 
-[![Swift 4.2](https://img.shields.io/badge/swift-4.2-ED523F.svg?style=flat)](https://swift.org/download/) [![iOS/macOS/tvOS CI](https://img.shields.io/circleci/project/github/pointfreeco/swift-snapshot-testing/master.svg?label=ios/macos/tvos)](https://circleci.com/gh/pointfreeco/swift-snapshot-testing) [![Linux CI](https://img.shields.io/travis/pointfreeco/swift-snapshot-testing/master.svg?label=linux)](https://travis-ci.org/pointfreeco/swift-nonempty) [![@pointfreeco](https://img.shields.io/badge/contact-@pointfreeco-5AA9E7.svg?style=flat)](https://twitter.com/pointfreeco)
+[![Swift 5](https://img.shields.io/badge/swift-5-ED523F.svg?style=flat)](https://swift.org/download/) [![iOS/macOS/tvOS CI](https://img.shields.io/circleci/project/github/pointfreeco/swift-snapshot-testing/master.svg?label=ios/macos/tvos)](https://circleci.com/gh/pointfreeco/swift-snapshot-testing) [![Linux CI](https://img.shields.io/travis/pointfreeco/swift-snapshot-testing/master.svg?label=linux)](https://travis-ci.org/pointfreeco/swift-snapshot-testing) [![@pointfreeco](https://img.shields.io/badge/contact-@pointfreeco-5AA9E7.svg?style=flat)](https://twitter.com/pointfreeco)
 
 Delightful Swift snapshot testing.
 
@@ -73,6 +73,8 @@ assertSnapshot(matching: vc, as: .image(on: .iPadMini(.portrait)))
 assertSnapshot(matching: vc, as: .recursiveDescription(on: .iPadMini(.portrait)))
 ```
 
+> ⚠️ Warning: Snapshots must be compared using a simulator with the same OS, device gamut, and scale as the simulator that originally took the reference to avoid discrepancies between images.
+
 Better yet, SnapshotTesting isn't limited to views and view controllers! There are [a number of available snapshot strategies](Documentation/Available-Snapshot-Strategies.md) to choose from.
 
 For example, you can snapshot test URL requests (_e.g._, those that your API client prepares).
@@ -129,7 +131,7 @@ If your data can be represented as an image, text, or data, you can write a snap
 If you use [Carthage](https://github.com/Carthage/Carthage), you can add the following dependency to your `Cartfile`:
 
 ``` ruby
-github "pointfreeco/swift-snapshot-testing" ~> 1.1
+github "pointfreeco/swift-snapshot-testing" ~> 1.4
 ```
 
 > ⚠️ Warning: Carthage instructs you to drag frameworks into your Xcode project. Xcode may automatically attempt to link these frameworks to your app target. `SnapshotTesting.framework` is only compatible with test targets, so when you first add it to your project:
@@ -147,7 +149,7 @@ If your project uses [CocoaPods](https://cocoapods.org), add the pod to any appl
 
 ```ruby
 target 'MyAppTests' do
-  pod 'SnapshotTesting', '~> 1.1'
+  pod 'SnapshotTesting', '~> 1.4'
 end
 ```
 
@@ -157,7 +159,7 @@ If you want to use SnapshotTesting in a project that uses [SwiftPM](https://swif
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.1.0"),
+  .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.4.0"),
 ]
 ```
 
@@ -174,6 +176,12 @@ dependencies: [
   - **SceneKit, SpriteKit, and WebKit support.** Most snapshot testing libraries don't support these view subclasses.
   - **`Codable` support**. Snapshot encodable data structures into their [JSON](Documentation/Available-Snapshot-Strategies.md#json) and [property list](Documentation/Available-Snapshot-Strategies.md#plist) representations.
   - **Custom diff tool integration**.
+
+## Plug-ins
+
+  - [swift-html](https://github.com/pointfreeco/swift-html) is a Swift DSL for type-safe, extensible, and transformable HTML documents and includes an `HtmlSnapshotTesting` module to snapshot test its HTML documents.
+
+Have you written your own SnapshotTesting plug-in? [Add it here](https://github.com/pointfreeco/swift-snapshot-testing/edit/master/README.md) and submit a pull request!
   
 ## Related Tools
 
@@ -187,7 +195,7 @@ SnapshotTesting was designed with [witness-oriented programming](https://www.poi
 
 This concept (and more) are explored thoroughly in a series of episodes on [Point-Free](https://www.pointfree.co), a video series exploring functional programming and Swift hosted by [Brandon Williams](https://github.com/mbrandonw) and [Stephen Celis](https://github.com/stephencelis).
 
-Witness-oriented programming was explored in the following episodes:
+Witness-oriented programming and the design of this library was explored in the following [Point-Free](https://www.pointfree.co) episodes:
 
   - [Episode 33](https://www.pointfree.co/episodes/ep33-protocol-witnesses-part-1): Protocol Witnesses: Part 1
   - [Episode 34](https://www.pointfree.co/episodes/ep34-protocol-witnesses-part-1): Protocol Witnesses: Part 2
@@ -196,9 +204,11 @@ Witness-oriented programming was explored in the following episodes:
   - [Episode 37](https://www.pointfree.co/episodes/ep37-protocol-oriented-library-design-part-1): Protocol-Oriented Library Design: Part 1
   - [Episode 38](https://www.pointfree.co/episodes/ep38-protocol-oriented-library-design-part-2): Protocol-Oriented Library Design: Part 2
   - [Episode 39](https://www.pointfree.co/episodes/ep39-witness-oriented-library-design): Witness-Oriented Library Design
+  - [Episode 40](https://www.pointfree.co/episodes/ep40-async-functional-refactoring): Async Functional Refactoring
+  - [Episode 41](https://www.pointfree.co/episodes/ep41-a-tour-of-snapshot-testing): A Tour of Snapshot Testing 🆓
 
-<a href="https://www.pointfree.co/episodes/ep26-domain-specific-languages-part-1">
-  <img alt="video poster image" src="https://d1hf1soyumxcgv.cloudfront.net/0039-witness-oriented-library-design/poster.jpg" width="480">
+<a href="https://www.pointfree.co/episodes/ep41-a-tour-of-snapshot-testing">
+  <img alt="video poster image" src="https://d1hf1soyumxcgv.cloudfront.net/0041-tour-of-snapshot-testing/0041-poster.jpg" width="480">
 </a>
 
 ## License

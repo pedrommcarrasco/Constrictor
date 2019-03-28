@@ -1,4 +1,3 @@
-#if !os(Linux)
 import XCTest
 
 /// Enhances failure messages with a command line diff tool expression that can be copied and pasted into a terminal.
@@ -32,7 +31,7 @@ public func assertSnapshot<Value, Format>(
   ) {
 
   let failure = verifySnapshot(
-    matching: value,
+    matching: try value(),
     as: snapshotting,
     named: name,
     record: recording,
@@ -45,13 +44,109 @@ public func assertSnapshot<Value, Format>(
   XCTFail(message, file: file, line: line)
 }
 
+/// Asserts that a given value matches references on disk.
+///
+/// - Parameters:
+///   - value: A value to compare against a reference.
+///   - snapshotting: An dictionnay of names and strategies for serializing, deserializing, and comparing values.
+///   - recording: Whether or not to record a new reference.
+///   - timeout: The amount of time a snapshot must be generated in.
+///   - file: The file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+///   - testName: The name of the test in which failure occurred. Defaults to the function name of the test case in which this function was called.
+///   - line: The line number on which failure occurred. Defaults to the line number on which this function was called.
+public func assertSnapshots<Value, Format>(
+  matching value: @autoclosure () throws -> Value,
+  as strategies: [String: Snapshotting<Value, Format>],
+  record recording: Bool = false,
+  timeout: TimeInterval = 5,
+  file: StaticString = #file,
+  testName: String = #function,
+  line: UInt = #line
+  ) {
+
+  try? strategies.forEach { name, strategy in
+    assertSnapshot(
+      matching: try value(),
+      as: strategy,
+      named: name,
+      record: recording,
+      timeout: timeout,
+      file: file,
+      testName: testName,
+      line: line
+    )
+  }
+}
+
+/// Asserts that a given value matches references on disk.
+///
+/// - Parameters:
+///   - value: A value to compare against a reference.
+///   - snapshotting: An array of strategies for serializing, deserializing, and comparing values.
+///   - recording: Whether or not to record a new reference.
+///   - timeout: The amount of time a snapshot must be generated in.
+///   - file: The file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+///   - testName: The name of the test in which failure occurred. Defaults to the function name of the test case in which this function was called.
+///   - line: The line number on which failure occurred. Defaults to the line number on which this function was called.
+public func assertSnapshots<Value, Format>(
+  matching value: @autoclosure () throws -> Value,
+  as strategies: [Snapshotting<Value, Format>],
+  record recording: Bool = false,
+  timeout: TimeInterval = 5,
+  file: StaticString = #file,
+  testName: String = #function,
+  line: UInt = #line
+  ) {
+
+  try? strategies.forEach { strategy in
+    assertSnapshot(
+      matching: try value(),
+      as: strategy,
+      record: recording,
+      timeout: timeout,
+      file: file,
+      testName: testName,
+      line: line
+    )
+  }
+}
+
 /// Verifies that a given value matches a reference on disk.
+///
+/// Third party snapshot assert helpers can be built on top of this function. Simply invoke `verifySnapshot` with your own arguments, and then invoke `XCTFail` with the string returned if it is non-`nil`. For example, if you want the snapshot directory to be determined by an environment variable, you can create your own assert helper like so:
+///
+///     public func myAssertSnapshot<Value, Format>(
+///       matching value: @autoclosure () throws -> Value,
+///       as snapshotting: Snapshotting<Value, Format>,
+///       named name: String? = nil,
+///       record recording: Bool = false,
+///       timeout: TimeInterval = 5,
+///       file: StaticString = #file,
+///       testName: String = #function,
+///       line: UInt = #line
+///       ) {
+///
+///         let snapshotDirectory = ProcessInfo.processInfo.environment["SNAPSHOT_REFERENCE_DIR"]! + "/" + #file
+///         let failure = verifySnapshot(
+///           matching: value,
+///           as: snapshotting,
+///           named: name,
+///           record: recording,
+///           snapshotDirectory: snapshotDirectory,
+///           timeout: timeout,
+///           file: file,
+///           testName: testName
+///         )
+///         guard let message = failure else { return }
+///         XCTFail(message, file: file, line: line)
+///     }
 ///
 /// - Parameters:
 ///   - value: A value to compare against a reference.
 ///   - snapshotting: A strategy for serializing, deserializing, and comparing values.
 ///   - name: An optional description of the snapshot.
 ///   - recording: Whether or not to record a new reference.
+///   - snapshotDirectory: Optional directory to save snapshots. By default snapshots will be saved in a directory with the same name as the test file, and that directory will sit inside a directory `__Snapshots__` that sits next to your test file.
 ///   - timeout: The amount of time a snapshot must be generated in.
 ///   - file: The file in which failure occurred. Defaults to the file name of the test case in which this function was called.
 ///   - testName: The name of the test in which failure occurred. Defaults to the function name of the test case in which this function was called.
@@ -62,6 +157,7 @@ public func verifySnapshot<Value, Format>(
   as snapshotting: Snapshotting<Value, Format>,
   named name: String? = nil,
   record recording: Bool = false,
+  snapshotDirectory: String? = nil,
   timeout: TimeInterval = 5,
   file: StaticString = #file,
   testName: String = #function,
@@ -74,10 +170,12 @@ public func verifySnapshot<Value, Format>(
     do {
       let fileUrl = URL(fileURLWithPath: "\(file)")
       let fileName = fileUrl.deletingPathExtension().lastPathComponent
-      let directoryUrl = fileUrl.deletingLastPathComponent()
-      let snapshotDirectoryUrl: URL = directoryUrl
-        .appendingPathComponent("__Snapshots__")
-        .appendingPathComponent(fileName)
+
+      let snapshotDirectoryUrl = snapshotDirectory.map(URL.init(fileURLWithPath:))
+        ?? fileUrl
+          .deletingLastPathComponent()
+          .appendingPathComponent("__Snapshots__")
+          .appendingPathComponent(fileName)
 
       let identifier: String
       if let name = name {
@@ -112,6 +210,8 @@ public func verifySnapshot<Value, Format>(
         return "Exceeded timeout of \(timeout) seconds waiting for snapshot"
       case .incorrectOrder, .invertedFulfillment, .interrupted:
         return "Couldn't snapshot value"
+      @unknown default:
+        return "Couldn't snapshot value"
       }
 
       guard let diffable = optionalDiffable else {
@@ -127,11 +227,11 @@ public func verifySnapshot<Value, Format>(
         try snapshotting.diffing.toData(diffable).write(to: snapshotFileUrl)
         return recording
           ? """
-            Record mode is on. \(diffMessage)
+            Record mode is on. Turn record mode off and re-run "\(testName)" to test against the newly-recorded snapshot.
 
             open "\(snapshotFileUrl.path)"
 
-            Turn record mode off and re-run "\(testName)" to test against the newly-recorded snapshot.
+            \(diffMessage)
             """
           : """
             No reference was found on disk. Automatically recorded snapshot: …
@@ -173,9 +273,11 @@ public func verifySnapshot<Value, Format>(
         .map { "\($0) \"\(snapshotFileUrl.path)\" \"\(failedSnapshotFileUrl.path)\"" }
         ?? "@\(minus)\n\"\(snapshotFileUrl.path)\"\n@\(plus)\n\"\(failedSnapshotFileUrl.path)\""
       return """
-      \(failure.trimmingCharacters(in: .whitespacesAndNewlines))
+      Snapshot does not match reference.
 
       \(diffMessage)
+
+      \(failure.trimmingCharacters(in: .whitespacesAndNewlines))
       """
     } catch {
       return error.localizedDescription
@@ -184,7 +286,6 @@ public func verifySnapshot<Value, Format>(
 
 private let counterQueue = DispatchQueue(label: "co.pointfree.SnapshotTesting.counter")
 private var counterMap: [URL: Int] = [:]
-#endif
 
 func sanitizePathComponent(_ string: String) -> String {
   return string

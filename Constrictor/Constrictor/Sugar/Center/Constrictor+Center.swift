@@ -9,10 +9,10 @@
 import UIKit
 
 // MARK: - Center
-extension Constrictor {
+public extension Constrictor {
 
     @discardableResult
-    public func center(as relation:  LayoutRelation = .equal,
+    func center(as relation:  LayoutRelation = .equal,
                        in item: Anchorable,
                        with constant: CenterConstant,
                        prioritizeAs priority: LayoutPriority = .required,
@@ -27,7 +27,7 @@ extension Constrictor {
     }
 
     @discardableResult
-    public func center(as relation:  LayoutRelation = .equal,
+    func center(as relation:  LayoutRelation = .equal,
                        in item: Anchorable,
                        with constant: CGFloat = 0,
                        prioritizeAs priority: LayoutPriority = .required,

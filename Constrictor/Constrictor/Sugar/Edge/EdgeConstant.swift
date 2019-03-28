@@ -18,33 +18,33 @@ public struct EdgeConstant: Equatable {
 }
 
 // MARK: - Modifiers
-extension EdgeConstant {
+public extension EdgeConstant {
     
-    public static var zero: EdgeConstant {
+    static var zero: EdgeConstant {
         return EdgeConstant(top: 0, bottom: 0, leading: 0, trailing: 0)
     }
     
-    public static func top(_ value: CGFloat) -> EdgeConstant {
+    static func top(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: value, bottom: 0, leading: 0, trailing: 0)
     }
     
-    public static func bottom(_ value: CGFloat) -> EdgeConstant {
+    static func bottom(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: 0, bottom: -value, leading: 0, trailing: 0)
     }
     
-    public static func leading(_ value: CGFloat) -> EdgeConstant {
+    static func leading(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: 0, bottom: 0, leading: value, trailing: 0)
     }
     
-    public static func trailing(_ value: CGFloat) -> EdgeConstant {
+    static func trailing(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: 0, bottom: 0, leading: 0, trailing: -value)
     }
     
-    public static func vertical(_ value: CGFloat) -> EdgeConstant {
+    static func vertical(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: value, bottom: -value, leading: 0, trailing: 0)
     }
     
-    public static func horizontal(_ value: CGFloat) -> EdgeConstant {
+    static func horizontal(_ value: CGFloat) -> EdgeConstant {
         return EdgeConstant(top: 0, bottom: 0, leading: value, trailing: -value)
     }
     
@@ -54,9 +54,9 @@ extension EdgeConstant {
 }
 
 // MARK: - Operator
-extension EdgeConstant {
+public extension EdgeConstant {
     
-    public static func & (lhs: EdgeConstant, rhs: EdgeConstant) -> EdgeConstant {
+    static func & (lhs: EdgeConstant, rhs: EdgeConstant) -> EdgeConstant {
         return .init(top: lhs.top + rhs.top,
                      bottom: lhs.bottom + rhs.bottom,
                      leading: lhs.leading + rhs.leading,
