@@ -87,9 +87,9 @@ struct Assembler {
         let constraint: NSLayoutConstraint
         
         switch relation {
-        case .lessOrEqual: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
+        case .lessOrEqual: constraint = anchor.constraint(lessThanOrEqualToConstant: constant)
         case .equal: constraint = anchor.constraint(equalToConstant: constant)
-        case .greaterOrEqual: constraint = anchor.constraint(lessThanOrEqualToConstant: constant)
+        case .greaterOrEqual: constraint = anchor.constraint(greaterThanOrEqualToConstant: constant)
         }
         
         constraint.set(constant: constant, priority: priority, state: state)
