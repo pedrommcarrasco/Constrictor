@@ -166,7 +166,7 @@ I'm also a conference and meetup organizer, being part of **[SwiftAveiro](https:
 
 If you enjoy my work and would like to help me continue it, please consider:
 * https://www.buymeacoffee.com/pedrommcarrasco
-* https://www.paypal.com/paypalme2/pedrommcarrasco
+* https://www.paypal.me/pedrommcarrasco
 
 # Contributing 🙌 
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Constrictor/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Constrictor/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc). Also, feel free to ask me anything on [Twitter](https://twitter.com/pedrommcarrasco)
